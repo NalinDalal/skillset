@@ -1,0 +1,34 @@
+{
+  "name": "skillset",
+  "version": "0.1.0",
+  "description": "A curated, auto-synced collection of agent skills (design, animation, dev workflow) with a CLI to install them into any harness — Claude Code, OpenCode, Cursor, Codex, Gemini.",
+  "type": "module",
+  "bin": {
+    "skillset": "./bin/skillset.mjs"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "skills",
+    "vendor.json"
+  ],
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "list": "node bin/skillset.mjs list",
+    "install": "node bin/skillset.mjs install"
+  },
+  "keywords": [
+    "agent",
+    "skills",
+    "claude",
+    "opencode",
+    "cursor",
+    "codex",
+    "design",
+    "ai"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

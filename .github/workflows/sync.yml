@@ -1,0 +1,59 @@
+name: Sync upstream skills
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily 03:00 UTC
+  workflow_dispatch: # manual trigger: "Run workflow"
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync skills from upstreams
+        run: node scripts/sync.mjs
+
+      - name: Report state
+        id: state
+        run: |
+          state=$(cat .sync-state)
+          echo "state=$state" >> "$GITHUB_OUTPUT"
+
+      - name: Create pull request if changed
+        if: steps.state.outputs.state == 'CHANGED'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: sync skills from upstreams"
+          title: "chore: sync skills from upstreams"
+          branch: chore/sync-upstreams
+          base: main
+          delete-branch: true
+          labels: dependencies
+          body: |
+            Upstream skill updates detected. This PR re-vendors the latest
+            versions from:
+
+            - pbakaus/impeccable
+            - Leonxlnx/taste-skill
+            - emilkowalski/skills
+
+            Review the diff, then merge. After merge, publish a new version:
+
+            ```
+            npm version patch && npm publish
+            ```
