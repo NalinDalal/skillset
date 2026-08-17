@@ -18,10 +18,10 @@ A curated collection of **31 agent skills** (design, animation, dev workflow) wi
 
 ## Install
 
-**From npm (after publish):**
+**From npm (published as `@nalindalal/skillset`):**
 ```bash
-npx skillset install            # install all skills, all harnesses (global)
-bunx skillset install           # bun equivalent
+npx @nalindalal/skillset install   # install all skills, all harnesses (global)
+bunx @nalindalal/skillset install  # bun equivalent
 ```
 
 **From the repo directly:**
@@ -59,7 +59,7 @@ The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on 
 npm version patch && npm publish
 ```
 
-That's it — you never hand-copy skill files again. New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx skillset install` on any machine.
+That's it — you never hand-copy skill files again. New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx @nalindalal/skillset install` on any machine.
 
 ### Manual sync
 

@@ -1,5 +1,5 @@
 {
-  "name": "skillset",
+  "name": "@nalindalal/skillset",
   "version": "0.1.0",
   "description": "A curated, auto-synced collection of agent skills (design, animation, dev workflow) with a CLI to install them into any harness — Claude Code, OpenCode, Cursor, Codex, Gemini.",
   "type": "module",
@@ -28,6 +28,13 @@
     "ai"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NalinDalal/skillset.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   }
