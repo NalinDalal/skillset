@@ -168,6 +168,171 @@ Apply changes in this order for maximum visual impact with minimum risk:
 6. **Add loading, empty, and error states** — makes it feel finished
 7. **Polish typography scale and spacing** — the premium final touch
 
+## Product-Quality Pass (for apps and products)
+
+A second, higher-level pass after the design audit. The goal is NOT prettier UI — it is eliminating everything that makes a product feel developer-built instead of polished. This pass is a methodology, not a style. Apply it to app-like surfaces (canvases, editors, dashboards, tools) and to any product that has multi-step flows.
+
+### Feel contract (write this first)
+
+Products that feel different — Excalidraw, Apple, Figma — feel different because every element obeys ONE point of view, not because they execute more rules. Before any audit or fix, write a 3–5 line feel contract:
+
+1. **Temperament in one word** — calm, playful, precise, rugged, hand-made…
+2. **What this product believes** — e.g. "the canvas is the product; chrome supports it, never competes."
+3. **What it refuses** (anti-goals) — e.g. "no glassmorphism, no bounce, no gradient accents, no generic SaaS chrome."
+4. **Two reference products + WHY they feel good** — not as styles to copy, as felt qualities: "Excalidraw feels hand-drawn and forgiving — objects feel physical in the hand." "Apple feels calm and direct — nothing waits, nothing lingers."
+5. **Where the feel lives** — the 2–3 contact points that carry the whole personality (stroke language, spring feel, selection behavior, tool dock).
+
+Every subsequent decision must trace back to this contract. When in doubt about any element, ask: *"Would a user who loves the reference product recognize this as the same product?"* If the answer is no, the element breaks the contract — remove it or redesign it. A UI that passes every checklist but has no contract still feels like a developer tool; the contract is what makes it feel *authored*.
+
+### Constraint budget
+
+The constraint IS the identity. Excalidraw is one stroke language and one palette; Apple removes until the essence remains. Define the budget before building:
+
+- One accent color, one radius scale, one icon family, one stroke weight, one motion curve family, one surface language.
+- Everything outside the budget is refused by default. Adding a new element to the budget requires a named reason that traces to the feel contract.
+- When a section of the UI needs more identity, remove from elsewhere first.
+
+### Fix priority tiers
+
+Prioritize by impact tier, never by what is easiest to fix. Fix all of P0 before touching P2.
+
+- **P0 — broken / confusing:** crashes, dead controls, actions with no feedback, flows that dead-end, states that mislead.
+- **P1 — visibly unfinished:** missing empty/loading/error states, buttons that do nothing, layout gaps, placeholder text.
+- **P2 — major product-quality improvement:** feedback quality, keyboard support, information hierarchy, responsive behavior.
+- **P3 — polish:** typography details, spacing, alignment, micro-interactions.
+
+### Full-state audit (nothing may render as a blank mystery)
+
+Audit every asynchronous or possibly-empty surface. The user must always be able to tell loading / empty / broken apart. Use the lightest appropriate feedback:
+
+- **Instant operation:** no loader at all.
+- **Short async operation:** subtle progress indicator.
+- **Long operation:** progress or status message with context.
+- **Empty state:** explain what the user can do here.
+- **Error state:** what happened + a recovery action.
+- **Connection state** (collaboration, sync): say it in user language — "connected", "reconnecting", "disconnected" — never developer terms.
+
+### Feedback mechanism selection
+
+- **Direct manipulation** (dragging, resizing, tool selection): visual state on the thing itself. Nothing else.
+- **Completed operation** (copied, exported): small contextual status only when useful — "Link copied", "PNG exported". Never generic "Success!".
+- **Destructive action:** confirmation ONLY when genuinely dangerous or hard to reverse.
+- **Undoable action:** prefer undo over confirmation.
+- Not every action becomes a toast. Toasts are for completed operations worth acknowledging; the interface communicates the rest through its own state.
+
+### Information hierarchy (four questions at any moment)
+
+The user should always be able to answer, in order:
+
+1. Where am I?
+2. What am I doing?
+3. What is selected?
+4. What can I do next?
+
+The canvas/content dominates; secondary controls visually recede. Avoid too many borders, shadows, pills, background fills, icons, and redundant labels. Important actions are findable without making everything prominent.
+
+### Keyboard-first
+
+Productivity tools treat the keyboard as a first-class input. Audit:
+
+- Tool activation, Delete/Backspace, Undo/Redo, Copy/Paste, zoom, search, menus, panels.
+- Escape consistently exits transient UI states (menus, modals, panels, Present Mode).
+- Focus is never trapped; focus management is appropriate for each panel/modal.
+- No mouse-only controls where keyboard interaction is expected.
+- Shortcut hints are visually consistent.
+
+### First-run and empty-canvas experience
+
+The empty state of a new product is a critical moment. Within seconds the user should understand what the product is, where to start, and where the primary actions live. Prefer lightweight contextual guidance — a subtle empty-state hint, first-use tooltip, keyboard hint — over a giant onboarding tour. Onboarding must disappear naturally once the user starts interacting and must never permanently consume workspace or interrupt the workflow.
+
+### Finish details (the subconscious-finish checklist)
+
+- No layout jump when panels open/close.
+- Consistent panel opening direction and close-button location.
+- Consistent tooltip timing.
+- Selected controls stay visibly selected.
+- Disabled controls explain themselves when useful.
+- No mysterious blank states.
+- No accidental scrollbars, no clipped shadows.
+- No text jumping between states, no icon changing size between states.
+- No hover state that causes layout movement.
+- No inconsistent cursor behavior, no unexpected focus loss.
+- No dead controls, no accidental double-click requirements.
+- No controls that only work with a mouse where keyboard is expected.
+
+### 10-minute user test
+
+Simulate the core user journey end to end and record each step in the finish gate's journey table (below). At every step ask: would a first-time user understand what just happened? Is there enough feedback? Does anything feel unfinished or slow? Any step answered "yes" blocks the finish gate — fix it, then re-run that step.
+
+Then close your eyes on each core interaction and describe the **feeling**, not the function. "The drag is glued to the cursor" and "the panel lands before the eye asks for it" are feelings that pass. "It works, I guess" and "it snaps, then I wait" are feelings that fail. Compare every felt quality against the feel contract: does this interaction feel like the reference product would feel, or like a dev tool that merely functions?
+
+### Do not overdesign
+
+The product must not become Linear, Notion, Figma, Framer, Apple.com, a glassmorphism dashboard, or a colorful SaaS template. When the product has a core surface (like a canvas), that surface is the product — the chrome supports it, never competes. Often the best improvement is removing something. Prefer less chrome, noise, states, duplicated patterns, borders, and animation, while increasing clarity, feedback, consistency, responsiveness, and confidence.
+
+### Final quality gate
+
+Inspect the result as three people, then run the finish gate below. Ship only when the gate has zero FAILs and all three pass:
+
+- **Designer:** hierarchy and visual consistency.
+- **User:** obvious, responsive, forgiving.
+- **Engineer:** maintainable, no new layer of duplicated patterns, no unrelated changes in the diff.
+
+### Finish gate (blocking — required before declaring done)
+
+Before reporting completion of any redesign or product-quality pass, output this gate table. **Assertions are not evidence.** Every row must carry evidence; a row without evidence is a FAIL.
+
+Evidence classes:
+
+- `[capture]` — actual screenshot at the stated viewport (Playwright, browser automation, devtools screenshot, `npx playwright screenshot`, etc.)
+- `[dom]` — rendered DOM / computed-style inspection (devtools element panel, rendered HTML)
+- `[code]` — source inspection with a specific reference (file:line, CSS rule, component)
+
+| # | Check | Result | Evidence |
+|---|---|---|---|
+| 1 | All 7 viewports render without overflow or horizontal scroll (1440 / 1280 / 1024 / 768 / 640 / 390 / 375) | PASS/FAIL | [capture] |
+| 2 | Hierarchy changes per class, not just shrinks (desktop full chrome / tablet reduced chrome / mobile primary-action-first) | PASS/FAIL | [capture] |
+| 3 | No surface renders blank: every list/panel/search/trash has empty, loading, and error states as applicable | PASS/FAIL | [dom] per surface |
+| 4 | Error states explain what happened + give a recovery action | PASS/FAIL | [dom]/[code] |
+| 5 | No P0 (broken/confusing) or P1 (visibly unfinished) issues remain | PASS/FAIL | [code]/[dom] |
+| 6 | Feedback matches mechanism (visual state for manipulation, contextual status for completed ops, confirm only for dangerous actions, undo over confirm) | PASS/FAIL | [code] |
+| 7 | Keyboard: Escape exits transient states, focus never trapped, no mouse-only controls, shortcut hints consistent | PASS/FAIL | [code]+[dom] |
+| 8 | First-run guidance present and self-disappearing (never consumes workspace permanently) | PASS/FAIL | [capture] |
+| 9 | `prefers-reduced-motion` respected (no transform-based motion under reduce) | PASS/FAIL | [code] |
+| 10 | 10-minute journey executed, every step clean (table below) | PASS/FAIL | per-step result |
+| 11 | lint + build (+ tests/typecheck if the project has them) pass | PASS/FAIL | command output |
+
+10-minute journey table — record each step (last column = felt quality vs the feel contract: glued/calm/instant vs laggy/abrupt/ambiguous):
+
+| Step | Understood? | Feedback present? | Unfinished? | Slow? | Feels right? |
+|---|---|---|---|---|---|
+| Open → understand what the product does | — | — | — | — | — |
+| Create canvas → first drawing | — | — | — | — | — |
+| Edit (color, move, resize, text) | — | — | — | — | — |
+| Undo / redo / multi-select | — | — | — | — | — |
+| Search / libraries / panels | — | — | — | — | — |
+| Share → copy link | — | — | — | — | — |
+| Theme switch / present mode / export | — | — | — | — | — |
+| Mobile viewport: repeat a basic interaction | — | — | — | — | — |
+
+Any "yes" in the journey table fails row 10.
+
+Gate rules:
+
+- **Zero FAILs to declare done.** One or more FAILs → fix and re-run the failed rows before reporting completion. A report that says "done" without a gate table is incomplete by definition.
+- **No browser tooling available?** State it as the first line of the report: "Visual verification was NOT performed (no browser tooling)." Then downgrade every visual check to [dom]/[code] and let the user decide if that suffices. Never silently skip a [capture] row; never upgrade an evidence class to force a pass.
+- The gate runs last, after all fixes; its output is the final section of the report.
+
+### Responsive verification matrix
+
+Test at: 1440, 1280, 1024, 768, 640, 390, 375px. "Does not overflow" is the floor, not the goal. The information hierarchy must change per class, not just shrink:
+
+- **Desktop:** full toolbar and panels.
+- **Tablet:** reduce secondary chrome.
+- **Mobile:** prioritize the primary action (the canvas/content); a mobile viewport that feels like a squeezed desktop is a failed adaptation.
+
+Per class, verify: tool docks, properties/panels, top bars, menus, modals, canvas interaction, touch hit targets (44px minimum), text editing, and Present Mode.
+
 ## Rules
 
 - Work with the existing tech stack. Do not migrate frameworks or styling libraries.

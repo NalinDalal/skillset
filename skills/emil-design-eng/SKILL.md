@@ -196,6 +196,19 @@ Springs maintain velocity when interrupted — CSS animations and keyframes rest
 
 ## Component Building Principles
 
+### Choose the right feedback mechanism
+
+Not every action deserves the same feedback. The mechanism must match what the user did:
+
+| Action | Feedback |
+| --- | --- |
+| Direct manipulation (drag, resize, tool select) | Visual state on the thing itself — nothing else |
+| Completed operation (copied, exported) | Small contextual status only when useful: "Link copied", "PNG exported" — never generic "Success!" |
+| Destructive action | Confirmation ONLY when genuinely dangerous or hard to reverse |
+| Undoable action | Prefer undo over confirmation |
+
+Do not turn every action into a toast. Toasts are for completed operations worth acknowledging; the interface communicates everything else through its own state. The best feedback is often no feedback — just the element visibly being where the user put it.
+
 ### Buttons must feel responsive
 
 Add `transform: scale(0.97)` on `:active`. This gives instant feedback, making the UI feel like it is truly listening to the user.

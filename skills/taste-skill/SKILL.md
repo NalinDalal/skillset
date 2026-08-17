@@ -152,6 +152,7 @@ Discouraged by default in code, markup, and visible text. Replace symbols with i
 * Contain page layouts using `max-w-[1400px] mx-auto` or `max-w-7xl`.
 * **Viewport Stability:** NEVER use `h-screen` for full-height Hero sections. ALWAYS use `min-h-[100dvh]` to prevent layout jumping on mobile (iOS Safari address bar).
 * **Grid over Flex-Math:** NEVER use complex flexbox percentage math (`w-[calc(33%-1rem)]`). ALWAYS use CSS Grid (`grid grid-cols-1 md:grid-cols-3 gap-6`).
+* **VERIFICATION MATRIX (mandatory before ship):** verify at 1440, 1280, 1024, 768, 640, 390, and 375px. "Does not overflow" is the floor, not the goal. The information hierarchy must CHANGE per class, not just shrink: desktop = full chrome; tablet = reduced secondary chrome; mobile = one-column flow, primary action first. A mobile viewport that feels like a squeezed desktop is a failed adaptation, not a responsive win. Per class verify: nav collapse, hero reflow, multi-column fallbacks, touch targets, and that nothing scrolls horizontally.
 
 ### 3.F Dependency Verification (mandatory)
 Before importing ANY 3rd-party library, check `package.json`. If the package is missing, output the install command first. **Never** assume a library exists.
