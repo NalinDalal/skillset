@@ -35,6 +35,19 @@ When every tool/design decision in the project is imported from a top-tier sourc
 
 Intervention: require **one consciously-chosen divergence per project** — one place where the user deviates from the common answer on purpose, with one line of reasoning ("most projects do X; I do Y because <reason>"). Help name it if needed. It becomes the interview story and the motivation to keep building.
 
+## The delegated-thinking trap (third documented failure mode)
+
+Boundary: the user offloads the *doing* to AI freely, but never the *deciding*. When design decisions, architecture reasoning, or plan-shaping are handed to the agent wholesale, the project stops being the user's — nothing to defend, nothing committed, and momentum dies (documented: playmesh, 5 days stuck after delegating the thinking). A user cannot build what they did not decide to build.
+
+Hard rules for agents in any session:
+1. **Present decisions, don't make them.** Options with one-line tradeoffs; the user picks. "Which?" not "I'll do X."
+2. **Ask for the user's opinion first** on anything that shapes the product (architecture, scope, UX, what to build next) before offering a recommendation.
+3. **Surface, don't resolve, uncertainty.** If the agent notices an ambiguous requirement, ask. Filling gaps silently converts the user's project into the agent's project.
+4. **Design docs/plans must contain the user's stated reasons**, not paraphrased AI reasoning. If a decision lacks the user's input, stop and get it.
+5. **No delegated "thinking deliverables"** (AI-written architecture docs, AI-chosen roadmaps) unless explicitly requested — and when requested, they get marked as drafts the user must amend, not final.
+
+> The user's stated anti-pattern in their own words: "don't let me allocate thinking also to AI, this happened in playmesh and I was stuck for 5 days." If the session shows the user deferring decisions to the agent, this rule is how the agent refuses that deferral.
+
 ## Protocol: when this skill is triggered
 
 1. **Check the "why" of the current task.** Ask (mentally or to the user): does this make the SHIP thread's product more real? If the user says "I'm just keeping things organized / prepping" — flag it, don't comply immediately.
@@ -49,4 +62,4 @@ One money thread (SHIP), one growth thread (GROW), one maintenance thread (PARK-
 
 ## Success criteria
 
-The session ends with: one real unit of the SHIP project built OR the freeze moment rehearsed — not with new docs, new curated lists, or a rewritten plan.
+The session ends with: one real unit of the SHIP project built OR the freeze moment rehearsed — not with new docs, new curated lists, or a rewritten plan. And every decision that shaped the session's work was the user's — not the agent's.
