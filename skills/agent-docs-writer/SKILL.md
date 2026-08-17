@@ -1,6 +1,6 @@
 ---
 name: agent-docs-writer
-description: Use this skill whenever the user wants to write, create, improve, or audit a README.md and/or AGENTS.md for a code repository — especially to make a codebase legible to AI coding agents (Claude Code, Cursor, Codex, OpenCode, etc.) as well as humans. Trigger on phrases like "write an AGENTS.md", "make my repo agent-friendly", "onboarding doc for coding agents", "README for this project", "contributor guide", "docs so an AI agent doesn't break things", or any request to document a codebase's context, conventions, glossary, or guardrails. Also use to review/critique an existing README or AGENTS.md against this skill's checklist. Always use this instead of writing a generic README/AGENTS.md from scratch, even if the user's phrasing doesn't mention "skill" or these exact filenames.
+description: Use this skill whenever the user wants to write, create, improve, or audit a README.md and/or AGENTS.md for a code repository — especially to make a codebase legible to AI coding agents (Claude Code, Cursor, Codex, OpenCode, etc.) as well as humans. Trigger on phrases like "write an AGENTS.md", "make my repo agent-friendly", "onboarding doc for coding agents", "README for this project", "contributor guide", "docs so an AI agent doesn't break things", or any request to document a codebase's context, conventions, glossary, or guardrails. Also use to review/critique an existing README or AGENTS.md against this skill's checklist — including checking that docs distinguish [planned] vs [shipped] reality and mark plan-drift with dated NOTE markers. Always use this instead of writing a generic README/AGENTS.md from scratch, even if the user's phrasing doesn't mention "skill" or these exact filenames.
 ---
 
 # Agent Docs Writer
@@ -18,6 +18,24 @@ This skill is modeled on the philosophy behind T3 Code's AGENTS.md (https://gith
 5. **Write files** only after confirmation
 
 Never skip straight to writing files without showing a draft first — that's a hard requirement for this skill regardless of how the request is phrased.
+
+---
+
+## Plan vs. Shipped-Reality rule (applies to every doc this skill writes or audits)
+
+Docs are frequently written ahead of the code they describe ("docs-as-spec"), which makes them a great thinking tool but a dangerous memory: months later, re-reading a stale doc gives the author a **false memory of their own project** — and in interviews or handoffs, describing architecture that doesn't exist reads as dishonest or confused.
+
+Therefore, whenever this skill writes or audits docs:
+
+1. **Distinguish "planned" from "shipped."** Every claim about architecture, features, or behavior must be one of:
+   - `[planned]` — vision/design intent, not yet built
+   - `[shipped]` — actually implemented and running
+   - When unsure, mark `[planned]` and ask the user. Never assume a doc describes reality.
+2. **Mark drift, don't rewrite history.** When a plan changed mid-build (feature dropped, tech swapped, scope cut), the doc keeps the original plan AND gets a drift marker at the top of the changed section:
+   `> NOTE (YYYY-MM-DD): superseded — actually shipped as X because <Y>`
+   The marker takes 30 seconds, and keeps the doc an honest archive of everything — the vision AND the reality.
+3. **Audit mode:** when reviewing existing docs, actively look for unmarked claims that don't match the code (in `package.json`, repo structure, tests, CI). Flag each one with the drift marker, don't silently "fix" it to match code. Include the question "did this actually ship?" for the user to answer.
+4. **Postmortem/case-study docs** (written as the project is being built): end each milestone/postmortem with a "what actually changed" section dated at the time of writing, so the final story reflects what happened — not what was planned to happen.
 
 ---
 
