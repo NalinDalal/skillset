@@ -7,6 +7,10 @@ description: Use whenever the user is spending time on docs, curation, planning,
 
 The user's known failure mode, documented from experience: **when a main project gets hard or scary, attention flees into "useful-looking" work** — docs rewrites, skill curation, planning, scripts that describe the project instead of building it. This looks like progress, feels like progress, and produces none. The user has shipped real projects with AI (modheshwari, CoDraw) and then stalled on the next one (playmesh) for exactly this reason.
 
+## Current SHIP thread (recorded, dated)
+
+- **playmesh** — direction decided by the user (2026-08-17): P2P-no-server WebRTC first (never worked with WebRTC), renderer (canvas/WebGL) second, original game third. The "stand out from stack" layer is the new thing, not bun/ws/microservices (already proven in CoDraw/modheshwari). No external audience — intrinsic fuel; do not force an audience. Anchor sessions to this order; when the user drifts to docs/curation/other projects, re-anchor here with one concrete step (e.g. two-tab WebRTC hello demo).
+
 ## The pattern to recognize
 
 Distinguish **motion** (activity that feels productive) from **progress** (activity that advances the SHIP thread):
