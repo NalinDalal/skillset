@@ -18,10 +18,16 @@ A curated collection of **31 agent skills** (design, animation, dev workflow) wi
 
 ## Install
 
-**From npm (published as `@nalindalal/skillset`):**
+**Via GitHub (no npm account/token needed — always works):**
 ```bash
-npx @nalindalal/skillset install   # install all skills, all harnesses (global)
-bunx @nalindalal/skillset install  # bun equivalent
+npx github:NalinDalal/skillset install    # install all skills, all harnesses (global)
+bunx github:NalinDalal/skillset install   # bun equivalent
+```
+
+**From npm (if/when published as `@nalindalal/skillset`):**
+```bash
+npx @nalindalal/skillset install
+bunx @nalindalal/skillset install
 ```
 
 **From the repo directly:**
