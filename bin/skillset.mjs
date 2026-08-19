@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * skillset — install, list, and sync agent skills from this repo.
+ * skillset: install, list, and sync agent skills from this repo.
  *
  *   skillset list                          list available skills
  *   skillset install [--skill <name>]...   install into agent harnesses
@@ -81,7 +81,7 @@ function readDescription(name) {
 
 function cmdList() {
   const skills = listSkills();
-  console.log(`skillset — ${skills.length} skills\n`);
+  console.log(`skillset: ${skills.length} skills\n`);
   for (const name of skills) {
     const desc = readDescription(name);
     console.log(`  ${name.padEnd(32)} ${desc}`);
@@ -102,7 +102,7 @@ function cmdInstall() {
   const all = listSkills();
   const skills = onlySkills.length ? onlySkills.filter((s) => all.includes(s)) : all;
   const missing = onlySkills.filter((s) => !all.includes(s));
-  if (missing.length) console.warn(`  ! unknown skill(s): ${missing.join(", ")} — skipped\n`);
+  if (missing.length) console.warn(`  ! unknown skill(s): ${missing.join(", ")}. Skipped\n`);
 
   let installed = 0;
   for (const target of targets) {
@@ -149,7 +149,7 @@ function cmdSync() {
 }
 
 function cmdHelp() {
-  console.log(`skillset — install, list, and sync agent skills.
+  console.log(`skillset: install, list, and sync agent skills.
 
 Usage:
   skillset list                        list available skills

@@ -1,6 +1,10 @@
 # skillset
 
-A curated collection of **31 agent skills** (design, animation, dev workflow) with a CLI to install them into any harness — Claude Code, OpenCode, Cursor, Codex, Gemini — and a CI/CD pipeline that keeps them synced with top-tier upstreams.
+A curated collection of **34 agent skills** (design, animation, dev workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps them synced with top-tier upstreams.
+
+> **Owned, not copied.** Synced skills are a base, not the final word. Any skill
+> you care about gets a `curations/<skill>/` layer that survives every upstream
+> re-sync, your taste, your whys, never clobbered. See [Ownership model](#ownership-model).
 
 ## What's inside
 
@@ -8,17 +12,21 @@ A curated collection of **31 agent skills** (design, animation, dev workflow) wi
 
 | Upstream | Skills |
 |---|---|
-| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★) | `impeccable` — 23 design commands, 59 deterministic detector rules, live browser iteration |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★) | `impeccable`: 23 design commands, 59 deterministic detector rules, live browser iteration |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★) | `taste-skill`, `taste-skill-v1`, `redesign-skill`, `soft-skill`, `minimalist-skill`, `brutalist-skill`, `gpt-tasteskill`, `image-to-code-skill`, `output-skill`, `stitch-skill`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `brandkit` |
 | [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★) | `emil-design-eng`, `animate`, `review-animations`, `improve-animations`, `find-animation-opportunities`, `animation-vocabulary`, `apple-design`, `pick-ui-library`, `prototype`, `ask-sonner` |
 
 ### Original skills
 
-`ui-theme-picker`, `deployments`, `agent-docs-writer`, `ultra-context-engine`, `freelancing`, `startup-founder`, `resume-revamp-jake-ats`
+`ui-theme-picker`, `deployments`, `agent-docs-writer`, `ultra-context-engine`, `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `house-style`: how the codebase wants to be built: route-based files, Apple/Google-clean UI (no AI purple slop), docs the human writes and the agent audits.
+
+### Added skills
+
+`unslop`: cuts AI tells from any writing (from [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop), vendored as an owned skill).
 
 ## Install
 
-**Via GitHub (no npm account/token needed — always works):**
+**Via GitHub (no npm account/token needed, always works):**
 ```bash
 npx github:NalinDalal/skillset install    # install all skills, all harnesses (global)
 bunx github:NalinDalal/skillset install   # bun equivalent
@@ -34,7 +42,7 @@ bunx @nalindalal/skillset install
 ```bash
 git clone https://github.com/NalinDalal/skillset.git
 cd skillset
-npm link                        # or: bun link — then `skillset` is on your PATH
+npm link                        # or bun link, then `skillset` is on your PATH
 ```
 
 ## Usage
@@ -58,16 +66,43 @@ The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on 
 
 1. `scripts/sync.mjs` shallow-clones each upstream repo from `vendor.json`, compares the pinned commit against `origin/HEAD`
 2. If upstream moved, the skill folders are re-vendored into `skills/` and `vendor.json` is bumped
-3. A PR titled `chore: sync skills from upstreams` is auto-opened against `main`
-4. Merge it, then publish:
+3. Every owned skill's `curations/<skill>/overlay/` is re-applied on top: upstream churn never overwrites your voice
+4. A PR titled `chore: sync skills from upstreams` is auto-opened against `main`
+5. Merge it, then publish:
 
 ```bash
 npm version patch && npm publish
 ```
 
-That's it — you never hand-copy skill files again. New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx @nalindalal/skillset install` on any machine.
+That's it: you never hand-copy skill files again. New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx @nalindalal/skillset install` on any machine.
 
-### Manual sync
+## Ownership model
+
+Upstream SKILL.md files encode someone else's judgment about someone else's
+codebase. The moment a skill matters to you, it should encode yours.
+
+```text
+curations/
+  <skill>/
+    overlay/          # your owned versions, copied over skills/<skill>/ after EVERY sync
+    WHY.md            # why you own it this way; read by sync, never shipped
+```
+
+- **Pick what to own.** Upstream never ships a file you've overlaid. Your
+  version always wins. Everything else in that skill still tracks upstream.
+- **Never edit `skills/<skill>/` directly.** The next sync deletes the folder.
+  If you want it in your voice, put it in `curations/<skill>/overlay/` first.
+- **Write the why.** `WHY.md` is the difference between curation and
+  copy-paste. Future-you and future agents read it.
+
+Try it:
+
+```bash
+cp -R curations/TEMPLATE curations/impeccable   # then fill in overlay/ + WHY.md
+npm run sync                                    # overlay survives, check git diff
+```
+
+## Manual sync
 
 ```bash
 node scripts/sync.mjs            # check + apply updates
@@ -79,6 +114,7 @@ node scripts/sync.mjs --repo taste-skill  # one upstream only
 
 ```
 skills/<name>/SKILL.md     # the skills themselves (self-contained, copyable)
+curations/<name>/          # your ownership layer: overlay/ + WHY.md (never touched by sync)
 vendor.json                # upstream repos + pinned commits + skill maps
 scripts/sync.mjs           # re-vendor logic (used by CI and manually)
 bin/skillset.mjs           # the CLI (npm bin target)
@@ -87,4 +123,4 @@ bin/skillset.mjs           # the CLI (npm bin target)
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT: see [LICENSE](LICENSE).

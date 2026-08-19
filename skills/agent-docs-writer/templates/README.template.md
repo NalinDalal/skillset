@@ -1,6 +1,6 @@
 # {project_name}
 
-{one_paragraph_what_and_why — no marketing fluff, just what this is and what problem it solves}
+{one_paragraph_what_and_why}. No marketing fluff, just what this is and what problem it solves}
 
 ## Quick start
 
@@ -14,6 +14,6 @@
 
 ## Contributing / working in this repo
 
-See [AGENTS.md](./AGENTS.md) before making changes — it covers conventions, non-negotiables, and how the pieces fit together. This applies whether you're a human or a coding agent.
+See [AGENTS.md](./AGENTS.md) before making changes. It covers conventions, non-negotiables, and how the pieces fit together. This applies whether you're a human or a coding agent.
 
 {optional: links to docs site, issue tracker, discord, etc.}

@@ -5,7 +5,7 @@
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
       "commit": "f88b2837a7d7c3182e46307bbbb091a1ed547571",
-      "source": ".opencode/skills/impeccable",
+      "source": ".opencode/skills",
       "skills": [
         "impeccable"
       ]
@@ -47,6 +47,15 @@
         "pick-ui-library",
         "prototype",
         "review-animations"
+      ]
+    },
+    {
+      "name": "pstack",
+      "repo": "cursor/plugins",
+      "commit": "60c641e4fad674784b30abcf9f8915dea39df38d",
+      "source": "pstack/skills",
+      "skills": [
+        "unslop"
       ]
     }
   ]

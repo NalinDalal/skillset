@@ -1,7 +1,7 @@
 {
   "name": "@nalindalal/skillset",
   "version": "0.2.0",
-  "description": "A curated, auto-synced collection of agent skills (design, animation, dev workflow) with a CLI to install them into any harness — Claude Code, OpenCode, Cursor, Codex, Gemini.",
+  "description": "A curated, auto-synced collection of agent skills (design, animation, dev workflow) with a CLI to install them into any harness: Claude Code, OpenCode, Cursor, Codex, Gemini.",
   "type": "module",
   "bin": {
     "skillset": "./bin/skillset.mjs"
