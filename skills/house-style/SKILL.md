@@ -1,6 +1,6 @@
 ---
 name: house-style
-description: "How I want this codebase built: route-based file layout, UI that looks like Apple or Google shipped it (no AI purple slop), and docs that I write and you audit. Load before writing code, designing a screen, or touching documentation."
+description: "How I want this codebase built: route-based file layout, UI that looks like Apple or Google shipped it (no AI purple slop), micro-animations that move only what changed, and docs that I write and you audit. Load before writing code, designing a screen, or touching documentation."
 ---
 
 # House style
@@ -60,12 +60,74 @@ screen, would it look out of place? Their shared vocabulary is the target:
   decision is a Tailwind utility or a small composable component. Raw CSS
   only when Tailwind cannot do what the design needs, and only with a
   reason.
+- **Feedback matches the action.** Manipulation (press, drag) gets a
+  visual state: pressed, hovered, active. Completed work (saved, sent)
+  gets a quiet status: a checkmark, a toast. Destructive work gets
+  confirmation. Nothing else moves.
 
 Eye-catching does not mean loud. The screens that stop people are the calm
 ones with one surprising detail: a perfect number, a sharp shape, one bold
-move in the layout. If any UI skill (impeccable, taste-skill, whichever is
+move in the layout. If any UI skill (impeccable, ui, whichever is
 loaded) suggests purple, gradients, heavy rounding or decoration, say no
 and go calmer.
+
+### Micro-animations: motion is a detail, not a decoration
+
+Motion follows the same rule as color: restraint. When nothing moves
+except what needs to, the one movement that matters is obvious.
+
+- **Move what changed, nothing else.** The clicked button, the reordered
+  list item, the flipped state. If the motion does not answer "what
+  happened?", cut it. No bounces, no confetti, no idle pulses. Nothing
+  animates on a loop: a pulse that never stops is a design that does not
+  know what to say.
+- **One motion per event.** Two springs competing at once read as glitch.
+  Everything else changes instantly.
+- **Spring curves, not keywords.** `ease-in-out` is the elevator; it does
+  not belong in a good UI. Arriving things default to an `ease-out`
+  spring (`cubic-bezier(0.16, 1, 0.3, 1)`), leaving things go sharper.
+  Raw CSS is allowed here when Tailwind's curves cannot do the feel: in
+  motion, the curve is the design.
+- **200ms in, 150ms out.** Micro means micro. A motion that needs more
+  than 300ms is a scene change with a storyboard, and it needs a reason.
+- **Matched to the element.** Small element, small motion. A checkbox
+  does not slide; a card does.
+- **State lands first.** Inputs respond the frame they are pressed.
+  Motion is polish on top, and interruptible: the next click cancels the
+  last spring. Nobody waits on a spring.
+- **Exits exist.** Whatever appears animated leaves animated. A one-frame
+  vanish is a flicker that cheapens the whole screen.
+- **Respect reduced motion.** `prefers-reduced-motion: reduce` means
+  instant state changes. No springs, no entrance sequences, no parallax.
+- **No effects that announce themselves.** No scroll-jacked pages, no
+  parallax, no staggered entrances on every load. They are purple slop
+  that moves.
+
+**Where the good stuff lives.** When a motion needs to feel right, study
+these first, then tune:
+
+- [Apple HIG Motion](https://developer.apple.com/design/human-interface-guidelines/motion):
+  the spec for how motion should feel: springy, brief, cancelable.
+- [Material 3 easing and duration](https://m3.material.io/styles/motion/easing-and-duration):
+  the spec for curves and timings, including the rule that exits beat
+  entrances.
+- [linear.app](https://linear.app): calm, precise, no wasted movement.
+  The default answer to "what should motion feel like".
+- [stripe.com](https://stripe.com): transitions where the content leads
+  and the effects follow.
+- [raycast.com](https://raycast.com): near-zero motion for a tool used
+  hundreds of times a day.
+- [apple.com](https://www.apple.com) product pages: scroll reveals done
+  with restraint.
+- [60fps.design](https://60fps.design): a gallery of shipped app motion,
+  real products instead of prototypes.
+- [emilkowal.ski](https://emilkowal.ski): the when and why of animating,
+  from the design engineer behind Linear-grade UI.
+- [Awwwards microinteractions](https://www.awwwards.com/websites/microinteractions/):
+  award sites that mostly show you where the line to "too much" is.
+
+The pattern every one of them shares: fast, physical, quiet,
+purposeful.
 
 ## 3. Docs are mine, yours is the audit
 
