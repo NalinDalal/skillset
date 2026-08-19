@@ -4,14 +4,16 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "5c5553b1d7f9e89bb833f9179cea681742a17720",
+      "commit": "f88b2837a7d7c3182e46307bbbb091a1ed547571",
       "source": ".opencode/skills/impeccable",
-      "skills": ["impeccable"]
+      "skills": [
+        "impeccable"
+      ]
     },
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "e988add20dab0fa97d7a76781c48961c8184288e",
+      "commit": "dfb6f9f9e93a39f673b1827c0889cc28326d1800",
       "source": "skills",
       "skills": [
         "brandkit",
@@ -32,7 +34,7 @@
     {
       "name": "emil-skills",
       "repo": "emilkowalski/skills",
-      "commit": "78761e1b57f97dce65b983d640c70a68f39e8163",
+      "commit": "e879241fab3cdb22e8d95587cdbf40b57a88d7da",
       "source": "skills",
       "skills": [
         "animate",
