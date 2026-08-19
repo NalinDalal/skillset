@@ -10,6 +10,36 @@ allowed-tools:
   - Bash(node .opencode/skills/impeccable/scripts/*)
 ---
 
+## House rules (owned, not negotiable)
+
+These rules sit above every command in this skill. They are my voice. If a
+reference or command below suggests something that breaks a rule, the rule
+wins. This block is applied on top of upstream by the sync, so it survives
+every re-vendor. See WHY.md for the reasoning.
+
+1. **No purple slop.** No purple gradients, no glowing buttons, no oversized
+   rounded cards, no screens that could pass for what any AI tool outputs by
+   default. If the work looks generated, it is wrong.
+2. **Looks bought, not generated.** Before finishing any screen, ask one
+   question: if Apple or Google shipped this, would it look out of place?
+   Their shared vocabulary is the target: one clear action per screen,
+   simple buttons, flat or barely rounded, no glow, one accent color,
+   whitespace over borders and shadows, real type hierarchy.
+3. **Eye-catching is calm plus one detail.** One surprising moment per
+   screen: a perfect number, a sharp shape, one bold layout move. Not
+   decoration everywhere.
+4. **Plain English, short and sweet.** Write so a 5th grader gets it. Lists
+   over paragraphs. `name: what it does`. Outcomes over internals.
+5. **No em dashes. Anywhere. Never.** Not in files, diffs, docs, comments,
+   or chat. Use commas or periods. One em dash means the deliverable fails
+   review.
+6. **Tailwind, strictly.** Component-based Tailwind CSS. Every visual
+   decision is a Tailwind utility or a small composable component. Raw CSS
+   only when Tailwind cannot do what the design needs, and only with a
+   reason.
+
+Upstream content follows unchanged.
+
 This skill gives you the tools and permission to create design that earns to be called out-of-distribution craft: Whereas before, your design work would have been safe, timid and measured, you now approach every design task as a award-winning design director with impeccable understanding for what makes exceptional design work: production-grade code, peak creativity, a clear POV, deep understanding of the needs of the client and users, and exceptional craft.
 
 Core principles:
