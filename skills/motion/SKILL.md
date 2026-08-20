@@ -1,6 +1,6 @@
 ---
 name: motion
-description: The whole motion job in one skill: name an effect you cannot place, decide whether it should animate, build the animation, review existing motion, or audit a screen for motion. Use when asked to animate something, add micro-interactions, make a UI feel alive, review or improve the animations, find what should move, or describe an effect you want ("what's it called when..."). Replaces the old animation family (animate, emil-design-eng, review-animations, improve-animations, find-animation-opportunities, animation-vocabulary, apple-design) as a single owned skill. house-style's "Micro-animations" section is the law; this file is the process.
+description: The whole motion job in one skill. Name an effect you cannot place. Decide whether to animate it. Build the animation. Review existing motion. Audit a screen for motion. Use when asked to animate something, add micro-interactions, make a UI feel alive, or review or improve the animations. Use it to find what could move or to name an effect you want ("what is it called when..."). Replaces the old animation family (animate, emil-design-eng, review-animations, improve-animations, find-animation-opportunities, animation-vocabulary, apple-design) as a single owned skill. house-style's "Micro-animations" section is the law. This file is the process.
 ---
 
 # Motion
@@ -54,7 +54,7 @@ Ask in order. The first no stops the work.
 
 1. What changed? If the interaction changed nothing visible, there is
    nothing to animate.
-2. How often? Rare moments (monthly, first visit) may carry motion.
+2. How often? Rare moments (monthly, first visit) can carry motion.
    Daily interactions get subtle and fast. Anything used hundreds of
    times a day gets none. Keyboard-initiated actions never animate.
 3. One motion per event. Pick the element that carries the change. The
@@ -97,10 +97,10 @@ Crib sheet for the common jobs:
 
 ## Review (a piece of work)
 
-Default to flagging; approval is earned. Check in this order:
+Default to flagging. Approve only what passes review. Check in this order:
 
 1. Purpose: does it answer "what happened?" If not, flag for removal.
-2. Speed: it should pass without being noticed. If you noticed it, it
+2. Speed: it passes unnoticed. If you noticed it, it
    is slow.
 3. Physics: spring feel, no `ease-in-out`, no `linear` outside progress
    bars.
@@ -119,8 +119,8 @@ it.
 
 Read-only. Survey everything that moves, then hand back:
 
-1. Places that animate and should not, each with the reason.
-2. Places that should animate and do not, only where a user would wait
+1. Places that animate but must not, each with the reason.
+2. Places that must animate but do not, only where a user would wait
    or wonder.
 3. For every yes: the exact motion another agent can implement without
    asking (property, curve, duration, interruption, exit).
@@ -134,20 +134,20 @@ motion, they get removal.
 The products that feel expensive (Apple, Linear, Stripe) share a
 physical grammar. Match it, do not invent your own:
 
-- Springs for anything interactive; timed curves only for
+- Springs for anything interactive. Timed curves only for
   non-feedback transitions.
 - Sheets and drawers are draggable. Release mid-drag either settles or
   dismisses, driven by velocity.
 - A fling keeps gliding and coasts to rest.
 - The current gesture interrupts the last motion seamlessly.
-- Depth is called, not decorated: slight scale and blur for layers,
+- Depth comes from use, not decoration. Slight scale and blur for layers,
   never shadows and bevels pretending to be 3D.
 - Feedback returns along the same path it came: what rose from the
   bottom dismisses toward the bottom.
 
 ## Tooling notes
 
-- Tailwind utilities for duration and easing; arbitrary
+- Tailwind utilities for duration and easing. Arbitrary
   `ease-[cubic-bezier(...)]` for springs.
 - CSS transitions beat keyframes when interruption matters, which is
   nearly always.
@@ -160,6 +160,6 @@ physical grammar. Match it, do not invent your own:
 
 Merged from the seven-skill animation family (emil-design-eng, animate,
 review-animations, improve-animations, find-animation-opportunities,
-animation-vocabulary, apple-design): one job split into seven voices
-of the same skill. They are gone by choice and their folders do not
-come back on sync.
+animation-vocabulary, apple-design). It was one job split into seven
+voices of the same skill. They are gone by choice and their folders do
+not come back on sync.

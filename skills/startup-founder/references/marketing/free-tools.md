@@ -1,6 +1,6 @@
 ---
 name: free-tools
-description: When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions "engineering as marketing," "free tool," "marketing tool," "calculator," "generator," "interactive tool," "lead gen tool," "build a tool for leads," "free resource," "ROI calculator," "grader tool," "audit tool," "should I build a free tool," or "tools for lead gen." Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see lead-magnets.
+description: When the user wants to plan, evaluate, or build a free tool for marketing purposes. Lead generation, SEO value, or brand awareness. Also use when the user mentions "engineering as marketing," "free tool," "marketing tool," "calculator," "generator," "interactive tool," "lead gen tool," "build a tool for leads," "free resource," "ROI calculator," "grader tool," "audit tool," "is a free tool worth building," or "tools for lead gen." Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see lead-magnets.
 metadata:
   version: 2.0.0
 ---
@@ -16,7 +16,7 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 Before designing a tool strategy, understand:
 
-1. **Business Context** - What's the core product? Who is the target audience? What problems do they have?
+1. **Business Context** - What is the core product? Who is the target audience? What problems do they have?
 
 2. **Goals** - Lead generation? SEO/traffic? Brand awareness? Product education?
 
@@ -27,7 +27,7 @@ Before designing a tool strategy, understand:
 ## Core Principles
 
 ### 1. Solve a Real Problem
-- Tool must provide genuine value
+- Tool must give genuine value
 - Solves a problem your audience actually has
 - Useful even without your main product
 
@@ -71,7 +71,7 @@ Before designing a tool strategy, understand:
 
 3. **What do they need before buying your product?** - Assessments, planning, comparisons
 
-4. **What information do they wish they had?** - Data they can't easily access, benchmarks
+4. **What information do they wish they had?** - Data they cannot easily access, benchmarks
 
 ### Validate the Idea
 
@@ -96,7 +96,7 @@ Before designing a tool strategy, understand:
 ### Lead Capture Best Practices
 - Value exchange clear: "Get your full report"
 - Minimal friction: Email only
-- Show preview of what they'll get
+- Show preview of what they will get
 - Optional: Segment by asking one qualifying question
 
 ---
@@ -111,7 +111,7 @@ Before designing a tool strategy, understand:
 ### Link Building
 Free tools attract links because:
 - Genuinely useful (people reference them)
-- Unique (can't link to just any page)
+- Unique (cannot link to just any page)
 - Shareable (social amplification)
 
 ---
@@ -133,9 +133,9 @@ When: Something good exists, white-label available, not core differentiator
 ## MVP Scope
 
 ### Minimum Viable Tool
-1. Core functionality only—does the one thing, works reliably
-2. Essential UX—clear input, obvious output, mobile works
-3. Basic lead capture—email collection, leads go somewhere useful
+1. Core functionality only: does the one thing, works reliably
+2. Essential UX: clear input, obvious output, mobile works
+3. Basic lead capture: email collection, leads go somewhere useful
 
 ### What to Skip Initially
 Account creation, saving results, advanced features, perfect design, every edge case
@@ -166,14 +166,14 @@ Rate each factor 1-5:
 1. What existing tools does your audience use for workarounds?
 2. How do you currently generate leads?
 3. What technical resources are available?
-4. What's the timeline and budget?
+4. What is the timeline and budget?
 
 ---
 
 ## Related Skills
 
 - **lead-magnets**: For downloadable content lead magnets (ebooks, checklists, templates)
-- **cro**: For optimizing the tool's landing page
+- **cro**: For optimizing the landing page
 - **seo-audit**: For SEO-optimizing the tool
 - **analytics**: For measuring tool usage
 - **emails**: For nurturing leads from the tool

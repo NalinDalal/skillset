@@ -25,7 +25,7 @@
 
 ## Layout rules
 
-- One layout family per section; a family appears once across 8
+- One layout family per section. A family appears once across 8
   sections.
 - Max two consecutive image-text splits.
 - Grid over flex math. No w-[calc(33%-1rem)] style fractions.
@@ -60,5 +60,5 @@
   SVG grayscale filters on photos are banned.
 - Motion: see the motion skill. Springs, one motion per event, nothing
   loops.
-- No external widget dependencies in the first pass: build the core
+- No external widget dependencies in the first pass. Build the core
   first, add libraries only when they earn it.

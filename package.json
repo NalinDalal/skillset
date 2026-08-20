@@ -16,7 +16,8 @@
   "scripts": {
     "sync": "node scripts/sync.mjs",
     "list": "node bin/skillset.mjs list",
-    "install": "node bin/skillset.mjs install"
+    "install": "node bin/skillset.mjs install",
+    "lint:ste": "node scripts/ste-gate.mjs"
   },
   "keywords": [
     "agent",

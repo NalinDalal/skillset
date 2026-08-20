@@ -1,6 +1,6 @@
 ---
 name: freelancing
-description: "Complete studio/freelance playbook for developers. Use this skill whenever the user mentions: freelancing, studio pitch, client proposals, quotations,   invoices, contracts, SRS, pricing, rates, Upwork, Fiverr, finding clients,   portfolio, project scoping, estimates, client communication, onboarding,   deliverables, scope creep, payment follow-up, agency vs individual positioning,   or any aspect of running a freelance dev studio. Covers everything from   first contact to final payment and testimonials."
+description: "Complete studio/freelance playbook for developers. Use this skill whenever the user mentions: freelancing, studio pitch, client proposals, quotations, invoices, contracts, SRS, pricing, rates, Upwork, Fiverr, finding clients, portfolio, project scoping, estimates, client communication, onboarding, deliverables, scope creep, payment follow-up, agency vs individual positioning, or any aspect of running a freelance dev studio. Covers everything from first contact to final payment and testimonials."
 ---
 
 # Freelance Studio Playbook
@@ -23,8 +23,8 @@ You are not a developer for hire. You are a problem-solving studio that happens 
 
 ### The Right Answer: "Small Studio"
 
-Don't say: "I'm a freelancer"  
-Don't say: "We're an agency"  
+Do not say: "I'm a freelancer"  
+Do not say: "We're an agency"  
 Do say: "We're a small product studio" or "We're a boutique dev team"
 
 Benefits:
@@ -41,7 +41,7 @@ Benefits:
 
 ### Upwork
 • Complete profile fully  
-• Start with small jobs ($200–500) for reviews  
+• Start with small jobs ($200 to $500) for reviews  
 • Apply selectively  
 • Conversion improves after 5+ reviews  
 
@@ -192,7 +192,7 @@ Example 4-week build:
 Week 1:
 architecture + design
 
-Week 2–3:
+Week 2 to 3:
 core development
 
 Week 4:
@@ -261,17 +261,17 @@ Figma
 
 # 11. GROWTH ROADMAP
 
-Months 1–3:
+Months 1 to 3:
 small projects
 reviews
 portfolio
 
-Months 4–6:
+Months 4 to 6:
 raise rates
 referrals
 direct outreach
 
-Months 7–12:
+Months 7 to 12:
 choose niche
 premium pricing
 

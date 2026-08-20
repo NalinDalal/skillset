@@ -7,7 +7,7 @@ metadata:
 
 # Competitor & Alternative Pages
 
-You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuine value to evaluators, and position your product effectively.
+You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms. The pages give genuine value to evaluators and position your product effectively.
 
 ## Initial Assessment
 
@@ -42,23 +42,23 @@ Before creating competitor pages, understand:
 ### 1. Honesty Builds Trust
 - Acknowledge competitor strengths
 - Be accurate about your limitations
-- Don't misrepresent competitor features
-- Readers are comparing—they'll verify claims
+- Do not misrepresent competitor features
+- Readers compare options. They will verify claims.
 
 ### 2. Depth Over Surface
 - Go beyond feature checklists
 - Explain *why* differences matter
 - Include use cases and scenarios
-- Show, don't just tell
+- Show, do not just tell
 
 ### 3. Help Them Decide
 - Different tools fit different needs
-- Be clear about who you're best for
+- Be clear about who you are best for
 - Be clear about who competitor is best for
 - Reduce evaluation friction
 
 ### 4. Modular Content Architecture
-- Competitor data should be centralized
+- Keep competitor data centralized
 - Updates propagate to all pages
 - Single source of truth per competitor
 
@@ -78,7 +78,7 @@ Before creating competitor pages, understand:
 1. Why people look for alternatives (validate their pain)
 2. Summary: You as the alternative (quick positioning)
 3. Detailed comparison (features, service, pricing)
-4. Who should switch (and who shouldn't)
+4. Who should switch (and who should not)
 5. Migration path
 6. Social proof from switchers
 7. CTA
@@ -87,7 +87,7 @@ Before creating competitor pages, understand:
 
 ### Format 2: [Competitor] Alternatives (Plural)
 
-**Search intent**: User is researching options, earlier in journey
+**Search intent**: User researches options, earlier in journey
 
 **URL pattern**: `/alternatives/[competitor]-alternatives`
 
@@ -104,7 +104,7 @@ Before creating competitor pages, understand:
 
 **Important**: Include 4-7 real alternatives. Being genuinely helpful builds trust and ranks better.
 
-**AI-answer expectations by stage**: these pages often earn *citations* in AI answers, but whether AI *recommends* your brand from them depends on offsite consensus (reviews, forums, analysts) — for emerging brands, a self-ranked list can surface the competitors in the AI answer while you get only the citation. Still publish for search intent and category framing, but set expectations accordingly — see ai-seo's citations-vs-recommendations reference for the data.
+**AI-answer expectations by stage**: these pages often earn *citations* in AI answers. Whether AI *recommends* your brand from them depends on offsite consensus (reviews, forums, analysts). For emerging brands, a self-ranked list can surface the competitors in the AI answer while you get only the citation. Still publish for search intent and category framing, but set expectations accordingly. See the citations-vs-recommendations reference in ai-seo for the data.
 
 ---
 
@@ -149,7 +149,7 @@ Before creating competitor pages, understand:
 ## Essential Sections
 
 ### TL;DR Summary
-Start every page with a quick summary for scanners—key differences in 2-3 sentences.
+Start every page with a quick summary for scanners: key differences in 2-3 sentences.
 
 ### Paragraph Comparisons
 Go beyond tables. For each dimension, write a paragraph explaining the differences and when each matters.
@@ -158,9 +158,9 @@ Go beyond tables. For each dimension, write a paragraph explaining the differenc
 For each category: describe how each handles it, list strengths and limitations, give bottom line recommendation.
 
 ### Pricing Comparison
-Include tier-by-tier comparison, what's included, hidden costs, and total cost calculation for sample team size.
+Include tier-by-tier comparison, included items, hidden costs, and total cost calculation for sample team size.
 
-### Who It's For
+### Who This Serves
 Be explicit about ideal customer for each option. Honest recommendations build trust.
 
 ### Migration Section
@@ -193,7 +193,7 @@ Create a single source of truth for each competitor with:
 For each competitor, gather:
 
 1. **Product research**: Sign up, use it, document features/UX/limitations
-2. **Pricing research**: Current pricing, what's included, hidden costs
+2. **Pricing research**: Current pricing, included items, hidden costs
 3. **Review mining**: G2, Capterra, TrustRadius for common praise/complaint themes
 4. **Customer feedback**: Talk to customers who switched (both directions)
 5. **Content research**: Their positioning, their comparison pages, their changelog
@@ -244,7 +244,7 @@ Recommended pages to create with priority order based on search volume.
 
 1. What are common reasons people switch to you?
 2. Do you have customer quotes about switching?
-3. What's your pricing vs. competitors?
+3. What is your pricing vs. competitors?
 4. Do you offer migration support?
 
 ---

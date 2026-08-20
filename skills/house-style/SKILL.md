@@ -178,6 +178,9 @@ short sentences, no padding. Long and fancy does not mean clear.
 - **No em dashes. Anywhere. Never.** Not in files, diffs, docs, comments,
   or chat. Use commas or periods. One em dash means the deliverable fails
   review.
+- **STE-clean on owned skills.** Owned skill files pass `npm run lint:ste`.
+  The bar is 2.5 violations per 100 words. Bullet lists and quoted speech
+  do not count.
 - **Small paragraphs.** Two or three lines beats a wall of text.
 - **List is the default.** Features, files, packages, steps: one per line,
   `name: what it does`.

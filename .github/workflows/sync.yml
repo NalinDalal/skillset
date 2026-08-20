@@ -6,12 +6,29 @@ on:
   workflow_dispatch: # manual trigger: "Run workflow"
   push:
     branches: [main]
+  pull_request:
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
+  lint-ste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: STE lint owned skills
+        run: npm run lint:ste
+
   sync:
     runs-on: ubuntu-latest
     steps:

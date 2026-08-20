@@ -1,13 +1,13 @@
 ---
 name: deployments
-description: "Analyze any repository structure (monorepo, separate frontend/backend, full-stack, static site) and provide clean step-by-step deployment instructions for AWS EC2, VPS, or virtual machines. Guides through the complete E2E process from launching instances to SSL setup, with exact commands, verification steps, and troubleshooting. Use when user wants to deploy a repo to production, asks about AWS/cloud deployment, or needs hosting guidance. Covers all architectures: Node.js, Python, Docker, static sites, databases, and provides adapted instructions based on detected tech stack."
+description: "Analyze any repository structure (monorepo, separate frontend/backend, full-stack, static site) and give clean step-by-step deployment instructions for AWS EC2, VPS, or virtual machines. Guides through the complete E2E process from launching instances to SSL setup, with exact commands, verification steps, and troubleshooting. Use when user wants to deploy a repo to production, asks about AWS/cloud deployment, or needs hosting guidance. Covers all architectures: Node.js, Python, Docker, static sites, databases, and adapts instructions to the detected tech stack."
 ---
 
 
 # Repo Deployment Guide Skill
  
 ## Purpose
-Analyze any repository structure and provide clean, step-by-step deployment instructions for AWS EC2, VPS, or any virtual machine. Guide users through the entire E2E process with zero assumptions.
+Analyze any repository structure and give clean, step-by-step deployment instructions for AWS EC2, VPS, or any virtual machine. Guide users through the entire E2E process with zero assumptions.
  
 ## When to trigger
 - User wants to deploy a repo to AWS/EC2/VPS/cloud VM
@@ -53,7 +53,7 @@ Based on analysis, determine:
  
 ### Phase 3: Step-by-Step Instructions
  
-Provide in this exact format:
+Give in this exact format:
  
 ```
 ## Deployment Plan for [Project Name]
@@ -81,9 +81,10 @@ Provide in this exact format:
 5. Security group: Allow SSH (22), HTTP (80), HTTPS (443), Custom TCP ([ports needed])
 6. Storage: 20GB GP3
 7. Click Launch
- 
+```
+
 **Take care:**
-- Save your .pem file immediately - you can't download it again
+- Save your .pem file immediately - you cannot download it again
 - chmod 400 myproject.pem after download
 - Note your instance's public IP from the console
  
@@ -125,7 +126,7 @@ sudo npm install -g pm2
 ```
  
 **Take care:**
-- Each command should complete without errors
+- Each command completes without errors
 - Check versions: `node -v`, `nginx -v`, `psql --version`
  
 ---
@@ -226,7 +227,7 @@ npm run build
 **What:** Run backend as persistent process
 **How:**
 ```bash
-cd /home/claude/yourrepo/backend
+cd /home/ubuntu/yourrepo/backend
 npm install
 pm2 start npm --name "backend" -- start
 pm2 save
@@ -236,7 +237,7 @@ pm2 startup
 Run the command PM2 outputs (starts with sudo)
  
 **Take care:**
-- `pm2 status` should show backend running
+- `pm2 status` shows backend running
 - `pm2 logs backend` to check for errors
 - PM2 will auto-restart on crashes and server reboots
  
@@ -297,7 +298,7 @@ sudo ufw enable
 ```
  
 **Take care:**
-- Allow OpenSSH BEFORE enabling firewall or you'll lock yourself out
+- Allow OpenSSH BEFORE enabling firewall or you will lock yourself out
 - Type 'y' when prompted
  
 ---
@@ -433,7 +434,7 @@ df -h  # disk space
 - Redis: Install redis-server for caching
  
 **For different clouds:**
-- DigitalOean: "Droplet" instead of EC2, otherwise identical
+- DigitalOcean: "Droplet" instead of EC2, otherwise identical
 - Linode: "Linode" instead of EC2, same process
 - Vultr: Same Ubuntu setup process
  
@@ -489,4 +490,4 @@ For Django + React:
 - Static file collection step
 - PostgreSQL setup same
  
-The skill should feel like pair programming with someone who's done this 100 times and remembers all the gotchas.
+The skill feels like pair programming with someone who has done this 100 times and remembers all the gotchas.

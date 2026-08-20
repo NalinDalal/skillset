@@ -1,6 +1,6 @@
 ---
 name: ultra-context-engine
-description: "You are an aggressive context-efficiency and token-optimization layer for Claude Code. Your primary objective is: > Use the minimum amount of model context necessary to produce a correct result. Do not optimize tokens at the expense of correctness. The priority order is: 1. Correctness 2. Relevant context 3. Context efficiency 4. Tool-call efficiency 5. Response brevity Never sacrifice required information merely to reduce tokens."
+description: "An aggressive context-efficiency and token-optimization layer for Claude Code. Primary objective: use the minimum amount of model context needed to produce a correct result. Do not optimize tokens at the expense of correctness. Priority order: correctness, relevant context, context efficiency, tool-call efficiency, response brevity. Never sacrifice required information merely to reduce tokens."
 ---
 
 
@@ -48,12 +48,12 @@ Return concise result
 
 # Integrated Systems
 
-This skill is designed to orchestrate the concepts and capabilities represented by:
+This skill orchestrates the concepts and capabilities represented by:
 
 * Caveman
   https://github.com/juliusbrussee/caveman
 
-* RTK — Rust Token Killer
+* RTK: Rust Token Killer
   https://github.com/rtk-ai/rtk
 
 * Code Review Graph
@@ -86,7 +86,7 @@ Do not assume every repository is installed.
 
 Do not execute, import, or invoke a tool merely because it exists in this list.
 
-Use an available implementation when present. Otherwise reproduce the underlying behavior using native Claude Code capabilities.
+Use an available implementation when present. Otherwise reproduce the underlying behavior with native Claude Code capabilities.
 
 ---
 
@@ -94,7 +94,7 @@ Use an available implementation when present. Otherwise reproduce the underlying
 
 Determine the task before retrieving context.
 
-## Mode 1 — Simple Question
+## Mode 1: Simple Question
 
 Examples:
 
@@ -112,7 +112,7 @@ Do not retrieve unrelated files.
 
 ---
 
-## Mode 2 — Local Code Change
+## Mode 2: Local Code Change
 
 Examples:
 
@@ -134,7 +134,7 @@ Do not load the entire repository.
 
 ---
 
-## Mode 3 — Debugging
+## Mode 3: Debugging
 
 First identify:
 
@@ -145,13 +145,13 @@ First identify:
 5. Configuration
 6. Tests/logs
 
-Follow the smallest dependency path capable of explaining the failure.
+Use the smallest dependency path that explains the failure.
 
 Do not indiscriminately retrieve every file mentioning the same keyword.
 
 ---
 
-## Mode 4 — Code Review
+## Mode 4: Code Review
 
 Use graph-based and symbol-based retrieval.
 
@@ -170,7 +170,7 @@ Avoid reading unrelated files.
 
 ---
 
-## Mode 5 — Architecture / Repository Understanding
+## Mode 5: Architecture / Repository Understanding
 
 Use progressive discovery.
 
@@ -190,13 +190,13 @@ Dependencies
 Relevant implementation
 ```
 
-Never begin by loading the entire repository.
+Never start by loading the entire repository.
 
 ---
 
-## Mode 6 — Large Output / Logs
+## Mode 6: Large Output / Logs
 
-Never inject large raw outputs directly into context when they can be processed externally.
+Never inject large raw outputs directly into context when an external process can handle them.
 
 Prefer:
 
@@ -220,15 +220,15 @@ Expose only relevant sections
 
 Use a funnel.
 
-## Level 0 — User-provided context
+## Level 0: Context from the user
 
-Always use information already provided by the user before performing additional retrieval.
+Always use information already given by the user before doing additional retrieval.
 
 Do not retrieve information the user already supplied.
 
 ---
 
-## Level 1 — Symbol lookup
+## Level 1: Symbol lookup
 
 Prefer symbols over files.
 
@@ -244,13 +244,13 @@ route POST /login
 
 Use symbol-level navigation whenever possible.
 
-This follows the Token Savior principle.
+This uses the Token Savior principle.
 
 ---
 
-## Level 2 — Dependency expansion
+## Level 2: Dependency expansion
 
-Once the target symbol is identified, expand only as necessary.
+Once you identify the target symbol, expand only as necessary.
 
 Typical expansion:
 
@@ -265,21 +265,21 @@ Target
 
 Use graph-based traversal where available.
 
-This follows the Code Review Graph principle.
+This uses the Code Review Graph principle.
 
 ---
 
-## Level 3 — Semantic retrieval
+## Level 3: Semantic retrieval
 
 When exact symbol navigation is insufficient, use semantic/hybrid retrieval.
 
 Retrieve the smallest set of documents/code fragments that answer the question.
 
-This follows the Claude Context principle.
+This uses the Claude Context principle.
 
 ---
 
-## Level 4 — Broader retrieval
+## Level 4: Broader retrieval
 
 Only expand beyond the immediate dependency neighborhood when evidence indicates that the existing context is insufficient.
 
@@ -303,9 +303,9 @@ Required Context =
   + Evidence Needed For Decision
 ```
 
-Everything else is presumed irrelevant until proven otherwise.
+Presume everything else irrelevant until proven otherwise.
 
-If two pieces of context provide the same information, keep the smaller one.
+If two pieces of context give the same information, keep the smaller one.
 
 If a summary is sufficient, do not include the raw source.
 
@@ -387,7 +387,7 @@ Never compress away information that could change the answer.
 
 Apply the RTK principle to terminal output.
 
-Terminal output should be treated as noisy input.
+Treat terminal output as noisy input.
 
 Remove or collapse:
 
@@ -447,7 +447,7 @@ Query only required information
 Return compact result
 ```
 
-The model should receive:
+Give the model:
 
 ```text
 Summary
@@ -468,14 +468,14 @@ MCP calls can become a major source of context waste.
 
 Before invoking an MCP tool:
 
-1. Determine exactly what information is required.
+1. Determine exactly what information you need.
 2. Request the narrowest possible result.
-3. Avoid requesting fields that will not be used.
+3. Avoid requesting fields you will not use.
 4. Avoid repeating equivalent requests.
 5. Cache reusable results when possible.
 6. Compress results before exposing them to the model.
 
-Follow the Token Optimizer MCP principle:
+Use the Token Optimizer MCP principle:
 
 ```text
 MCP Request
@@ -505,7 +505,7 @@ Cache information when it is:
 
 * deterministic
 * expensive to retrieve
-* likely to be reused
+* likely used again
 * unchanged during the current task
 
 Good candidates:
@@ -602,7 +602,7 @@ Uncertain
 
 # Response Optimization
 
-The model's final response should contain only information useful to the user.
+The final response must contain only information useful to the user.
 
 Prefer:
 
@@ -626,7 +626,7 @@ Avoid:
 
 For simple tasks, answer briefly.
 
-For complex tasks, provide enough detail to make the result usable.
+For complex tasks, give enough detail to make the result usable.
 
 Do not impose arbitrary word limits when the task requires explanation.
 
@@ -672,7 +672,7 @@ Never sacrifice:
 
 # Final Response Terseness
 
-Follow the Claude Token Efficient principle.
+Use the Claude Token Efficient principle.
 
 Use concise structure:
 
@@ -729,7 +729,7 @@ Repeated MCP data
 → compressed result
 ```
 
-The system should be adaptive.
+Make the system adaptive.
 
 ---
 
@@ -806,7 +806,7 @@ If a dependency is uncertain:
 
 INSPECT IT.
 
-If a log line may contain important evidence:
+If a log line might contain important evidence:
 
 PRESERVE IT.
 
@@ -894,7 +894,7 @@ If yes, shorten it.
 
 # Ideal End-to-End Pipeline
 
-The complete system should behave like this:
+The complete system behaves like this:
 
 ```text
                     USER REQUEST
@@ -955,11 +955,11 @@ The skill is successful when:
 
 1. The model sees less irrelevant context.
 2. Large outputs do not consume unnecessary context.
-3. Repeated MCP calls are avoided.
+3. Avoid repeated MCP calls.
 4. Repository navigation happens at symbol level whenever possible.
-5. Semantic retrieval is used only when needed.
-6. Relevant dependency context is preserved.
-7. Terminal noise is removed.
+5. Use semantic retrieval only when needed.
+6. Preserve relevant dependency context.
+7. Remove terminal noise.
 8. Responses are concise without losing information.
 9. Accuracy remains unchanged or improves.
 10. The system automatically expands context when the reduced context is insufficient.

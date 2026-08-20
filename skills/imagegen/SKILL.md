@@ -1,6 +1,6 @@
 ---
 name: imagegen
-description: Generates premium design images with image models: web section references, mobile app screens, brand kits, and image-first website builds. Use when the user wants design references, landing page images, app screen concepts, brand identity decks, or a website built from generated images. Replaces imagegen-frontend-web, imagegen-frontend-mobile, brandkit, and image-to-code-skill as one owned skill. Generates images only, except the image-to-code flow which implements what it generated. house-style is the law for taste; this file is the craft.
+description: Generates premium design images with image models: web section references, mobile app screens, brand kits, and image-first website builds. Use when the user wants design references, landing page images, app screen concepts, brand identity decks, or a website built from generated images. Replaces imagegen-frontend-web, imagegen-frontend-mobile, brandkit, and image-to-code-skill as one owned skill. Generates images only, except the image-to-code flow which implements what it generated. house-style is the law for taste. This file is the craft.
 ---
 
 # Imagegen
