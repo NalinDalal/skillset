@@ -60,6 +60,36 @@ skillset sync                              # pull latest from upstream repos (lo
 
 Restart/reload your agent after installing.
 
+## How to use a skill
+
+1. **Install the skill you want.**
+
+   ```bash
+   skillset install --skill motion --target claude,opencode
+   ```
+
+   Restart or reload your agent so it loads the new skill.
+
+2. **Trigger it by what you want, not by command.** Skills turn on from
+   their description. Ask in plain words and the matching skill takes over:
+
+   | You say | Skill fires |
+   |---|---|
+   | "make this screen not look templated" | `ui` |
+   | "what is it called when a popover bounces open" | `motion` |
+   | "help me deploy this repo to a VPS" | `deployments` |
+   | "write an AGENTS.md for this repo" | `agent-docs-writer` |
+   | "I want to start freelancing" | `freelancing` |
+   | "clean up this sloppy AI-sounding text" | `unslop` |
+
+3. **Or call it by name.** If the agent did not auto-load it, say so in
+   your request: "use the motion skill to review these animations". The
+   skill runs as a normal agent task, so it works in any harness that
+   supports skills (Claude Code, OpenCode, Cursor, Codex, Gemini).
+
+4. **See what's installed.** `skillset list` shows all skills in this
+   repo. To remove one: `skillset install --undo --skill motion`.
+
 ## CI/CD: how updates flow
 
 The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on demand via *Actions → Sync upstream skills → Run workflow*):
