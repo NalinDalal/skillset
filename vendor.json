@@ -16,19 +16,7 @@
       "commit": "dfb6f9f9e93a39f673b1827c0889cc28326d1800",
       "source": "skills",
       "skills": [
-        "brandkit",
-        "brutalist-skill",
-        "gpt-tasteskill",
-        "image-to-code-skill",
-        "imagegen-frontend-mobile",
-        "imagegen-frontend-web",
-        "minimalist-skill",
-        "output-skill",
-        "redesign-skill",
-        "soft-skill",
-        "stitch-skill",
-        "taste-skill",
-        "taste-skill-v1"
+        "output-skill"
       ]
     },
     {
@@ -37,22 +25,15 @@
       "commit": "e879241fab3cdb22e8d95587cdbf40b57a88d7da",
       "source": "skills",
       "skills": [
-        "animate",
-        "animation-vocabulary",
-        "apple-design",
         "ask-sonner",
-        "emil-design-eng",
-        "find-animation-opportunities",
-        "improve-animations",
         "pick-ui-library",
-        "prototype",
-        "review-animations"
+        "prototype"
       ]
     },
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "60c641e4fad674784b30abcf9f8915dea39df38d",
+      "commit": "fd6dd6f7276956a532bb78a748a8d2818b6eb5f4",
       "source": "pstack/skills",
       "skills": [
         "unslop"

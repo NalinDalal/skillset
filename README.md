@@ -1,6 +1,6 @@
 # skillset
 
-A curated collection of **34 agent skills** (design, animation, dev workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps them synced with top-tier upstreams.
+A curated collection of **17 agent skills** (design, motion, dev workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps them synced with top-tier upstreams.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
@@ -13,12 +13,12 @@ A curated collection of **34 agent skills** (design, animation, dev workflow) wi
 | Upstream | Skills |
 |---|---|
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★) | `impeccable`: 23 design commands, 59 deterministic detector rules, live browser iteration |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★) | `taste-skill`, `taste-skill-v1`, `redesign-skill`, `soft-skill`, `minimalist-skill`, `brutalist-skill`, `gpt-tasteskill`, `image-to-code-skill`, `output-skill`, `stitch-skill`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `brandkit` |
-| [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★) | `emil-design-eng`, `animate`, `review-animations`, `improve-animations`, `find-animation-opportunities`, `animation-vocabulary`, `apple-design`, `pick-ui-library`, `prototype`, `ask-sonner` |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★) | `output-skill` (the design half of this upstream was merged into the owned `ui` skill) |
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★) | `pick-ui-library`, `prototype`, `ask-sonner` (the animation half of this upstream was merged into the owned `motion` skill) |
 
 ### Original skills
 
-`ui-theme-picker`, `deployments`, `agent-docs-writer`, `ultra-context-engine`, `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `house-style`: how the codebase wants to be built: route-based files, Apple/Google-clean UI (no AI purple slop), docs the human writes and the agent audits.
+`deployments`, `agent-docs-writer`, `ultra-context-engine`, `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `house-style`: how the codebase wants to be built: route-based files, Apple/Google-clean UI (no AI purple slop), docs the human writes and the agent audits. `motion`: one skill that owns the whole motion job: name an effect, decide, build, review, audit. Merged from the seven-skill animation family because they were one job in seven voices. `ui`: one skill that owns the whole UI job: pick the direction, design the system, build the screen, redesign or audit, verify before ship. Merged from nine overlapping design skills. `imagegen`: one skill that owns design-image generation: web references, mobile screens, brand kits, image-to-code. Merged from four image-generation skills.
 
 ### Added skills
 
@@ -48,7 +48,7 @@ npm link                        # or bun link, then `skillset` is on your PATH
 ## Usage
 
 ```bash
-skillset list                              # see all 31 skills + descriptions
+skillset list                              # see all 17 skills + descriptions
 skillset install                           # everything → ~/.claude, ~/.config/opencode, ~/.cursor, ~/.agents, ~/.gemini
 skillset install --skill taste-skill       # just one skill
 skillset install --target claude,opencode  # only specific harnesses
