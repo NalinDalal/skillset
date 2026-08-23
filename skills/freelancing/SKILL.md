@@ -19,7 +19,7 @@ You are not a developer for hire. You are a problem-solving studio that happens 
 
 ---
 
-# 0. POSITIONING — Agency vs Individual vs Studio
+# 0. POSITIONING -- Agency vs Individual vs Studio
 
 ### The Right Answer: "Small Studio"
 
@@ -54,7 +54,7 @@ Benefits:
 LinkedIn founders, startups via Crunchbase, YC directory.
 
 ### Referrals
-Offer 5–10% referral fee.
+Offer 5-10% referral fee.
 
 ---
 
@@ -175,11 +175,11 @@ Example:
 
 # 6. CLIENT ONBOARDING FLOW
 
-Step 1 — discovery call  
-Step 2 — scope doc  
-Step 3 — quotation  
-Step 4 — contract + upfront payment  
-Step 5 — kickoff  
+Step 1 -- discovery call  
+Step 2 -- scope doc  
+Step 3 -- quotation  
+Step 4 -- contract + upfront payment  
+Step 5 -- kickoff  
 
 ---
 
