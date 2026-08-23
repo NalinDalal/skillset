@@ -4,7 +4,7 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "f88b2837a7d7c3182e46307bbbb091a1ed547571",
+      "commit": "56f44523f76efdcec813e67b38ee550e49b16f48",
       "source": ".opencode/skills",
       "skills": [
         "impeccable"
@@ -13,7 +13,7 @@
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "dfb6f9f9e93a39f673b1827c0889cc28326d1800",
+      "commit": "72e299530e2eb31ed8da06181bc19f6c18a00821",
       "source": "skills",
       "skills": [
         "output-skill"
@@ -22,7 +22,7 @@
     {
       "name": "emil-skills",
       "repo": "emilkowalski/skills",
-      "commit": "e879241fab3cdb22e8d95587cdbf40b57a88d7da",
+      "commit": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "source": "skills",
       "skills": [
         "ask-sonner",
@@ -33,7 +33,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "fd6dd6f7276956a532bb78a748a8d2818b6eb5f4",
+      "commit": "46125561306434d8a1d7745d540d8932ab0cd2a2",
       "source": "pstack/skills",
       "skills": [
         "unslop"
