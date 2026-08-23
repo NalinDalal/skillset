@@ -1,6 +1,6 @@
 ---
 name: nerdev-docs
-description: Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks with templates
+description: "Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks with templates"
 ---
 
 # nerdev-docs Skill
