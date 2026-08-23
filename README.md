@@ -1,6 +1,6 @@
 # skillset
 
-A curated collection of **17 agent skills** (design, motion, dev workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps them synced with top-tier upstreams.
+A curated collection of **20 agent skills** (design, motion, dev workflow, your patterns) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps them synced with top-tier upstreams.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
@@ -23,6 +23,14 @@ A curated collection of **17 agent skills** (design, motion, dev workflow) with 
 ### Added skills
 
 `unslop`: cuts AI tells from any writing (from [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop), vendored as an owned skill).
+
+### Your skills (local, not synced)
+
+| Skill | Purpose |
+|-------|---------|
+| `nerdev-monorepo` | Turborepo + Bun monorepo structure, conventions, CI/CD, deployment patterns |
+| `nerdev-abstraction` | Interface-first, registry, factory, plugin protocol for plug-and-play architecture |
+| `nerdev-docs` | Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks |
 
 ## Install
 
@@ -48,7 +56,7 @@ npm link                        # or bun link, then `skillset` is on your PATH
 ## Usage
 
 ```bash
-skillset list                              # see all 17 skills + descriptions
+skillset list                              # see all 20 skills + descriptions
 skillset install                           # everything → ~/.claude, ~/.config/opencode, ~/.cursor, ~/.agents, ~/.gemini
 skillset install --skill taste-skill       # just one skill
 skillset install --target claude,opencode  # only specific harnesses
@@ -73,14 +81,17 @@ Restart/reload your agent after installing.
 2. **Trigger it by what you want, not by command.** Skills turn on from
    their description. Ask in plain words and the matching skill takes over:
 
-   | You say | Skill fires |
-   |---|---|
-   | "make this screen not look templated" | `ui` |
-   | "what is it called when a popover bounces open" | `motion` |
-   | "help me deploy this repo to a VPS" | `deployments` |
-   | "write an AGENTS.md for this repo" | `agent-docs-writer` |
-   | "I want to start freelancing" | `freelancing` |
-   | "clean up this sloppy AI-sounding text" | `unslop` |
+| You say | Skill fires |
+|---|---|
+| "make this screen not look templated" | `ui` |
+| "what is it called when a popover bounces open" | `motion` |
+| "help me deploy this repo to a VPS" | `deployments` |
+| "write an AGENTS.md for this repo" | `agent-docs-writer` |
+| "I want to start freelancing" | `freelancing` |
+| "clean up this sloppy AI-sounding text" | `unslop` |
+| "scaffold a new Turborepo + Bun monorepo" | `nerdev-monorepo` |
+| "add a plug-and-play tool system with registry" | `nerdev-abstraction` |
+| "create ADR, design doc, incident template" | `nerdev-docs` |
 
 3. **Or call it by name.** If the agent did not auto-load it, say so in
    your request: "use the motion skill to review these animations". The
@@ -89,6 +100,40 @@ Restart/reload your agent after installing.
 
 4. **See what's installed.** `skillset list` shows all skills in this
    repo. To remove one: `skillset install --undo --skill motion`.
+
+### Using your local skills (nerdev-*)
+
+Your three `nerdev-*` skills live in `skills/` but **aren't managed by the sync script** — they're owned directly in this repo.
+
+**Option A: Use from this repo (recommended)**
+```bash
+# From skillset root
+opencode  # opencode.json points to ./skills
+# skill nerdev-monorepo  → works
+```
+
+**Option B: Symlink globally (works everywhere)**
+```bash
+ln -sf /Users/nalindalal/skillset/opencode.json ~/.config/opencode/opencode.json
+# Now in ANY directory:
+opencode
+# skill nerdev-monorepo  → works
+```
+
+**Option C: Copy to a project**
+```bash
+cp -r /Users/nalindalal/skillset/skills/nerdev-monorepo /my-project/.opencode/skills/
+# In /my-project:
+opencode
+# skill nerdev-monorepo  → works
+```
+
+**Compose them:**
+```bash
+skill nerdev-monorepo      # Repo skeleton + conventions
+skill nerdev-abstraction   # Plug-and-play architecture
+skill nerdev-docs          # Living docs + ADRs + runbooks
+```
 
 ## CI/CD: how updates flow
 

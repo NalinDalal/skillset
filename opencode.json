@@ -1,0 +1,8 @@
+{
+  "skills": {
+    "paths": [
+      "./skills",
+      "~/.config/opencode/skills"
+    ]
+  }
+}
