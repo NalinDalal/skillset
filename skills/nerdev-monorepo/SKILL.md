@@ -1,3 +1,8 @@
+---
+name: nerdev-monorepo
+description: Turborepo + Bun monorepo structure, conventions, CI/CD, and deployment patterns from nerdev-co
+---
+
 # nerdev-monorepo Skill
 
 **Purpose**: Enforce the nerdev-co development methodology across all projects — consistent monorepo structure, file-based architecture, camelCase naming, documented code, and production-ready patterns.

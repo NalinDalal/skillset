@@ -1,3 +1,8 @@
+---
+name: nerdev-docs
+description: Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks with templates
+---
+
 # nerdev-docs Skill
 
 **Purpose**: Development-integrated documentation — docs that live with code, generate from code, evolve with code, and serve both humans and AI agents.
