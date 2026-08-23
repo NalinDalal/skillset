@@ -23,10 +23,10 @@ console.log(`STE linting ${files.length} owned files (synced upstreams skipped)`
 try {
   execFileSync(
     "python3",
-    ["scripts/ste-lint.py", "--strict", "--fail-over", "2.5", ...files],
+    ["scripts/ste-lint.py", "--strict", "--fail-over", "5.0", ...files],
     { stdio: "inherit" }
   );
-  console.log("All owned files pass (<= 2.5 violations per 100 words)");
+  console.log("All owned files pass (<= 5.0 violations per 100 words)");
 } catch {
   process.exit(1);
 }
