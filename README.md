@@ -103,7 +103,7 @@ Restart/reload your agent after installing.
 
 ### Using your local skills (nerdev-*)
 
-Your three `nerdev-*` skills live in `skills/` but **aren't managed by the sync script** — they're owned directly in this repo.
+Your three `nerdev-*` skills live in `skills/` but **aren't managed by the sync script** -- they're owned directly in this repo.
 
 **Option A: Use from this repo (recommended)**
 ```bash

@@ -5,7 +5,7 @@ description: "Development-integrated docs: ADRs, design docs, incident postmorte
 
 # nerdev-docs Skill
 
-**Purpose**: Development-integrated documentation — docs that live with code, generate from code, evolve with code, and serve both humans and AI agents.
+**Purpose**: Development-integrated documentation -- docs that live with code, generate from code, evolve with code, and serve both humans and AI agents.
 
 ---
 
@@ -21,7 +21,7 @@ description: "Development-integrated docs: ADRs, design docs, incident postmorte
 
 ## Required Document Types
 
-### 1. AGENTS.md (AI Agent Guidance) — **MANDATORY**
+### 1. AGENTS.md (AI Agent Guidance) -- **MANDATORY**
 Generated via `agent-docs-writer` skill. Every project root must have this.
 
 ```
@@ -320,7 +320,7 @@ bun run dev
 ## Code Standards
 - camelCase files/functions, PascalCase types
 - JSDoc on all exports
-- No `any` — use `unknown` or proper types
+- No `any` -- use `unknown` or proper types
 - Shared code in `packages/`
 - Diff-based WS sync (no full state)
 ```

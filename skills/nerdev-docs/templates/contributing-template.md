@@ -93,7 +93,7 @@ chore(deps): upgrade bun to 1.2.0
 | CSS Classes | `kebab-case` |
 
 ### TypeScript
-- No `any` — use `unknown` or proper types
+- No `any` -- use `unknown` or proper types
 - Strict mode enabled
 - JSDoc on all exports
 - Discriminated unions for WS messages

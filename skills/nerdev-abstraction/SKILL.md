@@ -5,7 +5,7 @@ description: Interface-first, registry, factory, plugin protocol for plug-and-pl
 
 # nerdev-abstraction Skill
 
-**Purpose**: Enforce plug-and-play abstraction patterns across any codebase — interface-driven design, registry-based composition, workspace packages, and zero-duplication shared utilities.
+**Purpose**: Enforce plug-and-play abstraction patterns across any codebase -- interface-driven design, registry-based composition, workspace packages, and zero-duplication shared utilities.
 
 ---
 
