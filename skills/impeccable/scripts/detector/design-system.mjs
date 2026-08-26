@@ -13,15 +13,11 @@ const FALLBACK_DIRS = ['.agents/context', 'docs'];
 // CLI can't import (separate tree). `.git` and `package.json` are the common
 // boundaries; `.impeccable` is our own project marker.
 const PROJECT_ROOT_MARKERS = ['.git', 'package.json', '.impeccable'];
-const WORKSPACE_CONFIG_FILES = ['pnpm-workspace.yaml'];
-const MONOREPO_TOOLING_FILES = ['turbo.json', 'nx.json', 'lerna.json'];
+// Monorepo-root recognition, mirroring context.mjs's isMonorepoRoot: declared
+// workspace globs (package.json `workspaces`, pnpm-workspace.yaml `packages:`)
+// or a marker file beside apps/ or packages/ children.
+const MONOREPO_MARKER_FILES = ['pnpm-workspace.yaml', 'turbo.json', 'nx.json', 'lerna.json'];
 const MONOREPO_FALLBACK_PROJECT_DIRS = ['apps', 'packages'];
-const PACKAGE_MANAGER_FILES = {
-  bun: 'bun.lock',
-  pnpm: 'pnpm-lock.yaml',
-  yarn: 'yarn.lock',
-  npm: 'package-lock.json',
-};
 const COLOR_CHANNEL_TOLERANCE = 6;
 // Shadow blacks at different alphas are different tokens (0.28 vs 0.55 is the
 // difference between a documented shadow and drift), so shadow matching cannot
@@ -46,13 +42,6 @@ function firstExisting(dir, names) {
   for (const name of names) {
     const abs = path.join(dir, name);
     if (fs.existsSync(abs)) return abs;
-  }
-  return null;
-}
-
-function detectPackageManager(dir) {
-  for (const [manager, file] of Object.entries(PACKAGE_MANAGER_FILES)) {
-    if (fs.existsSync(path.join(dir, file))) return manager;
   }
   return null;
 }
@@ -632,25 +621,16 @@ function readWorkspacePatterns(dir) {
   return readWorkspacePatternGroups(dir).flat();
 }
 
-function hasFallbackWorkspaceChildren(dir) {
-  for (const name of MONOREPO_FALLBACK_PROJECT_DIRS) {
-    const base = path.join(dir, name);
-    let entries;
-    try {
-      entries = fs.readdirSync(base, { withFileTypes: true });
-    } catch {
-      continue;
-    }
-    if (entries.some((entry) => entry.isDirectory())) return true;
-  }
-  return false;
-}
-
 function isMonorepoRoot(dir) {
   if (readWorkspacePatterns(dir).some(pattern => !String(pattern).trim().startsWith('!'))) return true;
-  if (WORKSPACE_CONFIG_FILES.some(file => fs.existsSync(path.join(dir, file)))) return hasFallbackWorkspaceChildren(dir);
-  if (!MONOREPO_TOOLING_FILES.some(file => fs.existsSync(path.join(dir, file)))) return false;
-  return hasFallbackWorkspaceChildren(dir);
+  if (!MONOREPO_MARKER_FILES.some(file => fs.existsSync(path.join(dir, file)))) return false;
+  return MONOREPO_FALLBACK_PROJECT_DIRS.some(name => {
+    try {
+      return fs.readdirSync(path.join(dir, name), { withFileTypes: true }).some(entry => entry.isDirectory());
+    } catch {
+      return false;
+    }
+  });
 }
 
 function monorepoOwnsPath(root, boundaryDir) {
