@@ -45,8 +45,15 @@ const PRODUCT_NAMES = ['PRODUCT.md', 'Product.md', 'product.md'];
 const DESIGN_NAMES = ['DESIGN.md', 'Design.md', 'design.md'];
 const SKILL_REFERENCE_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'reference');
 const FALLBACK_DIRS = ['.agents/context', 'docs'];
-const MONOREPO_MARKER_FILES = ['pnpm-workspace.yaml', 'turbo.json', 'nx.json', 'lerna.json'];
+const WORKSPACE_CONFIG_FILES = ['pnpm-workspace.yaml'];
+const MONOREPO_TOOLING_FILES = ['turbo.json', 'nx.json', 'lerna.json'];
 const MONOREPO_FALLBACK_PROJECT_DIRS = ['apps', 'packages'];
+const PACKAGE_MANAGER_FILES = {
+  bun: 'bun.lock',
+  pnpm: 'pnpm-lock.yaml',
+  yarn: 'yarn.lock',
+  npm: 'package-lock.json',
+};
 const WORKSPACE_DISCOVERY_IGNORED_DIRS = new Set([
   'node_modules',
   '.git',
@@ -280,8 +287,9 @@ function findMonorepoRoot(startDir) {
 }
 
 function isMonorepoRoot(dir) {
-  if (readProjectPatterns(dir).some((pattern) => !normalizeWorkspacePattern(pattern).startsWith('!'))) return true;
-  if (!MONOREPO_MARKER_FILES.some((file) => fs.existsSync(path.join(dir, file)))) return false;
+  if (readProjectPatterns(dir).some((pattern) => !normalizeWorkspacePattern(pattern).trim().startsWith('!'))) return true;
+  if (WORKSPACE_CONFIG_FILES.some((file) => fs.existsSync(path.join(dir, file)))) return hasFallbackWorkspaceChildren(dir);
+  if (!MONOREPO_TOOLING_FILES.some((file) => fs.existsSync(path.join(dir, file)))) return false;
   return hasFallbackWorkspaceChildren(dir);
 }
 
@@ -313,7 +321,8 @@ function discoverTargetCandidates(repoRoot) {
       }
     }
   }
-  if (MONOREPO_MARKER_FILES.some((file) => fs.existsSync(path.join(repoRoot, file)))) {
+  if (WORKSPACE_CONFIG_FILES.some((file) => fs.existsSync(path.join(repoRoot, file))) ||
+      MONOREPO_TOOLING_FILES.some((file) => fs.existsSync(path.join(repoRoot, file)))) {
     for (const name of MONOREPO_FALLBACK_PROJECT_DIRS) {
       const base = path.join(repoRoot, name);
       let entries;
@@ -450,9 +459,22 @@ function walkDirs(root, visit) {
 }
 
 function isCandidateProjectRoot(dir) {
+  const hasRootEntry = firstExisting(dir, [
+    'index.ts',
+    'index.tsx',
+    'index.jsx',
+    'index.js',
+    'main.ts',
+    'main.tsx',
+    'main.jsx',
+    'main.js',
+    'App.tsx',
+    'App.jsx',
+  ]);
   return !!(
     fs.existsSync(path.join(dir, 'package.json'))
     || firstExisting(dir, [...PRODUCT_NAMES, ...DESIGN_NAMES])
+    || hasRootEntry
     || fs.existsSync(path.join(dir, 'src'))
     || fs.existsSync(path.join(dir, 'app'))
     || fs.existsSync(path.join(dir, 'pages'))
@@ -465,7 +487,24 @@ function isIgnoredWorkspaceDiscoveryDir(name) {
 }
 
 function findTargetExample(repoRoot, projectRoot) {
-  const examples = [
+  const pkgManager = detectPackageManager(projectRoot);
+  const bunFirst = pkgManager === 'bun';
+  const rootExamples = bunFirst
+    ? [
+        'index.ts',
+        'index.tsx',
+        'index.jsx',
+        'index.js',
+        'main.ts',
+        'main.tsx',
+        'main.jsx',
+        'main.js',
+        'App.tsx',
+        'App.jsx',
+        'page.tsx',
+      ]
+    : [];
+  const srcExamples = [
     'src/App.jsx',
     'src/App.tsx',
     'src/main.jsx',
@@ -476,6 +515,7 @@ function findTargetExample(repoRoot, projectRoot) {
     'pages/index.tsx',
     'public/index.html',
   ];
+  const examples = [...rootExamples, ...srcExamples];
   for (const rel of examples) {
     const abs = path.join(projectRoot, rel);
     if (fs.existsSync(abs)) return path.relative(repoRoot, abs).split(path.sep).join('/');
@@ -776,6 +816,13 @@ function normalizeWorkspacePattern(pattern) {
     .replace(/^['"]|['"]$/g, '')
     .replace(/^\.\//, '')
     .replace(/\/+$/, '');
+}
+
+function detectPackageManager(dir) {
+  for (const [manager, file] of Object.entries(PACKAGE_MANAGER_FILES)) {
+    if (fs.existsSync(path.join(dir, file))) return manager;
+  }
+  return null;
 }
 
 function segmentMatches(patternSegment, relSegment) {
