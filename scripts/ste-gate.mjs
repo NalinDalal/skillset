@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const vendor = JSON.parse(readFileSync("vendor.json", "utf8"));
-const synced = new Set(vendor.upstreams.flatMap((u) => u.skills));
+const synced = new Set(vendor.upstreams.flatMap((u) => u.skills.map((s) => s.name)));
 
 function walk(dir, out) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
