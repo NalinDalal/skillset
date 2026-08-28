@@ -4,7 +4,7 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "63b04e2530f5c7b41ea83c133daab24f34912456",
+      "commit": "31dcc687c66ed0037dd4ebfe3ba474e2b8a7b06b",
       "source": ".opencode/skills",
       "skills": [
         "impeccable"
@@ -33,7 +33,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "799151d91b6e12ee7dbd09f708eec108d7de9b3b",
+      "commit": "397c8660da6d3d873a91e18c2ca2f22cac1f0ac1",
       "source": "pstack/skills",
       "skills": [
         "unslop"
