@@ -120,7 +120,7 @@ Contract signed
 ↓  
 Invoice 50% upfront  
 ↓  
-Work begins  
+Work starts  
 ↓  
 Milestone invoice  
 ↓  
@@ -651,7 +651,7 @@ contract signed
 
 50% paid
 
-resources provided
+resources supplied
 
 milestone defined
 

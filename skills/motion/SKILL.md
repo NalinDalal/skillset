@@ -139,7 +139,7 @@ physical grammar. Match it, do not invent your own:
 - Sheets and drawers are draggable. Release mid-drag either settles or
   dismisses, driven by velocity.
 - A fling keeps gliding and coasts to rest.
-- The current gesture interrupts the last motion seamlessly.
+- The current gesture interrupts the last motion cleanly.
 - Depth comes from use, not decoration. Slight scale and blur for layers,
   never shadows and bevels pretending to be 3D.
 - Feedback returns along the same path it came: what rose from the

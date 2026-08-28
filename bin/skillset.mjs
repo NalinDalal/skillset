@@ -113,7 +113,11 @@ function cmdInstall() {
     }
     const destBase = scope === "project" ? join(process.cwd(), cfg.project) : cfg.global;
     for (const skill of skills) {
-      const dest = join(destBase, skill);
+      const safeSkill = skill.replace(/\.\./g, "").replace(/[/\\]/g, "");
+      if (safeSkill !== skill) {
+        console.warn(`  ! sanitized skill name: ${skill} → ${safeSkill}`);
+      }
+      const dest = join(destBase, safeSkill);
       if (dry) {
         console.log(`  ~ ${target}: would install ${skill} → ${dest}`);
         continue;

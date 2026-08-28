@@ -7,7 +7,7 @@
       "commit": "31dcc687c66ed0037dd4ebfe3ba474e2b8a7b06b",
       "source": ".opencode/skills",
       "skills": [
-        "impeccable"
+        { "name": "impeccable", "sha256": "TBD" }
       ]
     },
     {
@@ -16,7 +16,7 @@
       "commit": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "source": "skills",
       "skills": [
-        "output-skill"
+        { "name": "output-skill", "sha256": "TBD" }
       ]
     },
     {
@@ -25,9 +25,9 @@
       "commit": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "source": "skills",
       "skills": [
-        "ask-sonner",
-        "pick-ui-library",
-        "prototype"
+        { "name": "ask-sonner", "sha256": "TBD" },
+        { "name": "pick-ui-library", "sha256": "TBD" },
+        { "name": "prototype", "sha256": "TBD" }
       ]
     },
     {
@@ -36,7 +36,7 @@
       "commit": "397c8660da6d3d873a91e18c2ca2f22cac1f0ac1",
       "source": "pstack/skills",
       "skills": [
-        "unslop"
+        { "name": "unslop", "sha256": "TBD" }
       ]
     }
   ]
