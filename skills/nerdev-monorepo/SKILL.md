@@ -188,6 +188,53 @@ apps/ws-backend/src/
 └── index.ts
 ```
 
+### 6b. HTTP Route File Convention (Elysia)
+
+**One file per resource under `routes/`, named after the resource.**
+
+| Pattern | Example |
+|---------|---------|
+| Single file per resource | `routes/auth.ts`, `routes/me.ts`, `routes/profile.ts` |
+| All HTTP verbs in one file | `GET /me`, `PUT /me` both in `me.ts` |
+| Handler naming | `handleGetMe`, `handlePutMe` (or `handleMe` for single-handler) |
+| Promotion to folder | `routes/<resource>/index.ts` + `handlers.ts` when resource outgrows one file |
+
+```typescript
+// apps/http-backend/src/routes/me.ts
+import { t } from 'elysia'
+
+/**
+ * @fileoverview Current user profile endpoints
+ * @module routes/me
+ */
+
+export function handleGetMe(app: Elysia) {
+  return app.get('/me', async ({ currentUser }) => currentUser)
+}
+
+export function handlePutMe(app: Elysia) {
+  return app.put('/me', async ({ body, currentUser, db }) => {
+    // update logic
+  }, { body: t.Object({ name: t.String(), bio: t.Optional(t.String()) }) })
+}
+```
+
+```text
+# When a resource grows (e.g., familyTree, messages, adminRoleChange):
+routes/
+├── familyTree/
+│   ├── index.ts       # Route registration
+│   └── handlers.ts    # All handlers
+├── messages/
+│   ├── index.ts
+│   └── handlers.ts
+└── adminRoleChange/
+    ├── index.ts
+    └── handlers.ts
+```
+
+**Rule**: Start with one file. Only split into `routes/<resource>/` when the file genuinely exceeds ~300 lines or has 5+ handlers.
+
 ### 7. Frontend Patterns (Vite + TanStack Router)
 
 #### Canvas Engine (CoDraw Pattern)
