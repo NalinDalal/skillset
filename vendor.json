@@ -33,7 +33,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "bdf7aa355337897f167153e05069aca505dae17c",
+      "commit": "799151d91b6e12ee7dbd09f708eec108d7de9b3b",
       "source": "pstack/skills",
       "skills": [
         "unslop"
