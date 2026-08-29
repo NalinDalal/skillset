@@ -1,76 +1,69 @@
 # skillset
 
-A curated collection of **20 agent skills** (design, motion, dev workflow, your patterns) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps them synced with top-tier upstreams.
+A curated collection of **45 agent skills** (design, motion, backend patterns, dev workflow, business) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps a handful of them synced with top-tier upstreams.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
-> re-sync, your taste, your whys, never clobbered. See [Ownership model](#ownership-model).
+> re-sync — your taste, your whys, never clobbered. See [Ownership model](#ownership-model).
 
 ## What's inside
 
-### Design & animation skills (from upstreams, auto-synced)
+### Synced from upstream (5 skills, auto-updated nightly)
 
-| Upstream | Skills |
-|---|---|
-| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★) | `impeccable`: 23 design commands, 59 deterministic detector rules, live browser iteration |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★) | `output-skill` (the design half of this upstream was merged into the owned `ui` skill) |
-| [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★) | `pick-ui-library`, `prototype`, `ask-sonner` (the animation half of this upstream was merged into the owned `motion` skill) |
+| Upstream                                                                                  | Skills                                                                                    |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★)                        | `impeccable`: 23 design commands, 59 deterministic detector rules, live browser iteration |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★)                    | `output-skill`                                                                            |
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★)                      | `ask-sonner`, `pick-ui-library`, `prototype`                                              |
+| [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) | `unslop`: cuts AI tells from any writing                                                  |
 
-### Original skills
+These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` checks them nightly and opens a PR when they move — you never hand-copy a file from them.
 
-`deployments`, `agent-docs-writer`, `ultra-context-engine`, `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `house-style`: how the codebase wants to be built: route-based files, Apple/Google-clean UI (no AI purple slop), docs the human writes and the agent audits. `motion`: one skill that owns the whole motion job: name an effect, decide, build, review, audit. Merged from the seven-skill animation family because they were one job in seven voices. `ui`: one skill that owns the whole UI job: pick the direction, design the system, build the screen, redesign or audit, verify before ship. Merged from nine overlapping design skills. `imagegen`: one skill that owns design-image generation: web references, mobile screens, brand kits, image-to-code. Merged from four image-generation skills.
+### Everything else (40 skills, owned outright)
 
-### Added skills
+Not synced from anywhere — written for this repo, live only here, edited directly in `skills/<name>/`.
 
-`unslop`: cuts AI tells from any writing (from [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop), vendored as an owned skill).
+**UI / design / frontend family** — `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (master orchestrator — loads the rest of this family for a full build), `ui` (whole UI job: direction → system → build → verify), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
 
-### Your skills (local, not synced)
+**Pattern → library pairs** — ask "how do I build X" and you get the pattern skill; it names the library and hands off to the library-specific guide:
 
-| Skill | Purpose |
-|-------|---------|
-| `nerdev-monorepo` | Turborepo + Bun monorepo structure, conventions, CI/CD, deployment patterns |
-| `nerdev-abstraction` | Interface-first, registry, factory, plugin protocol for plug-and-play architecture |
-| `nerdev-docs` | Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks |
-| `house-style` | How the codebase wants to be built: route-based files, Apple/Google-clean UI (no AI purple slop), docs the human writes and the agent audits |
-| `ui-engineering` | **Master UI orchestrator** — load when user says "build the FE", "build the UI", "build the frontend". Asks brief, loads all sub-skills, enforces Linear/Raycast/Stripe quality bar |
-| `ui` | Whole UI job: pick direction, design system, build screen, redesign/audit, verify |
-| `impeccable` | 23 design commands, 59 detector rules, live browser iteration |
-| `motion` | Whole motion job: name effect, decide, build, review, audit |
-| `pick-ui-library` | Curated library picks for UI primitives (base-ui, Sonner, motion, cmdk, RHF, TanStack Table, Virtuoso, Vaul) |
-| `prototype` | Build divergent UI variants behind a visual picker |
-| `imagegen` | Premium design image generation: web refs, mobile screens, brand kits, image-to-code |
-| `ask-modal` | Pattern guide: dialogs, sheets, popovers, menus, selects |
-| `ask-toast` | Pattern guide: toasts, notifications, loading states |
-| `ask-animation` | Pattern guide: transitions, springs, scroll, gestures |
-| `ask-form` | Pattern guide: forms, validation, server actions |
-| `ask-table` | Pattern guide: data tables, sorting, filtering, virtualization |
-| `ask-command-menu` | Pattern guide: command palette (⌘K), fuzzy search |
-| `ask-virtual-list` | Pattern guide: infinite scroll, variable heights |
-| `ask-drawer` | Pattern guide: mobile bottom sheets, side drawers |
-| `ask-base-ui` | Library guide: unstyled accessible primitives (Dialog, Sheet, Popover, Menu, Select, etc.) |
-| `ask-motion` | Library guide: motion.dev springs, layout, gestures, scroll |
-| `ask-cmdk` | Library guide: command palette, fuzzy search, keyboard nav |
-| `ask-rhf` | Library guide: React Hook Form + Zod |
-| `ask-tanstack-table` | Library guide: TanStack Table v8 headless tables |
-| `ask-virtuoso` | Library guide: Virtuoso virtualized lists |
-| `ask-vaul` | Library guide: Vaul drawers/sheets with gestures |
-| `ask-gsap` | Library guide: GSAP + ScrollTrigger + Lenis for showcase tier |
+| Pattern skill      | Hands off to                                   |
+| ------------------ | ---------------------------------------------- |
+| `ask-modal`        | `ask-base-ui`                                  |
+| `ask-toast`        | `ask-sonner`                                   |
+| `ask-animation`    | `ask-motion` (or `ask-gsap` for showcase-tier) |
+| `ask-form`         | `ask-rhf`                                      |
+| `ask-table`        | `ask-tanstack-table`                           |
+| `ask-command-menu` | `ask-cmdk`                                     |
+| `ask-virtual-list` | `ask-virtuoso`                                 |
+| `ask-drawer`       | `ask-vaul`                                     |
+
+**Backend / dev-workflow** — `api-design`, `auth`, `database`, `git-ci`, `performance`, `realtime`, `security`, `testing`.
+
+**nerdev-co family** — `nerdev-monorepo` (Turborepo + Bun structure, CI/CD, deploy), `nerdev-docs` (ADRs, design docs, runbooks), `nerdev-abstraction` (interface-first, registry-based plug-and-play).
+
+**Meta / process** — `agent-docs-writer` (README/AGENTS.md), `progress-guard` (catches motion-not-progress on side work), `ultra-context-engine` (token-efficiency layer).
+
+**Business** — `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `deployments`.
 
 ## Install
 
 **Via GitHub (no npm account/token needed, always works):**
+
 ```bash
 npx github:NalinDalal/skillset install    # install all skills, all harnesses (global)
 bunx github:NalinDalal/skillset install   # bun equivalent
 ```
 
 **From npm (if/when published as `@nalindalal/skillset`):**
+
 ```bash
 npx @nalindalal/skillset install
 bunx @nalindalal/skillset install
 ```
 
 **From the repo directly:**
+
 ```bash
 git clone https://github.com/NalinDalal/skillset.git
 cd skillset
@@ -80,65 +73,82 @@ npm link                        # or bun link, then `skillset` is on your PATH
 ## Usage
 
 ```bash
-skillset list                              # see all 20 skills + descriptions
+skillset list                              # see all 45 skills + descriptions
 skillset install                           # everything → ~/.claude, ~/.config/opencode, ~/.cursor, ~/.agents, ~/.gemini
-skillset install --skill taste-skill       # just one skill
+skillset install --skill motion            # just one skill
 skillset install --target claude,opencode  # only specific harnesses
 skillset install --scope project           # into ./project/.claude/skills etc. instead of global
 skillset install --dry-run                 # preview without touching anything
 skillset install --undo                    # remove everything this CLI installed
-skillset sync                              # pull latest from upstream repos (local)
+skillset sync                              # pull latest from the 4 upstream repos (local)
 ```
 
-Restart/reload your agent after installing.
+Restart or reload your agent after installing.
 
-## How to use a skill
+## What to say for what you want
 
-1. **Install the skill you want.**
+Skills fire from their description, not from a command you type. Say what you want in plain words; the closest-matching skill loads. If it doesn't auto-load, name it: _"use the motion skill to review these animations."_
 
-   ```bash
-   skillset install --skill motion --target claude,opencode
-   ```
+**UI / frontend:**
 
-   Restart or reload your agent so it loads the new skill.
+| You say                                                  | Skill fires                                                 |
+| -------------------------------------------------------- | ----------------------------------------------------------- |
+| "build the FE / build the frontend / design the UI"      | `ui-engineering` (loads the rest of the UI family)          |
+| "make this screen not look templated"                    | `ui`                                                        |
+| "what's it called when a popover bounces open"           | `motion`                                                    |
+| "pick a design direction / theme"                        | `ui`, `house-style`                                         |
+| "generate a web/mobile design reference"                 | `imagegen`                                                  |
+| "add a modal / dialog / sheet / popover / menu / select" | `ask-modal` → `ask-base-ui`                                 |
+| "add a toast / notification / loading state"             | `ask-toast` → `ask-sonner`                                  |
+| "add animations / transitions / motion"                  | `ask-animation` → `ask-motion` (or `ask-gsap` for showcase) |
+| "build a form with validation"                           | `ask-form` → `ask-rhf`                                      |
+| "build a data table / sorting / filtering"               | `ask-table` → `ask-tanstack-table`                          |
+| "add a command palette / ⌘K"                             | `ask-command-menu` → `ask-cmdk`                             |
+| "build a virtual list / infinite scroll / feed / chat"   | `ask-virtual-list` → `ask-virtuoso`                         |
+| "add a mobile drawer / bottom sheet"                     | `ask-drawer` → `ask-vaul`                                   |
 
-2. **Trigger it by what you want, not by command.** Skills turn on from
-   their description. Ask in plain words and the matching skill takes over:
+**Backend / dev workflow:**
 
-| You say | Skill fires |
-|---|---|
-| "make this screen not look templated" | `ui` |
-| "what is it called when a popover bounces open" | `motion` |
-| "help me deploy this repo to a VPS" | `deployments` |
-| "write an AGENTS.md for this repo" | `agent-docs-writer` |
-| "I want to start freelancing" | `freelancing` |
-| "clean up this sloppy AI-sounding text" | `unslop` |
-| "scaffold a new Turborepo + Bun monorepo" | `nerdev-monorepo` |
-| "add a plug-and-play tool system with registry" | `nerdev-abstraction` |
-| "create ADR, design doc, incident template" | `nerdev-docs` |
-| **"build the FE", "build the UI", "build the frontend", "design the frontend", "make the UI"** | `ui-engineering` |
-| **"add a modal/dialog/sheet/popover/menu/select"** | `ask-modal` → `ask-base-ui` |
-| **"add a toast/notification/loading state"** | `ask-toast` → `ask-sonner` |
-| **"add animations/transitions/motion"** | `ask-animation` → `ask-motion` (or `ask-gsap` if showcase) |
-| **"build a form with validation"** | `ask-form` → `ask-rhf` |
-| **"build a data table/sorting/filtering"** | `ask-table` → `ask-tanstack-table` |
-| **"add a command palette/⌘K"** | `ask-command-menu` → `ask-cmdk` |
-| **"build a virtual list/infinite scroll/feed/chat"** | `ask-virtual-list` → `ask-virtuoso` |
-| **"add a mobile drawer/bottom sheet"** | `ask-drawer` → `ask-vaul` |
+| You say                                                               | Skill fires   |
+| --------------------------------------------------------------------- | ------------- |
+| "design/review this REST or tRPC or GraphQL API"                      | `api-design`  |
+| "add auth / OAuth / JWT / MFA / passwordless"                         | `auth`        |
+| "design the Prisma schema / optimize this query"                      | `database`    |
+| "set up CI / commit conventions / release automation"                 | `git-ci`      |
+| "reduce bundle size / fix Core Web Vitals / find a memory leak"       | `performance` |
+| "build live cursors / chat / multiplayer / presence"                  | `realtime`    |
+| "harden security / add CSP / rate limiting / review security posture" | `security`    |
+| "write tests / set up Vitest or Playwright / fix flaky tests"         | `testing`     |
 
-3. **Or call it by name.** If the agent did not auto-load it, say so in
-   your request: "use the motion skill to review these animations". The
-   skill runs as a normal agent task, so it works in any harness that
-   supports skills (Claude Code, OpenCode, Cursor, Codex, Gemini).
+**Repo & process:**
 
-4. **See what's installed.** `skillset list` shows all skills in this
-   repo. To remove one: `skillset install --undo --skill motion`.
+| You say                                           | Skill fires          |
+| ------------------------------------------------- | -------------------- |
+| "help me deploy this repo to a VPS/EC2"           | `deployments`        |
+| "write an AGENTS.md / audit this README"          | `agent-docs-writer`  |
+| "clean up this sloppy AI-sounding text"           | `unslop`             |
+| "scaffold a new Turborepo + Bun monorepo"         | `nerdev-monorepo`    |
+| "add a plug-and-play tool system with a registry" | `nerdev-abstraction` |
+| "create an ADR / design doc / incident template"  | `nerdev-docs`        |
+
+**Business:**
+
+| You say                            | Skill fires              |
+| ---------------------------------- | ------------------------ |
+| "I want to start freelancing"      | `freelancing`            |
+| "should I build this startup idea" | `startup-founder`        |
+| "revamp my resume for this JD"     | `resume-revamp-jake-ats` |
+
+`progress-guard` and `ultra-context-engine` don't wait to be called by name — they run in the background whenever their trigger conditions show up in the conversation (side-work-instead-of-shipping, and token-budget pressure, respectively).
+
+**See what's installed:** `skillset list`. **Remove one:** `skillset install --undo --skill motion`.
 
 ### Using your local skills (nerdev-*)
 
-Your three `nerdev-*` skills live in `skills/` but **aren't managed by the sync script** -- they're owned directly in this repo.
+The three `nerdev-*` skills live in `skills/` but **aren't managed by the sync script** — they're owned directly in this repo, same as everything in "Everything else" above.
 
 **Option A: Use from this repo (recommended)**
+
 ```bash
 # From skillset root
 opencode  # opencode.json points to ./skills
@@ -146,6 +156,7 @@ opencode  # opencode.json points to ./skills
 ```
 
 **Option B: Symlink globally (works everywhere)**
+
 ```bash
 ln -sf /Users/nalindalal/skillset/opencode.json ~/.config/opencode/opencode.json
 # Now in ANY directory:
@@ -154,6 +165,7 @@ opencode
 ```
 
 **Option C: Copy to a project**
+
 ```bash
 cp -r /Users/nalindalal/skillset/skills/nerdev-monorepo /my-project/.opencode/skills/
 # In /my-project:
@@ -162,6 +174,7 @@ opencode
 ```
 
 **Compose them:**
+
 ```bash
 skill nerdev-monorepo      # Repo skeleton + conventions
 skill nerdev-abstraction   # Plug-and-play architecture
@@ -170,7 +183,7 @@ skill nerdev-docs          # Living docs + ADRs + runbooks
 
 ## CI/CD: how updates flow
 
-The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on demand via *Actions → Sync upstream skills → Run workflow*):
+The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on demand via _Actions → Sync upstream skills → Run workflow_):
 
 1. `scripts/sync.mjs` shallow-clones each upstream repo from `vendor.json`, compares the pinned commit against `origin/HEAD`
 2. If upstream moved, the skill folders are re-vendored into `skills/` and `vendor.json` is bumped
@@ -182,7 +195,9 @@ The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on 
 npm version patch && npm publish
 ```
 
-That's it: you never hand-copy skill files again. New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx @nalindalal/skillset install` on any machine.
+`.github/workflows/sync.yml` also runs `npm run lint:ste` on every push — every owned `.md` file has to stay under 5.0 STE violations per 100 words (synced upstream files are exempt).
+
+New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx @nalindalal/skillset install` on any machine.
 
 ## Ownership model
 
@@ -198,8 +213,10 @@ curations/
 
 - **Pick what to own.** Upstream never ships a file you've overlaid. Your
   version always wins. Everything else in that skill still tracks upstream.
-- **Never edit `skills/<skill>/` directly.** The next sync deletes the folder.
-  If you want it in your voice, put it in `curations/<skill>/overlay/` first.
+- **Never edit `skills/<skill>/` directly** for the 5 synced skills — the next
+  sync deletes the folder. If you want it in your voice, put it in
+  `curations/<skill>/overlay/` first. (This doesn't apply to the 40 owned
+  skills — those you edit directly, since nothing re-vendors them.)
 - **Write the why.** `WHY.md` is the difference between curation and
   copy-paste. Future-you and future agents read it.
 
@@ -225,6 +242,7 @@ skills/<name>/SKILL.md     # the skills themselves (self-contained, copyable)
 curations/<name>/          # your ownership layer: overlay/ + WHY.md (never touched by sync)
 vendor.json                # upstream repos + pinned commits + skill maps
 scripts/sync.mjs           # re-vendor logic (used by CI and manually)
+scripts/ste-gate.mjs       # STE prose-quality gate, runs on every push
 bin/skillset.mjs           # the CLI (npm bin target)
 .github/workflows/sync.yml # nightly auto-sync + PR
 ```
