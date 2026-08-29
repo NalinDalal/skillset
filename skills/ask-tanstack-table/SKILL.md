@@ -259,7 +259,7 @@ export function DataTable<TData>({
       {/* Pagination */}
       <div className="px-3 py-2 border-t flex items-center justify-between">
         <span className="text-sm text-gray-600 dark:text-gray-400">
-          {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}–{Math.min(
+          {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}-{Math.min(
             (table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize,
             rowCount ?? data.length
           )} of {rowCount ?? data.length}
