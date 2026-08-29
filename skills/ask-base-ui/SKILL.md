@@ -1,11 +1,11 @@
 ---
 name: ask-base-ui
-description: Library guide for base-ui — unstyled, accessible primitives (Dialog, Sheet, Popover, Menu, Select, Toast, Tooltip, etc.). Load via ask-modal, ask-toast, ask-drawer pattern skills. Implements the pattern with base-ui primitives.
+description: Library guide for base-ui: unstyled, accessible primitives (Dialog, Sheet, Popover, Menu, Select, Toast, Tooltip, etc.). Load via ask-modal, ask-toast, ask-drawer pattern skills. Implements the pattern with base-ui primitives.
 ---
 
-# Ask Base-UI — Unstyled Accessible Primitives
+# Ask Base-UI: Unstyled Accessible Primitives
 
-**When to use:** Any overlay UI — dialogs, sheets, popovers, menus, selects, tooltips, hover cards, comboboxes, tabs, accordions.
+**When to use:** Any overlay UI: dialogs, sheets, popovers, menus, selects, tooltips, hover cards, comboboxes, tabs, accordions.
 
 **Package:** `@base-ui-components/react` (or individual packages like `@base-ui-components/dialog`)
 
@@ -13,10 +13,10 @@ description: Library guide for base-ui — unstyled, accessible primitives (Dial
 
 ## Core Philosophy
 
-- **Unstyled** — No CSS, you compose with your design system
-- **Accessible** — WAI-ARIA, focus management, keyboard nav built-in
-- **Headless** — Logic only, you render the markup
-- **Composable** — Slot-based API, full control over rendering
+- **Unstyled**: No CSS, you compose with your design system
+- **Accessible**: WAI-ARIA, focus management, keyboard nav built-in
+- **Headless**: Logic only, you render the markup
+- **Composable**: Slot-based API, full control over rendering
 
 ---
 
@@ -31,6 +31,7 @@ npm i @base-ui-components/dialog @base-ui-components/select @base-ui-components/
 ---
 
 ## Primitives Reference
+
 
 | Primitive | Package | Use For |
 |-----------|---------|---------|
@@ -48,6 +49,7 @@ npm i @base-ui-components/dialog @base-ui-components/select @base-ui-components/
 | **Switch** | `@base-ui-components/switch` | Toggle switches |
 | **Slider** | `@base-ui-components/slider` | Range sliders |
 | **Date Picker** | `@base-ui-components/date-picker` | Calendar, date range |
+
 
 ---
 
@@ -119,6 +121,7 @@ export const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLD
 
 ## Dialog Example (Complete)
 
+
 ```tsx
 // components/ui/Dialog.tsx (continued)
 
@@ -151,6 +154,7 @@ function DeleteConfirmation({ onConfirm }) {
 ---
 
 ## Select Example (Complete)
+
 
 ```tsx
 // components/ui/Select.tsx
@@ -273,6 +277,7 @@ export const SelectScrollDownButton = React.forwardRef<
 
 ## Sheet/Drawer Example (Mobile)
 
+
 ```tsx
 // components/ui/Sheet.tsx
 'use client'
@@ -316,7 +321,7 @@ export const SheetContent = React.forwardRef<
 ))
 
 export const SheetHeader = ({ className, ...props }) => (
-  <div className={cn('flex flex-col space-y-2', className)} {...props} />
+  <div className={cn('flex flex-col space-y-2', className)} {...props} /
 )
 
 export const SheetTitle = React.forwardRef<HTMLHeadingElement, React.ComponentPropsWithoutRef<'h2'>>(({ className, ...props }, ref) => (
@@ -332,26 +337,36 @@ export const SheetDescription = React.forwardRef<HTMLParagraphElement, React.Com
 
 ## Key Props Quick Reference
 
+
 ### Dialog
+
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `open` | `boolean` | — | Controlled open state |
-| `onOpenChange` | `(open: boolean) => void` | — | Open change handler |
+| `open` | `boolean` | *none* | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | *none* | Open change handler |
 | `modal` | `boolean` | `true` | Focus trap, backdrop click close |
 
+
 ### Select
+
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `value` | `string` | — | Controlled value |
-| `onValueChange` | `(value: string) => void` | — | Change handler |
+| `value` | `string` | *none* | Controlled value |
+| `onValueChange` | `(value: string) => void` | *none* | Change handler |
 | `multiple` | `boolean` | `false` | Multi-select |
-| `filter` | `(value: string, search: string) => boolean` | — | Custom filter |
+| `filter` | `(value: string, search: string) => boolean` | *none* | Custom filter |
+
 
 ### Sheet
+
+
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `side` | `'bottom' \| 'top' \| 'left' \| 'right'` | `'bottom'` | Drawer direction |
 | `snapPoints` | `number[]` | `[1]` | Snap percentages (0-1) |
+
 
 ---
 
@@ -376,19 +391,21 @@ import { motion } from 'motion/react'
 
 ## Troubleshooting
 
+
 | Issue | Fix |
 |-------|-----|
-| Styles not applying | Base-ui is unstyled — you must provide all CSS |
-| Focus not trapped | Ensure `DialogPrimitive.Content` is used, not custom div |
+| Styles not applying | Base-ui is unstyled: you must supply all CSS |
+| Focus not trapped | Confirm `DialogPrimitive.Content` is used, not custom div |
 | Portal not rendering | Wrap in `DialogPrimitive.Portal` |
 | Select not closing | Use `SelectPrimitive.Item` with `onSelect` |
-| Z-index issues | All primitives portal to body — check stacking contexts |
+| Z-index issues | All primitives portal to body: check stacking contexts |
+
 
 ---
 
 ## Related Skills
 
-- `ask-modal` — Pattern guide for dialogs/sheets/popovers/menus
-- `ask-toast` — Pattern guide for toasts (recommends Sonner instead)
-- `ask-drawer` — Pattern guide for mobile drawers (recommends Vaul)
-- `ui-engineering` — Master orchestrator
+- `ask-modal`: Pattern guide for dialogs/sheets/popovers/menus
+- `ask-toast`: Pattern guide for toasts (recommends Sonner instead)
+- `ask-drawer`: Pattern guide for mobile drawers (recommends Vaul)
+- `ui-engineering`: Master orchestrator

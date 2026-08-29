@@ -1,9 +1,9 @@
 ---
 name: ask-cmdk
-description: Library guide for cmdk — command palette, fuzzy search, keyboard navigation, groups, async loading. Load via ask-command-menu pattern skill.
+description: Library guide for cmdk: command palette, fuzzy search, keyboard navigation, groups, async loading. Load via ask-command-menu pattern skill.
 ---
 
-# Ask Cmdk — Command Palette (⌘K)
+# Ask Cmdk: Command Palette (⌘K)
 
 **When to use:** Global command palette, contextual command menus, search interfaces.
 
@@ -297,7 +297,7 @@ const recentItems = items.filter(i => recent.includes(i.id))
 ## Styling (Tailwind + Headless)
 
 ```tsx
-// cmdk injects minimal styles — customize via className
+// cmdk injects minimal styles: customize via className
 <Command className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-[90vw] rounded-xl border bg-white shadow-xl dark:bg-gray-900">
   <CommandInput className="w-full px-4 py-3 text-lg border-b outline-none placeholder:text-gray-400" />
   <CommandList className="max-h-[400px] overflow-auto p-1">
@@ -315,13 +315,13 @@ const recentItems = items.filter(i => recent.includes(i.id))
 |-------|-----|
 | Not opening on ⌘K | Check global listener, ensure no conflicting handlers |
 | Items not filtering | Verify fuzzy search logic, check `keywords` field |
-| Focus lost on close | `Command` handles this — ensure `onOpenChange` closes properly |
+| Focus lost on close | `Command` handles this: ensure `onOpenChange` closes properly |
 | Async loading flashes | Show `CommandLoading` skeleton, debounce |
-| Mobile keyboard issues | `CommandInput` is native input — works on mobile |
+| Mobile keyboard issues | `CommandInput` is native input: works on mobile |
 
 ---
 
 ## Related Skills
 
-- `ask-command-menu` — Pattern guide for command palettes
-- `ui-engineering` — Master orchestrator
+- `ask-command-menu`: Pattern guide for command palettes
+- `ui-engineering`: Master orchestrator
