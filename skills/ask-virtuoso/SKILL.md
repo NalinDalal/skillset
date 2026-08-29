@@ -1,11 +1,11 @@
 ---
 name: ask-virtuoso
-description: Library guide for Virtuoso — virtualized lists with variable heights, grouping, infinite scroll, smooth scrolling. Load via ask-virtual-list pattern skill.
+description: Library guide for Virtuoso: virtualized lists with variable heights, grouping, infinite scroll, smooth scrolling. Load via ask-virtual-list pattern skill.
 ---
 
-# Ask Virtuoso — Virtualized Lists
+# Ask Virtuoso: Virtualized Lists
 
-**When to use:** Long lists — feeds, chat, logs, activity, notifications, search results. Handles variable heights natively.
+**When to use:** Long lists: feeds, chat, logs, activity, notifications, search results. Handles variable heights natively.
 
 **Package:** `react-virtuoso`
 
@@ -342,6 +342,6 @@ ref.current?.getScrollElement() // HTMLElement
 
 ## Related Skills
 
-- `ask-virtual-list` — Pattern guide for virtual lists
-- `ask-tanstack-table` — Virtualized tables
-- `ui-engineering` — Master orchestrator
+- `ask-virtual-list`: Pattern guide for virtual lists
+- `ask-tanstack-table`: Virtualized tables
+- `ui-engineering`: Master orchestrator

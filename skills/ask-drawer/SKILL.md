@@ -1,15 +1,15 @@
 ---
 name: ask-drawer
-description: Pattern guide for mobile drawers/sheets — bottom sheets, side drawers, swipe gestures, nested drawers. Load via ui-engineering. Invokes pick-ui-library → recommends Vaul → loads ask-vaul for implementation.
+description: Pattern guide for mobile drawers/sheets: bottom sheets, side drawers, swipe gestures, nested drawers. Load via ui-engineering. Invokes pick-ui-library → recommends Vaul → loads ask-vaul for implementation.
 ---
 
-# Ask Drawer — Mobile Bottom Sheets, Side Drawers
+# Ask Drawer: Mobile Bottom Sheets, Side Drawers
 
-**When to use:** Mobile-first overlays — filters, actions, navigation, forms, any sheet that slides from bottom/side.
+**When to use:** Mobile-first overlays: filters, actions, navigation, forms, any sheet that slides from bottom/side.
 
 ---
 
-## The Pattern (What Good Looks Like — Linear/iOS/Material)
+## The Pattern (What Good Looks Like: Linear/iOS/Material)
 
 | Drawer Type | Use When | Key Behaviors |
 |-------------|----------|---------------|
@@ -21,30 +21,30 @@ description: Pattern guide for mobile drawers/sheets — bottom sheets, side dra
 
 ## Quality Checklist (Vaul + House-Style)
 
-- [ ] **Vaul** — Headless, accessible, gesture-driven, spring physics
-- [ ] **Drag handle** — Visual indicator, click/tap toggles
-- [ ] **Snap points** — Half (50%), Full (90%), custom percentages
-- [ ] **Swipe to dismiss** — Velocity-based, spring back if slow
-- [ ] **Backdrop** — Blur + dim, click closes
-- [ ] **Focus trap** — Inside drawer, restore on close
-- [ ] **Keyboard** — ESC closes, Tab cycles
-- [ ] **Animation** — Spring (stiffness: 500, damping: 30), 200ms
-- [ ] **Reduced motion** — Instant snap
-- [ ] **Safe area** — Respects home indicator, notch
-- [ ] **Scroll lock** — Body locked, drawer scrolls independently
+- [ ] **Vaul**: Headless, accessible, gesture-driven, spring physics
+- [ ] **Drag handle**: Visual indicator, click/tap toggles
+- [ ] **Snap points**: Half (50%), Full (90%), custom percentages
+- [ ] **Swipe to dismiss**: Velocity-based, spring back if slow
+- [ ] **Backdrop**: Blur + dim, click closes
+- [ ] **Focus trap**: Inside drawer, restore on close
+- [ ] **Keyboard**: ESC closes, Tab cycles
+- [ ] **Animation**: Spring (stiffness: 500, damping: 30), 200ms
+- [ ] **Reduced motion**: Instant snap
+- [ ] **Safe area**: Respects home indicator, notch
+- [ ] **Scroll lock**: Body locked, drawer scrolls independently
 
 ---
 
 ## Anti-Patterns (Slop)
 
-- ❌ Custom div + transform — No gestures, no physics, no accessibility
-- ❌ Fixed height — Doesn't adapt to content
-- ❌ No drag handle — User doesn't know it's draggable
-- ❌ No snap points — Awkward intermediate states
-- ❌ No swipe dismiss — Must hunt for close button
-- ❌ No focus trap — Keyboard trap
-- ❌ Z-index wars — Portal to root
-- ❌ Ignores safe area — Content under home indicator
+- ❌ Custom div + transform: No gestures, no physics, no accessibility
+- ❌ Fixed height: Doesn't adapt to content
+- ❌ No drag handle: User doesn't know it's draggable
+- ❌ No snap points: Awkward intermediate states
+- ❌ No swipe dismiss: Must hunt for close button
+- ❌ No focus trap: Keyboard trap
+- ❌ Z-index wars: Portal to root
+- ❌ Ignores safe area: Content under home indicator
 
 ---
 

@@ -9,12 +9,12 @@ This skill is how I like things done. It is my voice, not an upstream's. If a
 synced skill says one thing and this says another, this wins.
 
 > **UI/Design skill family:** This skill is the *law* (philosophy/aesthetics). The process skills that implement it:
-> - [`ui`](../ui/SKILL.md) — whole UI job (pick direction, design system, build screen, redesign, verify)
-> - [`impeccable`](../impeccable/SKILL.md) — commands/detectors for audit, polish, animate, etc.
-> - [`motion`](../motion/SKILL.md) — whole motion job (name, decide, build, review, audit)
-> - [`pick-ui-library`](../pick-ui-library/SKILL.md) — curated library picks for UI primitives
-> - [`imagegen`](../imagegen/SKILL.md) — premium design image generation (references only)
-> - [`prototype`](../prototype/SKILL.md) — build divergent UI variants behind a picker
+> - [`ui`](../ui/SKILL.md): whole UI job (pick direction, design system, build screen, redesign, verify)
+> - [`impeccable`](../impeccable/SKILL.md): commands/detectors for audit, polish, animate, etc.
+> - [`motion`](../motion/SKILL.md): whole motion job (name, decide, build, review, audit)
+> - [`pick-ui-library`](../pick-ui-library/SKILL.md): curated library picks for UI primitives
+> - [`imagegen`](../imagegen/SKILL.md): premium design image generation (references only)
+> - [`prototype`](../prototype/SKILL.md): build divergent UI variants behind a picker
 >
 > Load `house-style` + the relevant process skill(s) for UI/design/frontend work.
 
@@ -172,11 +172,11 @@ src/
 ```
 
 ### Rules
-- **Route file owns the flow** — input validation, auth checks, DB calls, response
-- **Shared code lives in `utils/` or root** — only when genuinely used by ≥2 routes
-- **No premature abstraction** — duplicate until it hurts, then extract
-- **Types from `protocol` package** — never redefine message types locally
-- **Entry point imports routes, routes import shared** — no circular deps
+- **Route file owns the flow**: input validation, auth checks, DB calls, response
+- **Shared code lives in `utils/` or root**: only when genuinely used by ≥2 routes
+- **No premature abstraction**: duplicate until it hurts, then extract
+- **Types from `protocol` package**: never redefine message types locally
+- **Entry point imports routes, routes import shared**: no circular deps
 
 This pattern works for both REST (Bun) and WebSocket handlers.
 

@@ -1,6 +1,6 @@
 ---
 name: ask-motion
-description: Library guide for motion.dev (Framer Motion) — springs, layout animations, gestures, scroll, AnimatePresence. Load via ask-animation pattern skill. Implements house-style motion rules.
+description: Library guide for motion.dev (Framer Motion): springs, layout animations, gestures, scroll, AnimatePresence. Load via ask-animation pattern skill. Implements house-style motion rules.
 ---
 # Ask Motion , motion.dev (Framer Motion)
 
@@ -33,14 +33,14 @@ export const spring = {
   damping: 30,
   mass: 0.8,
 } as const
-// ≈ cubic-bezier(0.16, 1, 0.3, 1) — 200ms in
+// ≈ cubic-bezier(0.16, 1, 0.3, 1): 200ms in
 
 export const springOut = {
   type: 'spring',
   stiffness: 600,
   damping: 35,
 } as const
-// Sharper exit — 150ms out
+// Sharper exit: 150ms out
 
 export const tapSpring = {
   type: 'spring',

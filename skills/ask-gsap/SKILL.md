@@ -1,9 +1,9 @@
 ---
 name: ask-gsap
-description: Library guide for GSAP + ScrollTrigger + Lenis — showcase-tier scroll animations, scrub, pin, timelines, text morphing, smooth scroll. Load when animation dial = 3 via ask-animation pattern skill.
+description: Library guide for GSAP + ScrollTrigger + Lenis: showcase-tier scroll animations, scrub, pin, timelines, text morphing, smooth scroll. Load when animation dial = 3 via ask-animation pattern skill.
 ---
 
-# Ask GSAP — Showcase Tier Scroll Animations
+# Ask GSAP: Showcase Tier Scroll Animations
 
 **When to use:** Animation dial = 3 (showcase/motion-heavy). Complex scroll-linked animations, pinning, scrubbing, timelines, text/SVG morphing.
 
@@ -449,6 +449,6 @@ if (prefersReduced) {
 
 ## Related Skills
 
-- `ask-animation` — Pattern guide for all motion
-- `ask-motion` — motion.dev for non-showcase motion
-- `ui-engineering` — Master orchestrator
+- `ask-animation`: Pattern guide for all motion
+- `ask-motion`: motion.dev for non-showcase motion
+- `ui-engineering`: Master orchestrator

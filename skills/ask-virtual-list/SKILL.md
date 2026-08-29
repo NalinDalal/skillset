@@ -1,15 +1,15 @@
 ---
 name: ask-virtual-list
-description: Pattern guide for virtualized lists — infinite scroll, variable heights, dynamic content, smooth scrolling. Load via ui-engineering. Invokes pick-ui-library → recommends Virtuoso → loads ask-virtuoso for implementation.
+description: Pattern guide for virtualized lists: infinite scroll, variable heights, dynamic content, smooth scrolling. Load via ui-engineering. Invokes pick-ui-library → recommends Virtuoso → loads ask-virtuoso for implementation.
 ---
 
-# Ask Virtual List — Infinite Scroll, Variable Heights, Smooth Performance
+# Ask Virtual List: Infinite Scroll, Variable Heights, Smooth Performance
 
-**When to use:** Long lists — feeds, chat, logs, activity, notifications, search results, any list >100 items.
+**When to use:** Long lists: feeds, chat, logs, activity, notifications, search results, any list >100 items.
 
 ---
 
-## The Pattern (What Good Looks Like — Linear/Twitter/Slack)
+## The Pattern (What Good Looks Like: Linear/Twitter/Slack)
 
 | Feature | Quality Bar |
 |---------|-------------|
@@ -28,27 +28,27 @@ description: Pattern guide for virtualized lists — infinite scroll, variable h
 
 ## Quality Checklist
 
-- [ ] **Virtuoso** — Handles variable heights, grouping, infinite scroll out of box
-- [ ] **Overscan** — Render 5-10 items above/below viewport
-- [ ] **Height caching** — Measure once, cache, invalidate on content change
-- [ ] **Skeleton loading** — Same height as real items, shimmer animation
-- [ ] **Intersection Observer** — For load-more trigger (not scroll listener)
-- [ ] **Scroll restoration** — `history.scrollRestoration = 'manual'` + save/restore
-- [ ] **No layout shift** — Reserve space for async images/avatars
-- [ ] **Memory** — Unmount far items, don't accumulate DOM nodes
+- [ ] **Virtuoso**: Handles variable heights, grouping, infinite scroll out of box
+- [ ] **Overscan**: Render 5-10 items above/below viewport
+- [ ] **Height caching**: Measure once, cache, invalidate on content change
+- [ ] **Skeleton loading**: Same height as real items, shimmer animation
+- [ ] **Intersection Observer**: For load-more trigger (not scroll listener)
+- [ ] **Scroll restoration**: `history.scrollRestoration = 'manual'` + save/restore
+- [ ] **No layout shift**: Reserve space for async images/avatars
+- [ ] **Memory**: Unmount far items, don't accumulate DOM nodes
 
 ---
 
 ## Anti-Patterns (Slop)
 
-- ❌ `react-window` fixed height only — Breaks with variable content
-- ❌ No overscan — Flashing blank space on fast scroll
-- ❌ Scroll listener for load-more — Jank, fires too often
-- ❌ No skeleton — Content pops in, layout shift
-- ❌ No scroll restoration — Back button loses position
-- ❌ All items in DOM — 10k items = frozen tab
-- ❌ No sticky headers — Sections lose context
-- ❌ Images without dimensions — Layout shift on load
+- ❌ `react-window` fixed height only: Breaks with variable content
+- ❌ No overscan: Flashing blank space on fast scroll
+- ❌ Scroll listener for load-more: Jank, fires too often
+- ❌ No skeleton: Content pops in, layout shift
+- ❌ No scroll restoration: Back button loses position
+- ❌ All items in DOM: 10k items = frozen tab
+- ❌ No sticky headers: Sections lose context
+- ❌ Images without dimensions: Layout shift on load
 
 ---
 

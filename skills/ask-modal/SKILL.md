@@ -1,11 +1,11 @@
 ---
 name: ask-modal
-description: Pattern guide for dialogs, sheets, popovers, menus, selects — when you need any overlay UI. Load via ui-engineering. Invokes pick-ui-library → recommends base-ui → loads ask-base-ui for implementation.
+description: Pattern guide for dialogs, sheets, popovers, menus, selects: when you need any overlay UI. Load via ui-engineering. Invokes pick-ui-library → recommends base-ui → loads ask-base-ui for implementation.
 ---
 
-# Ask Modal — Dialogs, Sheets, Popovers, Menus, Selects
+# Ask Modal: Dialogs, Sheets, Popovers, Menus, Selects
 
-**When to use:** Any overlay — confirmation dialog, settings sheet, dropdown menu, select, popover, tooltip, hover card.
+**When to use:** Any overlay: confirmation dialog, settings sheet, dropdown menu, select, popover, tooltip, hover card.
 
 ---
 

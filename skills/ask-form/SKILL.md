@@ -3,9 +3,9 @@ name: ask-form
 description: Pattern guide for forms, validation, server actions, submission states. Load via ui-engineering. Invokes pick-ui-library → recommends react-hook-form + zod → loads ask-rhf for implementation.
 ---
 
-# Ask Form — Forms, Validation, Server Actions
+# Ask Form: Forms, Validation, Server Actions
 
-**When to use:** Any form — settings, onboarding, auth, checkout, data entry, filters, search.
+**When to use:** Any form: settings, onboarding, auth, checkout, data entry, filters, search.
 
 ---
 
@@ -23,30 +23,30 @@ description: Pattern guide for forms, validation, server actions, submission sta
 
 ## Quality Checklist (Linear/Stripe/Raycast)
 
-- [ ] **React Hook Form** — Uncontrolled, performant, minimal re-renders
-- [ ] **Zod schema** — Single source of truth for validation (client + server)
-- [ ] **Inline validation** — On blur (not on change), show error at field
-- [ ] **Submit handling** — Loading state, disabled, prevent double-submit
-- [ ] **Server errors** — Map to fields, show at top + inline
-- [ ] **Optimistic UI** — Update immediately, rollback on error
-- [ ] **Keyboard** — Enter submits (except textarea), Tab navigates
-- [ ] **Accessibility** — Labels, `aria-describedby` for errors, `aria-invalid`
-- [ ] **Auto-focus** — First error on submit, first field on mount
-- [ ] **Dirty tracking** — Warn on leave if unsaved changes
-- [ ] **Reset** — Clear errors on change, reset form after success
+- [ ] **React Hook Form**: Uncontrolled, performant, minimal re-renders
+- [ ] **Zod schema**: Single source of truth for validation (client + server)
+- [ ] **Inline validation**: On blur (not on change), show error at field
+- [ ] **Submit handling**: Loading state, disabled, prevent double-submit
+- [ ] **Server errors**: Map to fields, show at top + inline
+- [ ] **Optimistic UI**: Update immediately, rollback on error
+- [ ] **Keyboard**: Enter submits (except textarea), Tab navigates
+- [ ] **Accessibility**: Labels, `aria-describedby` for errors, `aria-invalid`
+- [ ] **Auto-focus**: First error on submit, first field on mount
+- [ ] **Dirty tracking**: Warn on leave if unsaved changes
+- [ ] **Reset**: Clear errors on change, reset form after success
 
 ---
 
 ## Anti-Patterns (Slop)
 
-- ❌ Controlled inputs with `useState` per field — Slow, boilerplate
-- ❌ No schema — Validation scattered, inconsistent client/server
-- ❌ Validate on change — Annoying, shows errors before user finishes
-- ❌ No loading state — Double submits, no feedback
-- ❌ Server errors only at top — User hunts for field
-- ❌ No optimistic UI — Feels slow, no instant feedback
-- ❌ `onSubmit` in `<form>` without `preventDefault` — Page reload
-- ❌ File upload without preview/progress — Broken UX
+- ❌ Controlled inputs with `useState` per field: Slow, boilerplate
+- ❌ No schema: Validation scattered, inconsistent client/server
+- ❌ Validate on change: Annoying, shows errors before user finishes
+- ❌ No loading state: Double submits, no feedback
+- ❌ Server errors only at top: User hunts for field
+- ❌ No optimistic UI: Feels slow, no instant feedback
+- ❌ `onSubmit` in `<form>` without `preventDefault`: Page reload
+- ❌ File upload without preview/progress: Broken UX
 
 ---
 

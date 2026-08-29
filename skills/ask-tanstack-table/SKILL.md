@@ -1,11 +1,11 @@
 ---
 name: ask-tanstack-table
-description: Library guide for TanStack Table v8 — headless, TypeScript-first, sorting, filtering, pagination, virtualization, column resizing. Load via ask-table pattern skill.
+description: Library guide for TanStack Table v8: headless, TypeScript-first, sorting, filtering, pagination, virtualization, column resizing. Load via ask-table pattern skill.
 ---
 
-# Ask TanStack Table — Data Tables v8
+# Ask TanStack Table: Data Tables v8
 
-**When to use:** Any tabular data — admin panels, dashboards, reports, data grids.
+**When to use:** Any tabular data: admin panels, dashboards, reports, data grids.
 
 **Package:** `@tanstack/react-table`, `@tanstack/react-virtual`
 
@@ -497,6 +497,6 @@ function exportToCSV(table: ReturnType<typeof useReactTable>) {
 
 ## Related Skills
 
-- `ask-table` — Pattern guide for data tables
-- `ask-virtuoso` — Virtualized lists (non-table)
-- `ui-engineering` — Master orchestrator
+- `ask-table`: Pattern guide for data tables
+- `ask-virtuoso`: Virtualized lists (non-table)
+- `ui-engineering`: Master orchestrator

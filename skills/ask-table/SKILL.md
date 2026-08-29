@@ -1,11 +1,11 @@
 ---
 name: ask-table
-description: Pattern guide for data tables — sorting, filtering, pagination, virtualization, column resizing, row selection, inline editing. Load via ui-engineering. Invokes pick-ui-library → recommends TanStack Table → loads ask-tanstack-table for implementation.
+description: Pattern guide for data tables: sorting, filtering, pagination, virtualization, column resizing, row selection, inline editing. Load via ui-engineering. Invokes pick-ui-library → recommends TanStack Table → loads ask-tanstack-table for implementation.
 ---
 
-# Ask Table — Data Tables, Sorting, Filtering, Virtualization
+# Ask Table: Data Tables, Sorting, Filtering, Virtualization
 
-**When to use:** Any tabular data — admin panels, dashboards, lists, reports, data grids.
+**When to use:** Any tabular data: admin panels, dashboards, lists, reports, data grids.
 
 ---
 
@@ -30,29 +30,29 @@ description: Pattern guide for data tables — sorting, filtering, pagination, v
 
 ## Quality Checklist
 
-- [ ] **TanStack Table v8** — Headless, framework-agnostic, TypeScript-first
-- [ ] **Virtualized** — `@tanstack/react-virtual` for 100+ rows
-- [ ] **Server-side** — Sorting/filtering/pagination on server for large data
-- [ ] **Column definitions** — Type-safe, reusable, composable
-- [ ] **State persistence** — URL sync (search params) or localStorage
-- [ ] **Loading states** — Skeleton rows, not spinner
-- [ ] **Empty state** — Helpful illustration + action
-- [ ] **Error state** — Retry button, not just error text
-- [ ] **Responsive** — Horizontal scroll on mobile, priority columns
-- [ ] **Density toggle** — Compact/comfortable spacing
+- [ ] **TanStack Table v8**: Headless, framework-agnostic, TypeScript-first
+- [ ] **Virtualized**: `@tanstack/react-virtual` for 100+ rows
+- [ ] **Server-side**: Sorting/filtering/pagination on server for large data
+- [ ] **Column definitions**: Type-safe, reusable, composable
+- [ ] **State persistence**: URL sync (search params) or localStorage
+- [ ] **Loading states**: Skeleton rows, not spinner
+- [ ] **Empty state**: Helpful illustration + action
+- [ ] **Error state**: Retry button, not just error text
+- [ ] **Responsive**: Horizontal scroll on mobile, priority columns
+- [ ] **Density toggle**: Compact/comfortable spacing
 
 ---
 
 ## Anti-Patterns (Slop)
 
-- ❌ HTML `<table>` with manual sort/filter — Reinventing wheel
-- ❌ No virtualization >100 rows — Jank, memory
-- ❌ All data client-side for 10k+ rows — Freezes main thread
-- ❌ No keyboard nav — Power user hostile
-- ❌ Fixed column widths — Content clips or wastes space
-- ❌ No loading skeleton — Flashing content
-- ❌ Select all only selects current page — Confusing
-- ❌ No copy/paste — Data trapped
+- ❌ HTML `<table>` with manual sort/filter: Reinventing wheel
+- ❌ No virtualization >100 rows: Jank, memory
+- ❌ All data client-side for 10k+ rows: Freezes main thread
+- ❌ No keyboard nav: Power user hostile
+- ❌ Fixed column widths: Content clips or wastes space
+- ❌ No loading skeleton: Flashing content
+- ❌ Select all only selects current page: Confusing
+- ❌ No copy/paste: Data trapped
 
 ---
 

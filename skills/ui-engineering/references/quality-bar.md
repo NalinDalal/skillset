@@ -4,7 +4,7 @@
 
 ---
 
-## SaaS Gold Standard (Best "Feel" — Snappy, Physics-Based)
+## SaaS Gold Standard (Best "Feel": Snappy, Physics-Based)
 
 | Site | What to Steal | Why It Works |
 |------|---------------|--------------|
@@ -70,7 +70,7 @@
 | Site | Best For |
 |------|----------|
 | **Awwwards** | Cutting-edge motion, WebGL |
-| **Mobbin** | Real UI patterns (not just heroes) — mobile + desktop |
+| **Mobbin** | Real UI patterns (not just heroes): mobile + desktop |
 | **Godly** | Curated landing pages |
 | **SiteInspire** | Design inspiration |
 | **Dribbble** | Micro-interaction concepts (search "micro-interaction") |
@@ -212,17 +212,17 @@ gsap.from('.reveal', {
 
 Every component must pass:
 
-- [ ] **One clear action** — Primary CTA obvious
-- [ ] **Color in small doses** — 1 accent, used only for actions
-- [ ] **Whitespace separates** — No borders/shadows for separation
-- [ ] **Real type hierarchy** — Display / Body / Hint (not 5 bold sizes)
-- [ ] **Feedback matches action** — Press = visual, Done = quiet, Destructive = confirm
-- [ ] **Dark mode works** — `theme="system"` wired
-- [ ] **Reduced motion works** — Instant state changes
-- [ ] **No em dashes** — In visible text
-- [ ] **Accessibility** — Keyboard, ARIA, focus visible, contrast AA
-- [ ] **TypeScript strict** — No `any`, discriminated unions
-- [ ] **Tailwind component-based** — Tokens first, raw CSS only with reason
+- [ ] **One clear action**: Primary CTA obvious
+- [ ] **Color in small doses**: 1 accent, used only for actions
+- [ ] **Whitespace separates**: No borders/shadows for separation
+- [ ] **Real type hierarchy**: Display / Body / Hint (not 5 bold sizes)
+- [ ] **Feedback matches action**: Press = visual, Done = quiet, Destructive = confirm
+- [ ] **Dark mode works**: `theme="system"` wired
+- [ ] **Reduced motion works**: Instant state changes
+- [ ] **No em dashes**: In visible text
+- [ ] **Accessibility**: Keyboard, ARIA, focus visible, contrast AA
+- [ ] **TypeScript strict**: No `any`, discriminated unions
+- [ ] **Tailwind component-based**: Tokens first, raw CSS only with reason
 
 ---
 

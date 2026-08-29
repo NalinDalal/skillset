@@ -1,9 +1,9 @@
 ---
 name: performance
-description: Performance optimization — bundle analysis, code splitting, lazy loading, caching strategies, database profiling, Core Web Vitals, memory leaks, profiling tools, CDN, edge caching. Load when optimizing or auditing performance.
+description: Performance optimization: bundle analysis, code splitting, lazy loading, caching strategies, database profiling, Core Web Vitals, memory leaks, profiling tools, CDN, edge caching. Load when optimizing or auditing performance.
 ---
 
-# Performance — Bundle, Runtime, Database, Network
+# Performance: Bundle, Runtime, Database, Network
 
 **When to use:** Optimizing slow pages, reducing bundle size, fixing memory leaks, improving Core Web Vitals, scaling infrastructure.
 
@@ -526,8 +526,8 @@ bun x autocannon -c 100 -d 30 http://localhost:3000/api/projects
 ---
 
 ## Related Skills
-- `database` — Query optimization, indexing
-- `testing` — Performance regression tests
-- `realtime` — WebSocket scaling
-- `deployments` — CDN, edge caching config
-- `git-ci` — Performance budgets in CI
+- `database`: Query optimization, indexing
+- `testing`: Performance regression tests
+- `realtime`: WebSocket scaling
+- `deployments`: CDN, edge caching config
+- `git-ci`: Performance budgets in CI

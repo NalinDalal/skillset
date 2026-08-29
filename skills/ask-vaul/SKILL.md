@@ -1,9 +1,9 @@
 ---
 name: ask-vaul
-description: Library guide for Vaul — accessible drawer/sheet component with gestures, snap points, spring physics. Load via ask-drawer pattern skill.
+description: Library guide for Vaul: accessible drawer/sheet component with gestures, snap points, spring physics. Load via ask-drawer pattern skill.
 ---
 
-# Ask Vaul — Mobile Drawers & Sheets
+# Ask Vaul: Mobile Drawers & Sheets
 
 **When to use:** Bottom sheets, side drawers, mobile navigation, filter panels, any gesture-driven overlay.
 
@@ -246,10 +246,10 @@ function CreateProjectDrawer({ onSuccess }) {
 |------|------|---------|-------------|
 | `direction` | `'bottom' \| 'top' \| 'left' \| 'right'` | `'bottom'` | Drawer direction |
 | `snapPoints` | `number[]` | `[1]` | Array of 0-1 percentages |
-| `open` | `boolean` | — | Controlled open |
-| `onOpenChange` | `(open: boolean) => void` | — | Open change handler |
+| `open` | `boolean` | - | Controlled open |
+| `onOpenChange` | `(open: boolean) => void` | - | Open change handler |
 | `dismissible` | `boolean` | `true` | Allow swipe/backdrop dismiss |
-| `snapTo` | `number` | — | Programmatic snap |
+| `snapTo` | `number` | - | Programmatic snap |
 | `overscroll` | `boolean` | `false` | Allow overscroll past snap |
 
 ---
@@ -290,15 +290,15 @@ import { motion, AnimatePresence } from 'motion/react'
 | Drawer not opening | Check `DrawerTrigger` wraps a button, not a div |
 | Snap points not working | Ensure values are 0-1, array not empty |
 | Scroll not working | Content must be in `DrawerContent`, not `Drawer` |
-| Z-index issues | Vaul portals to body — check global stacking |
-| Mobile keyboard covers input | Vaul handles this — ensure `snapPoints` includes full height |
+| Z-index issues | Vaul portals to body: check global stacking |
+| Mobile keyboard covers input | Vaul handles this: ensure `snapPoints` includes full height |
 | Gesture conflicts | Set `overscroll={true}` if nested scrollable content |
 
 ---
 
 ## Related Skills
 
-- `ask-drawer` — Pattern guide for drawers/sheets
-- `ask-base-ui` — Alternative: base-ui Sheet primitive
-- `ask-form` — Forms in drawers
-- `ui-engineering` — Master orchestrator
+- `ask-drawer`: Pattern guide for drawers/sheets
+- `ask-base-ui`: Alternative: base-ui Sheet primitive
+- `ask-form`: Forms in drawers
+- `ui-engineering`: Master orchestrator

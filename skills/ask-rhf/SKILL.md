@@ -1,11 +1,11 @@
 ---
 name: ask-rhf
-description: Library guide for React Hook Form + Zod — performant forms, validation, server actions, field arrays, TypeScript. Load via ask-form pattern skill.
+description: Library guide for React Hook Form + Zod: performant forms, validation, server actions, field arrays, TypeScript. Load via ask-form pattern skill.
 ---
 
-# Ask RHF — React Hook Form + Zod
+# Ask RHF: React Hook Form + Zod
 
-**When to use:** All forms — simple to complex, server actions, multi-step, file uploads.
+**When to use:** All forms: simple to complex, server actions, multi-step, file uploads.
 
 **Packages:** `react-hook-form`, `@hookform/resolvers/zod`, `zod`
 
@@ -393,7 +393,7 @@ export function Form<T extends FieldValues>({
 
 ## Related Skills
 
-- `ask-form` — Pattern guide for forms
-- `ask-toast` — Toast feedback on submit
-- `ask-modal` — Form in dialog
-- `ui-engineering` — Master orchestrator
+- `ask-form`: Pattern guide for forms
+- `ask-toast`: Toast feedback on submit
+- `ask-modal`: Form in dialog
+- `ui-engineering`: Master orchestrator

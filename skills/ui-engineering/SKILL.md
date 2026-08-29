@@ -1,9 +1,9 @@
 ---
 name: ui-engineering
-description: The complete UI engineering orchestrator. Load when user says "build the FE", "build the UI", "build the frontend", "make the UI", "design the frontend", or any request to build/design a frontend. This skill asks the right questions, loads the right sub-skills, and produces masterpiece-quality UI — not slop. It references Linear, Raycast, Stripe, Vercel, Arc, Attio quality bar.
+description: The complete UI engineering orchestrator. Load when user says "build the FE", "build the UI", "build the frontend", "make the UI", "design the frontend", or any request to build/design a frontend. This skill asks the right questions, loads the right sub-skills, and produces masterpiece-quality UI, not slop. It references Linear, Raycast, Stripe, Vercel, Arc, Attio quality bar.
 ---
 
-# UI Engineering — Master Orchestrator
+# UI Engineering: Master Orchestrator
 
 **One job:** When user wants frontend/UI, this skill runs the complete process. It asks, plans, loads sub-skills, and ships masterpiece quality.
 
@@ -32,7 +32,7 @@ Reference these. If the output doesn't feel like these, it's not done.
 
 ---
 
-## Phase 0: Clarify (Mandatory — Never Skip)
+## Phase 0: Clarify (Mandatory: Never Skip)
 
 Before ANY code, ask these. One round. Get answers.
 
@@ -49,7 +49,7 @@ Before ANY code, ask these. One round. Get answers.
 
 **5. Must-have interactions?** (Command palette, drag-drop, canvas, real-time sync, keyboard shortcuts, etc.)
 
-**6. Existing stack?** (Framework, styling, motion lib already installed — check package.json)
+**6. Existing stack?** (Framework, styling, motion lib already installed: check package.json)
 
 **7. Dark mode?** (Yes/No/System)
 
@@ -112,16 +112,16 @@ For EACH interaction needed, invoke `pick-ui-library` to get the right library, 
 ## Phase 4: Build & Verify (Load `impeccable`)
 
 `impeccable` commands for each screen/component:
-- `audit` — full UX/UI review against craft bar
-- `polish` — micro-interactions, hover states, focus states, error states
-- `animate` — add purposeful motion
-- `verify` — finish gate (mandatory before ship)
+- `audit`: full UX/UI review against craft bar
+- `polish`: micro-interactions, hover states, focus states, error states
+- `animate`: add purposeful motion
+- `verify`: finish gate (mandatory before ship)
 
 **Finish gate checklist (from `impeccable/references/verify.md`):**
 - [ ] One clear action per screen
 - [ ] Color in small doses (1 accent)
 - [ ] Whitespace separates, not borders/shadows
-- [ ] Real type hierarchy (display, body, hint — not 5 bold sizes)
+- [ ] Real type hierarchy (display, body, hint: not 5 bold sizes)
 - [ ] Feedback matches action (press = visual state, done = quiet status, destructive = confirmation)
 - [ ] Dark mode works
 - [ ] Reduced motion works
@@ -130,7 +130,7 @@ For EACH interaction needed, invoke `pick-ui-library` to get the right library, 
 
 ---
 
-## Phase 5: Divergence (Optional — Load `prototype`)
+## Phase 5: Divergence (Optional: Load `prototype`)
 
 When direction is ambiguous or user wants options:
 - Load `prototype` skill
@@ -144,29 +144,29 @@ When direction is ambiguous or user wants options:
 ```
 User: "Build the FE/UI"
     │
-    ├─► ui-engineering (THIS SKILL — orchestrates all)
-    │     │
-    │     ├─► house-style (LAW — always loaded)
-    │     │
-    │     ├─► ui (process: direction → system → build → verify)
-    │     │
-    │     ├─► pick-ui-library (for each interaction needed)
-    │     │     ├─► ask-modal → ask-base-ui
-    │     │     ├─► ask-toast → ask-sonner
-    │     │     ├─► ask-animation → ask-motion
-    │     │     ├─► ask-command-menu → ask-cmdk
-    │     │     ├─► ask-form → ask-rhf
-    │     │     ├─► ask-table → ask-tanstack-table
-    │     │     ├─► ask-virtual-list → ask-virtuoso
-    │     │     └─► ask-drawer → ask-vaul
-    │     │
-    │     ├─► motion (name → decide → build → review)
-    │     │
-    │     ├─► impeccable (audit → polish → animate → verify)
-    │     │
-    │     └─► prototype (optional — divergence exploration)
-    │
-    └─► References: references/quality-bar.md (sites, libraries, galleries)
+    ├─► ui-engineering (THIS SKILL: orchestrates all)
+     │
+     ├─► house-style (LAW: always loaded)
+     │
+     ├─► ui (process: direction → system → build → verify)
+     │
+     ├─► pick-ui-library (for each interaction needed)
+     │     ├─► ask-modal → ask-base-ui
+     │     ├─► ask-toast → ask-sonner
+     │     ├─► ask-animation → ask-motion
+     │     ├─► ask-command-menu → ask-cmdk
+     │     ├─► ask-form → ask-rhf
+     │     ├─► ask-table → ask-tanstack-table
+     │     ├─► ask-virtual-list → ask-virtuoso
+     │     └─► ask-drawer → ask-vaul
+     │
+     ├─► motion (name → decide → build → review)
+     │
+     ├─► impeccable (audit → polish → animate → verify)
+     │
+     └─► prototype (optional: divergence exploration)
+     │
+     └─► References: references/quality-bar.md (sites, libraries, galleries)
 ```
 
 ---
@@ -183,7 +183,7 @@ User: "Build the FE/UI"
 
 ---
 
-## When User Says Vague Things — Translate
+## When User Says Vague Things: Translate
 
 | User Says | You Do |
 |-----------|--------|
@@ -200,19 +200,19 @@ User: "Build the FE/UI"
 ## Output Standard
 
 Every deliverable:
-1. **Real component** — not a demo, production-ready
-2. **TypeScript** — strict, no `any`, discriminated unions for variants
-3. **Tailwind** — component-based, tokens first, raw CSS only when needed
-4. **Motion** — spring curves, reduced-motion, exits, state lands first
-5. **Accessibility** — keyboard, ARIA, focus, contrast
-6. **Dark mode** — `theme="system"` wired
-7. **Tests** — if test setup exists, add tests
+1. **Real component**: not a demo, production-ready
+2. **TypeScript**: strict, no `any`, discriminated unions for variants
+3. **Tailwind**: component-based, tokens first, raw CSS only when needed
+4. **Motion**: spring curves, reduced-motion, exits, state lands first
+5. **Accessibility**: keyboard, ARIA, focus, contrast
+6. **Dark mode**: `theme="system"` wired
+7. **Tests**: if test setup exists, add tests
 
 ---
 
 ## References
 
-- `references/quality-bar.md` — Full site/library/gallery list with what to steal
-- `references/tokens.md` — Token templates for each vibe
-- `references/motion-recipes.md` — Common motion patterns with code
-- `references/component-checklist.md` — Per-component finish gate
+- `references/quality-bar.md`: Full site/library/gallery list with what to steal
+- `references/tokens.md`: Token templates for each vibe
+- `references/motion-recipes.md`: Common motion patterns with code
+- `references/component-checklist.md`: Per-component finish gate

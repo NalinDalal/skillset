@@ -3,9 +3,9 @@ name: ask-toast
 description: Pattern guide for toasts, notifications, loading states, action toasts. Load via ui-engineering. Invokes pick-ui-library → recommends Sonner → loads ask-sonner for implementation.
 ---
 
-# Ask Toast — Toasts, Notifications, Loading States
+# Ask Toast: Toasts, Notifications, Loading States
 
-**When to use:** Any transient feedback — success, error, info, warning, loading, promise-based, action buttons, custom content.
+**When to use:** Any transient feedback: success, error, info, warning, loading, promise-based, action buttons, custom content.
 
 ---
 
@@ -18,23 +18,23 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 | **Loading** | Manual state management | Spinner, update by `id` to success/error |
 | **Promise** | Async operations | `toast.promise(promise, { loading, success, error })` |
 | **Action** | Undo, retry, view, dismiss | Button in toast, closes unless `preventDefault()` |
-| **Custom JSX** | Rich content | `toast(<CustomComponent />)` — keeps shell |
-| **Headless** | Design system toast | `toast.custom((t) => <CustomToast {...t} />)` — no styles |
+| **Custom JSX** | Rich content | `toast(<CustomComponent />)`: keeps shell |
+| **Headless** | Design system toast | `toast.custom((t) => <CustomToast {...t} />)`: no styles |
 
 ---
 
 ## Quality Checklist (From Linear/Raycast/Sonner defaults)
 
-- [ ] **One `<Toaster />` at root** — never per-page, never conditional
-- [ ] **`richColors` enabled** — success=green, error=red, not gray
-- [ ] **Theme wired** — `theme="system"` or from `next-themes`
-- [ ] **Action toasts** — Undo on delete, Retry on error, View on created
-- [ ] **Promise toasts** — For all async: loading → success/error auto
-- [ ] **Persistent for critical** — `{ duration: Infinity }` for "Saved" confirmations
-- [ ] **Stacking** — Multiple toasts stack, gap between, max 3-4 visible
-- [ ] **Swipe to dismiss** — Mobile: swipe right/left based on position
-- [ ] **Reduced motion** — Instant appear/disappear
-- [ ] **No duplicate toasts** — Stable `id` for loading→success flows
+- [ ] **One `<Toaster />` at root**: never per-page, never conditional
+- [ ] **`richColors` enabled**: success=green, error=red, not gray
+- [ ] **Theme wired**: `theme="system"` or from `next-themes`
+- [ ] **Action toasts**: Undo on delete, Retry on error, View on created
+- [ ] **Promise toasts**: For all async: loading → success/error auto
+- [ ] **Persistent for critical**: `{ duration: Infinity }` for "Saved" confirmations
+- [ ] **Stacking**: Multiple toasts stack, gap between, max 3-4 visible
+- [ ] **Swipe to dismiss**: Mobile: swipe right/left based on position
+- [ ] **Reduced motion**: Instant appear/disappear
+- [ ] **No duplicate toasts**: Stable `id` for loading→success flows
 
 ---
 
@@ -53,10 +53,10 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 
 ## Styling Escalation Ladder (From ask-sonner)
 
-1. **Defaults** — `richColors`, `invert` for theme flip
-2. **Inline tweaks** — `toastOptions={{ style }}` on Toaster or per-call
-3. **ClassNames on parts** — `classNames: { toast, title, description, actionButton, cancelButton, closeButton }` — needs `!important`
-4. **Headless** — `toast.custom((t) => <YourToast {...t} />)` — full control, keeps positioning/stacking/swipe
+1. **Defaults**: `richColors`, `invert` for theme flip
+2. **Inline tweaks**: `toastOptions={{ style }}` on Toaster or per-call
+3. **ClassNames on parts**: `classNames: { toast, title, description, actionButton, cancelButton, closeButton }`: needs `!important`
+4. **Headless**: `toast.custom((t) => <YourToast {...t} />)`: full control, keeps positioning/stacking/swipe
 
 **Recommendation:** For design system, wrap Sonner in your own `toast()` abstraction using headless.
 

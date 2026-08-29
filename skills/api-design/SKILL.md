@@ -1,9 +1,9 @@
 ---
 name: api-design
-description: API design patterns — REST conventions, tRPC, GraphQL, versioning, error formats, pagination, filtering, OpenAPI, rate limiting, webhooks, API versioning. Load when designing or reviewing APIs.
+description: API design patterns: REST conventions, tRPC, GraphQL, versioning, error formats, pagination, filtering, OpenAPI, rate limiting, webhooks, API versioning. Load when designing or reviewing APIs.
 ---
 
-# API Design — REST, tRPC, GraphQL Patterns
+# API Design: REST, tRPC, GraphQL Patterns
 
 **When to use:** Designing new APIs, reviewing existing APIs, choosing between REST/tRPC/GraphQL, standardizing conventions.
 
@@ -460,8 +460,8 @@ const limits = {
 ---
 
 ## Related Skills
-- `auth` — Authentication middleware
-- `security` — Rate limiting, headers, validation
-- `database` — Query optimization for API
-- `testing` — API contract testing
-- `git-ci` — OpenAPI generation in CI
+- `auth`: Authentication middleware
+- `security`: Rate limiting, headers, validation
+- `database`: Query optimization for API
+- `testing`: API contract testing
+- `git-ci`: OpenAPI generation in CI

@@ -1,15 +1,15 @@
 ---
 name: ask-command-menu
-description: Pattern guide for command palettes (⌘K) — fuzzy search, keyboard nav, nested commands, groups, async loading. Load via ui-engineering. Invokes pick-ui-library → recommends cmdk → loads ask-cmdk for implementation.
+description: Pattern guide for command palettes (⌘K): fuzzy search, keyboard nav, nested commands, groups, async loading. Load via ui-engineering. Invokes pick-ui-library → recommends cmdk → loads ask-cmdk for implementation.
 ---
 
-# Ask Command Menu — Command Palette (⌘K)
+# Ask Command Menu: Command Palette (⌘K)
 
 **When to use:** Global command palette, contextual menus, search interfaces, quick actions, help menus.
 
 ---
 
-## The Pattern (What Good Looks Like — Linear/Raycast/Vercel)
+## The Pattern (What Good Looks Like: Linear/Raycast/Vercel)
 
 | Feature | Quality Bar |
 |---------|-------------|
@@ -28,15 +28,15 @@ description: Pattern guide for command palettes (⌘K) — fuzzy search, keyboar
 
 ## Quality Checklist
 
-- [ ] **cmdk** — Headless, accessible, keyboard-first
-- [ ] **Global listener** — Single ⌘K handler at app root
-- [ ] **Fuzzy matching** — `fuse.js` or cmdk built-in, highlight matches
-- [ ] **Command registry** — Centralized, typed, extensible
-- [ ] **Loading states** — Skeleton for async groups
-- [ ] **Empty state** — "No commands found" + help hint
-- [ ] **Close on execute** — Unless command returns `keepOpen: true`
-- [ ] **Focus restore** — Return focus to trigger on close
-- [ ] **Mobile** — Responsive, touch-friendly (or disable on mobile)
+- [ ] **cmdk**: Headless, accessible, keyboard-first
+- [ ] **Global listener**: Single ⌘K handler at app root
+- [ ] **Fuzzy matching**: `fuse.js` or cmdk built-in, highlight matches
+- [ ] **Command registry**: Centralized, typed, extensible
+- [ ] **Loading states**: Skeleton for async groups
+- [ ] **Empty state**: "No commands found" + help hint
+- [ ] **Close on execute**: Unless command returns `keepOpen: true`
+- [ ] **Focus restore**: Return focus to trigger on close
+- [ ] **Mobile**: Responsive, touch-friendly (or disable on mobile)
 
 ---
 
@@ -49,7 +49,7 @@ description: Pattern guide for command palettes (⌘K) — fuzzy search, keyboar
 - ❌ No async support → Blocks UI on search
 - ❌ Doesn't close on execute → Lingers awkwardly
 - ❌ No focus restore → Keyboard trap
-- ❌ No recent/history — Misses power user workflow
+- ❌ No recent/history: Misses power user workflow
 
 ---
 
@@ -93,7 +93,7 @@ export interface CommandGroup {
   loader?: () => Promise<Command[]>
 }
 
-// Registry — single source of truth
+// Registry: single source of truth
 export const commandRegistry: CommandGroup[] = [
   {
     id: 'navigation',
