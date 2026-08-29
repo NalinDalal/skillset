@@ -5,6 +5,8 @@ description: Generates premium design images with image models: web section refe
 
 # Imagegen
 
+> **Skill family:** `house-style` = law. [`ui`](../ui/SKILL.md) = full UI process. [`impeccable`](../impeccable/SKILL.md) = commands. [`motion`](../motion/SKILL.md) = motion job. [`pick-ui-library`](../pick-ui-library/SKILL.md) = library picks. [`prototype`](../prototype/SKILL.md) = divergence exploration. This skill = premium design *image references* (web, mobile, brand, image-to-code). Load `house-style` + this skill for design references; the generated images feed into `ui`/`prototype`/`image-to-code` for implementation.
+
 One job, four modes. Pick the mode from the ask: web references, mobile
 screens, brand kit, image to code. Details in references/. house-style
 is the law for taste; this file is the craft of image generation.

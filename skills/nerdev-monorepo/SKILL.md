@@ -7,6 +7,10 @@ description: Turborepo + Bun monorepo structure, conventions, CI/CD, and deploym
 
 **Purpose**: Enforce the nerdev-co development methodology across all projects -- consistent monorepo structure, file-based architecture, camelCase naming, documented code, and production-ready patterns.
 
+> **Visual, motion, and docs standards:** This skill defines structure and operations. For UI feel (Apple/Google quality), micro-animation restraint, and documentation tone, see [`house-style`](../house-style/SKILL.md). Load both for nerdev-co projects.
+
+> **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-docs`](../nerdev-docs/SKILL.md) for development-integrated documentation (ADRs, design docs, runbooks) and [`nerdev-abstraction`](../nerdev-abstraction/SKILL.md) for interface-first, registry-based plug-and-play patterns. All three work together for nerdev-co projects.
+
 ---
 
 ## Core Principles

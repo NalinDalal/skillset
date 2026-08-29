@@ -8,6 +8,16 @@ description: "How I want this codebase built: route-based file layout, UI that l
 This skill is how I like things done. It is my voice, not an upstream's. If a
 synced skill says one thing and this says another, this wins.
 
+> **UI/Design skill family:** This skill is the *law* (philosophy/aesthetics). The process skills that implement it:
+> - [`ui`](../ui/SKILL.md) — whole UI job (pick direction, design system, build screen, redesign, verify)
+> - [`impeccable`](../impeccable/SKILL.md) — commands/detectors for audit, polish, animate, etc.
+> - [`motion`](../motion/SKILL.md) — whole motion job (name, decide, build, review, audit)
+> - [`pick-ui-library`](../pick-ui-library/SKILL.md) — curated library picks for UI primitives
+> - [`imagegen`](../imagegen/SKILL.md) — premium design image generation (references only)
+> - [`prototype`](../prototype/SKILL.md) — build divergent UI variants behind a picker
+>
+> Load `house-style` + the relevant process skill(s) for UI/design/frontend work.
+
 Three rules cover most of it:
 
 1. Files follow the route, not the framework.
@@ -128,6 +138,49 @@ these first, then tune:
 
 The pattern every one of them shares: fast, physical, quiet,
 purposeful.
+
+## Modular Route-Based File Layout (Backend Services)
+
+### Principle
+One route → one file. Shared code only when ≥2 routes use it. Keep it in the route file until proven shared.
+
+### Structure for Bun HTTP APIs (`apps/be/`)
+```
+src/
+├── index.ts           # Server entry, route dispatch
+├── config.ts          # Env, secrets, constants
+├── schemas.ts         # Zod input validation per route
+├── auth.ts            # Shared auth: hash, JWT, getCurrentUser
+├── utils.ts           # Response helpers, CORS
+└── routes/
+    ├── auth.ts        # POST /auth/signup, /auth/signin, GET /auth/me
+    ├── rooms.ts       # POST /rooms, GET /rooms, GET /rooms/:id
+    └── health.ts      # GET /health
+```
+
+### Structure for WebSocket Gateway (`apps/ws-gateway/`)
+```
+src/
+├── index.ts           # Server entry, WS connection handler
+├── utils.ts           # Shared state (clients, rooms), broadcast, helpers
+└── handlers/
+    ├── auth.ts        # AUTH → AUTH_OK
+    ├── rooms.ts       # CREATE_ROOM, JOIN_ROOM
+    ├── players.ts     # PLAYER_READY, START_GAME, LEAVE_ROOM
+    ├── game.ts        # GAME_ACTION, PING
+    └── dispatcher.ts  # Message routing, connection lifecycle
+```
+
+### Rules
+- **Route file owns the flow** — input validation, auth checks, DB calls, response
+- **Shared code lives in `utils/` or root** — only when genuinely used by ≥2 routes
+- **No premature abstraction** — duplicate until it hurts, then extract
+- **Types from `protocol` package** — never redefine message types locally
+- **Entry point imports routes, routes import shared** — no circular deps
+
+This pattern works for both REST (Bun) and WebSocket handlers.
+
+> **For Turborepo + Bun projects:** Full monorepo structure, package patterns, CI/CD, and deployment conventions are in [`nerdev-monorepo`](../nerdev-monorepo/SKILL.md). This skill covers the aesthetic/philosophy layer; that one covers the structural/operational layer.
 
 ## 3. Docs are mine, yours is the audit
 

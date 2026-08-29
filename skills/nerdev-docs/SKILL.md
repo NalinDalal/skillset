@@ -7,6 +7,10 @@ description: "Development-integrated docs: ADRs, design docs, incident postmorte
 
 **Purpose**: Development-integrated documentation -- docs that live with code, generate from code, evolve with code, and serve both humans and AI agents.
 
+> **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-monorepo`](../nerdev-monorepo/SKILL.md) for Turborepo + Bun monorepo structure, CI/CD, and deployment patterns, and [`nerdev-abstraction`](../nerdev-abstraction/SKILL.md) for interface-first, registry-based plug-and-play patterns. All three work together for nerdev-co projects.
+>
+> **AI agent docs:** `AGENTS.md` generation uses the [`agent-docs-writer`](../agent-docs-writer/SKILL.md) skill (referenced in Required Document Types).
+
 ---
 
 ## Documentation Philosophy

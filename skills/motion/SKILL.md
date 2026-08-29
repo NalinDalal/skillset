@@ -22,6 +22,8 @@ rebuild.
 - This skill wins over any synced skill that talks about animation.
   house-style wins over both.
 
+> **Related skills:** [`pick-ui-library`](../pick-ui-library/SKILL.md) for motion library recommendations (motion.dev, GSAP). [`ui`](../ui/SKILL.md) for the full UI process where motion is one phase. Load `house-style` + this skill for motion work; add `ui` when motion is part of a broader UI task.
+
 ## Name it (when you cannot say what you want)
 
 Reverse lookup: you describe the feeling, this names the effect.

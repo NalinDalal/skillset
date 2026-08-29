@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # Picking The Right Library
 
+> **Skill family:** This skill picks *libraries*. For *motion implementation* (springs, gestures, scroll animations), see [`motion`](../motion/SKILL.md). For the *full UI process* (direction → system → build → verify), see [`ui`](../ui/SKILL.md). Both reference `house-style` as the law. Load this skill when you need a library recommendation; load `motion` or `ui` when you need to build with it.
+
 A lookup skill. When invoked with a task ("I need toasts", "what should I use for drag and drop?"), match the task to the curated list below and recommend the library. These are deliberate, taste-driven picks — don't substitute alternatives outside this list unless the user asks for one or the task genuinely isn't covered.
 
 ## How to use this

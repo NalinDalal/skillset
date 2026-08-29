@@ -25,6 +25,8 @@ Never skip straight to writing files without showing a draft first. This is a ha
 
 ---
 
+> **nerdev-docs integration:** This skill generates `AGENTS.md` for projects using the nerdev-co methodology. See [`nerdev-docs`](../nerdev-docs/SKILL.md) for the full documentation framework (ADRs, design docs, runbooks) that mandates AGENTS.md as a required document type.
+
 ## Plan vs. Shipped-Reality rule (applies to every doc this skill writes or audits)
 
 Docs often come before the code they describe ("docs-as-spec"). That makes them a great thinking tool but a dangerous memory. Months later, re-reading a stale doc gives the author a **false memory of their own project**. In interviews or handoffs, describing architecture that does not exist reads as dishonest or confused.

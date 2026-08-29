@@ -31,6 +31,30 @@ A curated collection of **20 agent skills** (design, motion, dev workflow, your 
 | `nerdev-monorepo` | Turborepo + Bun monorepo structure, conventions, CI/CD, deployment patterns |
 | `nerdev-abstraction` | Interface-first, registry, factory, plugin protocol for plug-and-play architecture |
 | `nerdev-docs` | Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks |
+| `house-style` | How the codebase wants to be built: route-based files, Apple/Google-clean UI (no AI purple slop), docs the human writes and the agent audits |
+| `ui-engineering` | **Master UI orchestrator** — load when user says "build the FE", "build the UI", "build the frontend". Asks brief, loads all sub-skills, enforces Linear/Raycast/Stripe quality bar |
+| `ui` | Whole UI job: pick direction, design system, build screen, redesign/audit, verify |
+| `impeccable` | 23 design commands, 59 detector rules, live browser iteration |
+| `motion` | Whole motion job: name effect, decide, build, review, audit |
+| `pick-ui-library` | Curated library picks for UI primitives (base-ui, Sonner, motion, cmdk, RHF, TanStack Table, Virtuoso, Vaul) |
+| `prototype` | Build divergent UI variants behind a visual picker |
+| `imagegen` | Premium design image generation: web refs, mobile screens, brand kits, image-to-code |
+| `ask-modal` | Pattern guide: dialogs, sheets, popovers, menus, selects |
+| `ask-toast` | Pattern guide: toasts, notifications, loading states |
+| `ask-animation` | Pattern guide: transitions, springs, scroll, gestures |
+| `ask-form` | Pattern guide: forms, validation, server actions |
+| `ask-table` | Pattern guide: data tables, sorting, filtering, virtualization |
+| `ask-command-menu` | Pattern guide: command palette (⌘K), fuzzy search |
+| `ask-virtual-list` | Pattern guide: infinite scroll, variable heights |
+| `ask-drawer` | Pattern guide: mobile bottom sheets, side drawers |
+| `ask-base-ui` | Library guide: unstyled accessible primitives (Dialog, Sheet, Popover, Menu, Select, etc.) |
+| `ask-motion` | Library guide: motion.dev springs, layout, gestures, scroll |
+| `ask-cmdk` | Library guide: command palette, fuzzy search, keyboard nav |
+| `ask-rhf` | Library guide: React Hook Form + Zod |
+| `ask-tanstack-table` | Library guide: TanStack Table v8 headless tables |
+| `ask-virtuoso` | Library guide: Virtuoso virtualized lists |
+| `ask-vaul` | Library guide: Vaul drawers/sheets with gestures |
+| `ask-gsap` | Library guide: GSAP + ScrollTrigger + Lenis for showcase tier |
 
 ## Install
 
@@ -92,6 +116,15 @@ Restart/reload your agent after installing.
 | "scaffold a new Turborepo + Bun monorepo" | `nerdev-monorepo` |
 | "add a plug-and-play tool system with registry" | `nerdev-abstraction` |
 | "create ADR, design doc, incident template" | `nerdev-docs` |
+| **"build the FE", "build the UI", "build the frontend", "design the frontend", "make the UI"** | `ui-engineering` |
+| **"add a modal/dialog/sheet/popover/menu/select"** | `ask-modal` → `ask-base-ui` |
+| **"add a toast/notification/loading state"** | `ask-toast` → `ask-sonner` |
+| **"add animations/transitions/motion"** | `ask-animation` → `ask-motion` (or `ask-gsap` if showcase) |
+| **"build a form with validation"** | `ask-form` → `ask-rhf` |
+| **"build a data table/sorting/filtering"** | `ask-table` → `ask-tanstack-table` |
+| **"add a command palette/⌘K"** | `ask-command-menu` → `ask-cmdk` |
+| **"build a virtual list/infinite scroll/feed/chat"** | `ask-virtual-list` → `ask-virtuoso` |
+| **"add a mobile drawer/bottom sheet"** | `ask-drawer` → `ask-vaul` |
 
 3. **Or call it by name.** If the agent did not auto-load it, say so in
    your request: "use the motion skill to review these animations". The

@@ -7,6 +7,8 @@ description: Interface-first, registry, factory, plugin protocol for plug-and-pl
 
 **Purpose**: Enforce plug-and-play abstraction patterns across any codebase -- interface-driven design, registry-based composition, workspace packages, and zero-duplication shared utilities.
 
+> **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-monorepo`](../nerdev-monorepo/SKILL.md) for Turborepo + Bun monorepo structure, CI/CD, and deployment patterns, and [`nerdev-docs`](../nerdev-docs/SKILL.md) for development-integrated documentation (ADRs, design docs, runbooks). All three work together for nerdev-co projects.
+
 ---
 
 ## Core Abstraction Principles

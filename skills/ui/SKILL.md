@@ -11,6 +11,8 @@ verify. house-style is the law and wins on conflict. impeccable has the
 commands and detectors. This file is the process. If another synced
 skill about visual design loads, this skill wins.
 
+> **Skill family:** `house-style` = law (philosophy). This skill = process orchestrator. [`impeccable`](../impeccable/SKILL.md) = commands/detectors. [`motion`](../motion/SKILL.md) = motion job (name/decide/build/review). [`pick-ui-library`](../pick-ui-library/SKILL.md) = curated library picks. Load `house-style` + this skill for UI work; add `motion` for animation focus; invoke `pick-ui-library` when you need a library.
+
 ## The rules that never bend
 
 - Bought, not generated. If the screen could pass for default AI output,
