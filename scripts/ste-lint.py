@@ -138,7 +138,7 @@ def lint(text, strict=False):
     v["banned_word"], bh = count_ci(text, BANNED)
     v["marketing_adjective"], mh = count_ci(text, MARKETING)
     v["modal_hedge"], _ = count_ci(text, MODAL_HEDGE)
-    paras = [p for p in re.split(r"\n\s*\n", raw) if p.strip()]
+    paras = [p for p in re.split(r"\n\s*\n", text) if p.strip()]
     def is_list_block(p):
         lines = [l for l in p.split("\n") if l.strip()]
         if not lines: return False
