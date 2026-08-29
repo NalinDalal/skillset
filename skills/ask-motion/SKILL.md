@@ -2,35 +2,29 @@
 name: ask-motion
 description: Library guide for motion.dev (Framer Motion) — springs, layout animations, gestures, scroll, AnimatePresence. Load via ask-animation pattern skill. Implements house-style motion rules.
 ---
+# Ask Motion , motion.dev (Framer Motion)
 
-# Ask Motion — motion.dev (Framer Motion)
-
-**When to use:** All UI motion — page transitions, layout animations, enter/exit, drag, hover/tap, scroll-linked (basic), stagger.
+**When to use:** All UI motion , page transitions, layout animations, enter/exit, drag, hover/tap, scroll-linked (basic), stagger.
 
 **Package:** `motion` (formerly `framer-motion`)
 
 ---
 
 ## Installation
-
 ```bash
 npm i motion
 # or
 npm i framer-motion@latest
 ```
-
 ---
 
 ## Core API (v11+)
-
 ```tsx
 import { motion, AnimatePresence, LazyMotion, domAnimation, m, useScroll, useTransform, useSpring, useMotionValue, useAnimationControls } from 'motion/react'
 ```
-
 ---
 
 ## House-Style Motion Config (Non-Negotiable)
-
 ```tsx
 // lib/motion-config.ts
 export const spring = {
@@ -75,11 +69,9 @@ export const toastTransition = {
   transition: springOut,
 } as const
 ```
-
 ---
 
 ## Reduced Motion (Mandatory)
-
 ```tsx
 // hooks/useReducedMotion.ts
 import { useEffect, useState } from 'react'
@@ -103,11 +95,9 @@ export function useReducedMotion() {
 const reduced = useReducedMotion()
 const transition = reduced ? { duration: 0 } : spring
 ```
-
 ---
 
 ## Page Transitions (Linear-style)
-
 ```tsx
 // app/layout.tsx
 import { AnimatePresence } from 'motion/react'
@@ -129,11 +119,9 @@ export default function Layout({ children }) {
   )
 }
 ```
-
 ---
 
 ## Layout Animations (Shared Element)
-
 ```tsx
 // Card that expands to detail page
 <motion.article layoutId="project-card" className="card">
@@ -144,11 +132,9 @@ export default function Layout({ children }) {
 // In detail page
 <motion.div layoutId="project-image" className="aspect-video rounded-lg bg-gray-100" />
 ```
-
 ---
 
 ## Enter/Exit (Modals, Toasts, Dropdowns)
-
 ```tsx
 import { AnimatePresence, motion } from 'motion/react'
 import { modalTransition, toastTransition } from '@/lib/motion-config'
@@ -173,11 +159,9 @@ import { modalTransition, toastTransition } from '@/lib/motion-config'
   ))}
 </AnimatePresence>
 ```
-
 ---
 
 ## Hover/Tap Feedback (Raycast-style)
-
 ```tsx
 <motion.button
   whileHover={{ scale: 1.02 }}
@@ -197,11 +181,9 @@ import { modalTransition, toastTransition } from '@/lib/motion-config'
   Content
 </motion.div>
 ```
-
 ---
 
 ## Drag (Vaul-style Drawers, Sliders)
-
 ```tsx
 <motion.div
   drag="y"
@@ -223,11 +205,9 @@ import { modalTransition, toastTransition } from '@/lib/motion-config'
   // Use useTransform for custom thumb
 />
 ```
-
 ---
 
-## Scroll-Linked (Basic — Use GSAP for Complex)
-
+## Scroll-Linked (Basic , Use GSAP for Complex)
 ```tsx
 import { useScroll, useTransform, motion } from 'motion/react'
 
@@ -251,11 +231,9 @@ function ScrollProgress() {
   return <motion.div style={{ width }} className="h-0.5 bg-primary fixed top-0 z-50" />
 }
 ```
-
 ---
 
 ## Stagger (Rare Moments Only)
-
 ```tsx
 import { motion } from 'motion/react'
 
@@ -291,11 +269,9 @@ import { motion } from 'motion/react'
   ))}
 </motion.ul>
 ```
-
 ---
 
 ## useSpring (Smooth Values)
-
 ```tsx
 import { useSpring, motion } from 'motion/react'
 
@@ -325,11 +301,9 @@ function MagneticButton() {
   )
 }
 ```
-
 ---
 
 ## LazyMotion (Bundle Size)
-
 ```tsx
 import { LazyMotion, domAnimation, m, motion } from 'motion/react'
 
@@ -343,7 +317,6 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
   <motion.div animate={{ x: 100 }} />
 </LazyMotion>
 ```
-
 ---
 
 ## Common Pitfalls
@@ -352,7 +325,7 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
 |-------|-----|
 | Layout shift on animate | Use `layout` prop, animate `transform` only |
 | Exit animation not playing | Wrap in `AnimatePresence mode="wait"` |
-| Stagger too slow | Reduce delay, or don't stagger daily interactions |
+| Stagger too slow | Reduce delay, or do not stagger daily interactions |
 | No reduced motion | Wrap transitions in `useReducedMotion` hook |
 | Jitter on scroll | Use `useTransform` with `useScroll`, not `onScroll` |
 | Bundle too big | Use `LazyMotion` with `domAnimation` |
@@ -373,6 +346,6 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
 
 ## Related Skills
 
-- `ask-animation` — Pattern guide for all motion
-- `ask-gsap` — GSAP + ScrollTrigger + Lenis for showcase tier
-- `ui-engineering` — Master orchestrator
+- `ask-animation` , Pattern guide for all motion
+- `ask-gsap` , GSAP + ScrollTrigger + Lenis for showcase tier
+- `ui-engineering` , Master orchestrator

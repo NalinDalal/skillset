@@ -2,10 +2,9 @@
 name: ask-animation
 description: Pattern guide for transitions, springs, scroll animations, gestures, page transitions. Load via ui-engineering. Invokes pick-ui-library → recommends motion.dev (Framer Motion) → loads ask-motion for implementation. For showcase tier: GSAP + ScrollTrigger + Lenis.
 ---
+# Ask Animation , Transitions, Springs, Scroll, Gestures
 
-# Ask Animation — Transitions, Springs, Scroll, Gestures
-
-**When to use:** Any motion — page transitions, layout animations, enter/exit, scroll-linked, drag, hover/tap feedback, morphing.
+**When to use:** Any motion , page transitions, layout animations, enter/exit, scroll-linked, drag, hover/tap feedback, morphing.
 
 ---
 
@@ -24,38 +23,37 @@ description: Pattern guide for transitions, springs, scroll animations, gestures
 
 ---
 
-## Quality Checklist (House-Style Law — Non-Negotiable)
+## Quality Checklist (House-Style Law , Non-Negotiable)
 
-- [ ] **Fast, physical, quiet, purposeful** — Every motion answers "what changed?"
-- [ ] **State lands first** — Input responds same frame, motion is polish on top
-- [ ] **Transform + opacity only** — No layout property animations (width, height, top, left)
-- [ ] **Spring curves** — `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out spring), not `ease-in-out`
-- [ ] **200ms in, 150ms out** — Micro means micro. >300ms = scene change, needs reason
-- [ ] **One motion per event** — Pick the element that carries the change
-- [ ] **Matched to element** — Checkbox doesn't slide; card does
-- [ ] **Exits exist** — Whatever appears animated leaves animated
-- [ ] **Reduced motion** — `prefers-reduced-motion: reduce` = instant, no springs
-- [ ] **Interruptible** — Next click cancels last spring. Nobody waits.
-- [ ] **Nothing loops forever** — No idle pulses, no infinite marquees (unless dial=3 justified)
+- [ ] **Fast, physical, quiet, purposeful** , Every motion answers "what changed?"
+- [ ] **State lands first** , Input responds same frame, motion is polish on top
+- [ ] **Transform + opacity only** , No layout property animations (width, height, top, left)
+- [ ] **Spring curves** , `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out spring), not `ease-in-out`
+- [ ] **200ms in, 150ms out** , Micro means micro. >300ms = scene change, needs reason
+- [ ] **One motion per event** , Pick the element that carries the change
+- [ ] **Matched to element** , Checkbox does not slide. card does
+- [ ] **Exits exist** , Whatever appears animated leaves animated
+- [ ] **Reduced motion** , `prefers-reduced-motion: reduce` = instant, no springs
+- [ ] **Interruptible** , Next click cancels last spring. Nobody waits.
+- [ ] **Nothing loops forever** , No idle pulses, no infinite marquees (unless dial=3 justified)
 
 ---
 
 ## Anti-Patterns (Slop)
 
-- ❌ `transition: all 0.3s ease` — Lazy, animates layout properties
-- ❌ `animate.css` / `framer-motion` defaults without tuning — Generic feel
-- ❌ Stagger on every page load — Daily interactions get subtle/fast
-- ❌ Keyboard-initiated actions animate — Never
-- ❌ Scroll-jacking — User owns scroll
-- ❌ Parallax without purpose — Dial 3 only
-- ❌ No reduced-motion support — Accessibility fail
-- ❌ Exit animation missing — One-frame vanish = flicker
-- ❌ Competing springs — Two at once reads as glitch
+- ❌ `transition: all 0.3s ease` , Lazy, animates layout properties
+- ❌ `animate.css` / `framer-motion` defaults without tuning , Generic feel
+- ❌ Stagger on every page load , Daily interactions get subtle/fast
+- ❌ Keyboard-initiated actions animate , Never
+- ❌ Scroll-jacking , User owns scroll
+- ❌ Parallax without purpose , Dial 3 only
+- ❌ No reduced-motion support , Accessibility fail
+- ❌ Exit animation missing , One-frame vanish = flicker
+- ❌ Competing springs , Two at once reads as glitch
 
 ---
 
 ## Implementation Flow
-
 ```
 User needs animation/motion
     │
@@ -67,11 +65,9 @@ User needs animation/motion
     │
     └─► implement with motion.dev + house-style motion rules
 ```
-
 ---
 
 ## motion.dev Primitives (Core)
-
 ```tsx
 import { motion, AnimatePresence, LazyMotion, domAnimation, m } from 'motion/react'
 
@@ -101,7 +97,6 @@ const tapSpring = { type: 'spring', stiffness: 600, damping: 20 }
 // Scroll-linked (with GSAP - see ask-motion for GSAP)
 // motion.dev scroll: useScroll, useTransform
 ```
-
 ---
 
 ## Composition Examples
@@ -128,7 +123,6 @@ export default function Layout({ children }) {
   )
 }
 ```
-
 ### Button Press Feedback (Raycast-style)
 ```tsx
 <motion.button
@@ -140,8 +134,7 @@ export default function Layout({ children }) {
   Action
 </motion.button>
 ```
-
-### List Stagger (Onboarding only — rare moment)
+### List Stagger (Onboarding only , rare moment)
 ```tsx
 <ul>
   <AnimatePresence>
@@ -159,7 +152,6 @@ export default function Layout({ children }) {
   </AnimatePresence>
 </ul>
 ```
-
 ### Scroll Reveal (Stripe-style)
 ```tsx
 // Use GSAP for this - see ask-motion
@@ -169,10 +161,9 @@ const y = useTransform(scrollY, [0, 500], [100, 0])
 
 <motion.div style={{ y }} className="sticky top-0" />
 ```
-
 ---
 
-## Showcase Tier (Dial = 3) — GSAP + Lenis
+## Showcase Tier (Dial = 3) , GSAP + Lenis
 
 When animation dial = 3 (showcase/motion-heavy):
 - `npm i gsap @studio-freight/lenis`
