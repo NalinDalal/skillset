@@ -9,6 +9,7 @@
       "skills": [
         {
           "name": "impeccable",
+          "dest": "ui/impeccable",
           "sha256": "bfd851e1c2620321eb904d885e2604f68fc11dd453e1c8c4176b19043edb1798"
         }
       ]
@@ -21,6 +22,7 @@
       "skills": [
         {
           "name": "output-skill",
+          "dest": "quality/output-skill",
           "sha256": "f07af7f89f8ade4c8e23f7480295b63f5cacae52d3d0524ab8cb2c1707d6951e"
         }
       ]
@@ -33,14 +35,17 @@
       "skills": [
         {
           "name": "ask-sonner",
+          "dest": "ui/ask-sonner",
           "sha256": "8af7b781ed563750336dd0e1587256ab509b01c4d42c6d40f6d720139d2387f3"
         },
         {
           "name": "pick-ui-library",
+          "dest": "ui/pick-ui-library",
           "sha256": "a88a228e0745e4340112f3484918fb905278e6c961b71d774d75d51533a3a162"
         },
         {
           "name": "prototype",
+          "dest": "ui/prototype",
           "sha256": "ab985ac901e31ae6f93ed81a6d9616b8142f554112397c5b3739f8de20b104c3"
         }
       ]
@@ -53,6 +58,7 @@
       "skills": [
         {
           "name": "unslop",
+          "dest": "quality/unslop",
           "sha256": "6ea94089a68550d237a7c1ab9e11d1e14c963eece4207274c60e6f0647c61267"
         }
       ]

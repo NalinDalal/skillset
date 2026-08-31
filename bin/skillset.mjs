@@ -61,16 +61,27 @@ function flagValues(name) {
   return vals;
 }
 
-function listSkills() {
-  return readdirSync(SKILLS_DIR, { withFileTypes: true })
-    .filter((e) => e.isDirectory() && existsSync(join(SKILLS_DIR, e.name, "SKILL.md")))
-    .map((e) => e.name)
-    .sort();
+function walkSkills(dir, prefix) {
+  const results = [];
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    if (!e.isDirectory()) continue;
+    const rel = prefix ? `${prefix}/${e.name}` : e.name;
+    const full = join(dir, e.name);
+    if (existsSync(join(full, "SKILL.md"))) {
+      results.push(rel);
+    }
+    results.push(...walkSkills(full, rel));
+  }
+  return results;
 }
 
-function readDescription(name) {
+function listSkills() {
+  return walkSkills(SKILLS_DIR, "").sort();
+}
+
+function readDescription(relPath) {
   try {
-    const md = readFileSync(join(SKILLS_DIR, name, "SKILL.md"), "utf8");
+    const md = readFileSync(join(SKILLS_DIR, relPath, "SKILL.md"), "utf8");
     const m = md.match(/^description:\s*(.*)$/m);
     if (!m) return "";
     return m[1].replace(/^["']|["']$/g, "").slice(0, 120) + (m[1].length > 120 ? "…" : "");
@@ -100,8 +111,14 @@ function cmdInstall() {
     : Object.keys(HARNESSES);
 
   const all = listSkills();
-  const skills = onlySkills.length ? onlySkills.filter((s) => all.includes(s)) : all;
-  const missing = onlySkills.filter((s) => !all.includes(s));
+  const allLeaf = all.map((p) => p.split("/").pop());
+  const skills = onlySkills.length
+    ? onlySkills.filter((s) => all.includes(s) || allLeaf.includes(s)).map((s) => {
+        const idx = all.indexOf(s);
+        return idx >= 0 ? all[idx] : all[allLeaf.indexOf(s)];
+      })
+    : all;
+  const missing = onlySkills.filter((s) => !all.includes(s) && !allLeaf.includes(s));
   if (missing.length) console.warn(`  ! unknown skill(s): ${missing.join(", ")}. Skipped\n`);
 
   let installed = 0;
@@ -113,9 +130,10 @@ function cmdInstall() {
     }
     const destBase = scope === "project" ? join(process.cwd(), cfg.project) : cfg.global;
     for (const skill of skills) {
-      const safeSkill = skill.replace(/\.\./g, "").replace(/[/\\]/g, "");
-      if (safeSkill !== skill) {
-        console.warn(`  ! sanitized skill name: ${skill} → ${safeSkill}`);
+      const leafName = skill.split("/").pop();
+      const safeSkill = leafName.replace(/\.\./g, "").replace(/[/\\]/g, "");
+      if (safeSkill !== leafName) {
+        console.warn(`  ! sanitized skill name: ${leafName} → ${safeSkill}`);
       }
       const dest = join(destBase, safeSkill);
       if (dry) {
@@ -126,7 +144,7 @@ function cmdInstall() {
         if (existsSync(dest)) {
           rmSync(dest, { recursive: true, force: true });
           installed++;
-          console.log(`  ✗ ${target}: removed ${skill}`);
+          console.log(`  ✗ ${target}: removed ${safeSkill}`);
         }
         continue;
       }
@@ -156,7 +174,7 @@ function cmdHelp() {
   console.log(`skillset: install, list, and sync agent skills.
 
 Usage:
-  skillset list                        list available skills
+  skillset list                        list available skills (category/name)
   skillset install [--skill <name>]   install skills into agent harnesses
       --target <claude,opencode,cursor,codex,gemini>   (default: all)
       --scope <global|project>         (default: global)
@@ -166,7 +184,7 @@ Usage:
 
 Examples:
   skillset install                                    # everything, global
-  skillset install --skill taste-skill --skill animate
+  skillset install --skill ui/motion --skill backend/auth
   skillset install --target claude,opencode --scope project
   skillset install --undo                             # remove everything installed
 `);

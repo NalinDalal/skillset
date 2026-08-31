@@ -93,6 +93,26 @@ cd skillset
 npm link                        # or bun link, then `skillset` is on your PATH
 ```
 
+## Quick start (local project)
+
+```bash
+# 1. Install skills into your project
+cd my-project
+skillset install --scope project --target opencode   # or claude, cursor, etc.
+
+# 2. Open your agent in that directory
+opencode    # or claude, cursor, etc.
+
+# 3. Say what you want — the matching skill loads automatically
+> add a toast notification to this page
+# → ask-toast fires → hands off to ask-sonner → you get working code
+
+# Or name a skill explicitly if it doesn't auto-load
+> use the motion skill to review these animations
+```
+
+That's it. Skills are just markdown files your agent reads — no build step, no runtime. Install them, then talk to your agent naturally.
+
 ## Usage
 
 ```bash
@@ -106,7 +126,11 @@ skillset install --undo                    # remove everything this CLI installe
 skillset sync                              # pull latest from the 4 upstream repos (local)
 ```
 
-Restart or reload your agent after installing.
+Restart or reload your agent after installing:
+- **OpenCode**: just start a new session (`opencode`)
+- **Claude Code**: `/clear` or start a new session
+- **Cursor**: reload window (`Cmd+Shift+P` → "Reload Window")
+- **Codex**: start a new session
 
 ## What to say for what you want
 
@@ -198,7 +222,7 @@ opencode  # opencode.json points to ./skills
 **Option B: Symlink globally (works everywhere)**
 
 ```bash
-ln -sf /Users/nalindalal/skillset/opencode.json ~/.config/opencode/opencode.json
+ln -sf /path/to/skillset/opencode.json ~/.config/opencode/opencode.json
 # Now in ANY directory:
 opencode
 # skill nerdev/nerdev-monorepo  → works
@@ -207,7 +231,7 @@ opencode
 **Option C: Copy to a project**
 
 ```bash
-cp -r /Users/nalindalal/skillset/skills/nerdev/nerdev-monorepo /my-project/.opencode/skills/
+cp -r /path/to/skillset/skills/nerdev/nerdev-monorepo /my-project/.opencode/skills/
 # In /my-project:
 opencode
 # skill nerdev/nerdev-monorepo  → works
@@ -247,15 +271,15 @@ codebase. The moment a skill matters to you, it should encode yours.
 ```text
 curations/
   <skill>/
-    overlay/          # your owned versions, copied over skills/<skill>/ after EVERY sync
+    overlay/          # your owned versions, copied over skills/<category>/<skill>/ after EVERY sync
     WHY.md            # why you own it this way; read by sync, never shipped
 ```
 
 - **Pick what to own.** Upstream never ships a file you've overlaid. Your
   version always wins. Everything else in that skill still tracks upstream.
-- **Never edit `skills/<skill>/` directly** for the 5 synced skills — the next
+- **Never edit `skills/<category>/<skill>/` directly** for the 5 synced skills — the next
   sync deletes the folder. If you want it in your voice, put it in
-  `curations/<skill>/overlay/` first. (This doesn't apply to the 40 owned
+  `curations/<skill>/overlay/` first. (This doesn't apply to the 47 owned
   skills — those you edit directly, since nothing re-vendors them.)
 - **Write the why.** `WHY.md` is the difference between curation and
   copy-paste. Future-you and future agents read it.

@@ -82,11 +82,10 @@ function fetchUpstream(name, repo, source) {
   return dir;
 }
 
-function applyCurations(skill) {
+function applyCurations(skill, destPath) {
   const overlay = join(CURATIONS_DIR, skill, "overlay");
   if (!existsSync(overlay)) return false;
-  const to = join(SKILLS_DIR, skill);
-  cpSync(overlay, to, { recursive: true, force: true });
+  cpSync(overlay, destPath, { recursive: true, force: true });
   const why = join(CURATIONS_DIR, skill, "WHY.md");
   if (existsSync(why)) console.log(`    notes: ${readFileSync(why, "utf8").trim().split("\n")[0]}`);
   return true;
@@ -95,28 +94,29 @@ function applyCurations(skill) {
 function applySkill(srcDir, skillObj, dry) {
   const skill = skillObj.name;
   const from = join(srcDir, skill);
-  const to = join(SKILLS_DIR, skill);
+  const to = join(SKILLS_DIR, skillObj.dest);
   if (!existsSync(from)) {
     if (existsSync(to)) {
-      console.error(`  ! upstream no longer ships "${skill}". Keeping your owned copy (remove curations/${skill} and skills/${skill} to drop it)`);
+      console.error(`  ! upstream no longer ships "${skill}". Keeping your owned copy (remove curations/${skill} and skills/${skillObj.dest} to drop it)`);
     } else {
       console.error(`  ! missing in upstream: ${skill}`);
     }
     return;
   }
   if (dry) {
-    console.log(`  ~ would update: ${skill}`);
+    console.log(`  ~ would update: ${skill} → ${skillObj.dest}`);
     return;
   }
   rmSync(to, { recursive: true, force: true });
+  mkdirSync(join(SKILLS_DIR, dirname(skillObj.dest)), { recursive: true });
   cpSync(from, to, { recursive: true });
-  const curated = applyCurations(skill);
+  const curated = applyCurations(skill, to);
   const sha256 = computeSha256(to);
   if (skillObj.sha256 && skillObj.sha256 !== "TBD" && skillObj.sha256 !== sha256) {
     console.warn(`  ⚠ SHA256 mismatch for ${skill}: expected ${skillObj.sha256.slice(0, 16)}..., got ${sha256.slice(0, 16)}...`);
   }
   skillObj.sha256 = sha256;
-  console.log(`  ✓ updated: ${skill}${curated ? " [+ curation overlay]" : ""} (sha256: ${sha256.slice(0, 16)}...)`);
+  console.log(`  ✓ updated: ${skill} → ${skillObj.dest}${curated ? " [+ curation overlay]" : ""} (sha256: ${sha256.slice(0, 16)}...)`);
 }
 
 const vendor = JSON.parse(readFileSync(VENDOR_FILE, "utf8"));
@@ -131,7 +131,7 @@ for (const upstream of vendor.upstreams) {
     continue;
   }
 
-  const missing = upstream.skills.filter((s) => !existsSync(join(SKILLS_DIR, s.name)));
+  const missing = upstream.skills.filter((s) => !existsSync(join(SKILLS_DIR, s.dest)));
   if (head === upstream.commit && missing.length === 0) {
     console.log(`  * ${upstream.name}: up to date (${head.slice(0, 7)})`);
     continue;
@@ -139,7 +139,7 @@ for (const upstream of vendor.upstreams) {
 
   const srcDir = fetchUpstream(upstream.name, upstream.repo, upstream.source);
   if (head === upstream.commit) {
-    console.log(`↻ ${upstream.name}: restoring missing skill(s): ${missing.map(s => s.name).join(", ")}`);
+    console.log(`↻ ${upstream.name}: restoring missing skill(s): ${missing.map(s => s.dest).join(", ")}`);
   } else {
     console.log(`↻ ${upstream.name}: ${upstream.commit.slice(0, 7)} → ${head.slice(0, 7)}`);
     changed = true;
@@ -160,10 +160,14 @@ if (changed && !dryRun) {
 }
 
 if (!dryRun && existsSync(CURATIONS_DIR)) {
+  const destLookup = Object.fromEntries(
+    vendor.upstreams.flatMap((u) => u.skills.map((s) => [s.name, s.dest]))
+  );
   for (const entry of readdirSync(CURATIONS_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
-    if (!existsSync(join(SKILLS_DIR, entry.name))) continue;
-    if (applyCurations(entry.name)) console.log(`◈ ensured curation overlay: ${entry.name}`);
+    const dest = destLookup[entry.name];
+    if (!dest || !existsSync(join(SKILLS_DIR, dest))) continue;
+    if (applyCurations(entry.name, join(SKILLS_DIR, dest))) console.log(`◈ ensured curation overlay: ${entry.name}`);
   }
   writeFileSync(join(ROOT, ".sync-state"), changed ? "CHANGED" : "UP_TO_DATE");
 }
