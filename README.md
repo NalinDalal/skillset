@@ -1,6 +1,6 @@
 # skillset
 
-A curated collection of **45 agent skills** (design, motion, backend patterns, dev workflow, business) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps a handful of them synced with top-tier upstreams.
+A curated collection of **52 agent skills** organized into 9 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps a handful of them synced with top-tier upstreams.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
@@ -8,43 +8,66 @@ A curated collection of **45 agent skills** (design, motion, backend patterns, d
 
 ## What's inside
 
+### Categories
+
+```
+skills/
+├── ui/               25 skills  Components, animations, design systems
+├── backend/           5 skills  API, auth, database, realtime, security
+├── devops/            4 skills  CI/CD, deployment, testing, performance
+├── architecture/      4 skills  Planning, onboarding, research
+├── engineering/       4 skills  TDD, code review, verification, standards
+├── quality/           2 skills  Writing quality, anti-slop
+├── business/          3 skills  Freelancing, startup, career
+├── nerdev/            3 skills  Nerdev skill family
+└── ai-agent/          2 skills  Agent docs, context management
+```
+
 ### Synced from upstream (5 skills, auto-updated nightly)
 
 | Upstream                                                                                  | Skills                                                                                    |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★)                        | `impeccable`: 23 design commands, 59 deterministic detector rules, live browser iteration |
-| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★)                    | `output-skill`                                                                            |
-| [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★)                      | `ask-sonner`, `pick-ui-library`, `prototype`                                              |
-| [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) | `unslop`: cuts AI tells from any writing                                                  |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) (59k★)                        | `ui/impeccable`: 23 design commands, 59 deterministic detector rules, live browser iteration |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) (77k★)                    | `quality/output-skill`                                                                    |
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★)                      | `ui/ask-sonner`, `ui/pick-ui-library`, `ui/prototype`                                     |
+| [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) | `quality/unslop`: cuts AI tells from any writing                                          |
 
 These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` checks them nightly and opens a PR when they move — you never hand-copy a file from them.
 
-### Everything else (40 skills, owned outright)
+### Everything else (47 skills, owned outright)
 
-Not synced from anywhere — written for this repo, live only here, edited directly in `skills/<name>/`.
+Not synced from anywhere — written for this repo, live only here, edited directly in `skills/<category>/<name>/`.
 
-**UI / design / frontend family** — `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (master orchestrator — loads the rest of this family for a full build), `ui` (whole UI job: direction → system → build → verify), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
+**ui/** — `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (master orchestrator — loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
 
 **Pattern → library pairs** — ask "how do I build X" and you get the pattern skill; it names the library and hands off to the library-specific guide:
 
-| Pattern skill      | Hands off to                                   |
-| ------------------ | ---------------------------------------------- |
-| `ask-modal`        | `ask-base-ui`                                  |
-| `ask-toast`        | `ask-sonner`                                   |
-| `ask-animation`    | `ask-motion` (or `ask-gsap` for showcase-tier) |
-| `ask-form`         | `ask-rhf`                                      |
-| `ask-table`        | `ask-tanstack-table`                           |
-| `ask-command-menu` | `ask-cmdk`                                     |
-| `ask-virtual-list` | `ask-virtuoso`                                 |
-| `ask-drawer`       | `ask-vaul`                                     |
+| Pattern skill      | Hands off to                                        |
+| ------------------ | --------------------------------------------------- |
+| `ui/ask-modal`     | `ui/ask-base-ui`                                    |
+| `ui/ask-toast`     | `ui/ask-sonner`                                     |
+| `ui/ask-animation` | `ui/ask-motion` (or `ui/ask-gsap` for showcase-tier) |
+| `ui/ask-form`      | `ui/ask-rhf`                                        |
+| `ui/ask-table`     | `ui/ask-tanstack-table`                             |
+| `ui/ask-command-menu` | `ui/ask-cmdk`                                    |
+| `ui/ask-virtual-list` | `ui/ask-virtuoso`                                 |
+| `ui/ask-drawer`    | `ui/ask-vaul`                                       |
 
-**Backend / dev-workflow** — `api-design`, `auth`, `database`, `git-ci`, `performance`, `realtime`, `security`, `testing`.
+**backend/** — `api-design`, `auth`, `database`, `realtime`, `security`.
 
-**nerdev-co family** — `nerdev-monorepo` (Turborepo + Bun structure, CI/CD, deploy), `nerdev-docs` (ADRs, design docs, runbooks), `nerdev-abstraction` (interface-first, registry-based plug-and-play).
+**devops/** — `deployments`, `git-ci`, `performance`, `testing`.
 
-**Meta / process** — `agent-docs-writer` (README/AGENTS.md), `progress-guard` (catches motion-not-progress on side work), `ultra-context-engine` (token-efficiency layer).
+**architecture/** — `blueprint` (multi-PR construction plans), `code-tour` (guided codebase walkthroughs), `search-first` (research-before-coding), `progress-guard` (catches motion-not-progress on side work).
 
-**Business** — `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `deployments`.
+**engineering/** — `tdd-workflow` (RED/GREEN/REFACTOR cycle), `code-review` (confidence-weighted, noise-free review), `verification-loop` (6-phase pre-PR gate), `coding-standards` (cross-project conventions).
+
+**quality/** — `unslop` (cuts AI tells), `output-skill` (elite writing quality).
+
+**nerdev/** — `nerdev-monorepo` (Turborepo + Bun structure, CI/CD, deploy), `nerdev-docs` (ADRs, design docs, runbooks), `nerdev-abstraction` (interface-first, registry-based plug-and-play).
+
+**ai-agent/** — `agent-docs-writer` (README/AGENTS.md), `ultra-context-engine` (token-efficiency layer).
+
+**business/** — `freelancing`, `startup-founder`, `resume-revamp-jake-ats`.
 
 ## Install
 
@@ -73,9 +96,9 @@ npm link                        # or bun link, then `skillset` is on your PATH
 ## Usage
 
 ```bash
-skillset list                              # see all 45 skills + descriptions
+skillset list                              # see all 52 skills + descriptions
 skillset install                           # everything → ~/.claude, ~/.config/opencode, ~/.cursor, ~/.agents, ~/.gemini
-skillset install --skill motion            # just one skill
+skillset install --skill ui/motion         # just one skill (category/name)
 skillset install --target claude,opencode  # only specific harnesses
 skillset install --scope project           # into ./project/.claude/skills etc. instead of global
 skillset install --dry-run                 # preview without touching anything
@@ -91,68 +114,85 @@ Skills fire from their description, not from a command you type. Say what you wa
 
 **UI / frontend:**
 
-| You say                                                  | Skill fires                                                 |
-| -------------------------------------------------------- | ----------------------------------------------------------- |
-| "build the FE / build the frontend / design the UI"      | `ui-engineering` (loads the rest of the UI family)          |
-| "make this screen not look templated"                    | `ui`                                                        |
-| "what's it called when a popover bounces open"           | `motion`                                                    |
-| "pick a design direction / theme"                        | `ui`, `house-style`                                         |
-| "generate a web/mobile design reference"                 | `imagegen`                                                  |
-| "add a modal / dialog / sheet / popover / menu / select" | `ask-modal` → `ask-base-ui`                                 |
-| "add a toast / notification / loading state"             | `ask-toast` → `ask-sonner`                                  |
-| "add animations / transitions / motion"                  | `ask-animation` → `ask-motion` (or `ask-gsap` for showcase) |
-| "build a form with validation"                           | `ask-form` → `ask-rhf`                                      |
-| "build a data table / sorting / filtering"               | `ask-table` → `ask-tanstack-table`                          |
-| "add a command palette / ⌘K"                             | `ask-command-menu` → `ask-cmdk`                             |
-| "build a virtual list / infinite scroll / feed / chat"   | `ask-virtual-list` → `ask-virtuoso`                         |
-| "add a mobile drawer / bottom sheet"                     | `ask-drawer` → `ask-vaul`                                   |
+| You say                                                  | Skill fires                                                        |
+| -------------------------------------------------------- | ------------------------------------------------------------------ |
+| "build the FE / build the frontend / design the UI"      | `ui/ui-engineering` (loads the rest of the UI family)              |
+| "make this screen not look templated"                    | `ui/ui-core`                                                       |
+| "what's it called when a popover bounces open"           | `ui/motion`                                                        |
+| "pick a design direction / theme"                        | `ui/ui-core`, `ui/house-style`                                     |
+| "generate a web/mobile design reference"                 | `ui/imagegen`                                                      |
+| "add a modal / dialog / sheet / popover / menu / select" | `ui/ask-modal` → `ui/ask-base-ui`                                  |
+| "add a toast / notification / loading state"             | `ui/ask-toast` → `ui/ask-sonner`                                   |
+| "add animations / transitions / motion"                  | `ui/ask-animation` → `ui/ask-motion` (or `ui/ask-gsap` for showcase) |
+| "build a form with validation"                           | `ui/ask-form` → `ui/ask-rhf`                                       |
+| "build a data table / sorting / filtering"               | `ui/ask-table` → `ui/ask-tanstack-table`                           |
+| "add a command palette / ⌘K"                             | `ui/ask-command-menu` → `ui/ask-cmdk`                              |
+| "build a virtual list / infinite scroll / feed / chat"   | `ui/ask-virtual-list` → `ui/ask-virtuoso`                          |
+| "add a mobile drawer / bottom sheet"                     | `ui/ask-drawer` → `ui/ask-vaul`                                    |
 
 **Backend / dev workflow:**
 
-| You say                                                               | Skill fires   |
-| --------------------------------------------------------------------- | ------------- |
-| "design/review this REST or tRPC or GraphQL API"                      | `api-design`  |
-| "add auth / OAuth / JWT / MFA / passwordless"                         | `auth`        |
-| "design the Prisma schema / optimize this query"                      | `database`    |
-| "set up CI / commit conventions / release automation"                 | `git-ci`      |
-| "reduce bundle size / fix Core Web Vitals / find a memory leak"       | `performance` |
-| "build live cursors / chat / multiplayer / presence"                  | `realtime`    |
-| "harden security / add CSP / rate limiting / review security posture" | `security`    |
-| "write tests / set up Vitest or Playwright / fix flaky tests"         | `testing`     |
+| You say                                                               | Skill fires              |
+| --------------------------------------------------------------------- | ------------------------ |
+| "design/review this REST or tRPC or GraphQL API"                      | `backend/api-design`     |
+| "add auth / OAuth / JWT / MFA / passwordless"                         | `backend/auth`           |
+| "design the Prisma schema / optimize this query"                      | `backend/database`       |
+| "set up CI / commit conventions / release automation"                 | `devops/git-ci`          |
+| "reduce bundle size / fix Core Web Vitals / find a memory leak"       | `devops/performance`     |
+| "build live cursors / chat / multiplayer / presence"                  | `backend/realtime`       |
+| "harden security / add CSP / rate limiting / review security posture" | `backend/security`       |
+| "write tests / set up Vitest or Playwright / fix flaky tests"         | `devops/testing`         |
+
+**Architecture / planning:**
+
+| You say                                                               | Skill fires                      |
+| --------------------------------------------------------------------- | -------------------------------- |
+| "plan a complex feature / break work into PRs"                        | `architecture/blueprint`         |
+| "create a codebase walkthrough for onboarding"                        | `architecture/code-tour`         |
+| "research existing solutions before building"                         | `architecture/search-first`      |
+
+**Engineering / quality:**
+
+| You say                                                               | Skill fires                      |
+| --------------------------------------------------------------------- | -------------------------------- |
+| "write tests first / use TDD"                                         | `engineering/tdd-workflow`       |
+| "review this code / check for issues"                                 | `engineering/code-review`        |
+| "verify before PR / run all checks"                                   | `engineering/verification-loop`  |
+| "enforce coding standards / clean code"                               | `engineering/coding-standards`   |
 
 **Repo & process:**
 
-| You say                                           | Skill fires          |
-| ------------------------------------------------- | -------------------- |
-| "help me deploy this repo to a VPS/EC2"           | `deployments`        |
-| "write an AGENTS.md / audit this README"          | `agent-docs-writer`  |
-| "clean up this sloppy AI-sounding text"           | `unslop`             |
-| "scaffold a new Turborepo + Bun monorepo"         | `nerdev-monorepo`    |
-| "add a plug-and-play tool system with a registry" | `nerdev-abstraction` |
-| "create an ADR / design doc / incident template"  | `nerdev-docs`        |
+| You say                                           | Skill fires                     |
+| ------------------------------------------------- | ------------------------------- |
+| "help me deploy this repo to a VPS/EC2"           | `devops/deployments`            |
+| "write an AGENTS.md / audit this README"          | `ai-agent/agent-docs-writer`    |
+| "clean up this sloppy AI-sounding text"           | `quality/unslop`                |
+| "scaffold a new Turborepo + Bun monorepo"         | `nerdev/nerdev-monorepo`        |
+| "add a plug-and-play tool system with a registry" | `nerdev/nerdev-abstraction`     |
+| "create an ADR / design doc / incident template"  | `nerdev/nerdev-docs`            |
 
 **Business:**
 
-| You say                            | Skill fires              |
-| ---------------------------------- | ------------------------ |
-| "I want to start freelancing"      | `freelancing`            |
-| "should I build this startup idea" | `startup-founder`        |
-| "revamp my resume for this JD"     | `resume-revamp-jake-ats` |
+| You say                            | Skill fires                     |
+| ---------------------------------- | ------------------------------- |
+| "I want to start freelancing"      | `business/freelancing`          |
+| "should I build this startup idea" | `business/startup-founder`      |
+| "revamp my resume for this JD"     | `business/resume-revamp-jake-ats` |
 
-`progress-guard` and `ultra-context-engine` don't wait to be called by name — they run in the background whenever their trigger conditions show up in the conversation (side-work-instead-of-shipping, and token-budget pressure, respectively).
+`architecture/progress-guard` and `ai-agent/ultra-context-engine` don't wait to be called by name — they run in the background whenever their trigger conditions show up in the conversation (side-work-instead-of-shipping, and token-budget pressure, respectively).
 
-**See what's installed:** `skillset list`. **Remove one:** `skillset install --undo --skill motion`.
+**See what's installed:** `skillset list`. **Remove one:** `skillset install --undo --skill ui/motion`.
 
-### Using your local skills (nerdev-*)
+### Using your local skills (nerdev/*)
 
-The three `nerdev-*` skills live in `skills/` but **aren't managed by the sync script** — they're owned directly in this repo, same as everything in "Everything else" above.
+The three `nerdev/*` skills live in `skills/nerdev/` but **aren't managed by the sync script** — they're owned directly in this repo, same as everything in "Everything else" above.
 
 **Option A: Use from this repo (recommended)**
 
 ```bash
 # From skillset root
 opencode  # opencode.json points to ./skills
-# skill nerdev-monorepo  → works
+# skill nerdev/nerdev-monorepo  → works
 ```
 
 **Option B: Symlink globally (works everywhere)**
@@ -161,24 +201,24 @@ opencode  # opencode.json points to ./skills
 ln -sf /Users/nalindalal/skillset/opencode.json ~/.config/opencode/opencode.json
 # Now in ANY directory:
 opencode
-# skill nerdev-monorepo  → works
+# skill nerdev/nerdev-monorepo  → works
 ```
 
 **Option C: Copy to a project**
 
 ```bash
-cp -r /Users/nalindalal/skillset/skills/nerdev-monorepo /my-project/.opencode/skills/
+cp -r /Users/nalindalal/skillset/skills/nerdev/nerdev-monorepo /my-project/.opencode/skills/
 # In /my-project:
 opencode
-# skill nerdev-monorepo  → works
+# skill nerdev/nerdev-monorepo  → works
 ```
 
 **Compose them:**
 
 ```bash
-skill nerdev-monorepo      # Repo skeleton + conventions
-skill nerdev-abstraction   # Plug-and-play architecture
-skill nerdev-docs          # Living docs + ADRs + runbooks
+skill nerdev/nerdev-monorepo      # Repo skeleton + conventions
+skill nerdev/nerdev-abstraction   # Plug-and-play architecture
+skill nerdev/nerdev-docs          # Living docs + ADRs + runbooks
 ```
 
 ## CI/CD: how updates flow
@@ -238,7 +278,17 @@ node scripts/sync.mjs --repo taste-skill  # one upstream only
 ## Structure
 
 ```
-skills/<name>/SKILL.md     # the skills themselves (self-contained, copyable)
+skills/
+├── ui/                    # UI components, animations, design systems
+├── backend/               # API, auth, database, realtime, security
+├── devops/                # CI/CD, deployment, testing, performance
+├── architecture/          # Planning, onboarding, research
+├── engineering/           # TDD, code review, verification, standards
+├── quality/               # Writing quality, anti-slop
+├── business/              # Freelancing, startup, career
+├── nerdev/                # Nerdev skill family
+└── ai-agent/              # Agent docs, context management
+
 curations/<name>/          # your ownership layer: overlay/ + WHY.md (never touched by sync)
 vendor.json                # upstream repos + pinned commits + skill maps
 scripts/sync.mjs           # re-vendor logic (used by CI and manually)
