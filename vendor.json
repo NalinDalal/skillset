@@ -21,7 +21,7 @@
       "skills": [
         {
           "name": "output-skill",
-          "sha256": "TBD"
+          "sha256": "f07af7f89f8ade4c8e23f7480295b63f5cacae52d3d0524ab8cb2c1707d6951e"
         }
       ]
     },
@@ -33,22 +33,22 @@
       "skills": [
         {
           "name": "ask-sonner",
-          "sha256": "TBD"
+          "sha256": "8af7b781ed563750336dd0e1587256ab509b01c4d42c6d40f6d720139d2387f3"
         },
         {
           "name": "pick-ui-library",
-          "sha256": "TBD"
+          "sha256": "a88a228e0745e4340112f3484918fb905278e6c961b71d774d75d51533a3a162"
         },
         {
           "name": "prototype",
-          "sha256": "TBD"
+          "sha256": "ab985ac901e31ae6f93ed81a6d9616b8142f554112397c5b3739f8de20b104c3"
         }
       ]
     },
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "68836ddaf5697224520f1847d90cdb90ca8babaa",
+      "commit": "fd878692de15a3069c21c8f429eb0b9f2fe178fa",
       "source": "pstack/skills",
       "skills": [
         {
