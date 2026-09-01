@@ -10,8 +10,6 @@ allowed-tools:
   - Bash(node .opencode/skills/impeccable/scripts/*)
 ---
 
-> **Skill hierarchy:** `house-style` is the law (philosophy). This skill provides the *commands and detectors* that enforce it. [`motion`](../motion/SKILL.md) handles the motion job (name/decide/build/review). [`ui`](../ui/SKILL.md) is the process orchestrator. Load `house-style` + this skill for UI work; add `motion` when animation is the focus.
-
 ## House rules (owned, not negotiable)
 
 These rules sit above every command in this skill. They are my voice. If a
