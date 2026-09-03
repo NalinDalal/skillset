@@ -9,7 +9,7 @@ and spinner patterns, see ui-core/references/build.md.
   form completion). Shows percentage or step.
 - Indeterminate: use when the duration is unknown but progress is
   happening (loading data, processing). Shows animation, no percentage.
-- Don't guess: if you don't know the duration, use indeterminate. A
+- Do not guess: if you do not know the duration, use indeterminate. A
   determinate bar that stalls at 90% is worse than an indeterminate
   spinner.
 
@@ -22,10 +22,10 @@ and spinner patterns, see ui-core/references/build.md.
 - Percentage label: show when the percentage is meaningful (more than
   10% steps). Hide for rapid progress where the number changes faster
   than the user can read it.
-- Color: accent color for fill, muted border for track. Don't use
-  multiple colors to indicate "health". That's a status indicator, not
+- Color: accent color for fill, muted border for track. Do not use
+  multiple colors to indicate "health". That is a status indicator, not
   a progress bar.
-- Animation: smooth transition between values. Don't jump. 300ms ease
+- Animation: smooth transition between values. Do not jump. 300ms ease
   is fine here because the bar is the feedback, not a micro-interaction.
 
 ## Step / wizard indicators
@@ -37,10 +37,10 @@ and spinner patterns, see ui-core/references/build.md.
   (settings, configuration). Show steps as a list, not a progress bar.
 - Completed state: checkmark or filled step. Never remove completed
   steps. The user needs to see progress.
-- Current step: accent color, larger or bolder. Don't use animation to
+- Current step: accent color, larger or bolder. Do not use animation to
   indicate the current step. Animation is for progress, not state.
-- Future steps: muted text or outline. Don't gray them out completely.
-  The user needs to see what's coming.
+- Future steps: muted text or outline. Do not gray them out completely.
+  The user needs to see what is coming.
 
 ## Multi-stage progress
 
@@ -50,7 +50,7 @@ and spinner patterns, see ui-core/references/build.md.
 - Stage transition: animate the stage name change, not the bar. The bar
   resets for the new stage.
 - Error in multi-stage: show which stage failed, why, and how to retry
-  that stage. Don't restart from stage one.
+  that stage. Do not restart from stage one.
 
 ## Skeleton vs spinner vs progress bar
 
@@ -58,20 +58,20 @@ and spinner patterns, see ui-core/references/build.md.
   (under 2s). See ui-core/references/build.md.
 - Spinner: use when the duration is unknown or the load is full-page.
   See ui-core/references/build.md.
-- Progress bar: use when the progress is measurable. Don't use a
+- Progress bar: use when the progress is measurable. Do not use a
   spinner when you can show a bar.
-- Don't show all three together. Pick one per loading state.
+- Do not show all three together. Pick one per loading state.
 
-## Don'ts
+## Avoid
 
-- Don't use indeterminate progress bars for operations that have a
+- Do not use indeterminate progress bars for operations that have a
   known duration. If you know it takes 5 seconds, show a determinate
   bar.
-- Don't animate progress bars with spring curves. Linear or ease-out
+- Do not animate progress bars with spring curves. Linear or ease-out
   only.
-- Don't show percentage for very fast operations (under 1s). The
+- Do not show percentage for very fast operations (under 1s). The
   number changes too fast to read.
-- Don't use progress bars for multi-step wizards without showing the
-  step names. A bar alone doesn't tell the user where they are.
-- Don't hide progress indicators behind hover. Progress is critical
-  feedback. It should be visible.
+- Do not use progress bars for multi-step wizards without showing the
+  step names. A bar alone does not tell the user where they are.
+- Do not hide progress indicators behind hover. Progress is critical
+  feedback. It must be visible.
