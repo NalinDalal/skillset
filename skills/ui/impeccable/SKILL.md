@@ -8,6 +8,7 @@ license: Apache 2.0
 allowed-tools:
   - Bash(npx impeccable *)
   - Bash(node .opencode/skills/impeccable/scripts/*)
+---
 
 ## House rules (owned, not negotiable)
 
