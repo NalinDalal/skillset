@@ -7,7 +7,6 @@ description: Pattern guide for forms, validation, server actions, submission sta
 
 **When to use:** Any form: settings, onboarding, auth, checkout, data entry, filters, search.
 
----
 
 ## The Pattern (What Good Looks Like)
 
@@ -19,9 +18,8 @@ description: Pattern guide for forms, validation, server actions, submission sta
 | **Complex** | Nested fields, arrays, conditionals | Field arrays, watch, dynamic validation |
 | **File upload** | Avatars, documents, media | Drag-drop, preview, progress, validation |
 
----
 
-## Quality Checklist (Linear/Stripe/Raycast)
+## Quality Checklist
 
 - [ ] **React Hook Form**: Uncontrolled, performant, minimal re-renders
 - [ ] **Zod schema**: Single source of truth for validation (client + server)
@@ -35,9 +33,8 @@ description: Pattern guide for forms, validation, server actions, submission sta
 - [ ] **Dirty tracking**: Warn on leave if unsaved changes
 - [ ] **Reset**: Clear errors on change, reset form after success
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ Controlled inputs with `useState` per field: Slow, boilerplate
 - ❌ No schema: Validation scattered, inconsistent client/server
@@ -48,7 +45,6 @@ description: Pattern guide for forms, validation, server actions, submission sta
 - ❌ `onSubmit` in `<form>` without `preventDefault`: Page reload
 - ❌ File upload without preview/progress: Broken UX
 
----
 
 ## Implementation Flow
 
@@ -64,7 +60,6 @@ User needs form
     └─► implement with RHF + Zod + server actions + toast feedback
 ```
 
----
 
 ## Schema First (Zod)
 
@@ -82,7 +77,6 @@ export const projectSchema = z.object({
 export type ProjectInput = z.infer<typeof projectSchema>
 ```
 
----
 
 ## Form Component (RHF + Zod + Server Action)
 
@@ -167,7 +161,6 @@ export function ProjectForm({ initialData, onSuccess }) {
 }
 ```
 
----
 
 ## Server Action + Optimistic UI (Linear-style)
 
@@ -193,7 +186,6 @@ export async function updateProject(id: string, data: Partial<ProjectInput>) {
 }
 ```
 
----
 
 ## Field Array (Dynamic Fields)
 
@@ -226,7 +218,6 @@ function TagFieldArray({ control }) {
 }
 ```
 
----
 
 ## When to Escalate
 

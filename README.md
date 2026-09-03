@@ -1,10 +1,10 @@
 # skillset
 
-A curated collection of **52 agent skills** organized into 9 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that keeps a handful of them synced with top-tier upstreams.
+52 agent skills in 9 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that syncs a handful from upstream repos.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
-> re-sync — your taste, your whys, never clobbered. See [Ownership model](#ownership-model).
+> re-sync: your taste, your whys, never clobbered. See [Ownership model](#ownership-model).
 
 ## What's inside
 
@@ -32,15 +32,15 @@ skills/
 | [emilkowalski/skills](https://github.com/emilkowalski/skills) (30k★)                      | `ui/ask-sonner`, `ui/pick-ui-library`, `ui/prototype`                                     |
 | [cursor/plugins pstack](https://github.com/cursor/plugins/tree/main/pstack/skills/unslop) | `quality/unslop`: cuts AI tells from any writing                                          |
 
-These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` checks them nightly and opens a PR when they move — you never hand-copy a file from them.
+These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` checks them nightly and opens a PR when they move. You never hand-copy a file from them.
 
 ### Everything else (47 skills, owned outright)
 
-Not synced from anywhere — written for this repo, live only here, edited directly in `skills/<category>/<name>/`.
+Not synced from anywhere. Written for this repo, live only here, edited directly in `skills/<category>/<name>/`.
 
-**ui/** — `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (master orchestrator — loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
+**ui/**: `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
 
-**Pattern → library pairs** — ask "how do I build X" and you get the pattern skill; it names the library and hands off to the library-specific guide:
+**Pattern → library pairs**: ask "how do I build X" and you get the pattern skill; it names the library and hands off to the library-specific guide:
 
 | Pattern skill      | Hands off to                                        |
 | ------------------ | --------------------------------------------------- |
@@ -53,21 +53,21 @@ Not synced from anywhere — written for this repo, live only here, edited direc
 | `ui/ask-virtual-list` | `ui/ask-virtuoso`                                 |
 | `ui/ask-drawer`    | `ui/ask-vaul`                                       |
 
-**backend/** — `api-design`, `auth`, `database`, `realtime`, `security`.
+**backend/**: `api-design`, `auth`, `database`, `realtime`, `security`.
 
-**devops/** — `deployments`, `git-ci`, `performance`, `testing`.
+**devops/**: `deployments`, `git-ci`, `performance`, `testing`.
 
-**architecture/** — `blueprint` (multi-PR construction plans), `code-tour` (guided codebase walkthroughs), `search-first` (research-before-coding), `progress-guard` (catches motion-not-progress on side work).
+**architecture/**: `blueprint` (multi-PR construction plans), `code-tour` (guided codebase walkthroughs), `search-first` (research-before-coding), `progress-guard` (catches motion-not-progress on side work).
 
-**engineering/** — `tdd-workflow` (RED/GREEN/REFACTOR cycle), `code-review` (confidence-weighted, noise-free review), `verification-loop` (6-phase pre-PR gate), `coding-standards` (cross-project conventions).
+**engineering/**: `tdd-workflow` (RED/GREEN/REFACTOR cycle), `code-review` (confidence-weighted, noise-free review), `verification-loop` (6-phase pre-PR gate), `coding-standards` (cross-project conventions).
 
-**quality/** — `unslop` (cuts AI tells), `output-skill` (elite writing quality).
+**quality/**: `unslop` (cuts AI tells), `output-skill` (elite writing quality).
 
-**nerdev/** — `nerdev-monorepo` (Turborepo + Bun structure, CI/CD, deploy), `nerdev-docs` (ADRs, design docs, runbooks), `nerdev-abstraction` (interface-first, registry-based plug-and-play).
+**nerdev/**: `nerdev-monorepo` (Turborepo + Bun structure, CI/CD, deploy), `nerdev-docs` (ADRs, design docs, runbooks), `nerdev-abstraction` (interface-first, registry-based plug-and-play).
 
-**ai-agent/** — `agent-docs-writer` (README/AGENTS.md), `ultra-context-engine` (token-efficiency layer).
+**ai-agent/**: `agent-docs-writer` (README/AGENTS.md), `ultra-context-engine` (token-efficiency layer).
 
-**business/** — `freelancing`, `startup-founder`, `resume-revamp-jake-ats`.
+**business/**: `freelancing`, `startup-founder`, `resume-revamp-jake-ats`.
 
 ## Install
 
@@ -103,7 +103,7 @@ skillset install --scope project --target opencode   # or claude, cursor, etc.
 # 2. Open your agent in that directory
 opencode    # or claude, cursor, etc.
 
-# 3. Say what you want — the matching skill loads automatically
+# 3. Say what you want, the matching skill loads automatically
 > add a toast notification to this page
 # → ask-toast fires → hands off to ask-sonner → you get working code
 
@@ -111,7 +111,7 @@ opencode    # or claude, cursor, etc.
 > use the motion skill to review these animations
 ```
 
-That's it. Skills are just markdown files your agent reads — no build step, no runtime. Install them, then talk to your agent naturally.
+That's it. Skills are just markdown files your agent reads, no build step, no runtime. Install them, then talk to your agent naturally.
 
 ## Usage
 
@@ -203,13 +203,13 @@ Skills fire from their description, not from a command you type. Say what you wa
 | "should I build this startup idea" | `business/startup-founder`      |
 | "revamp my resume for this JD"     | `business/resume-revamp-jake-ats` |
 
-`architecture/progress-guard` and `ai-agent/ultra-context-engine` don't wait to be called by name — they run in the background whenever their trigger conditions show up in the conversation (side-work-instead-of-shipping, and token-budget pressure, respectively).
+`architecture/progress-guard` and `ai-agent/ultra-context-engine` don't wait to be called by name. They run in the background whenever their trigger conditions show up in the conversation (side-work-instead-of-shipping, and token-budget pressure, respectively).
 
 **See what's installed:** `skillset list`. **Remove one:** `skillset install --undo --skill ui/motion`.
 
 ### Using your local skills (nerdev/*)
 
-The three `nerdev/*` skills live in `skills/nerdev/` but **aren't managed by the sync script** — they're owned directly in this repo, same as everything in "Everything else" above.
+The three `nerdev/*` skills live in `skills/nerdev/` but **aren't managed by the sync script**. They're owned directly in this repo, same as everything in "Everything else" above.
 
 **Option A: Use from this repo (recommended)**
 
@@ -259,7 +259,7 @@ The `.github/workflows/sync.yml` workflow runs **nightly at 03:00 UTC** (and on 
 npm version patch && npm publish
 ```
 
-`.github/workflows/sync.yml` also runs `npm run lint:ste` on every push — every owned `.md` file has to stay under 5.0 STE violations per 100 words (synced upstream files are exempt).
+`.github/workflows/sync.yml` also runs `npm run lint:ste` on every push. Every owned `.md` file has to stay under 5.0 STE violations per 100 words (synced upstream files are exempt).
 
 New versions flow: upstream repo → nightly sync → PR → merge → publish → `npx @nalindalal/skillset install` on any machine.
 
@@ -277,10 +277,10 @@ curations/
 
 - **Pick what to own.** Upstream never ships a file you've overlaid. Your
   version always wins. Everything else in that skill still tracks upstream.
-- **Never edit `skills/<category>/<skill>/` directly** for the 5 synced skills — the next
+- **Never edit `skills/<category>/<skill>/` directly** for the 5 synced skills. The next
   sync deletes the folder. If you want it in your voice, put it in
   `curations/<skill>/overlay/` first. (This doesn't apply to the 47 owned
-  skills — those you edit directly, since nothing re-vendors them.)
+  skills, those you edit directly, since nothing re-vendors them.)
 - **Write the why.** `WHY.md` is the difference between curation and
   copy-paste. Future-you and future agents read it.
 

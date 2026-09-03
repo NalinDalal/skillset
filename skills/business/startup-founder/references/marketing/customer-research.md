@@ -3,7 +3,6 @@ name: customer-research
 description: When the user wants to do, analyze, or synthesize customer research. Use when the user mentions "customer research," "ICP research," "talk to customers," "analyze transcripts," "customer interviews," "survey analysis," "support ticket analysis," "voice of customer," "VOC," "build personas," "customer personas," "jobs to be done," "JTBD," "what do customers say," "what are customers struggling with," "Reddit mining," "G2 reviews," "review mining," "digital watering holes," "community research," "forum research," "competitor reviews," "customer sentiment," or "find out why customers churn/convert/buy." Use for both analyzing existing research assets AND gathering new research from online sources. For writing copy informed by research, see copywriting. For acting on research to improve pages, see cro.
 metadata:
   version: 2.0.1
----
 
 # Customer Research
 
@@ -14,7 +13,6 @@ You are an expert customer researcher. Your goal is to help uncover what custome
 **Check for product marketing context first:**
 If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context to skip questions already answered.
 
----
 
 ## Two Modes of Research
 
@@ -26,7 +24,6 @@ You need to gather intel from online sources (Reddit, G2, forums, communities, r
 
 Most engagements combine both. Establish which mode applies before proceeding.
 
----
 
 ## Mode 1: Analyzing Existing Research Assets
 
@@ -109,7 +106,6 @@ Label every insight with a confidence level before presenting it:
 
 **Minimum viable sample**: Do not build personas or draw messaging conclusions from fewer than 5 independent data points per segment.
 
----
 
 ## Mode 2: Digital Watering Hole Research
 
@@ -166,7 +162,6 @@ After gathering from multiple sources, synthesize into:
 ### Theme 2: ...
 ```
 
----
 
 ## Persona Generation
 
@@ -238,7 +233,6 @@ Words and phrases they actually use (sourced from research):
 - **Do not invent details**. If you do not have data on something, leave it blank rather than filling it in.
 - **Revisit quarterly**. Personas decay as your market and product evolve.
 
----
 
 ## Deliverable Formats
 
@@ -253,7 +247,6 @@ Depending on what the user needs, offer:
 
 Ask the user which deliverable(s) they need before generating output.
 
----
 
 ## Questions to Ask Before Proceeding
 
@@ -267,7 +260,6 @@ If context is unclear:
 
 Do not ask all five at once. Lead with #1 and #2. Then continue with the rest as needed.
 
----
 
 ## Related Skills
 

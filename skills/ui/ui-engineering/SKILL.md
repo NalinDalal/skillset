@@ -1,13 +1,12 @@
 ---
 name: ui-engineering
-description: The complete UI engineering orchestrator. Load when user says "build the FE", "build the UI", "build the frontend", "make the UI", "design the frontend", or any request to build/design a frontend. This skill asks the right questions, loads the right sub-skills, and produces masterpiece-quality UI, not slop. It references Linear, Raycast, Stripe, Vercel, Arc, Attio quality bar.
+description: The complete UI engineering orchestrator. Load when user says "build the FE", "build the UI", "build the frontend", "make the UI", "design the frontend", or any request to build/design a frontend.
 ---
 
-# UI Engineering: Master Orchestrator
+# UI Engineering
 
-**One job:** When user wants frontend/UI, this skill runs the complete process. It asks, plans, loads sub-skills, and ships masterpiece quality.
+When user wants frontend/UI, this skill runs the complete process. It asks, plans, loads sub-skills, and ships.
 
----
 
 ## The Quality Bar (Non-Negotiable)
 
@@ -30,7 +29,6 @@ Reference these. If the output doesn't feel like these, it's not done.
 - Drawers: `Vaul`
 - Interactive vectors: `Rive`
 
----
 
 ## Phase 0: Clarify (Mandatory: Never Skip)
 
@@ -58,7 +56,6 @@ Before ANY code, ask these. One round. Get answers.
 
 **If user gives vague answers, push back with concrete options.** "Clinical like Linear? Playful like Arc? Dense like Bloomberg terminal?" Show reference screenshots if needed.
 
----
 
 ## Phase 1: Direction & Tokens (Load `ui` + `house-style`)
 
@@ -70,7 +67,6 @@ Before ANY code, ask these. One round. Get answers.
 - 1 accent color, 1 gray family, 1 radius scale, 1 icon family, 1 stroke weight, 1 motion curve family
 - To add somewhere, remove elsewhere
 
----
 
 ## Phase 2: Component Architecture (Load `pick-ui-library`)
 
@@ -89,7 +85,6 @@ For EACH interaction needed, invoke `pick-ui-library` to get the right library, 
 
 **Rule:** Never pick a library directly. Always go through `pick-ui-library` → it recommends → load the `ask-*` skill for implementation.
 
----
 
 ## Phase 3: Motion Design (Load `motion`)
 
@@ -107,7 +102,6 @@ For EACH interaction needed, invoke `pick-ui-library` to get the right library, 
 
 **For showcase tier (dial 3):** Add `GSAP` + `ScrollTrigger` + `Lenis` via `ask-motion`.
 
----
 
 ## Phase 4: Build & Verify (Load `impeccable`)
 
@@ -138,7 +132,6 @@ For EACH interaction needed, invoke `pick-ui-library` to get the right library, 
 - [ ] Notifications/badges: one purpose per badge, accessible
 - [ ] Empty states: purpose clear, copy structured, CTA present
 
----
 
 ## Phase 5: Divergence (Optional: Load `prototype`)
 
@@ -147,7 +140,6 @@ When direction is ambiguous or user wants options:
 - Build 3 genuinely different variants on named axes (layout, density, personality, motion, interaction model)
 - User picks winner → integrate into production
 
----
 
 ## Sub-Skill Loading Map
 
@@ -179,7 +171,6 @@ User: "Build the FE/UI"
      └─► References: references/quality-bar.md (sites, libraries, galleries)
 ```
 
----
 
 ## Anti-Slop Rules (Enforced)
 
@@ -191,7 +182,6 @@ User: "Build the FE/UI"
 - **Every component from primitives (base-ui) + custom composition.**
 - **Real copy. Real data shapes. No lorem ipsum. No "Item 1, Item 2".**
 
----
 
 ## When User Says Vague Things: Translate
 
@@ -205,7 +195,6 @@ User: "Build the FE/UI"
 | "Data table" | Load `ask-table` → `ask-tanstack-table` → Virtualized, sortable, filterable |
 | "Form" | Load `ask-form` → `ask-rhf` → Zod schema, server actions, loading states |
 
----
 
 ## Output Standard
 
@@ -218,7 +207,6 @@ Every deliverable:
 6. **Dark mode**: `theme="system"` wired
 7. **Tests**: if test setup exists, add tests
 
----
 
 ## References
 

@@ -3,7 +3,6 @@ name: competitors
 description: "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' 'competitive landing pages,' 'how do we compare to X,' 'battle card,' or 'competitor teardown.' Use this for any content that positions your product against competitors. Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. For sales-specific competitor docs, see sales-enablement."
 metadata:
   version: 2.0.1
----
 
 # Competitor & Alternative Pages
 
@@ -35,7 +34,6 @@ Before creating competitor pages, understand:
    - Conversion from competitor users
    - Brand positioning
 
----
 
 ## Core Principles
 
@@ -62,7 +60,6 @@ Before creating competitor pages, understand:
 - Updates propagate to all pages
 - Single source of truth per competitor
 
----
 
 ## Page Formats
 
@@ -83,7 +80,6 @@ Before creating competitor pages, understand:
 6. Social proof from switchers
 7. CTA
 
----
 
 ### Format 2: [Competitor] Alternatives (Plural)
 
@@ -106,7 +102,6 @@ Before creating competitor pages, understand:
 
 **AI-answer expectations by stage**: these pages often earn *citations* in AI answers. Whether AI *recommends* your brand from them depends on offsite consensus (reviews, forums, analysts). For emerging brands, a self-ranked list can surface the competitors in the AI answer while you get only the citation. Still publish for search intent and category framing, but set expectations accordingly. See the citations-vs-recommendations reference in ai-seo for the data.
 
----
 
 ### Format 3: You vs [Competitor]
 
@@ -126,7 +121,6 @@ Before creating competitor pages, understand:
 7. Migration support
 8. CTA
 
----
 
 ### Format 4: [Competitor A] vs [Competitor B]
 
@@ -144,7 +138,6 @@ Before creating competitor pages, understand:
 
 **Why this works**: Captures search traffic for competitor terms, positions you as knowledgeable.
 
----
 
 ## Essential Sections
 
@@ -168,7 +161,6 @@ Cover what transfers, what needs reconfiguration, support offered, and quotes fr
 
 **For detailed templates**: See [references/templates.md](references/templates.md)
 
----
 
 ## Content Architecture
 
@@ -184,7 +176,6 @@ Create a single source of truth for each competitor with:
 
 **For data structure and examples**: See [references/content-architecture.md](references/content-architecture.md)
 
----
 
 ## Research Process
 
@@ -204,7 +195,6 @@ For each competitor, gather:
 - **When notified**: Customer mentions competitor change
 - **Annually**: Full refresh of all competitor data
 
----
 
 ## SEO Considerations
 
@@ -225,7 +215,6 @@ For each competitor, gather:
 ### Schema Markup
 Consider FAQ schema for common questions like "What is the best alternative to [Competitor]?"
 
----
 
 ## Output Format
 
@@ -238,7 +227,6 @@ For each page: URL, meta tags, full page copy organized by section, comparison t
 ### Page Set Plan
 Recommended pages to create with priority order based on search volume.
 
----
 
 ## Task-Specific Questions
 
@@ -247,7 +235,6 @@ Recommended pages to create with priority order based on search volume.
 3. What is your pricing vs. competitors?
 4. Do you offer migration support?
 
----
 
 ## Related Skills
 

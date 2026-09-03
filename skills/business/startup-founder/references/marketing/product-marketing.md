@@ -3,7 +3,6 @@ name: product-marketing
 description: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project. Use it before other marketing skills. It creates `.agents/product-marketing.md` that all other skills reference for product, audience, and positioning context."
 metadata:
   version: 2.1.0
----
 
 # Product Marketing Context
 
@@ -50,7 +49,6 @@ For each section:
 
 Push for verbatim customer language. Exact phrases are more valuable than polished descriptions. They reflect how customers actually think and speak, which makes copy more resonant.
 
----
 
 ## Sections to Capture
 
@@ -125,7 +123,6 @@ The JTBD Four Forces:
 - Key conversion action (what you want people to do)
 - Current metrics (if known)
 
----
 
 ## Step 3: Create the Document
 
@@ -227,7 +224,6 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - v1 ([date]), Initial context.
 ```
 
----
 
 ## Step 4: Confirm, Version, and Save
 
@@ -244,7 +240,6 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - Save to `.agents/product-marketing.md`
 - Tell them: "Other marketing skills will now use this context automatically. The Changelog at the bottom tracks every revision. Check it to see how your positioning has evolved. Run `/product-marketing` anytime to update it."
 
----
 
 ## Tips
 

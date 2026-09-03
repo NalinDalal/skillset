@@ -36,8 +36,8 @@ ui-core/references/dark-mode.md.
 
 ## When to extend vs arbitrary
 
-- Extend the theme when the value is reused 2+ times. Two buttons with
-  the same padding = a token.
+- Extend the theme when the value is reused 2 or more times. Two
+  buttons with the same padding = a token.
 - Use arbitrary values for one-off layouts, experimental designs, or
   when the value is tied to content (image width, text length).
 - Don't extend the theme for every variant. Button variants (primary,

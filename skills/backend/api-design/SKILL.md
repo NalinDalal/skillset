@@ -7,7 +7,6 @@ description: API design patterns: REST conventions, tRPC, GraphQL, versioning, e
 
 **When to use:** Designing new APIs, reviewing existing APIs, choosing between REST/tRPC/GraphQL, standardizing conventions.
 
----
 
 ## Choose Your Paradigm
 
@@ -19,7 +18,6 @@ description: API design patterns: REST conventions, tRPC, GraphQL, versioning, e
 
 **Default for nerdev projects:** tRPC for internal, REST for public/webhooks.
 
----
 
 ## REST Conventions
 
@@ -116,7 +114,6 @@ POST   /api/v1/projects/{id}/duplicate     # Duplicate
 | `INTERNAL_ERROR` | 500 | Unexpected server error |
 | `SERVICE_UNAVAILABLE` | 503 | Downstream dependency down |
 
----
 
 ## Pagination
 
@@ -157,7 +154,6 @@ GET /api/v1/projects?page=2&limit=25
 }
 ```
 
----
 
 ## Filtering & Sorting
 
@@ -185,7 +181,6 @@ GET /api/v1/projects?status=active&sort=-createdAt&limit=25&cursor=abc123
 | GT/LT | `createdAt[gt]=2024-01-01` | Greater/less than |
 | GTE/LTE | `createdAt[gte]=2024-01-01` | Greater/less than or equal |
 
----
 
 ## Versioning
 
@@ -206,7 +201,6 @@ Accept: application/vnd.myapp.v2+json
 - `Sunset: Sat, 01 Jan 2025 00:00:00 GMT` header with removal date
 - Communication 6 months before removal
 
----
 
 ## OpenAPI / Schema
 
@@ -276,7 +270,6 @@ components:
       schema: { type: integer, minimum: 1, maximum: 100, default: 25 }
 ```
 
----
 
 ## tRPC Patterns (Type-Safe Internal APIs)
 
@@ -352,7 +345,6 @@ const createMutation = api.projects.create.useMutation()
 createMutation.mutate({ name: 'New Project', visibility: 'private' })
 ```
 
----
 
 ## Webhooks
 
@@ -422,7 +414,6 @@ export function verifyWebhookSignature(secret: string) {
 }
 ```
 
----
 
 ## Rate Limiting (API Level)
 
@@ -437,7 +428,6 @@ const limits = {
 }
 ```
 
----
 
 ## API Checklist
 
@@ -457,7 +447,6 @@ const limits = {
 - [ ] Deprecation headers on old versions
 - [ ] Audit logs for all mutations
 
----
 
 ## Related Skills
 - `backend/auth` - Authentication middleware

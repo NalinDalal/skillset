@@ -23,7 +23,6 @@ This skill borrows the philosophy behind T3 Code's AGENTS.md (https://github.com
 
 Never skip straight to writing files without showing a draft first. This is a hard requirement for this skill. It holds no matter how the user phrases the request.
 
----
 
 > **nerdev-docs integration:** This skill generates `AGENTS.md` for projects using the nerdev-co methodology. See [`nerdev-docs`](../nerdev-docs/SKILL.md) for the full documentation framework (ADRs, design docs, runbooks) that mandates AGENTS.md as a required document type.
 
@@ -43,7 +42,6 @@ Therefore, whenever this skill writes or audits docs:
 3. **Audit mode:** when reviewing existing docs, actively look for unmarked claims that do not match the code (in `package.json`, repo structure, tests, CI). Flag each one with the drift marker, do not silently "fix" it to match code. Include the question "did this actually ship?" for the user to answer.
 4. **Postmortem/case-study docs** (drafted during the build): end each milestone/postmortem with a "what actually changed" section dated at the time of writing. This keeps the final story true to what happened, not to the plan.
 
----
 
 ## Step 1: Scan the repo
 

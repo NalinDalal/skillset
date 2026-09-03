@@ -6,7 +6,6 @@ description: Pattern guide for transitions, springs, scroll animations, gestures
 
 **When to use:** Any motion , page transitions, layout animations, enter/exit, scroll-linked, drag, hover/tap feedback, morphing.
 
----
 
 ## The Pattern (What Good Looks Like)
 
@@ -21,9 +20,8 @@ description: Pattern guide for transitions, springs, scroll animations, gestures
 | **Morphing** | Icon state changes, shape shifts | motion.dev `keyframes` / GSAP | SVG path morph, crossfade |
 | **Stagger** | Lists, grids, onboarding | motion.dev `staggerChildren` | Rare moments only, 50-100ms delay |
 
----
 
-## Quality Checklist (House-Style Law , Non-Negotiable)
+## Quality Checklist
 
 - [ ] **Fast, physical, quiet, purposeful** , Every motion answers "what changed?"
 - [ ] **State lands first** , Input responds same frame, motion is polish on top
@@ -37,9 +35,8 @@ description: Pattern guide for transitions, springs, scroll animations, gestures
 - [ ] **Interruptible** , Next click cancels last spring. Nobody waits.
 - [ ] **Nothing loops forever** , No idle pulses, no infinite marquees (unless dial=3 justified)
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ `transition: all 0.3s ease` , Lazy, animates layout properties
 - ❌ `animate.css` / `framer-motion` defaults without tuning , Generic feel
@@ -51,7 +48,6 @@ description: Pattern guide for transitions, springs, scroll animations, gestures
 - ❌ Exit animation missing , One-frame vanish = flicker
 - ❌ Competing springs , Two at once reads as glitch
 
----
 
 ## Implementation Flow
 ```
@@ -65,7 +61,6 @@ User needs animation/motion
     │
     └─► implement with motion.dev + house-style motion rules
 ```
----
 
 ## motion.dev Primitives (Core)
 ```tsx
@@ -97,7 +92,6 @@ const tapSpring = { type: 'spring', stiffness: 600, damping: 20 }
 // Scroll-linked (with GSAP - see ask-motion for GSAP)
 // motion.dev scroll: useScroll, useTransform
 ```
----
 
 ## Composition Examples
 
@@ -161,7 +155,6 @@ const y = useTransform(scrollY, [0, 500], [100, 0])
 
 <motion.div style={{ y }} className="sticky top-0" />
 ```
----
 
 ## Showcase Tier (Dial = 3) , GSAP + Lenis
 
@@ -172,7 +165,6 @@ When animation dial = 3 (showcase/motion-heavy):
 - GSAP ScrollTrigger for scrub, pin, snap
 - Rive for interactive vectors
 
----
 
 ## When to Escalate
 

@@ -6,7 +6,6 @@ description: Application security , CSP, security headers, input validation, rat
 
 **When to use:** New project security setup, security review, hardening existing app, compliance prep.
 
----
 
 ## Security Headers (Mandatory)
 
@@ -69,7 +68,6 @@ export function securityHeaders() {
   }
 }
 ```
----
 
 ## CORS Configuration
 ```typescript
@@ -89,7 +87,6 @@ const cors = {
 
 // Never use: origin: '*' with credentials: true
 ```
----
 
 ## Rate Limiting
 
@@ -163,7 +160,6 @@ export function rateLimitMiddleware(limit = 100, windowMs = 60000) {
 | `/api/*` | 100 | 1 min |
 | `/ws` | 30 | 1 min (connections) |
 
----
 
 ## Input Validation (Zod)
 ```typescript
@@ -221,7 +217,6 @@ export function validateBody<T>(schema: z.ZodSchema<T>) {
   }
 }
 ```
----
 
 ## Authentication Hardening
 
@@ -314,7 +309,6 @@ export async function revokeAllUserSessions(userId: string) {
   }
 }
 ```
----
 
 ## Secrets Management
 
@@ -362,7 +356,6 @@ export function decryptData(encrypted: string): string {
   return new TextDecoder().decode(plaintext)
 }
 ```
----
 
 ## Dependency Security
 ```bash
@@ -383,7 +376,6 @@ bun x @cyclonedx/bom --format json > sbom.json
     bun audit --audit-level=high
     # Fail on high/critical
 ```
----
 
 ## Security Checklist (Per Deploy)
 
@@ -403,7 +395,6 @@ bun x @cyclonedx/bom --format json > sbom.json
 - [ ] File uploads: Type/size validation, virus scan
 - [ ] SQL injection: Parameterized queries only (Prisma)
 
----
 
 ## NASA Safety-Critical Coding Rules
 

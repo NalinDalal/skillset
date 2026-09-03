@@ -7,7 +7,6 @@ DESIGN.md follows the [official DESIGN.md format spec](https://raw.githubusercon
 The YAML frontmatter is the machine-readable layer. It's what Stitch's linter validates and what the live panel renders tiles from. Keep it tight; every entry should correspond to a token the project actually uses.
 
 ```yaml
----
 name: <project title>
 description: <one-line tagline>
 colors:
@@ -37,7 +36,6 @@ components:
     padding: "16px 48px"
   button-primary-hover:
     backgroundColor: "{colors.primary-deep}"
----
 ```
 
 Rules that matter:
@@ -130,12 +128,10 @@ Carry a line from PRODUCT.md only when it is a durable brand commitment that act
 The file opens with the YAML frontmatter staged in Step 2b (schema documented at the top of this reference), then the markdown body using the canonical structure below.
 
 ```markdown
----
 name: [Project Title]
 description: [one-line tagline]
 colors:
   # ... staged frontmatter from Step 2b
----
 
 # Design System: [Project Title]
 

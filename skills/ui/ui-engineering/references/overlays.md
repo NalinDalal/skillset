@@ -1,13 +1,12 @@
-# Overlay patterns
+# Overlays
 
-Rules for dropdowns, selects, menus, tooltips, and popovers. For
-focus-trap and ARIA requirements, see accessibility.md.
+Rules for dropdowns, tooltips, popovers, and positioning. For
+accessibility requirements, see accessibility.md.
 
 ## Dropdown / select / menu
 
-- Positioning: below the trigger by default, above if not enough space
-  below. Right-align if near the right edge. Collision handling is
-  required, not optional.
+- Positioning: below trigger, left-aligned by default. Above if
+  overflow. Collision handling is required, not optional.
 - Width: match the trigger width, or min 200px. Don't let the dropdown
   shrink below the widest item.
 - Scroll: show scrollbar when items exceed viewport height minus 2x
@@ -23,14 +22,14 @@ focus-trap and ARIA requirements, see accessibility.md.
 
 - Placement: top by default, bottom if not enough space above.
   Left/right for long text. Don't use tooltips for critical
-  information — tooltips are discoverable, not guaranteed.
+  information. Tooltips are discoverable, not guaranteed.
 - Trigger: hover for desktop, focus for keyboard. Don't show on click
   alone.
-- Delay: 300-500ms show delay on hover. No delay on focus. Don't make
-  the user wait for a tooltip they triggered with keyboard.
+- Delay: 300 to 500ms show delay on hover. No delay on focus. Don't
+  make the user wait for a tooltip they triggered with keyboard.
 - Duration: stay visible while hovered. Don't auto-hide after a
-  timeout — the user controls dismissal.
-- Rich vs plain: plain tooltip is text only, max 1-2 lines. Rich
+  timeout. The user controls dismissal.
+- Rich vs plain: plain tooltip is text only, max 1 to 2 lines. Rich
   tooltip includes an icon or link, max 200px wide. Don't use rich
   tooltips for simple descriptions.
 - Accessibility: tooltips are supplementary. The trigger must work

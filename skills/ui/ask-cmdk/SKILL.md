@@ -9,7 +9,6 @@ description: Library guide for cmdk: command palette, fuzzy search, keyboard nav
 
 **Package:** `cmdk`
 
----
 
 ## Installation
 
@@ -17,7 +16,6 @@ description: Library guide for cmdk: command palette, fuzzy search, keyboard nav
 npm i cmdk
 ```
 
----
 
 ## Core Components
 
@@ -35,7 +33,6 @@ import {
 } from 'cmdk'
 ```
 
----
 
 ## Basic Setup
 
@@ -119,7 +116,6 @@ export function CommandPalette({ items, isOpen, onClose }: { items: CommandItem[
 }
 ```
 
----
 
 ## Fuzzy Search with Fuse.js (Better Ranking)
 
@@ -136,7 +132,6 @@ const fuse = new Fuse(items, {
 const results = fuse.search(search)
 ```
 
----
 
 ## Highlight Matches
 
@@ -161,7 +156,6 @@ function Highlight({ text, matches }: { text: string; matches?: Fuse.FuseResultM
 }
 ```
 
----
 
 ## Async Loading (Debounced)
 
@@ -208,7 +202,6 @@ function debounce(fn: Function, ms: number) {
 }
 ```
 
----
 
 ## Global Keyboard Listener
 
@@ -240,7 +233,6 @@ export function useCommandPalette() {
 }
 ```
 
----
 
 ## Contextual Commands
 
@@ -256,7 +248,6 @@ const contextualItems: CommandItem[] = [
 const allItems = [...globalCommands, ...contextualItems]
 ```
 
----
 
 ## Recent/History (MRU)
 
@@ -292,7 +283,6 @@ const recentItems = items.filter(i => recent.includes(i.id))
 )}
 ```
 
----
 
 ## Styling (Tailwind + Headless)
 
@@ -307,7 +297,6 @@ const recentItems = items.filter(i => recent.includes(i.id))
 </Command>
 ```
 
----
 
 ## Common Issues
 
@@ -319,7 +308,6 @@ const recentItems = items.filter(i => recent.includes(i.id))
 | Async loading flashes | Show `CommandLoading` skeleton, debounce |
 | Mobile keyboard issues | `CommandInput` is native input: works on mobile |
 
----
 
 ## Related Skills
 

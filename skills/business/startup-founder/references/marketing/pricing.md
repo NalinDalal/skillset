@@ -3,7 +3,6 @@ name: pricing
 description: "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' 'monetization,' 'how much do I charge,' 'my pricing is wrong,' 'pricing page,' 'annual vs monthly,' 'per seat pricing,' 'do I offer a free plan,' 'pricing page teardown,' 'pricing page audit,' 'is my pricing page AI-readable,' or 'can AI read my pricing.' Use this whenever someone is figuring out what to charge, how to structure their plans, or wants to audit a pricing page (for humans and for the AI agents that shortlist tools). For in-app upgrade screens, see paywalls. For offer construction (bonuses, guarantees, value framing, naming) on services/courses/coaching/high-ticket B2B, see offers."
 metadata:
   version: 2.1.0
----
 
 # Pricing Strategy
 
@@ -36,7 +35,6 @@ Gather this context (ask if not provided):
 - Optimizing for growth, revenue, or profitability?
 - Moving upmarket or expanding downmarket?
 
----
 
 ## Pricing Fundamentals
 
@@ -65,7 +63,6 @@ Set the price by value delivered, not by cost to serve:
 
 **Key insight:** Price between the next best alternative and perceived value.
 
----
 
 ## Value Metrics
 
@@ -96,7 +93,6 @@ Ask: "As a customer uses more of [metric], do they get more value?"
 - If yes → good value metric
 - If no → price does not align with value
 
----
 
 ## Tier Structure Overview
 
@@ -115,7 +111,6 @@ Ask: "As a customer uses more of [metric], do they get more value?"
 
 **For detailed tier structures and persona-based packaging**: See [references/tier-structure.md](references/tier-structure.md)
 
----
 
 ## Pricing Research
 
@@ -138,7 +133,6 @@ Identifies which features customers value most:
 
 **For detailed research methods**: See [references/research-methods.md](references/research-methods.md)
 
----
 
 ## When to Raise Prices
 
@@ -165,7 +159,6 @@ Identifies which features customers value most:
 3. **Tied to value**: raise price but add features
 4. **Plan restructure**: change plans entirely
 
----
 
 ## Pricing Page Best Practices
 
@@ -189,7 +182,6 @@ Identifies which features customers value most:
 - **Charm pricing:** $49 vs. $50 (for value-focused)
 - **Round pricing:** $50 vs. $49 (for premium)
 
----
 
 ## Pricing Page Teardown
 
@@ -204,7 +196,6 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 
 **For the full 10-dimension rubric, scoring, and report template:** See [references/pricing-page-teardown.md](references/pricing-page-teardown.md). *(AI-agent-readiness lens adapted from Kyle Poyar / Growth Unhinged.)*
 
----
 
 ## Pricing Checklist
 
@@ -222,7 +213,6 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 - [ ] Created annual discount strategy
 - [ ] Planned enterprise/custom tier
 
----
 
 ## Task-Specific Questions
 
@@ -233,7 +223,6 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 5. Are you self-serve, sales-led, or hybrid?
 6. What pricing changes are you considering?
 
----
 
 ## Related Skills
 

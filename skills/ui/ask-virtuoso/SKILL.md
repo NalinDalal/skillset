@@ -9,7 +9,6 @@ description: Library guide for Virtuoso: virtualized lists with variable heights
 
 **Package:** `react-virtuoso`
 
----
 
 ## Installation
 
@@ -17,7 +16,6 @@ description: Library guide for Virtuoso: virtualized lists with variable heights
 npm i react-virtuoso
 ```
 
----
 
 ## Core Components
 
@@ -26,7 +24,6 @@ import { Virtuoso, VirtuosoHandle } from 'react-virtuoso'
 import { useInView } from 'react-intersection-observer'
 ```
 
----
 
 ## Basic List
 
@@ -45,7 +42,6 @@ function SimpleList({ items }: { items: Item[] }) {
 }
 ```
 
----
 
 ## Infinite Scroll (Feed)
 
@@ -102,7 +98,6 @@ function InfiniteFeed() {
 }
 ```
 
----
 
 ## Skeletons (Match Real Height)
 
@@ -138,7 +133,6 @@ function LoadMoreTrigger({ isLoading, ref }) {
 }
 ```
 
----
 
 ## Grouped Lists (Sticky Headers)
 
@@ -162,7 +156,6 @@ function GroupedList({ groups }: { groups: Group[] }) {
 }
 ```
 
----
 
 ## Chat / Messages (Variable Heights, Auto-scroll)
 
@@ -211,7 +204,6 @@ function ChatList({ messages }: { messages: Message[] }) {
 }
 ```
 
----
 
 ## Scroll Restoration (Back Navigation)
 
@@ -245,7 +237,6 @@ function FeedPage() {
 }
 ```
 
----
 
 ## Jump to Index / Top / Bottom
 
@@ -266,7 +257,6 @@ function JumpButtons() {
 }
 ```
 
----
 
 ## Reverse List (Chat - Newest at Bottom)
 
@@ -280,7 +270,6 @@ function JumpButtons() {
 />
 ```
 
----
 
 ## Fixed Height Items (Performance)
 
@@ -295,7 +284,6 @@ function JumpButtons() {
 />
 ```
 
----
 
 ## Common Props Reference
 
@@ -311,7 +299,6 @@ function JumpButtons() {
 | `style` | `CSSProperties` | Container style (must have height) |
 | `listRef` | `Ref<VirtuosoHandle>` | Access scroll methods |
 
----
 
 ## VirtuosoHandle Methods
 
@@ -326,7 +313,6 @@ ref.current?.getLastVisibleIndex() // Number
 ref.current?.getScrollElement() // HTMLElement
 ```
 
----
 
 ## Common Issues
 
@@ -338,7 +324,6 @@ ref.current?.getScrollElement() // HTMLElement
 | Memory grows | Ensure `overscan` not too high, items unmount correctly |
 | TypeScript errors | Import `VirtuosoHandle` from `react-virtuoso` |
 
----
 
 ## Related Skills
 

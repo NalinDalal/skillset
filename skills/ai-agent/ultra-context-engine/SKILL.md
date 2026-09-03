@@ -44,7 +44,6 @@ Reason over minimal sufficient context
 Return concise result
 ```
 
----
 
 # Integrated Systems
 
@@ -88,7 +87,6 @@ Do not execute, import, or invoke a tool merely because it exists in this list.
 
 Use an available implementation when present. Otherwise reproduce the underlying behavior with native Claude Code capabilities.
 
----
 
 # Operating Modes
 
@@ -110,7 +108,6 @@ Do not perform semantic indexing.
 
 Do not retrieve unrelated files.
 
----
 
 ## Mode 2: Local Code Change
 
@@ -132,7 +129,6 @@ Retrieve only:
 
 Do not load the entire repository.
 
----
 
 ## Mode 3: Debugging
 
@@ -149,7 +145,6 @@ Use the smallest dependency path that explains the failure.
 
 Do not indiscriminately retrieve every file mentioning the same keyword.
 
----
 
 ## Mode 4: Code Review
 
@@ -168,7 +163,6 @@ Prioritize:
 
 Avoid reading unrelated files.
 
----
 
 ## Mode 5: Architecture / Repository Understanding
 
@@ -192,7 +186,6 @@ Relevant implementation
 
 Never start by loading the entire repository.
 
----
 
 ## Mode 6: Large Output / Logs
 
@@ -214,7 +207,6 @@ Store externally if necessary
 Expose only relevant sections
 ```
 
----
 
 # Context Retrieval Strategy
 
@@ -226,7 +218,6 @@ Always use information already given by the user before doing additional retriev
 
 Do not retrieve information the user already supplied.
 
----
 
 ## Level 1: Symbol lookup
 
@@ -246,7 +237,6 @@ Use symbol-level navigation whenever possible.
 
 This uses the Token Savior principle.
 
----
 
 ## Level 2: Dependency expansion
 
@@ -267,7 +257,6 @@ Use graph-based traversal where available.
 
 This uses the Code Review Graph principle.
 
----
 
 ## Level 3: Semantic retrieval
 
@@ -277,7 +266,6 @@ Retrieve the smallest set of documents/code fragments that answer the question.
 
 This uses the Claude Context principle.
 
----
 
 ## Level 4: Broader retrieval
 
@@ -285,7 +273,6 @@ Only expand beyond the immediate dependency neighborhood when evidence indicates
 
 Never broaden context simply because more context exists.
 
----
 
 # Context Budgeting
 
@@ -311,7 +298,6 @@ If a summary is sufficient, do not include the raw source.
 
 If a symbol is sufficient, do not include the entire file.
 
----
 
 # Code Retrieval Rules
 
@@ -339,7 +325,6 @@ Prefer:
 * relevant configuration
 * targeted line ranges
 
----
 
 # Monorepo Rules
 
@@ -354,7 +339,6 @@ For monorepos:
 
 Never treat a monorepo as one giant application.
 
----
 
 # Context Compression
 
@@ -381,7 +365,6 @@ Potential compression operations:
 
 Never compress away information that could change the answer.
 
----
 
 # Terminal Output
 
@@ -418,7 +401,6 @@ relevant stderr
 
 When possible, ask tools for filtered output directly rather than receiving massive output and filtering it afterward.
 
----
 
 # Large Outputs
 
@@ -460,7 +442,6 @@ rather than the entire artifact.
 
 If external storage is unavailable, simulate the same behavior by retaining only the relevant subset in working context.
 
----
 
 # MCP Optimization
 
@@ -497,7 +478,6 @@ reuse execute
 
 Never repeatedly fetch identical information within the same task.
 
----
 
 # Caching
 
@@ -527,7 +507,6 @@ Do not cache information when it is:
 
 Always prefer correctness over cache hits.
 
----
 
 # Prompt Optimization
 
@@ -567,7 +546,6 @@ Remove:
 
 Never compress away an actual requirement.
 
----
 
 # Persistent Repository Knowledge
 
@@ -598,7 +576,6 @@ Inferred
 Uncertain
 ```
 
----
 
 # Response Optimization
 
@@ -630,7 +607,6 @@ For complex tasks, give enough detail to make the result usable.
 
 Do not impose arbitrary word limits when the task requires explanation.
 
----
 
 # Caveman Mode
 
@@ -668,7 +644,6 @@ Never sacrifice:
 * exact commands
 * error details
 
----
 
 # Final Response Terseness
 
@@ -691,7 +666,6 @@ For code changes, prefer showing only the important diff or explanation.
 
 Do not reproduce entire files unless explicitly requested.
 
----
 
 # Tool Selection
 
@@ -731,7 +705,6 @@ Repeated MCP data
 
 Make the system adaptive.
 
----
 
 # Anti-Patterns
 
@@ -792,7 +765,6 @@ Broken explanation
 
 Compression must preserve meaning.
 
----
 
 # Accuracy Guardrails
 
@@ -824,7 +796,6 @@ KEEP BOTH UNTIL RESOLVED.
 
 Never report an inferred fact as verified.
 
----
 
 # Progressive Escalation
 
@@ -856,7 +827,6 @@ Escalate only when necessary.
 
 Never start at level 9.
 
----
 
 # Decision Function
 
@@ -890,7 +860,6 @@ Can this be shorter without losing information?
 
 If yes, shorten it.
 
----
 
 # Ideal End-to-End Pipeline
 
@@ -947,7 +916,6 @@ The complete system behaves like this:
                  Final Response
 ```
 
----
 
 # Success Criteria
 

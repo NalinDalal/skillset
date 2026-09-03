@@ -2,7 +2,6 @@
 
 **The standard.** Every UI decision should trace back to these references.
 
----
 
 ## SaaS Gold Standard (Best "Feel": Snappy, Physics-Based)
 
@@ -15,7 +14,6 @@
 | **Arc (The Browser Company)** | Playful micro-copy + micro-animation combo, onboarding flow, personality | Personality without chaos. |
 | **Attio / Cron (Notion Calendar)** | SaaS onboarding-style micro-interactions, drag-drop, inline editing | Product-led growth patterns. |
 
----
 
 ## Agency/Showcase Tier (Heavier Animation, GSAP/WebGL)
 
@@ -28,7 +26,6 @@
 | **Resn** | Immersive WebGL experiences | Dial = 3 |
 | **Active Theory** | Three.js + GSAP mastery | Dial = 3 |
 
----
 
 ## Libraries/Tools (Beyond Aceternity)
 
@@ -63,7 +60,6 @@
 | **Vaul** | Drawers (already listed) |
 | **Radix/base-ui** | Popovers, tooltips, menus, selects |
 
----
 
 ## Inspiration Galleries (Browse, Don't Copy)
 
@@ -94,7 +90,6 @@
 | **Evil Charts** | Minimal ink: gridlines removed until the chart breaks, then added back sparingly. Annotations over legends. One accent per series, hue not lightness for distinction. |
 | **Timmo.co.in** | Clean SaaS feel through consistent spacing and restrained color. Layout that trusts the content without over-decorating. |
 
----
 
 ## GitHub Repos to Study
 
@@ -104,7 +99,6 @@
 | `addyosmani/agent-skills` | AI agent patterns |
 | `mattpocock/skills` | TypeScript patterns |
 
----
 
 ## Token Templates (Starting Points)
 
@@ -156,7 +150,6 @@
 }
 ```
 
----
 
 ## Motion Recipes (Copy-Paste Starting Points)
 
@@ -225,7 +218,6 @@ gsap.from('.reveal', {
 })
 ```
 
----
 
 ## Component Checklist (Finish Gate)
 
@@ -243,7 +235,6 @@ Every component must pass:
 - [ ] **TypeScript strict**: No `any`, discriminated unions
 - [ ] **Tailwind component-based**: Tokens first, raw CSS only with reason
 
----
 
 ## Anti-Patterns (Auto-Reject)
 
@@ -263,7 +254,6 @@ Every component must pass:
 | Focus not trapped in modal | Keyboard trap |
 | No ESC to close modal | UX fail |
 
----
 
 ## Decision Tree (When User Says Vague Things)
 
@@ -277,7 +267,6 @@ Every component must pass:
 | "Data table" | Load `ask-table` → `ask-tanstack-table` | Virtualized, sortable |
 | "Form" | Load `ask-form` → `ask-rhf` | Zod schema, server actions |
 
----
 
 ## Quick Reference: Skill Loading Map
 
@@ -300,5 +289,5 @@ User: "Build the FE/UI"
     │     ├─► impeccable (audit→polish→animate→verify)
     │     └─► prototype (optional divergence)
     │
-    └─► References: this file + tokens + motion-recipes + component-checklist
+    └─► References: quality-bar + tokens + motion-recipes + component-checklist + navigation + search + pagination + progress-indicators + avatars + overlays + floating-actions + card-patterns + tailwind-architecture + ui-core (build, verify, system, accessibility, responsive, dark-mode, copy, direction, styles, redesign)
 ```

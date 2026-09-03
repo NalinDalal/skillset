@@ -6,7 +6,6 @@ description: Prisma patterns , schema design, migrations, seeding, query optimiz
 
 **When to use:** Schema design, migrations, query optimization, seeding, connection management, advanced patterns.
 
----
 
 ## Prisma Setup
 ```typescript
@@ -29,7 +28,6 @@ process.on('beforeExit', async () => {
   await prisma.$disconnect()
 })
 ```
----
 
 ## Schema Conventions
 
@@ -122,7 +120,6 @@ async function updateTask(id: string, data: Partial<Task>, expectedVersion: numb
   })
 }
 ```
----
 
 ## Migrations
 
@@ -208,7 +205,6 @@ main()
   .catch(console.error)
   .finally(() => prisma.$disconnect())
 ```
----
 
 ## Query Patterns
 
@@ -261,7 +257,6 @@ const projects = await prisma.$queryRaw`
   LIMIT 20
 `
 ```
----
 
 ## Transactions
 
@@ -285,7 +280,6 @@ const result = await prisma.$transaction(async (tx) => {
   isolationLevel: 'ReadCommitted', // or 'Serializable'
 })
 ```
----
 
 ## Connection Pooling
 
@@ -303,7 +297,6 @@ datasource db {
   // Connection limit handled by PgBouncer
 }
 ```
----
 
 ## Soft Deletes
 ```typescript
@@ -326,7 +319,6 @@ prisma.$use(async (params, next) => {
 // Hard delete when needed
 await prisma.project.delete({ where: { id }, force: true }) // Custom extension
 ```
----
 
 ## Audit Logs
 ```prisma
@@ -378,7 +370,6 @@ async function updateProject(id: string, data: Partial<Project>, userId: string)
   return updated
 }
 ```
----
 
 ## Multi-Tenancy
 
@@ -401,7 +392,6 @@ prisma.$use(async (params, next) => {
   return next(params)
 })
 ```
----
 
 ## Read Replicas
 ```typescript
@@ -420,7 +410,6 @@ export async function getDashboardStats(userId: string) {
   return { projects, tasks, members }
 }
 ```
----
 
 ## Performance Checklist
 
@@ -434,7 +423,6 @@ export async function getDashboardStats(userId: string) {
 - [ ] Query logging in dev, slow query monitoring in prod
 - [ ] `EXPLAIN ANALYZE` on slow queries
 
----
 
 ## Related Skills
 - `devops/testing` - Testcontainers for integration tests

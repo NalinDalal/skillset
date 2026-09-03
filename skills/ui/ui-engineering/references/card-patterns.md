@@ -15,7 +15,7 @@ see ui-core/references/build.md.
 - Stat/summary card: shows a single metric with optional context. Use
   for dashboards, analytics. Number is dominant, label is secondary.
 - Don't mix subtypes in the same row. A media card next to a stat card
-  is fine; a media card next to an action card in the same row needs a
+  is fine. A media card next to an action card in the same row needs a
   documented reason.
 
 ## Elevation and border rules
@@ -37,10 +37,10 @@ see ui-core/references/build.md.
 - Focus state: the whole card gets a focus ring when focused via
   keyboard. Don't only focus the link inside.
 - Hover state: subtle background tint or border shift. Don't lift the
-  card on hover — that's a card flip, not a hover state.
+  card on hover. That's a card flip, not a hover state.
 - Don't put interactive elements inside a clickable card unless the
   whole card navigates. A card that navigates but contains a button is
-  ambiguous — does the button navigate or does the card?
+  ambiguous. Does the button navigate or does the card?
 
 ## Card grid vs list layout
 

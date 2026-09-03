@@ -9,7 +9,6 @@ description: Library guide for React Hook Form + Zod: performant forms, validati
 
 **Packages:** `react-hook-form`, `@hookform/resolvers/zod`, `zod`
 
----
 
 ## Installation
 
@@ -17,7 +16,6 @@ description: Library guide for React Hook Form + Zod: performant forms, validati
 npm i react-hook-form @hookform/resolvers zod
 ```
 
----
 
 ## Core Setup
 
@@ -59,7 +57,6 @@ export function MyForm({ defaultValues }: { defaultValues?: Partial<FormData> })
 }
 ```
 
----
 
 ## Field Components (Reusable)
 
@@ -149,7 +146,6 @@ export function FormField<T extends FieldValues>({
 }
 ```
 
----
 
 ## Server Actions + Toast Feedback
 
@@ -209,7 +205,6 @@ export function CreateProjectForm() {
 }
 ```
 
----
 
 ## Field Arrays (Dynamic Fields)
 
@@ -252,7 +247,6 @@ function TagArray({ control }: { control: Control<FormData> }) {
 }
 ```
 
----
 
 ## Watch / Conditional Fields
 
@@ -273,7 +267,6 @@ return (
 )
 ```
 
----
 
 ## Dirty Tracking + Warn on Leave
 
@@ -300,7 +293,6 @@ function FormWithDirtyCheck() {
 }
 ```
 
----
 
 ## File Upload
 
@@ -354,7 +346,6 @@ function FileUpload({ control, name, label }: { control: Control<FormData>; name
 }
 ```
 
----
 
 ## TypeScript: FormProvider Context
 
@@ -376,7 +367,6 @@ export function Form<T extends FieldValues>({
 </Form>
 ```
 
----
 
 ## Common Patterns
 
@@ -389,7 +379,6 @@ export function Form<T extends FieldValues>({
 | Reset after submit | `form.reset()` in `onSubmit` success |
 | Prefill from server | `defaultValues` from server data |
 
----
 
 ## Related Skills
 

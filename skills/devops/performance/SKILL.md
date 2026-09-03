@@ -7,7 +7,6 @@ description: Performance optimization: bundle analysis, code splitting, lazy loa
 
 **When to use:** Optimizing slow pages, reducing bundle size, fixing memory leaks, improving Core Web Vitals, scaling infrastructure.
 
----
 
 ## Performance Budgets
 
@@ -22,7 +21,6 @@ description: Performance optimization: bundle analysis, code splitting, lazy loa
 | **API p95** | < 200ms | Prometheus/Grafana |
 | **DB query p95** | < 50ms | pg_stat_statements |
 
----
 
 ## Frontend Optimization
 
@@ -124,7 +122,6 @@ const handleClick = useCallback((id: string) => {
 }, [dispatch])
 ```
 
----
 
 ## Caching Strategies
 
@@ -231,7 +228,6 @@ const projects = await cachedQuery(
 )
 ```
 
----
 
 ## Database Performance
 
@@ -301,7 +297,6 @@ export async function getDashboardStats(userId: string) {
 }
 ```
 
----
 
 ## Core Web Vitals Optimization
 
@@ -366,7 +361,6 @@ function SearchResults({ query }) {
 }
 ```
 
----
 
 ## Memory Leak Detection
 
@@ -419,7 +413,6 @@ node --inspect server.js
 bun --inspect server.ts
 ```
 
----
 
 ## Monitoring & Alerting
 
@@ -470,7 +463,6 @@ groups:
         for: 10m
 ```
 
----
 
 ## Performance Checklist
 
@@ -500,7 +492,6 @@ groups:
 - [ ] HTTP/2 or HTTP/3
 - [ ] Resource hints (preload, prefetch)
 
----
 
 ## Quick Commands
 
@@ -523,7 +514,6 @@ bun --inspect server.ts
 bun x autocannon -c 100 -d 30 http://localhost:3000/api/projects
 ```
 
----
 
 ## Related Skills
 - `backend/database` - Query optimization, indexing

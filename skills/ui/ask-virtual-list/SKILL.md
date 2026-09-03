@@ -7,9 +7,8 @@ description: Pattern guide for virtualized lists: infinite scroll, variable heig
 
 **When to use:** Long lists: feeds, chat, logs, activity, notifications, search results, any list >100 items.
 
----
 
-## The Pattern (What Good Looks Like: Linear/Twitter/Slack)
+## The Pattern
 
 | Feature | Quality Bar |
 |---------|-------------|
@@ -24,7 +23,6 @@ description: Pattern guide for virtualized lists: infinite scroll, variable heig
 | **Keyboard** | Home/End, Page Up/Down, arrow keys |
 | **Accessibility** | ARIA feed/listbox, live region for new items |
 
----
 
 ## Quality Checklist
 
@@ -37,9 +35,8 @@ description: Pattern guide for virtualized lists: infinite scroll, variable heig
 - [ ] **No layout shift**: Reserve space for async images/avatars
 - [ ] **Memory**: Unmount far items, don't accumulate DOM nodes
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ `react-window` fixed height only: Breaks with variable content
 - ❌ No overscan: Flashing blank space on fast scroll
@@ -50,7 +47,6 @@ description: Pattern guide for virtualized lists: infinite scroll, variable heig
 - ❌ No sticky headers: Sections lose context
 - ❌ Images without dimensions: Layout shift on load
 
----
 
 ## Implementation Flow
 
@@ -66,7 +62,6 @@ User needs virtual list/infinite scroll
     └─► implement with Virtuoso + infinite scroll + skeletons
 ```
 
----
 
 ## Core Setup (Virtuoso)
 
@@ -148,7 +143,6 @@ function EndDetector() {
 }
 ```
 
----
 
 ## Feed Example (Linear/Twitter-style)
 
@@ -200,7 +194,6 @@ export function ActivityFeed() {
 }
 ```
 
----
 
 ## Chat/Message List (Variable Heights)
 
@@ -248,7 +241,6 @@ export function ChatList({ messages, onScrollToBottom }) {
 }
 ```
 
----
 
 ## Skeletons (Match Real Item Height)
 
@@ -269,7 +261,6 @@ export function ActivitySkeleton() {
 }
 ```
 
----
 
 ## Scroll Restoration (Back Button)
 
@@ -302,7 +293,6 @@ export function useScrollRestoration(key: string) {
 }
 ```
 
----
 
 ## When to Escalate
 

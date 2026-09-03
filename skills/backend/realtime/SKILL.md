@@ -6,7 +6,6 @@ description: Real-time patterns: WebSocket server, connection lifecycle, rooms, 
 
 **When to use:** Collaborative editing, live cursors, chat, notifications, real-time dashboards, multiplayer.
 
----
 
 ## Architecture
 ```
@@ -20,7 +19,6 @@ description: Real-time patterns: WebSocket server, connection lifecycle, rooms, 
                     │  (Elysia)   │
                     └─────────────┘
 ```
----
 
 ## Bun Native WebSocket Server
 ```typescript
@@ -64,7 +62,6 @@ const server = serve({
 
 console.log(`WebSocket server running on ws://localhost:8080`)
 ```
----
 
 ## Connection Lifecycle
 ```typescript
@@ -118,7 +115,6 @@ export class ConnectionHandler {
   }
 }
 ```
----
 
 ## Message Protocol
 ```typescript
@@ -155,7 +151,6 @@ export type ServerMessage =
   | { type: 'ERROR'; payload: { code: string; message: string } }
   | { type: 'FULL_STATE'; payload: RoomState }
 ```
----
 
 ## Room Management
 ```typescript
@@ -299,7 +294,6 @@ export class RoomManager {
   }
 }
 ```
----
 
 ## Diff-Based Sync (Collaborative Editing)
 ```typescript
@@ -358,7 +352,6 @@ export class DiffHandler {
   }
 }
 ```
----
 
 ## Presence System
 ```typescript
@@ -392,7 +385,6 @@ export class PresenceManager {
   }
 }
 ```
----
 
 ## Reconnection Handling
 ```typescript
@@ -440,7 +432,6 @@ class RealtimeClient {
   }
 }
 ```
----
 
 ## Scaling with Redis Adapter
 ```typescript
@@ -505,7 +496,6 @@ export class ScaledRoomManager extends RoomManager {
   }
 }
 ```
----
 
 ## Authentication for WebSocket
 ```typescript
@@ -543,7 +533,6 @@ export async function createWSToken(req: Request) {
   return Response.json({ token })
 }
 ```
----
 
 ## Client-Side Hook (React)
 ```typescript
@@ -608,7 +597,6 @@ export function useRealtime(roomId: string) {
   return { connected, members, cursors, send, on }
 }
 ```
----
 
 ## Testing Real-Time
 ```typescript
@@ -656,7 +644,6 @@ describe('Real-time', () => {
   })
 })
 ```
----
 
 ## Checklist
 
@@ -673,7 +660,6 @@ describe('Real-time', () => {
 - [ ] Load testing (10k+ concurrent connections)
 - [ ] Monitoring: connections, messages/sec, latency
 
----
 
 ## Related Skills
 - `backend/auth` - WS authentication, short-lived tokens

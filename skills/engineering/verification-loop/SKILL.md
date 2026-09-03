@@ -2,117 +2,67 @@
 name: verification-loop
 category: engineering
 source: ECC (adapted)
-description: "6-phase verification system: Build → Type Check → Lint → Test → Security → Review. Load before PRs or after major changes."
----
+description: "6-phase verification system: Build, Type Check, Lint, Test, Security, Review. Load before PRs or after major changes."
 
 # Verification Loop
 
-**When to use:** Before creating PRs, after major changes, before releases, when setting up CI pipelines.
-
----
+When to use: before creating PRs, after major changes, before releases, when setting up CI pipelines.
 
 ## The 6 Phases
 
 ```
-1. Build          → Does it compile?
-2. Type Check     → Are types correct?
-3. Lint           → Does it follow conventions?
-4. Test Suite     → Do tests pass with adequate coverage?
-5. Security Scan  → Are there vulnerabilities?
-6. Diff Review    → Is the change scoped and intentional?
+1. Build          -> Does it compile?
+2. Type Check     -> Are types correct?
+3. Lint           -> Does it follow conventions?
+4. Test Suite     -> Do tests pass with adequate coverage?
+5. Security Scan  -> Are there vulnerabilities?
+6. Diff Review    -> Is the change scoped and intentional?
 ```
 
 Each phase must PASS before proceeding. Any FAIL stops the loop.
 
----
-
 ## Phase 1: Build
 
-### Command
 ```bash
 bun run build
 ```
 
-### What It Catches
-- Syntax errors
-- Missing imports
-- Circular dependencies
-- Configuration issues
+What it catches: syntax errors, missing imports, circular dependencies, configuration issues.
 
-### Pass Criteria
-- Exit code 0
-- No errors in output
-- All packages build successfully
-
----
+Pass criteria: exit code 0, no errors in output, all packages build successfully.
 
 ## Phase 2: Type Check
 
-### Command
 ```bash
 bun run check-types  # or tsc --noEmit
 ```
 
-### What It Catches
-- Type mismatches
-- Missing type annotations
-- Invalid generic usage
-- Null/undefined errors
+What it catches: type mismatches, missing type annotations, invalid generic usage, null/undefined errors.
 
-### Pass Criteria
-- Exit code 0
-- No type errors
-- Strict mode enabled
-
----
+Pass criteria: exit code 0, no type errors, strict mode enabled.
 
 ## Phase 3: Lint
 
-### Command
 ```bash
 bun run lint  # or eslint .
 ```
 
-### What It Catches
-- Code style violations
-- Unused variables/imports
-- Forbidden patterns (any, console.log in prod)
-- Complexity issues
+What it catches: code style violations, unused variables/imports, forbidden patterns (any, console.log in prod), complexity issues.
 
-### Pass Criteria
-- Exit code 0
-- No warnings (warnings = errors)
-- All custom rules pass
-
----
+Pass criteria: exit code 0, no warnings (warnings = errors), all custom rules pass.
 
 ## Phase 4: Test Suite
 
-### Command
 ```bash
 bun test --coverage
 ```
 
-### What It Catches
-- Regression bugs
-- Missing edge cases
-- Broken contracts
-- Performance regressions
+What it catches: regression bugs, missing edge cases, broken contracts, performance regressions.
 
-### Pass Criteria
-- All tests pass
-- Coverage thresholds met:
-  - Lines: ≥ 80%
-  - Functions: ≥ 80%
-  - Branches: ≥ 70%
-  - Statements: ≥ 80%
-- No flaky tests
-
----
+Pass criteria: all tests pass, coverage thresholds met (lines >= 80%, functions >= 80%, branches >= 70%, statements >= 80%), no flaky tests.
 
 ## Phase 5: Security Scan
 
-### Commands
 ```bash
 # Dependency audit
 bun audit --audit-level=high
@@ -124,22 +74,12 @@ grep -r "password\|secret\|token\|key\|api_key" --include="*.ts" --include="*.js
 grep -r "req\.body\|req\.query\|req\.params" --include="*.ts" | grep -v "validate\|sanitize\|parse"
 ```
 
-### What It Catches
-- Known vulnerabilities in dependencies
-- Hardcoded secrets
-- Missing input validation
-- Dangerous patterns (eval, exec, innerHTML)
+What it catches: known vulnerabilities in dependencies, hardcoded secrets, missing input validation, dangerous patterns (eval, exec, innerHTML).
 
-### Pass Criteria
-- No high/critical vulnerabilities
-- No hardcoded secrets
-- All user input validated
-
----
+Pass criteria: no high/critical vulnerabilities, no hardcoded secrets, all user input validated.
 
 ## Phase 6: Diff Review
 
-### Commands
 ```bash
 # Review changes
 git diff main...HEAD --stat
@@ -151,19 +91,9 @@ git diff main...HEAD | grep "^+" | wc -l
 git diff main...HEAD --name-only | grep -E "\.env|secret|password|key"
 ```
 
-### What It Catches
-- Out-of-scope changes
-- Large PRs that should be split
-- Sensitive file modifications
-- Missing documentation updates
+What it catches: out-of-scope changes, large PRs that should be split, sensitive file modifications, missing documentation updates.
 
-### Pass Criteria
-- Changes match PR description
-- PR size < 400 lines (ideal)
-- No sensitive files modified
-- Documentation updated if needed
-
----
+Pass criteria: changes match PR description, PR size < 400 lines (ideal), no sensitive files modified, documentation updated if needed.
 
 ## Verification Report
 
@@ -172,22 +102,22 @@ After running all phases, generate a report:
 ```markdown
 ## Verification Report
 
-**Date:** 2026-08-13
-**Branch:** feat/add-user-auth
-**Commit:** abc1234
+Date: 2026-08-13
+Branch: feat/add-user-auth
+Commit: abc1234
 
 ### Results
 
 | Phase | Status | Duration |
 |-------|--------|----------|
-| Build | ✅ PASS | 12s |
-| Type Check | ✅ PASS | 8s |
-| Lint | ✅ PASS | 5s |
-| Test Suite | ✅ PASS | 45s |
-| Security Scan | ✅ PASS | 3s |
-| Diff Review | ✅ PASS | 2s |
+| Build | PASS | 12s |
+| Type Check | PASS | 8s |
+| Lint | PASS | 5s |
+| Test Suite | PASS | 45s |
+| Security Scan | PASS | 3s |
+| Diff Review | PASS | 2s |
 
-### Overall: ✅ READY TO MERGE
+### Overall: READY TO MERGE
 
 ### Coverage Summary
 - Lines: 84% (threshold: 80%)
@@ -201,11 +131,9 @@ After running all phases, generate a report:
 - PR size: 127 lines (ideal)
 ```
 
----
-
 ## Automation
 
-### GitHub Actions Integration
+GitHub Actions integration:
 
 ```yaml
 # .github/workflows/verify.yml
@@ -247,8 +175,6 @@ jobs:
           fi
 ```
 
----
-
 ## Quick Commands
 
 ```bash
@@ -266,10 +192,8 @@ bun audit --audit-level=high
 bun test --coverage --reporter=json
 ```
 
----
-
 ## Related Skills
 
-- `engineering/tdd-workflow` - Test-first development
-- `engineering/code-review` - Review process
-- `devops/git-ci` - CI/CD pipeline setup
+- `engineering/tdd-workflow` for test-first development
+- `engineering/code-review` for review process
+- `devops/git-ci` for CI/CD pipeline setup

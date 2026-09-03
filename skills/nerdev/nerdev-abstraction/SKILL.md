@@ -3,18 +3,17 @@ name: nerdev-abstraction
 description: Interface-first, registry, factory, plugin protocol for plug-and-play architecture patterns
 ---
 
-# nerdev-abstraction Skill
+# nerdev-abstraction
 
-**Purpose**: Enforce plug-and-play abstraction patterns across any codebase -- interface-driven design, registry-based composition, workspace packages, and zero-duplication shared utilities.
+Purpose: enforce plug-and-play abstraction patterns across any codebase. Interface-driven design, registry-based composition, workspace packages, and zero-duplication shared utilities.
 
-> **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-monorepo`](../nerdev-monorepo/SKILL.md) for Turborepo + Bun monorepo structure, CI/CD, and deployment patterns, and [`nerdev-docs`](../nerdev-docs/SKILL.md) for development-integrated documentation (ADRs, design docs, runbooks). All three work together for nerdev-co projects.
-
----
+> nerdev-co skill family: this is one of three core skills. See also `nerdev-monorepo` for Turborepo + Bun monorepo structure, CI/CD, and deployment patterns, and `nerdev-docs` for development-integrated documentation (ADRs, design docs, runbooks). All three work together for nerdev-co projects.
 
 ## Core Abstraction Principles
 
 ### 1. Interface-First Design
-Every pluggable component defines a **contract** before implementation.
+
+Every pluggable component defines a contract before implementation.
 
 ```typescript
 // packages/core/interfaces/tool.ts
@@ -39,6 +38,7 @@ export interface Service {
 ```
 
 ### 2. Registry Pattern (Central Composition)
+
 Single source of truth for all implementations.
 
 ```typescript
@@ -72,6 +72,7 @@ export const toolRegistry = new ToolRegistry();
 ```
 
 ### 3. Factory Pattern (Configurable Instantiation)
+
 Create instances with runtime configuration.
 
 ```typescript
@@ -103,6 +104,7 @@ export function createToolFactory(options: ToolFactoryOptions = {}) {
 ```
 
 ### 4. Plugin Protocol (Standardized Entry Point)
+
 Every plugin exports a standard shape.
 
 ```typescript
@@ -131,6 +133,7 @@ export interface HookDefinition {
 ```
 
 ### 5. Workspace Package Structure
+
 ```
 packages/
 ├── core/                    # Interfaces, registry, factory, plugin protocol
@@ -184,6 +187,7 @@ packages/
 ```
 
 ### 6. Service Layer Abstraction
+
 Business logic separated from transport (HTTP, WS, CLI).
 
 ```typescript
@@ -214,6 +218,7 @@ export interface UserService {
 ```
 
 ### 7. Event Bus (Decoupled Communication)
+
 ```typescript
 // packages/core/events/eventBus.ts
 type EventHandler<T = unknown> = (payload: T) => Promise<void> | void;
@@ -244,6 +249,7 @@ export const eventBus = new EventBus();
 ```
 
 ### 8. Configuration-Driven Behavior
+
 Behavior controlled by config, not code changes.
 
 ```typescript
@@ -296,6 +302,7 @@ export function loadConfig(): AppConfig {
 ```
 
 ### 9. Barrel Exports (Clean Public API)
+
 ```typescript
 // packages/core/index.ts
 export * from './interfaces';
@@ -310,6 +317,7 @@ import { Tool, toolRegistry, createToolFactory, eventBus } from '@repo/core';
 ```
 
 ### 10. Dependency Injection (Optional, Lightweight)
+
 ```typescript
 // packages/core/di/container.ts
 type Factory<T> = () => T | Promise<T>;
@@ -343,8 +351,6 @@ export class Container {
 export const container = new Container();
 ```
 
----
-
 ## Plug-and-Play Checklist
 
 When adding a new pluggable feature:
@@ -357,8 +363,6 @@ When adding a new pluggable feature:
 - [ ] Export via barrel in `packages/core/index.ts`
 - [ ] Document config schema in `packages/config/schema.ts`
 - [ ] Add integration tests
-
----
 
 ## Anti-Patterns to Avoid
 
@@ -373,19 +377,15 @@ When adding a new pluggable feature:
 | Framework code in domain services | Pure TS, inject repositories |
 | Global mutable state | Event bus + explicit subscriptions |
 
----
-
 ## Migration Path for Existing Code
 
-1. **Extract interfaces** from concrete implementations
-2. **Create registry** and register existing implementations
-3. **Replace direct imports** with factory calls
-4. **Move shared types/utils** to `packages/shared/`
-5. **Add config schema** for hardcoded values
-6. **Introduce event bus** for cross-feature communication
-7. **Write plugin entry points** for each feature package
-
----
+1. Extract interfaces from concrete implementations.
+2. Create registry and register existing implementations.
+3. Replace direct imports with factory calls.
+4. Move shared types/utils to `packages/shared/`.
+5. Add config schema for hardcoded values.
+6. Introduce event bus for cross-feature communication.
+7. Write plugin entry points for each feature package.
 
 ## Usage with nerdev-monorepo
 
@@ -394,11 +394,11 @@ This skill composes with `nerdev-monorepo`:
 ```
 project/
 ├── packages/
-│   ├── core/              # <-- This skill
-│   ├── shared/            # <-- nerdev-monorepo common
-│   ├── config/            # <-- This skill
-│   ├── database/          # <-- nerdev-monorepo db
-│   └── ui/                # <-- nerdev-monorepo ui
+│   ├── core/              # This skill
+│   ├── shared/            # nerdev-monorepo common
+│   ├── config/            # This skill
+│   ├── database/          # nerdev-monorepo db
+│   └── ui/                # nerdev-monorepo ui
 ├── apps/
 │   ├── frontend/
 │   ├── http-backend/

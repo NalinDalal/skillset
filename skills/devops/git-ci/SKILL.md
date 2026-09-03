@@ -1,12 +1,9 @@
----
 name: git-ci
 description: Git workflow conventions, conventional commits, branching strategy, PR workflow, GitHub Actions CI/CD, release automation, semantic versioning. Load when setting up repo, configuring CI, or automating releases.
----
-# Git & CI , Conventions, Workflow, Automation
 
-**When to use:** New repo setup, CI configuration, release automation, PR workflow, commit standards.
+# Git & CI
 
----
+Load when setting up a new repo, configuring CI, automating releases, or enforcing commit standards.
 
 ## Git Conventions
 
@@ -62,7 +59,6 @@ BREAKING CHANGE: remove deprecated /api/v1 endpoints
 - Use package/app name: `feat(frontend):`, `fix(api):`, `chore(db):`
 - For monorepo: `feat(ui):`, `feat(common):`, `feat(http-backend):`
 
----
 
 ## PR Workflow
 
@@ -117,11 +113,9 @@ Brief description of changes.
 |        |       |
 ```
 ### PR Size Guidelines
-- **< 400 lines changed** , Ideal
-- **400-800** , Needs strong justification
-- **> 800** , Split into multiple PRs
-
----
+- < 400 lines changed: ideal
+- 400-800: needs strong justification
+- > 800: split into multiple PRs
 
 ## GitHub Actions CI
 
@@ -236,7 +230,6 @@ jobs:
   "globalEnv": ["DATABASE_URL", "NODE_ENV"]
 }
 ```
----
 
 ## Release Automation
 
@@ -283,7 +276,6 @@ jobs:
   }
 }
 ```
----
 
 ## Git Hooks (Husky + lint-staged)
 ```json
@@ -314,7 +306,6 @@ export default {
   },
 }
 ```
----
 
 ## Dependabot / Renovate
 ```yaml
@@ -338,7 +329,6 @@ updates:
     reviewers: ["team-leads"]
     assignees: ["bot-maintainer"]
 ```
----
 
 ## Required Checks Summary
 
@@ -352,7 +342,6 @@ updates:
 | Build | `bun run build` | ✅ |
 | Bundle Size | `bundlesize` | Optional |
 
----
 
 ## Quick Commands
 ```bash
@@ -374,7 +363,6 @@ git checkout -b fix/urgent-bug main
 git commit -m "fix(scope): urgent fix"
 gh pr create --base main --title "fix: urgent fix"
 ```
----
 
 ## Related Skills
 - `nerdev/nerdev-monorepo` - Turborepo structure

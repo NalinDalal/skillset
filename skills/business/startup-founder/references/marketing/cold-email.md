@@ -3,7 +3,6 @@ name: cold-email
 description: Write B2B cold emails and reminder sequences that get replies. Use when the user writes cold outreach emails, prospecting emails, cold email campaigns, sales development emails, or SDR emails. Also use when the user mentions "cold outreach," "prospecting email," "outbound email," "email to leads," "email prospects," "sales email," "reminder email sequence," "nobody replies to my emails," or "how do I write a cold email." Covers subject lines, opening lines, body copy, CTAs, personalization, and multi-touch reminder sequences. For warm/lifecycle email sequences, see emails. For sales collateral beyond emails, see sales-enablement.
 metadata:
   version: 2.0.0
----
 
 # Cold Email Writing
 
@@ -28,7 +27,6 @@ Understand the situation (ask if the user did not tell you):
 
 Work with whatever the user gives you. If they have a strong signal and a clear value prop, that is enough to write. Do not block on missing inputs. Use what you have and note what would make it stronger.
 
----
 
 ## Writing Principles
 
@@ -54,7 +52,6 @@ The reader sees their own situation reflected back. "You/your" dominates over "I
 
 Interest-based CTAs ("Worth exploring?" / "Would this be useful?") beat meeting requests. One CTA per email. Make it easy to say yes with a one-line reply.
 
----
 
 ## Voice & Tone
 
@@ -73,7 +70,6 @@ Interest-based CTAs ("Worth exploring?" / "Would this be useful?") beat meeting 
 - A LinkedIn DM from someone you have never met
 - An AI-generated email (avoid the telltale patterns: "I hope this email finds you well," "I came across your profile," "leverage," "synergy," "best-in-class")
 
----
 
 ## Structure
 
@@ -91,7 +87,6 @@ There is no single right structure. Choose a framework that fits the situation, 
 
 For the full catalog of frameworks with examples, see [frameworks.md](references/frameworks.md).
 
----
 
 ## Subject Lines
 
@@ -103,7 +98,6 @@ Short, boring, internal-looking. The only job of the subject line is to get the 
 
 See [subject-lines.md](references/subject-lines.md) for the full data.
 
----
 
 ## Follow-Up Sequences
 
@@ -115,7 +109,6 @@ Each follow-up adds something new: a different angle, fresh proof, a useful reso
 
 See [follow-up-sequences.md](references/follow-up-sequences.md) for cadence, angle rotation, and breakup email templates.
 
----
 
 ## Quality Check
 
@@ -127,7 +120,6 @@ Before presenting, gut-check:
 - Is the personalization connected to the problem?
 - Is there one clear, low-friction ask?
 
----
 
 ## What to Avoid
 
@@ -147,7 +139,6 @@ Before presenting, gut-check:
 
 - Sending only "Just checking in" notes
 
----
 
 ## Data & Benchmarks
 
@@ -165,7 +156,6 @@ The references contain performance data if you need to make informed choices:
 
 Use this data to inform your writing, not as a checklist to satisfy.
 
----
 
 ## Related Skills
 

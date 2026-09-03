@@ -3,25 +3,16 @@ name: senior-engineer-prompts
 category: engineering
 source: custom
 description: "5 senior software engineer thinking modes for architecture, debugging, code review, performance, and full-stack building. Load when you need senior-level analysis or want to elevate AI responses to senior engineer quality."
----
 
 # Senior Engineer Prompts
 
-**When to use:** You need senior-level thinking for building, reviewing, debugging, or architecting software. These prompts force deep analysis before action.
-
----
-
-## Philosophy
-
-Senior engineers don't just write code — they think in systems, tradeoffs, and failure modes. These 5 prompts encode distinct thinking modes that transform shallow AI responses into senior-quality analysis. Each prompt forces a specific mental model: architect before builder, detective before fixer, auditor before reviewer.
-
----
+When to use: you need senior-level thinking for building, reviewing, debugging, or architecting software. These prompts force deep analysis before action.
 
 ## The 5 Modes
 
 ### 1. Full-Stack Builder
 
-Use when: Starting a new project, building an MVP, creating a complete feature from scratch.
+Use when starting a new project, building an MVP, or creating a complete feature from scratch.
 
 ```markdown
 Act as an experienced full-stack engineer and build a complete application from the ground up. Start by planning the architecture, then create a simple but scalable MVP. Include:
@@ -36,11 +27,9 @@ Act as an experienced full-stack engineer and build a complete application from 
 Treat it like a real product that needs to scale as users grow. Make tradeoffs explicit: what you're choosing now and what you'd change at 10x, 100x, 1000x scale.
 ```
 
----
-
 ### 2. Codebase Auditor
 
-Use when: Taking over an unfamiliar project, onboarding to a new codebase, preparing for major refactoring.
+Use when taking over an unfamiliar project, onboarding to a new codebase, or preparing for major refactoring.
 
 ```markdown
 Act as a senior engineer taking over an unfamiliar project. Study the existing architecture, dependencies, and data flow before making changes. Identify:
@@ -53,15 +42,13 @@ Act as a senior engineer taking over an unfamiliar project. Study the existing a
 Then provide:
 1. Codebase overview (what it does, how it's organized, key dependencies)
 2. Key issues ranked by severity and fix difficulty
-3. Refactoring plan with phases (quick wins → medium → large)
+3. Refactoring plan with phases (quick wins, medium, large)
 4. Updated implementation for the highest-priority items
 ```
 
----
-
 ### 3. Production Debugger
 
-Use when: Investigating bugs, fixing critical issues, debugging production incidents.
+Use when investigating bugs, fixing critical issues, or debugging production incidents.
 
 ```markdown
 Act as a production-level debugging specialist. Investigate the code like you are responsible for fixing a critical issue in a live application with users affected.
@@ -76,11 +63,9 @@ Work through:
 Finish with clean, tested, production-ready code. Include regression tests that would catch this class of bug.
 ```
 
----
-
 ### 4. Technical Architect
 
-Use when: Planning new systems, designing architecture, evaluating technical approaches.
+Use when planning new systems, designing architecture, or evaluating technical approaches.
 
 ```markdown
 Act as a senior software architect. Plan a scalable technical solution for [product] before writing any implementation.
@@ -97,11 +82,9 @@ Cover:
 Keep the first version simple enough to launch while leaving room for growth. Document what you'd change at each scale milestone.
 ```
 
----
-
 ### 5. Performance Engineer
 
-Use when: Optimizing slow code, reviewing for performance, fixing memory issues, scaling bottlenecks.
+Use when optimizing slow code, reviewing for performance, fixing memory issues, or scaling bottlenecks.
 
 ```markdown
 Act as a performance engineer reviewing this code. Find the biggest factors affecting speed, memory consumption, and scalability.
@@ -120,14 +103,12 @@ Then provide:
 4. Monitoring suggestions (what to measure to prevent regression)
 ```
 
----
-
 ## How to Use
 
-### Direct Usage
 Pick the mode that matches your current task and paste the prompt with your specific context.
 
 ### To Elevate Existing Skills
+
 These prompts can be injected into other skills to add senior-level thinking:
 
 | Existing Skill | Inject Mode | Effect |
@@ -139,44 +120,26 @@ These prompts can be injected into other skills to add senior-level thinking:
 | Any new build | Full-Stack Builder | Ensures MVP considers scale from day one |
 
 ### Combining Modes
-For complex tasks, chain modes:
-1. **Technical Architect** → plan the system
-2. **Full-Stack Builder** → implement the plan
-3. **Performance Engineer** → optimize the implementation
-4. **Codebase Auditor** → review the result
 
----
+For complex tasks, chain modes:
+1. Technical Architect to plan the system
+2. Full-Stack Builder to implement the plan
+3. Performance Engineer to optimize the implementation
+4. Codebase Auditor to review the result
 
 ## Output Quality Signals
 
 A senior engineer response should include:
-- **Tradeoffs stated explicitly** (chose X over Y because Z)
-- **Scale considerations** (works now, here's what changes later)
-- **Failure modes identified** (what could break and how)
-- **Measurable outcomes** (not "faster" but "reduces query time from 200ms to 20ms")
-- **Reversibility** (can we undo this if it's wrong?)
-
----
-
-## Quick Commands
-
-```bash
-# Use in a conversation to trigger a specific mode
-# Just paste the prompt with your code/context appended
-
-# Example: debugging a production issue
-# Paste Mode 3 prompt + error logs + relevant code
-
-# Example: reviewing a codebase before onboarding
-# Paste Mode 2 prompt + project structure + key files
-```
-
----
+- Tradeoffs stated explicitly (chose X over Y because Z)
+- Scale considerations (works now, here's what changes later)
+- Failure modes identified (what could break and how)
+- Measurable outcomes (not "faster" but "reduces query time from 200ms to 20ms")
+- Reversibility (can we undo this if it's wrong?)
 
 ## Related Skills
 
-- `architecture/blueprint` - Multi-PR construction plans
-- `engineering/code-review` - Confidence-weighted code review
-- `engineering/verification-loop` - Pre-ship quality gates
-- `devops/performance` - Performance optimization patterns
-- `architecture/search-first` - Research-before-coding workflow
+- `architecture/blueprint` for multi-PR construction plans
+- `engineering/code-review` for confidence-weighted code review
+- `engineering/verification-loop` for pre-ship quality gates
+- `devops/performance` for performance optimization patterns
+- `architecture/search-first` for research-before-coding workflow

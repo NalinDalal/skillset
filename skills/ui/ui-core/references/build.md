@@ -15,7 +15,7 @@
 - Cards in cards, div-fake product UI.
 - Inter and Roboto as defaults.
 
-## Accessibility (enforced in build, not just verified)
+## Accessibility (built in, not checked later)
 
 - Color contrast: 4.5:1 for body text, 3:1 for large text and UI
   components. Test with actual text, not color picker values.

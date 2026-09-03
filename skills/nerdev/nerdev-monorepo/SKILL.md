@@ -1,17 +1,14 @@
----
 name: nerdev-monorepo
 description: Turborepo + Bun monorepo structure, conventions, CI/CD, and deployment patterns from nerdev-co
----
 
 # nerdev-monorepo Skill
 
-**Purpose**: Enforce the nerdev-co development methodology across all projects -- consistent monorepo structure, file-based architecture, camelCase naming, documented code, and production-ready patterns.
+Enforce the nerdev-co development methodology across all projects: consistent monorepo structure, file-based architecture, camelCase naming, documented code, and production-ready patterns.
 
 > **Visual, motion, and docs standards:** This skill defines structure and operations. For UI feel (Apple/Google quality), micro-animation restraint, and documentation tone, see [`house-style`](../house-style/SKILL.md). Load both for nerdev-co projects.
 
 > **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-docs`](../nerdev-docs/SKILL.md) for development-integrated documentation (ADRs, design docs, runbooks) and [`nerdev-abstraction`](../nerdev-abstraction/SKILL.md) for interface-first, registry-based plug-and-play patterns. All three work together for nerdev-co projects.
 
----
 
 ## Core Principles
 
@@ -437,7 +434,6 @@ server {
 }
 ```
 
----
 
 ## Required Files Checklist
 
@@ -454,7 +450,6 @@ Every nerdev-co project MUST have:
 - [ ] `eslint.config.js` - Flat config extending `@repo/eslint-config`
 - [ ] `tsconfig.json` - Extending `@repo/typescript-config`
 
----
 
 ## Commands Reference
 
@@ -470,7 +465,6 @@ Every nerdev-co project MUST have:
 | `bun run openapi:gen` | Generate OpenAPI spec |
 | `bun run docs:gen` | Generate documentation |
 
----
 
 ## When Creating New Projects
 
@@ -484,7 +478,6 @@ Every nerdev-co project MUST have:
 8. **Document architecture decisions** in design.md with rationale tables
 9. **Create deploy.md** before first deployment
 
----
 
 ## Code Review Checklist
 
@@ -501,7 +494,6 @@ Every nerdev-co project MUST have:
 - [ ] Dark mode support in components
 - [ ] Accessibility (ARIA, keyboard nav)
 
----
 
 ## Anti-Patterns to Avoid
 
@@ -518,7 +510,6 @@ Every nerdev-co project MUST have:
 | Next.js for canvas-heavy apps | Vite + TanStack Router |
 | Node.js for WebSocket servers | Bun.serve native WebSocket |
 
----
 
 ## References
 

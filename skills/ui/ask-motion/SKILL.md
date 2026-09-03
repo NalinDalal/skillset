@@ -8,7 +8,6 @@ description: Library guide for motion.dev (Framer Motion): springs, layout anima
 
 **Package:** `motion` (formerly `framer-motion`)
 
----
 
 ## Installation
 ```bash
@@ -16,13 +15,11 @@ npm i motion
 # or
 npm i framer-motion@latest
 ```
----
 
 ## Core API (v11+)
 ```tsx
 import { motion, AnimatePresence, LazyMotion, domAnimation, m, useScroll, useTransform, useSpring, useMotionValue, useAnimationControls } from 'motion/react'
 ```
----
 
 ## House-Style Motion Config (Non-Negotiable)
 ```tsx
@@ -69,7 +66,6 @@ export const toastTransition = {
   transition: springOut,
 } as const
 ```
----
 
 ## Reduced Motion (Mandatory)
 ```tsx
@@ -95,7 +91,6 @@ export function useReducedMotion() {
 const reduced = useReducedMotion()
 const transition = reduced ? { duration: 0 } : spring
 ```
----
 
 ## Page Transitions (Linear-style)
 ```tsx
@@ -119,7 +114,6 @@ export default function Layout({ children }) {
   )
 }
 ```
----
 
 ## Layout Animations (Shared Element)
 ```tsx
@@ -132,7 +126,6 @@ export default function Layout({ children }) {
 // In detail page
 <motion.div layoutId="project-image" className="aspect-video rounded-lg bg-gray-100" />
 ```
----
 
 ## Enter/Exit (Modals, Toasts, Dropdowns)
 ```tsx
@@ -159,7 +152,6 @@ import { modalTransition, toastTransition } from '@/lib/motion-config'
   ))}
 </AnimatePresence>
 ```
----
 
 ## Hover/Tap Feedback (Raycast-style)
 ```tsx
@@ -181,7 +173,6 @@ import { modalTransition, toastTransition } from '@/lib/motion-config'
   Content
 </motion.div>
 ```
----
 
 ## Drag (Vaul-style Drawers, Sliders)
 ```tsx
@@ -205,7 +196,6 @@ import { modalTransition, toastTransition } from '@/lib/motion-config'
   // Use useTransform for custom thumb
 />
 ```
----
 
 ## Scroll-Linked (Basic , Use GSAP for Complex)
 ```tsx
@@ -231,7 +221,6 @@ function ScrollProgress() {
   return <motion.div style={{ width }} className="h-0.5 bg-primary fixed top-0 z-50" />
 }
 ```
----
 
 ## Stagger (Rare Moments Only)
 ```tsx
@@ -269,7 +258,6 @@ import { motion } from 'motion/react'
   ))}
 </motion.ul>
 ```
----
 
 ## useSpring (Smooth Values)
 ```tsx
@@ -301,7 +289,6 @@ function MagneticButton() {
   )
 }
 ```
----
 
 ## LazyMotion (Bundle Size)
 ```tsx
@@ -317,7 +304,6 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
   <motion.div animate={{ x: 100 }} />
 </LazyMotion>
 ```
----
 
 ## Common Pitfalls
 
@@ -330,7 +316,6 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
 | Jitter on scroll | Use `useTransform` with `useScroll`, not `onScroll` |
 | Bundle too big | Use `LazyMotion` with `domAnimation` |
 
----
 
 ## When to Use GSAP Instead
 
@@ -342,7 +327,6 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
 | High-performance canvas/WebGL | GSAP + Pixi/Three |
 | Showcase tier (dial=3) | GSAP + Lenis |
 
----
 
 ## Related Skills
 

@@ -3,19 +3,10 @@ name: code-review
 category: engineering
 source: ECC (adapted)
 description: "Confidence-weighted code review with false-positive suppression. Load when reviewing code or setting up review processes."
----
 
 # Code Review
 
-**When to use:** Reviewing PRs, setting up review processes, establishing quality standards.
-
----
-
-## Philosophy
-
-Good code review catches real problems, not style preferences. This skill uses confidence weighting to filter noise and focus on issues that matter.
-
----
+When to use: reviewing PRs, setting up review processes, establishing quality standards.
 
 ## Review Checklist
 
@@ -54,8 +45,6 @@ Good code review catches real problems, not style preferences. This skill uses c
 | Minor refactoring | Small optimizations |
 | Style consistency | Inconsistent patterns |
 
----
-
 ## Confidence Weighting
 
 Each issue gets a confidence score (0.0 - 1.0):
@@ -68,37 +57,22 @@ Each issue gets a confidence score (0.0 - 1.0):
 | 0.3 - 0.4 | Uncertain | Comment, don't block |
 | 0.0 - 0.2 | Probably fine | Skip |
 
-### Confidence Rules
-- **Never report issues below 0.5 confidence** unless you can cite exact line and failure mode
-- **Suppress common LLM review noise**: "consider adding error handling" on already-handled paths, "might be slow" without benchmarks, "could be more readable" without specific suggestions
-- **Require concrete evidence**: line numbers, error messages, test cases that would fail
-
----
+Confidence rules:
+- Never report issues below 0.5 confidence unless you can cite exact line and failure mode.
+- Suppress common LLM review noise: "consider adding error handling" on already-handled paths, "might be slow" without benchmarks, "could be more readable" without specific suggestions.
+- Require concrete evidence: line numbers, error messages, test cases that would fail.
 
 ## Pre-Report Gate
 
-Before reporting any issue, verify:
-
-- [ ] Can I cite the exact line number?
-- [ ] Can I describe the concrete failure mode?
-- [ ] Would this actually cause a problem in production?
-- [ ] Is this a real issue or just a style preference?
-
-If any answer is "no", don't report the issue.
-
----
+Before reporting any issue, verify you can cite the exact line number, describe the concrete failure mode, explain why it would cause a problem in production, and confirm it is a real issue rather than a style preference. If any answer is "no", don't report it.
 
 ## Verdict System
 
-After reviewing all issues, assign a verdict:
-
 | Verdict | Meaning | When to Use |
 |---------|---------|-------------|
-| **APPROVE** | Ready to merge | No critical/high issues, medium/low are optional |
-| **WARNING** | Merge with caution | Medium issues exist but no blockers |
-| **BLOCK** | Cannot merge | Critical or high issues present |
-
----
+| APPROVE | Ready to merge | No critical/high issues, medium/low are optional |
+| WARNING | Merge with caution | Medium issues exist but no blockers |
+| BLOCK | Cannot merge | Critical or high issues present |
 
 ## Review Template
 
@@ -133,11 +107,9 @@ After reviewing all issues, assign a verdict:
 - [ ] Edge cases covered
 ```
 
----
-
 ## False-Positive Suppression
 
-### Skip These Common Noise Patterns
+Skip these common noise patterns:
 - "Consider adding error handling" on already-handled paths
 - "This might be slow" without benchmarks
 - "Could be more readable" without specific suggestion
@@ -145,53 +117,25 @@ After reviewing all issues, assign a verdict:
 - "This is a code smell" without concrete impact
 - "Should use const" when let is intentional
 
-### Instead of Noise, Focus On
-- Concrete bugs with reproduction steps
-- Performance issues with measurements
-- Security issues with attack vectors
-- Maintainability issues with specific refactoring suggestions
-
----
+Focus on: concrete bugs with reproduction steps, performance issues with measurements, security issues with attack vectors, maintainability issues with specific refactoring suggestions.
 
 ## Review Scope
 
-### What to Review
-- Logic correctness
-- Error handling
-- Security implications
-- Performance impact
-- Test coverage
-- API contract changes
-- Breaking changes
+Review: logic correctness, error handling, security implications, performance impact, test coverage, API contract changes, breaking changes.
 
-### What NOT to Review
-- Personal style preferences
-- Trivial formatting (let the linter handle it)
-- Library choices (unless there's a security/performance concern)
-- Variable naming (unless truly confusing)
-
----
+Don't review: personal style preferences, trivial formatting (let the linter handle it), library choices (unless there's a security/performance concern), variable naming (unless truly confusing).
 
 ## Quick Commands
 
 ```bash
-# Get PR diff
 gh pr diff <pr-number>
-
-# Checkout PR branch
 gh pr checkout <pr-number>
-
-# Run tests on PR branch
 bun test
-
-# Check for secrets
 grep -r "password\|secret\|token\|key" --include="*.ts" --include="*.js"
 ```
 
----
-
 ## Related Skills
 
-- `engineering/tdd-workflow` - Test quality standards
-- `engineering/verification-loop` - Pre-PR quality gates
-- `backend/security` - Security review patterns
+- `engineering/tdd-workflow` for test quality standards
+- `engineering/verification-loop` for pre-PR quality gates
+- `backend/security` for security review patterns

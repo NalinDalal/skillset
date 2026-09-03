@@ -272,7 +272,6 @@ After presenting the summary, tell the user:
 >
 > Re-run `/impeccable critique` after fixes to see your score improve.
 
----
 
 ## Reference Material
 
@@ -282,7 +281,6 @@ The sections below were previously separate reference files (`cognitive-load.md`
 
 Cognitive load is the total mental effort required to use an interface. Overloaded users make mistakes, get frustrated, and leave. This reference helps identify and fix cognitive overload.
 
----
 
 #### Three Types of Cognitive Load
 
@@ -314,7 +312,6 @@ Mental effort spent building understanding. This is *good* cognitive load; it le
 - Feedback that confirms correct understanding
 - Onboarding that teaches through action, not walls of text
 
----
 
 #### Cognitive Load Checklist
 
@@ -331,7 +328,6 @@ Evaluate the interface against these 8 items:
 
 **Scoring**: Count the failed items. 0–1 failures = low cognitive load (good). 2–3 = moderate (address soon). 4+ = high cognitive load (critical fix needed).
 
----
 
 #### The Working Memory Rule
 
@@ -349,7 +345,6 @@ At any decision point, count the number of distinct options, actions, or pieces 
 - Documentation sidebars: ≤4 sibling choices visible per level before grouping kicks in
 - Portfolio and gallery indexes: one decision per screen (which piece to open), not filter, sort, and tag controls all at once
 
----
 
 #### Common Cognitive Load Violations
 
@@ -385,7 +380,6 @@ At any decision point, count the number of distinct options, actions, or pieces 
 **Problem**: User must jump between screens/tabs/modals to gather info for a single decision.
 **Fix**: Co-locate the information needed for each decision. Reduce back-and-forth.
 
----
 
 ### Heuristics Scoring Guide
 
@@ -593,7 +587,6 @@ Even if the system is usable without docs, help should be easy to find, task-foc
 | 3 | Good documentation; searchable, mostly task-focused |
 | 4 | Excellent contextual help; right info at the right moment |
 
----
 
 #### Score Summary
 
@@ -609,7 +602,6 @@ Even if the system is usable without docs, help should be easy to find, task-foc
 
 When heuristics were scored `n/a`, the maximum is lower than 40; read the band off the percentage instead of the raw number (90%+ Excellent, 70%+ Good, 50%+ Acceptable, 30%+ Poor, below that Critical). 24/32 is 75%, so Good.
 
----
 
 #### Issue Severity (P0–P3)
 
@@ -624,7 +616,6 @@ Tag each individual issue found during scoring with a priority level:
 
 **Tip**: If you're unsure between two levels, ask: "Would a user contact support about this?" If yes, it's at least P1.
 
----
 
 ### Persona-Based Design Testing
 
@@ -632,7 +623,6 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 
 **How to use**: Select 2–3 personas most relevant to the interface being critiqued. Walk through the primary user action as each persona. Report specific red flags, not generic concerns.
 
----
 
 #### 1. Impatient Power User: "Alex"
 
@@ -659,7 +649,6 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 - One-item-at-a-time workflows where batch would be natural
 - Redundant confirmation steps for low-risk actions
 
----
 
 #### 2. Confused First-Timer: "Jordan"
 
@@ -686,7 +675,6 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 - Ambiguous next steps after completing an action
 - No confirmation that an action succeeded
 
----
 
 #### 3. Accessibility-Dependent User: "Sam"
 
@@ -714,7 +702,6 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 - Time-limited actions without extension option
 - Custom components that break screen reader flow
 
----
 
 #### 4. Deliberate Stress Tester: "Riley"
 
@@ -741,7 +728,6 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 - Workflows that lose user data on refresh or navigation
 - Inconsistent behavior between similar interactions in different parts of the UI
 
----
 
 #### 5. Distracted Mobile User: "Casey"
 
@@ -768,7 +754,6 @@ Test the interface through the eyes of 5 distinct user archetypes. Each persona 
 - Heavy assets loading on every page (no lazy loading)
 - Tiny tap targets or targets too close together
 
----
 
 #### Selecting Personas
 
@@ -783,7 +768,6 @@ Choose personas based on the interface type:
 | Data-heavy / analytics | Alex, Sam | Efficiency, keyboard nav |
 | Form-heavy / wizard | Jordan, Sam, Casey | Clarity, accessibility, mobile |
 
----
 
 #### Project-Specific Personas
 

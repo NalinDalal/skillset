@@ -139,6 +139,59 @@ these first, then tune:
 The pattern every one of them shares: fast, physical, quiet,
 purposeful.
 
+### Gradients: restraint is the rule
+
+Gradients are not banned. Bad gradients are banned. The difference is
+purpose and subtlety.
+
+**What to ban:**
+- Purple or blue glow gradients on backgrounds. The AI signature.
+- Gradient text (`background-clip: text` with a gradient fill). Always
+  looks cheap.
+- Radial gradient halos behind heroes or sections. Decorative noise.
+- Repeating gradient stripes as surface decoration. Not a texture, just
+  noise.
+- Gradient buttons with saturated color shifts. Buttons are flat or
+  solid.
+- Any gradient where you can see the color stops. If the transition is
+  visible, it is too much.
+
+**What to allow:**
+- Subtle tonal shifts on backgrounds. Two near-identical shades of the
+  same gray, blending imperceptibly. Stripe does this. The eye reads it
+  as depth, not as a gradient.
+- Shimmer loading states. A linear-gradient animating across a skeleton
+  is functional, not decorative.
+- Fade masks on scroll containers. A gradient from opaque to transparent
+  at the edge of a scrollable area tells the user there is more content.
+  That is communication.
+- Duotone or tonal overlays on images. Two colors, high contrast, used
+  to unify photography with the palette. Not a rainbow.
+- Background gradients that are solid colors with a slight warm/cool
+  shift. Not chromatic. Think "this white is slightly warmer on the left"
+  instead of "this goes from purple to blue."
+
+**The test:** cover the gradient with your thumb. If the design falls
+apart without it, the gradient is doing too much. If nothing changes,
+the gradient is decoration, and decoration that does nothing is noise.
+
+**Where gradients earn their place:**
+- Surfaces that need subtle depth (a card that recedes slightly toward
+  the bottom)
+- Loading and transition states (shimmer, crossfade)
+- Scroll indicators (fade at the edge of a container)
+- Image treatment (tonal overlay to match palette)
+
+**Where they never belong:**
+- Buttons
+- Text
+- Headers or nav bars
+- Anywhere that a solid color does the job
+
+Study how Stripe uses gradients: barely perceptible, always functional,
+never the first thing you see. The gradient exists to make the solid
+color feel less flat. That is the whole job.
+
 ## Modular Route-Based File Layout (Backend Services)
 
 ### Principle

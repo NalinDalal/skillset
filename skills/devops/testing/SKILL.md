@@ -1,12 +1,11 @@
 ---
 name: testing
-description: Testing patterns , unit, integration, E2E, Vitest, Playwright, React Testing Library, MSW, test database, coverage, CI integration. Load when writing tests or setting up test infrastructure.
+description: Testing patterns, unit, integration, E2E, Vitest, Playwright, React Testing Library, MSW, test database, coverage, CI integration. Load when writing tests or setting up test infrastructure.
 ---
-# Testing , Unit, Integration, E2E
 
-**When to use:** Writing tests, setting up test infrastructure, improving coverage, debugging flaky tests.
+# Testing
 
----
+Load when writing tests, setting up test infrastructure, improving coverage, or debugging flaky tests.
 
 ## Test Pyramid
 ```
@@ -16,7 +15,6 @@ description: Testing patterns , unit, integration, E2E, Vitest, Playwright, Reac
   /            \
 Unit (60-70%)   Vitest + RTL - Pure functions, components, hooks
 ```
----
 
 ## Tooling
 
@@ -29,7 +27,6 @@ Unit (60-70%)   Vitest + RTL - Pure functions, components, hooks
 | E2E | Playwright | Cross-browser, real user flows |
 | Visual | Playwright + pixelmatch | Screenshot regression |
 
----
 
 ## Vitest Config
 ```typescript
@@ -99,7 +96,6 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 })
 ```
----
 
 ## Unit Tests (Pure Functions)
 ```typescript
@@ -139,7 +135,6 @@ describe('isWeekend', () => {
   })
 })
 ```
----
 
 ## Component Tests (React Testing Library)
 ```typescript
@@ -208,7 +203,6 @@ describe('useDebounce', () => {
   })
 })
 ```
----
 
 ## Integration Tests (API + Database)
 
@@ -336,7 +330,6 @@ beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
 afterAll(() => server.close())
 afterEach(() => server.resetHandlers())
 ```
----
 
 ## E2E Tests (Playwright)
 ```typescript
@@ -437,7 +430,6 @@ test.describe('Projects', () => {
   })
 })
 ```
----
 
 ## Mocking Patterns
 
@@ -482,7 +474,6 @@ vi.mock('next/navigation', () => ({
   useSearchParams: () => new URLSearchParams(),
 }))
 ```
----
 
 ## Coverage Goals
 
@@ -508,7 +499,6 @@ coverage: {
   ],
 }
 ```
----
 
 ## CI Integration
 ```yaml
@@ -527,7 +517,6 @@ jobs:
           files: ./coverage/lcov.info
           flags: unittests
 ```
----
 
 ## Debugging Flaky Tests
 
@@ -539,7 +528,6 @@ jobs:
 | Browser flaky | Add retries, check race conditions |
 | DB state leaks | Use transactions + rollback, or clean DB |
 
----
 
 ## Quick Commands
 ```bash
@@ -560,7 +548,6 @@ bun playwright test
 bun playwright test --headed
 bun playwright show-report
 ```
----
 
 ## Related Skills
 - `devops/git-ci` - CI pipeline integration

@@ -7,7 +7,6 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 
 **When to use:** Any transient feedback: success, error, info, warning, loading, promise-based, action buttons, custom content.
 
----
 
 ## The Pattern (What Good Looks Like)
 
@@ -21,9 +20,8 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 | **Custom JSX** | Rich content | `toast(<CustomComponent />)`: keeps shell |
 | **Headless** | Design system toast | `toast.custom((t) => <CustomToast {...t} />)`: no styles |
 
----
 
-## Quality Checklist (From Linear/Raycast/Sonner defaults)
+## Quality Checklist
 
 - [ ] **One `<Toaster />` at root**: never per-page, never conditional
 - [ ] **`richColors` enabled**: success=green, error=red, not gray
@@ -36,9 +34,8 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 - [ ] **Reduced motion**: Instant appear/disappear
 - [ ] **No duplicate toasts**: Stable `id` for loading→success flows
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ Multiple `<Toaster />` mounted → Duplicates every toast
 - ❌ `toast()` called from server action → Client-only, call on client with result
@@ -49,7 +46,6 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 - ❌ Loading toast stuck → Promise never resolves, add timeout fallback
 - ❌ No action on destructive → "Deleted" without Undo = bad UX
 
----
 
 ## Styling Escalation Ladder (From ask-sonner)
 
@@ -60,7 +56,6 @@ description: Pattern guide for toasts, notifications, loading states, action toa
 
 **Recommendation:** For design system, wrap Sonner in your own `toast()` abstraction using headless.
 
----
 
 ## Implementation Flow
 
@@ -76,7 +71,6 @@ User needs toast/notification
     └─► implement with Sonner + custom headless wrapper
 ```
 
----
 
 ## Composition Examples
 
@@ -159,7 +153,6 @@ export function ToasterProvider() {
 }
 ```
 
----
 
 ## When to Escalate
 

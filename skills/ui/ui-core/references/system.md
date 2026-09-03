@@ -4,12 +4,12 @@
 
 One accent, one gray family, one radius scale, one icon family, one
 stroke weight, one motion curve family, one surface language. Every
-addition needs a reason that traces back to the product's feel contract.
+addition needs a reason tied to the product.
 
 ## Color
 
 - Max one accent, saturation under 80%.
-- One gray family: warm or cool, never both.
+- One gray family: warm or cool, not both.
 - No pure black: use tinted near-blacks.
 - Neutral roles: canvas, surface, text, muted text, border.
 - Pastel accents with dark text for tags and badges.
@@ -19,7 +19,7 @@ addition needs a reason that traces back to the product's feel contract.
   used only in that role. Warning never borrows from accent. Danger never
   borrows from warning.
 - Dark mode: invert the neutral scale, keep the accent hue, reduce
-  saturation by 10-20%. See Dark mode implementation in build.md.
+  saturation by 10-20%. See Dark mode in build.md.
 
 ## Type
 
@@ -31,7 +31,7 @@ addition needs a reason that traces back to the product's feel contract.
 - One family. Italic or bold of the same family for emphasis.
 - Serif only when the brand asks or the brief is editorial.
 - Modular scale: major third (1.25), perfect fourth (1.333), or golden
-  ratio (1.618). See Type scale system in build.md.
+  ratio (1.618). See Type scale in build.md.
 
 ## Scale
 
@@ -86,7 +86,7 @@ addition needs a reason that traces back to the product's feel contract.
   16px inline, 20px section headers, 24px standalone, 32px+ feature.
   See Icon system in build.md.
 - Form design: label above, validate on blur, error below input, submit
-  button shows loading state. See Form design standards in build.md.
+  button shows loading state. See Form design in build.md.
 - Component state matrix: every interactive component defines Default,
   Hover, Focus, Active, Disabled, Loading, Error, Empty, Selected.
   See Component state matrix in build.md.

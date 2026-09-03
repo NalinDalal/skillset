@@ -6,7 +6,6 @@ description: Authentication patterns , session-based, JWT, OAuth2/OIDC, magic li
 
 **When to use:** Implementing auth, adding OAuth providers, MFA, passwordless, RBAC, token refresh.
 
----
 
 ## Architecture Overview
 ```
@@ -20,7 +19,6 @@ description: Authentication patterns , session-based, JWT, OAuth2/OIDC, magic li
                     │ (Sessions)  │
                     └─────────────┘
 ```
----
 
 ## Session-Based Auth (Recommended for Web Apps)
 
@@ -179,7 +177,6 @@ export function requireRole(...roles: string[]) {
   }
 }
 ```
----
 
 ## JWT (For Mobile/API/WS)
 
@@ -284,7 +281,6 @@ export async function refreshTokens(req: Request) {
   return Response.json({ accessToken, refreshToken: newRefreshToken })
 }
 ```
----
 
 ## OAuth2 / OIDC Providers
 
@@ -365,7 +361,6 @@ export async function googleCallback(req: Request) {
   return Response.redirect('/dashboard')
 }
 ```
----
 
 ## Magic Links (Passwordless)
 ```typescript
@@ -398,7 +393,6 @@ export async function verifyMagicLink(token: string) {
   return user
 }
 ```
----
 
 ## MFA (TOTP)
 ```typescript
@@ -436,7 +430,6 @@ export async function disableMFA(userId: string) {
   })
 }
 ```
----
 
 ## Password Reset
 ```typescript
@@ -479,7 +472,6 @@ export async function resetPassword(token: string, newPassword: string) {
   return { success: true }
 }
 ```
----
 
 ## Email Verification
 ```typescript
@@ -506,7 +498,6 @@ export async function verifyEmail(token: string) {
   return true
 }
 ```
----
 
 ## RBAC (Role-Based Access Control)
 ```typescript
@@ -552,7 +543,6 @@ export function requirePermission(permission: Permission) {
   }
 }
 ```
----
 
 ## WebSocket Auth
 ```typescript
@@ -581,7 +571,6 @@ wsServer.on('connection', async (ws, req) => {
   })
 })
 ```
----
 
 ## Auth Checklist
 
@@ -598,7 +587,6 @@ wsServer.on('connection', async (ws, req) => {
 - [ ] Audit logs: All auth events (login, logout, failed attempts)
 - [ ] Account lockout: 5 failed attempts → 15 min lockout
 
----
 
 ## Related Skills
 - `backend/security` - Headers, rate limiting, CSP

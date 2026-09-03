@@ -7,9 +7,8 @@ description: Pattern guide for dialogs, sheets, popovers, menus, selects: when y
 
 **When to use:** Any overlay: confirmation dialog, settings sheet, dropdown menu, select, popover, tooltip, hover card.
 
----
 
-## The Pattern (What Good Looks Like)
+## The Pattern
 
 | Overlay Type | Use When | Key Behaviors |
 |--------------|----------|---------------|
@@ -20,9 +19,8 @@ description: Pattern guide for dialogs, sheets, popovers, menus, selects: when y
 | **Select** | Single/multi select, searchable | Native-like UX, groups, disabled options, async load |
 | **Hover Card** | Preview on hover (user avatar, link preview) | Delay open/close, follows cursor, dismiss on leave |
 
----
 
-## Quality Checklist (From Linear/Raycast/Stripe)
+## Quality Checklist
 
 - [ ] **Focus management:** Trap in dialog/sheet, restore to trigger on close
 - [ ] **Keyboard:** ESC closes, Tab cycles, arrows navigate menus/selects
@@ -35,9 +33,8 @@ description: Pattern guide for dialogs, sheets, popovers, menus, selects: when y
 - [ ] **Mobile:** Sheets use bottom sheet pattern, handle drag to dismiss
 - [ ] **Form integration:** Dialog/Sheet with form = submit on Enter, validate inline
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ Custom div + manual focus handling → Use `base-ui`
 - ❌ No focus trap → Accessibility fail
@@ -48,7 +45,6 @@ description: Pattern guide for dialogs, sheets, popovers, menus, selects: when y
 - ❌ Z-index wars → Portal to root
 - ❌ Select built from `<select>` → Can't style, use base-ui Select
 
----
 
 ## Implementation Flow
 
@@ -64,7 +60,6 @@ User needs modal
     └─► implement with base-ui primitives + custom composition
 ```
 
----
 
 ## base-ui Primitives to Use
 
@@ -85,7 +80,6 @@ import { Menu, MenuTrigger, MenuContent, MenuItem, MenuSeparator, MenuSub, MenuS
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup, SelectLabel, SelectSeparator, SelectScrollUpButton, SelectScrollDownButton } from 'base-ui/select'
 ```
 
----
 
 ## Composition Examples
 
@@ -140,7 +134,6 @@ function FilterSheet({ filters, onChange }) {
 }
 ```
 
----
 
 ## When to Escalate
 

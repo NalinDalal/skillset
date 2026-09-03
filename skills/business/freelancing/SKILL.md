@@ -6,7 +6,6 @@ description: "Complete studio/freelance playbook for developers. Use this skill 
 # Freelance Studio Playbook
 ### For developers operating as a small studio / collective
 
----
 
 # CORE PHILOSOPHY
 
@@ -17,7 +16,6 @@ You are not a developer for hire. You are a problem-solving studio that happens 
 • Under-promise, over-deliver  
 • Start as individuals, present as a team  
 
----
 
 # 0. POSITIONING -- Agency vs Individual vs Studio
 
@@ -33,7 +31,6 @@ Benefits:
 • Agility of freelancers  
 • Premium feel without large-agency pricing  
 
----
 
 # 1. FINDING AND EVALUATING CLIENTS
 
@@ -56,7 +53,6 @@ LinkedIn founders, startups via Crunchbase, YC directory.
 ### Referrals
 Offer 5-10% referral fee.
 
----
 
 ## Red Flags
 
@@ -66,7 +62,6 @@ Offer 5-10% referral fee.
 🚩 Refuses contract  
 🚩 Constant scope changes early  
 
----
 
 ## Green Flags
 
@@ -76,7 +71,6 @@ Offer 5-10% referral fee.
 ✅ Prior experience hiring developers  
 ✅ Accepts scoping call  
 
----
 
 # 2. PROPOSAL SYSTEM
 
@@ -91,7 +85,6 @@ Explain approach and proof.
 Paragraph 3:
 Timeline + investment + CTA.
 
----
 
 ## Proposal Personalization Rule
 
@@ -101,7 +94,6 @@ Always include 1 line:
 
 Shows real attention.
 
----
 
 # 3. QUOTATION vs INVOICE FLOW
 
@@ -128,7 +120,6 @@ Final invoice
 ↓  
 Testimonial  
 
----
 
 # 4. CONTRACT SYSTEM
 
@@ -145,7 +136,6 @@ Contract defines:
 • IP ownership  
 • change request process  
 
----
 
 # 5. PRICING SYSTEM
 
@@ -159,7 +149,6 @@ Retainer
 
 Package pricing
 
----
 
 ## Base Rate Formula
 
@@ -171,7 +160,6 @@ Example:
 ÷ 80 hrs  
 = ₹1,250/hr minimum
 
----
 
 # 6. CLIENT ONBOARDING FLOW
 
@@ -181,7 +169,6 @@ Step 3 -- quotation
 Step 4 -- contract + upfront payment  
 Step 5 -- kickoff  
 
----
 
 # 7. DELIVERY SYSTEM
 
@@ -198,7 +185,6 @@ core development
 Week 4:
 polish + deploy
 
----
 
 # 8. LATE PAYMENT HANDLING
 
@@ -216,7 +202,6 @@ Always:
 50% upfront  
 hold final code until payment clears  
 
----
 
 # 9. PORTFOLIO STRUCTURE
 
@@ -229,7 +214,6 @@ solution
 
 Focus on outcomes.
 
----
 
 # 10. TOOLS STACK
 
@@ -257,7 +241,6 @@ Vercel
 Design:
 Figma
 
----
 
 # 11. GROWTH ROADMAP
 
@@ -280,7 +263,6 @@ productize services
 retain clients
 build SaaS
 
----
 
 # 12. UPWORK PLAYBOOK
 
@@ -300,7 +282,6 @@ Approach
 Proof  
 CTA  
 
----
 
 # 13. CLIENT COMMUNICATION SCRIPTS
 
@@ -312,7 +293,6 @@ problem
 expectation  
 timeline  
 
----
 
 # 14. DISCOVERY QUESTIONS
 
@@ -331,7 +311,6 @@ Why this timeline?
 BUDGET:
 What range?
 
----
 
 # 15. ADVANCED CONTRACT CLAUSES
 
@@ -347,7 +326,6 @@ Client feedback SLA
 
 Value pricing clause
 
----
 
 # 16. PROJECT SCOPING SYSTEM
 
@@ -364,7 +342,6 @@ scope creep
 delays  
 profit loss  
 
----
 
 ## Feature Scope Template
 
@@ -389,7 +366,6 @@ logout works
 ESTIMATE:
 10 hours
 
----
 
 # 17. FULL SRS TEMPLATE
 
@@ -413,7 +389,6 @@ Acceptance criteria
 
 Sign-off
 
----
 
 # 18. MVP PRIORITIZATION FRAMEWORK
 
@@ -428,7 +403,6 @@ MVP proves idea works.
 
 Later versions improve scale.
 
----
 
 # 19. PRICING CALCULATOR STRUCTURE
 
@@ -452,7 +426,6 @@ AI integration:
 unclear scope:
 2.0
 
----
 
 # 20. CLIENT QUALIFICATION DECISION TREE
 
@@ -470,7 +443,6 @@ communication good?
 
 accept project
 
----
 
 # 21. NICHE POSITIONING STRATEGY
 
@@ -478,7 +450,6 @@ Generalists compete on price.
 
 Specialists compete on expertise.
 
----
 
 Positioning formula:
 
@@ -490,7 +461,6 @@ Example:
 
 I help SaaS founders build MVPs using Next.js and Supabase.
 
----
 
 # 22. OUTREACH SCRIPTS
 
@@ -509,7 +479,6 @@ Network:
 
 announce availability
 
----
 
 # 23. PORTFOLIO STRUCTURE THAT CONVERTS
 
@@ -525,7 +494,6 @@ proof
 
 CTA
 
----
 
 # 24. PROPOSAL GENERATOR TEMPLATE
 
@@ -537,7 +505,6 @@ project type
  timeline
  risk
 
----
 
 Structure:
 
@@ -553,7 +520,6 @@ price
 
 CTA
 
----
 
 # 25. CLIENT PSYCHOLOGY
 
@@ -569,7 +535,6 @@ Reduce uncertainty.
 
 Increase structure.
 
----
 
 Key principles:
 
@@ -579,7 +544,6 @@ confidence builds trust
 
 structure signals competence
 
----
 
 # 26. ASYNC COMMUNICATION SYSTEM
 
@@ -593,7 +557,6 @@ Notion for docs
 
 Calendly for calls
 
----
 
 Async update format:
 
@@ -605,7 +568,6 @@ NEXT
 
 BLOCKERS
 
----
 
 Decision format:
 
@@ -617,7 +579,6 @@ Recommendation
 
 Confirm
 
----
 
 Benefits:
 
@@ -631,7 +592,6 @@ timezone flexibility
 
 higher perceived professionalism
 
----
 
 # MASTER CHECKLIST
 
@@ -677,6 +637,5 @@ portfolio updated
 
 follow-up scheduled
 
----
 
 END OF PLAYBOOK

@@ -3,7 +3,6 @@ name: launch
 description: "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' 'product update,' 'how do I launch this,' 'launch checklist,' 'GTM plan,' or 'we are about to ship.' Use this whenever someone is preparing to release something publicly. For ongoing marketing after launch, see marketing-ideas. For the offer you launch (bonuses, guarantees, scarcity, naming), see offers."
 metadata:
   version: 2.0.1
----
 
 # Launch Strategy
 
@@ -14,7 +13,6 @@ You are an expert in SaaS product launches and feature announcements. Your goal 
 **Check for product marketing context first:**
 If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
----
 
 ## Core Philosophy
 
@@ -26,7 +24,6 @@ A strong launch is not about a single moment. It is about:
 - Making a splash at every stage
 - Building momentum that compounds over time
 
----
 
 ## The ORB Framework
 
@@ -100,7 +97,6 @@ Sent a free e-ink display to YouTuber Snazzy Labs, not a paid sponsorship, just 
 
 Borrowed channels give instant credibility, but only work if you convert borrowed attention into owned relationships.
 
----
 
 ## Five-Phase Launch Approach
 
@@ -177,7 +173,6 @@ Open the floodgates.
 
 **Goal:** Maximum visibility and conversion to paying users.
 
----
 
 ## Product Hunt Launch Strategy
 
@@ -230,7 +225,6 @@ Product Hunt can be powerful for reaching early adopters, but it is not magic. I
 - Directed traffic to capture signups
 - Result: #1 Product of the Day
 
----
 
 ## Post-Launch Product Marketing
 
@@ -256,7 +250,6 @@ Create no-code interactive demo (with tools like Navattic) so visitors can explo
 ### Keep Momentum Going
 It is easier to build on existing momentum than to start from scratch. Every touchpoint reinforces the launch.
 
----
 
 ## Ongoing Launch Strategy
 
@@ -295,7 +288,6 @@ Continue with email, social, and in-app messaging to highlight improvements.
 **Signal active development:**
 Even small changelog updates remind customers your product is evolving. This builds retention and word-of-mouth. Customers feel confident you will be around.
 
----
 
 ## Launch Checklist
 
@@ -330,7 +322,6 @@ Even small changelog updates remind customers your product is evolving. This bui
 - [ ] Gather and act on feedback
 - [ ] Plan next launch moment
 
----
 
 ## Task-Specific Questions
 
@@ -341,7 +332,6 @@ Even small changelog updates remind customers your product is evolving. This bui
 5. Have you launched before? What worked and what did not work?
 6. Are you considering Product Hunt? What is your preparation status?
 
----
 
 ## Related Skills
 

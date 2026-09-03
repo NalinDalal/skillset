@@ -7,9 +7,8 @@ description: Pattern guide for data tables: sorting, filtering, pagination, virt
 
 **When to use:** Any tabular data: admin panels, dashboards, lists, reports, data grids.
 
----
 
-## The Pattern (What Good Looks Like)
+## The Pattern
 
 | Feature | Quality Bar (Linear/GitHub/Stripe) |
 |---------|-------------------------------------|
@@ -26,7 +25,6 @@ description: Pattern guide for data tables: sorting, filtering, pagination, virt
 | **Keyboard** | Arrow nav, Space select, Enter edit, Escape cancel |
 | **Accessibility** | ARIA grid, column headers, sort announcements |
 
----
 
 ## Quality Checklist
 
@@ -41,9 +39,8 @@ description: Pattern guide for data tables: sorting, filtering, pagination, virt
 - [ ] **Responsive**: Horizontal scroll on mobile, priority columns
 - [ ] **Density toggle**: Compact/comfortable spacing
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ HTML `<table>` with manual sort/filter: Reinventing wheel
 - ❌ No virtualization >100 rows: Jank, memory
@@ -54,7 +51,6 @@ description: Pattern guide for data tables: sorting, filtering, pagination, virt
 - ❌ Select all only selects current page: Confusing
 - ❌ No copy/paste: Data trapped
 
----
 
 ## Implementation Flow
 
@@ -70,7 +66,6 @@ User needs data table
     └─► implement with TanStack Table + Virtual + URL state
 ```
 
----
 
 ## Core Setup (TanStack Table v8)
 
@@ -220,7 +215,6 @@ export function DataTable<TData>({ columns, data, rowCount, onRowClick }: DataTa
 }
 ```
 
----
 
 ## Server-Side (Large Data)
 
@@ -248,7 +242,6 @@ export async function GET(request: Request) {
 }
 ```
 
----
 
 ## When to Escalate
 

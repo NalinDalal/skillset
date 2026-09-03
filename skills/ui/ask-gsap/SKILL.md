@@ -9,7 +9,6 @@ description: Library guide for GSAP + ScrollTrigger + Lenis: showcase-tier scrol
 
 **Packages:** `gsap`, `@studio-freight/lenis`
 
----
 
 ## Installation
 
@@ -17,7 +16,6 @@ description: Library guide for GSAP + ScrollTrigger + Lenis: showcase-tier scrol
 npm i gsap @studio-freight/lenis
 ```
 
----
 
 ## Core Setup
 
@@ -57,7 +55,6 @@ export function shouldReduceMotion() {
 }
 ```
 
----
 
 ## ScrollTrigger Basics
 
@@ -103,7 +100,6 @@ gsap.to('.panel', {
 })
 ```
 
----
 
 ## Timeline + ScrollTrigger (Sequenced Animations)
 
@@ -123,7 +119,6 @@ tl.from('.title', { y: 50, opacity: 0, duration: 1 })
   .from('.cta', { scale: 0.9, opacity: 0, duration: 0.6 }, '-=0.2')
 ```
 
----
 
 ## Text Morphing / Reveal
 
@@ -160,7 +155,6 @@ gsap.to(split.chars, {
 })
 ```
 
----
 
 ## SVG Path Morphing
 
@@ -182,7 +176,6 @@ gsap.to('#shape', {
 })
 ```
 
----
 
 ## Horizontal Scroll Sections
 
@@ -205,7 +198,6 @@ panels.forEach((panel, i) => {
 })
 ```
 
----
 
 ## Parallax Layers
 
@@ -227,7 +219,6 @@ gsap.to('.layer-2', { yPercent: 20, scrollTrigger: { trigger: '.section', scrub:
 gsap.to('.layer-3', { yPercent: 40, scrollTrigger: { trigger: '.section', scrub: 0.8 } })
 ```
 
----
 
 ## Counter / Number Animation
 
@@ -249,7 +240,6 @@ counters.forEach(counter => {
 })
 ```
 
----
 
 ## Cursor Follower / Magnetic
 
@@ -271,7 +261,6 @@ buttons.forEach(btn => {
 })
 ```
 
----
 
 ## Lenis Integration (React)
 
@@ -312,7 +301,6 @@ export function LenisProvider({ children }) {
 }
 ```
 
----
 
 ## React Components with GSAP
 
@@ -355,7 +343,6 @@ export function ScrollReveal({ children, className, ...props }) {
 </ScrollReveal>
 ```
 
----
 
 ## Pinning with Content
 
@@ -382,7 +369,6 @@ export function PinnedSection({ children, className }) {
 }
 ```
 
----
 
 ## Cleanup (Critical)
 
@@ -396,7 +382,6 @@ useEffect(() => {
 }, [])
 ```
 
----
 
 ## Reduced Motion
 
@@ -410,7 +395,6 @@ if (prefersReduced) {
 }
 ```
 
----
 
 ## Common Patterns
 
@@ -422,7 +406,6 @@ if (prefersReduced) {
 | Progress bar | `gsap.to('.progress', { scaleX: 1, scrollTrigger: { trigger: 'body', start: 0, end: 'max', scrub: 0.5 } })` |
 | Image parallax | `gsap.to('img', { yPercent: -20, scrollTrigger: { trigger: '.section', scrub: 0.5 } })` |
 
----
 
 ## When NOT to Use GSAP
 
@@ -434,7 +417,6 @@ if (prefersReduced) {
 | Modal/toast enter/exit | motion.dev |
 | Basic scroll reveal | motion.dev `useScroll`/`useTransform` |
 
----
 
 ## Performance Tips
 
@@ -445,7 +427,6 @@ if (prefersReduced) {
 - Limit simultaneous animations
 - `anticipatePin: 1` for smooth pinning
 
----
 
 ## Related Skills
 

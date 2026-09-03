@@ -7,9 +7,8 @@ description: Pattern guide for command palettes (⌘K): fuzzy search, keyboard n
 
 **When to use:** Global command palette, contextual menus, search interfaces, quick actions, help menus.
 
----
 
-## The Pattern (What Good Looks Like: Linear/Raycast/Vercel)
+## The Pattern
 
 | Feature | Quality Bar |
 |---------|-------------|
@@ -24,7 +23,6 @@ description: Pattern guide for command palettes (⌘K): fuzzy search, keyboard n
 | **Contextual** | Different commands per route/context |
 | **Accessibility** | ARIA combobox, live region for results, focus management |
 
----
 
 ## Quality Checklist
 
@@ -38,9 +36,8 @@ description: Pattern guide for command palettes (⌘K): fuzzy search, keyboard n
 - [ ] **Focus restore**: Return focus to trigger on close
 - [ ] **Mobile**: Responsive, touch-friendly (or disable on mobile)
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ Custom input + manual filtering → Reinventing, accessibility gaps
 - ❌ No fuzzy search → Exact match only = frustrating
@@ -51,7 +48,6 @@ description: Pattern guide for command palettes (⌘K): fuzzy search, keyboard n
 - ❌ No focus restore → Keyboard trap
 - ❌ No recent/history: Misses power user workflow
 
----
 
 ## Implementation Flow
 
@@ -67,7 +63,6 @@ User needs command palette
     └─► implement with cmdk + command registry + fuzzy search
 ```
 
----
 
 ## Command Registry (Centralized, Typed)
 
@@ -123,7 +118,6 @@ export const commandRegistry: CommandGroup[] = [
 ]
 ```
 
----
 
 ## Command Palette Component (cmdk)
 
@@ -206,7 +200,6 @@ function highlightMatch(text: string, query: string) {
 }
 ```
 
----
 
 ## Global Hook (App Root)
 
@@ -239,7 +232,6 @@ export function useCommandPalette() {
 }
 ```
 
----
 
 ## Contextual Commands (Per Route)
 
@@ -260,7 +252,6 @@ const projectCommands: CommandGroup = {
 const allGroups = [...commandRegistry, projectCommands]
 ```
 
----
 
 ## When to Escalate
 

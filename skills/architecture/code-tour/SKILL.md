@@ -3,19 +3,16 @@ name: code-tour
 category: architecture
 source: ECC (adapted)
 description: "Guided codebase walkthroughs for onboarding. Load when onboarding new team members or documenting architecture."
----
 
 # Code Tour
 
 **When to use:** Onboarding new team members, documenting architecture, creating guided walkthroughs, explaining complex systems.
 
----
 
 ## What It Does
 
 Creates guided, step-by-step codebase walkthroughs with real file and line anchors. Each tour is tailored to a specific persona.
 
----
 
 ## Personas
 
@@ -30,7 +27,6 @@ Creates guided, step-by-step codebase walkthroughs with real file and line ancho
 | `feature-explainer` | How a specific feature works | Feature-focused |
 | `bug-fixer` | How to debug, where to look | Problem-solving |
 
----
 
 ## Tour Structure
 
@@ -57,7 +53,6 @@ Creates guided, step-by-step codebase walkthroughs with real file and line ancho
 [What to explore after this tour]
 ```
 
----
 
 ## Writing Style: SMIG Rule
 
@@ -83,7 +78,6 @@ server-side session table for revocation.
 If a user has multiple tabs open, only the most recent tab stays authenticated.
 ```
 
----
 
 ## Tour Example: New Joiner
 
@@ -151,7 +145,6 @@ After this tour, explore:
 3. `apps/web/src/hooks/` - React hooks for data fetching
 ```
 
----
 
 ## Code Annotations for Tours
 
@@ -168,7 +161,6 @@ export async function processOrder(orderId: string): Promise<Order> {
 }
 ```
 
----
 
 ## Generating Tours
 
@@ -190,7 +182,6 @@ Look at past incidents and bugs - they reveal:
 - Common failure modes
 - Areas needing documentation
 
----
 
 ## Quick Commands
 
@@ -205,7 +196,6 @@ echo "# Code Tour: [System Name]" > CODE_TOUR.md
 # Keep file references and line numbers current
 ```
 
----
 
 ## Related Skills
 

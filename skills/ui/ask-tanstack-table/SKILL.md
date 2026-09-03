@@ -9,7 +9,6 @@ description: Library guide for TanStack Table v8: headless, TypeScript-first, so
 
 **Package:** `@tanstack/react-table`, `@tanstack/react-virtual`
 
----
 
 ## Installation
 
@@ -17,7 +16,6 @@ description: Library guide for TanStack Table v8: headless, TypeScript-first, so
 npm i @tanstack/react-table @tanstack/react-virtual
 ```
 
----
 
 ## Core Setup
 
@@ -39,7 +37,6 @@ import {
 import { useVirtualizer } from '@tanstack/react-virtual'
 ```
 
----
 
 ## Column Definitions (Type-Safe)
 
@@ -87,7 +84,6 @@ export const projectColumns = [
 ]
 ```
 
----
 
 ## Table Component (Complete)
 
@@ -286,7 +282,6 @@ export function DataTable<TData>({
 }
 ```
 
----
 
 ## Column Visibility Dropdown
 
@@ -316,7 +311,6 @@ function ColumnVisibilityDropdown({ table }: { table: ReturnType<typeof useReact
 }
 ```
 
----
 
 ## Server-Side (Large Data)
 
@@ -351,7 +345,6 @@ export async function GET(request: Request) {
 }
 ```
 
----
 
 ## Client-Side with Server Data
 
@@ -390,7 +383,6 @@ function ProjectTable() {
 }
 ```
 
----
 
 ## Expanded Rows (Detail View)
 
@@ -424,7 +416,6 @@ getExpandedRowModel: getExpandedRowModel(),
 )}
 ```
 
----
 
 ## Row Selection
 
@@ -456,7 +447,6 @@ const table = useReactTable({
 </td>
 ```
 
----
 
 ## Column Resizing (Built-in)
 
@@ -473,7 +463,6 @@ const table = useReactTable({
 })
 ```
 
----
 
 ## Export to CSV
 
@@ -493,7 +482,6 @@ function exportToCSV(table: ReturnType<typeof useReactTable>) {
 }
 ```
 
----
 
 ## Related Skills
 

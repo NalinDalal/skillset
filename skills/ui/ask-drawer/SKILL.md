@@ -7,9 +7,8 @@ description: Pattern guide for mobile drawers/sheets: bottom sheets, side drawer
 
 **When to use:** Mobile-first overlays: filters, actions, navigation, forms, any sheet that slides from bottom/side.
 
----
 
-## The Pattern (What Good Looks Like: Linear/iOS/Material)
+## The Pattern
 
 | Drawer Type | Use When | Key Behaviors |
 |-------------|----------|---------------|
@@ -17,9 +16,8 @@ description: Pattern guide for mobile drawers/sheets: bottom sheets, side drawer
 | **Side Drawer** | Mobile nav, settings panel | Swipe from edge, backdrop, ESC closes, focus trap |
 | **Nested Drawer** | Drill-down (category → subcategory) | Stack, back gesture, breadcrumb |
 
----
 
-## Quality Checklist (Vaul + House-Style)
+## Quality Checklist
 
 - [ ] **Vaul**: Headless, accessible, gesture-driven, spring physics
 - [ ] **Drag handle**: Visual indicator, click/tap toggles
@@ -33,9 +31,8 @@ description: Pattern guide for mobile drawers/sheets: bottom sheets, side drawer
 - [ ] **Safe area**: Respects home indicator, notch
 - [ ] **Scroll lock**: Body locked, drawer scrolls independently
 
----
 
-## Anti-Patterns (Slop)
+## Anti-Patterns
 
 - ❌ Custom div + transform: No gestures, no physics, no accessibility
 - ❌ Fixed height: Doesn't adapt to content
@@ -46,7 +43,6 @@ description: Pattern guide for mobile drawers/sheets: bottom sheets, side drawer
 - ❌ Z-index wars: Portal to root
 - ❌ Ignores safe area: Content under home indicator
 
----
 
 ## Implementation Flow
 
@@ -62,7 +58,6 @@ User needs mobile drawer/sheet
     └─► implement with Vaul + custom composition
 ```
 
----
 
 ## Vaul Primitives
 
@@ -101,7 +96,6 @@ import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, Drawer
 </Drawer>
 ```
 
----
 
 ## Composition Examples
 
@@ -185,7 +179,6 @@ function MobileNavDrawer() {
 }
 ```
 
----
 
 ## Nested Drawers (Drill-down)
 
@@ -232,7 +225,6 @@ function NestedCategoryDrawer({ categories, onSelect }) {
 }
 ```
 
----
 
 ## When to Escalate
 

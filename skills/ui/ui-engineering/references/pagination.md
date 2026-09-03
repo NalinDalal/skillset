@@ -61,9 +61,9 @@ ui-core/references/build.md.
 ## Don'ts
 
 - Don't show page numbers for cursor-based pagination. The cursor is
-  opaque; page numbers are meaningless.
-- Don't use "load more" for search results. Search implies completion;
-  "load more" implies there's more to find.
+  opaque. Page numbers are meaningless.
+- Don't use "load more" for search results. Search implies completion.
+  "Load more" implies there's more to find.
 - Don't hide the total count for paginated data. The user needs to know
   the scope to make decisions.
 - Don't reset page size on every navigation. Persist per view.

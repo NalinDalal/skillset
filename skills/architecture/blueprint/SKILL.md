@@ -3,19 +3,16 @@ name: blueprint
 category: architecture
 source: ECC (adapted)
 description: "Multi-PR construction plans with adversarial review. Load when planning complex features or breaking work into steps."
----
 
 # Blueprint
 
 **When to use:** Planning complex features, breaking work into PRs, creating implementation plans with review gates.
 
----
 
 ## What It Does
 
 Turns a one-line objective into a multi-PR construction plan with self-contained step briefs so any agent can execute any step cold.
 
----
 
 ## Process
 
@@ -28,7 +25,6 @@ Turns a one-line objective into a multi-PR construction plan with self-contained
 6. Execute with checkpoints
 ```
 
----
 
 ## Step Brief Format
 
@@ -68,7 +64,6 @@ Implement JWT-based authentication with refresh tokens.
 - Database schema unchanged (Step 1)
 ```
 
----
 
 ## Adversarial Review
 
@@ -100,7 +95,6 @@ Before executing, have a stronger model review the plan:
 ### Verdict: NEEDS REVISION
 ```
 
----
 
 ## Plan Mutation Protocol
 
@@ -139,7 +133,6 @@ Reason: Performance critical, should be implemented earlier
 
 Each mutation gets an audit trail entry.
 
----
 
 ## Branch/PR Workflow
 
@@ -173,7 +166,6 @@ Examples:
 - `Step 4a: User Registration`
 - `Step 4b: User Login`
 
----
 
 ## Quick Commands
 
@@ -191,7 +183,6 @@ git checkout -b feat/step-N-description
 gh pr create --base main --title "Step N: Description"
 ```
 
----
 
 ## Related Skills
 

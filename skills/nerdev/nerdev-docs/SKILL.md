@@ -1,17 +1,14 @@
----
 name: nerdev-docs
 description: "Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks with templates"
----
 
 # nerdev-docs Skill
 
-**Purpose**: Development-integrated documentation -- docs that live with code, generate from code, evolve with code, and serve both humans and AI agents.
+Development-integrated documentation. Docs that live with code, generate from code, evolve with code, and serve both humans and AI agents.
 
 > **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-monorepo`](../nerdev-monorepo/SKILL.md) for Turborepo + Bun monorepo structure, CI/CD, and deployment patterns, and [`nerdev-abstraction`](../nerdev-abstraction/SKILL.md) for interface-first, registry-based plug-and-play patterns. All three work together for nerdev-co projects.
 >
 > **AI agent docs:** `AGENTS.md` generation uses the [`agent-docs-writer`](../agent-docs-writer/SKILL.md) skill (referenced in Required Document Types).
 
----
 
 ## Documentation Philosophy
 
@@ -21,7 +18,6 @@ description: "Development-integrated docs: ADRs, design docs, incident postmorte
 - Versioned **with** code (same repo, same PR)
 - Consumed **by** both humans and AI agents
 
----
 
 ## Required Document Types
 
@@ -329,7 +325,6 @@ bun run dev
 - Diff-based WS sync (no full state)
 ```
 
----
 
 ## Generation Scripts (package.json)
 
@@ -380,7 +375,6 @@ await Bun.write(filename, template.replace('{{FEATURE}}', feature));
 console.log(`Created ${filename}`);
 ```
 
----
 
 ## Documentation Linting
 
@@ -421,7 +415,6 @@ jobs:
 }
 ```
 
----
 
 ## AI-Agent Consumption Patterns
 
@@ -463,7 +456,6 @@ export function renderFrame(context: RenderContext): void {
 }
 ```
 
----
 
 ## Documentation Checklist per PR
 
@@ -476,7 +468,6 @@ export function renderFrame(context: RenderContext): void {
 - [ ] **Deploy process changed?** → `deploy.md` updated
 - [ ] **Onboarding info missing?** → `AGENTS.md` / `README.md` updated
 
----
 
 ## Tooling
 
@@ -489,7 +480,6 @@ export function renderFrame(context: RenderContext): void {
 | `openapi-generator` | Generate clients from OpenAPI |
 | `asyncapi-generator` | Generate code from AsyncAPI |
 
----
 
 ## Integration with Other Skills
 
@@ -500,7 +490,6 @@ export function renderFrame(context: RenderContext): void {
 | `agent-docs-writer` | `AGENTS.md` generation |
 | `this skill` | All other docs + generation scripts |
 
----
 
 ## Quick Start for New Projects
 
@@ -525,7 +514,6 @@ skill agent-docs-writer
 # Follow prompts
 ```
 
----
 
 ## Templates Location
 

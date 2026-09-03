@@ -3,7 +3,6 @@ name: free-tools
 description: When the user wants to plan, evaluate, or build a free tool for marketing purposes. Lead generation, SEO value, or brand awareness. Also use when the user mentions "engineering as marketing," "free tool," "marketing tool," "calculator," "generator," "interactive tool," "lead gen tool," "build a tool for leads," "free resource," "ROI calculator," "grader tool," "audit tool," "is a free tool worth building," or "tools for lead gen." Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see lead-magnets.
 metadata:
   version: 2.0.0
----
 
 # Free Tool Strategy (Engineering as Marketing)
 
@@ -22,7 +21,6 @@ Before designing a tool strategy, understand:
 
 3. **Resources** - Technical capacity to build? Ongoing maintenance bandwidth? Budget for promotion?
 
----
 
 ## Core Principles
 
@@ -44,7 +42,6 @@ Before designing a tool strategy, understand:
 ### 4. Worth the Investment
 - Lead value × expected leads > build cost + maintenance
 
----
 
 ## Tool Types Overview
 
@@ -59,7 +56,6 @@ Before designing a tool strategy, understand:
 
 **For detailed tool types and examples**: See [references/tool-types.md](references/tool-types.md)
 
----
 
 ## Ideation Framework
 
@@ -80,7 +76,6 @@ Before designing a tool strategy, understand:
 - **Lead quality**: Does this audience match buyers?
 - **Build feasibility**: How complex? Can you scope an MVP?
 
----
 
 ## Lead Capture Strategy
 
@@ -99,7 +94,6 @@ Before designing a tool strategy, understand:
 - Show preview of what they will get
 - Optional: Segment by asking one qualifying question
 
----
 
 ## SEO Considerations
 
@@ -114,7 +108,6 @@ Free tools attract links because:
 - Unique (cannot link to just any page)
 - Shareable (social amplification)
 
----
 
 ## Build vs. Buy
 
@@ -128,7 +121,6 @@ When: Speed to market, limited dev resources, testing concept
 ### Embed Existing
 When: Something good exists, white-label available, not core differentiator
 
----
 
 ## MVP Scope
 
@@ -140,7 +132,6 @@ When: Something good exists, white-label available, not core differentiator
 ### What to Skip Initially
 Account creation, saving results, advanced features, perfect design, every edge case
 
----
 
 ## Evaluation Scorecard
 
@@ -159,7 +150,6 @@ Rate each factor 1-5:
 
 **25+**: Strong candidate | **15-24**: Promising | **<15**: Reconsider
 
----
 
 ## Task-Specific Questions
 
@@ -168,7 +158,6 @@ Rate each factor 1-5:
 3. What technical resources are available?
 4. What is the timeline and budget?
 
----
 
 ## Related Skills
 

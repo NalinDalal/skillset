@@ -9,7 +9,6 @@ description: Library guide for Vaul: accessible drawer/sheet component with gest
 
 **Package:** `vaul`
 
----
 
 ## Installation
 
@@ -17,7 +16,6 @@ description: Library guide for Vaul: accessible drawer/sheet component with gest
 npm i vaul
 ```
 
----
 
 ## Core Components
 
@@ -34,7 +32,6 @@ import {
 } from 'vaul'
 ```
 
----
 
 ## Basic Bottom Sheet
 
@@ -61,7 +58,6 @@ function BottomSheet() {
 }
 ```
 
----
 
 ## Side Drawer (Navigation)
 
@@ -93,7 +89,6 @@ function SideDrawer() {
 }
 ```
 
----
 
 ## Snap Points Configuration
 
@@ -115,7 +110,6 @@ function SideDrawer() {
 <Drawer direction="bottom" snapPoints={[0.3, 0.6, 1]}>
 ```
 
----
 
 ## Custom Handle / Trigger
 
@@ -151,7 +145,6 @@ function FilterDrawer() {
 }
 ```
 
----
 
 ## Nested Drawers (Drill-down)
 
@@ -198,7 +191,6 @@ function NestedCategoryDrawer({ categories, onSelect }) {
 }
 ```
 
----
 
 ## Form in Drawer
 
@@ -238,7 +230,6 @@ function CreateProjectDrawer({ onSuccess }) {
 }
 ```
 
----
 
 ## Drawer Props Reference
 
@@ -252,7 +243,6 @@ function CreateProjectDrawer({ onSuccess }) {
 | `snapTo` | `number` | - | Programmatic snap |
 | `overscroll` | `boolean` | `false` | Allow overscroll past snap |
 
----
 
 ## Motion Integration (House-Style)
 
@@ -270,7 +260,6 @@ import { motion, AnimatePresence } from 'motion/react'
 </DrawerContent>
 ```
 
----
 
 ## Accessibility (Built-in)
 
@@ -281,7 +270,6 @@ import { motion, AnimatePresence } from 'motion/react'
 - ARIA attributes on all elements
 - Keyboard navigation (Tab, arrows)
 
----
 
 ## Common Issues
 
@@ -294,7 +282,6 @@ import { motion, AnimatePresence } from 'motion/react'
 | Mobile keyboard covers input | Vaul handles this: ensure `snapPoints` includes full height |
 | Gesture conflicts | Set `overscroll={true}` if nested scrollable content |
 
----
 
 ## Related Skills
 

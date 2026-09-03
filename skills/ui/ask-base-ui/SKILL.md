@@ -9,7 +9,6 @@ description: Library guide for base-ui: unstyled, accessible primitives (Dialog,
 
 **Package:** `@base-ui-components/react` (or individual packages like `@base-ui-components/dialog`)
 
----
 
 ## Core Philosophy
 
@@ -18,7 +17,6 @@ description: Library guide for base-ui: unstyled, accessible primitives (Dialog,
 - **Headless**: Logic only, you render the markup
 - **Composable**: Slot-based API, full control over rendering
 
----
 
 ## Installation
 
@@ -28,7 +26,6 @@ npm i @base-ui-components/react
 npm i @base-ui-components/dialog @base-ui-components/select @base-ui-components/popover
 ```
 
----
 
 ## Primitives Reference
 
@@ -51,7 +48,6 @@ npm i @base-ui-components/dialog @base-ui-components/select @base-ui-components/
 | **Date Picker** | `@base-ui-components/date-picker` | Calendar, date range |
 
 
----
 
 ## Composition Pattern (Design System Wrapper)
 
@@ -117,7 +113,6 @@ export const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLD
 )
 ```
 
----
 
 ## Dialog Example (Complete)
 
@@ -151,7 +146,6 @@ function DeleteConfirmation({ onConfirm }) {
 }
 ```
 
----
 
 ## Select Example (Complete)
 
@@ -273,7 +267,6 @@ export const SelectScrollDownButton = React.forwardRef<
 ))
 ```
 
----
 
 ## Sheet/Drawer Example (Mobile)
 
@@ -333,7 +326,6 @@ export const SheetDescription = React.forwardRef<HTMLParagraphElement, React.Com
 ))
 ```
 
----
 
 ## Key Props Quick Reference
 
@@ -368,7 +360,6 @@ export const SheetDescription = React.forwardRef<HTMLParagraphElement, React.Com
 | `snapPoints` | `number[]` | `[1]` | Snap percentages (0-1) |
 
 
----
 
 ## Motion Integration (House-Style)
 
@@ -387,7 +378,6 @@ import { motion } from 'motion/react'
 </AnimatePresence>
 ```
 
----
 
 ## Troubleshooting
 
@@ -401,7 +391,6 @@ import { motion } from 'motion/react'
 | Z-index issues | All primitives portal to body: check stacking contexts |
 
 
----
 
 ## Related Skills
 
