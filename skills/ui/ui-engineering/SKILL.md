@@ -123,10 +123,20 @@ For EACH interaction needed, invoke `pick-ui-library` to get the right library, 
 - [ ] Whitespace separates, not borders/shadows
 - [ ] Real type hierarchy (display, body, hint: not 5 bold sizes)
 - [ ] Feedback matches action (press = visual state, done = quiet status, destructive = confirmation)
-- [ ] Dark mode works
+- [ ] Dark mode works (both themes, contrast, no inversion)
 - [ ] Reduced motion works
 - [ ] No em dashes in visible text
-- [ ] Accessibility: keyboard nav, ARIA, focus visible, contrast
+- [ ] Accessibility: keyboard nav, ARIA, focus visible, contrast, screen reader
+- [ ] Responsive: 7 viewports, reflow not resize, touch targets 44px
+- [ ] Forms: labels above, validate on blur, errors below, loading state
+- [ ] Loading and skeletons: skeleton before spinner, progressive loading
+- [ ] Component states: all 9 states defined (Default, Hover, Focus, Active, Disabled, Loading, Error, Empty, Selected)
+- [ ] Design tokens: semantic naming, light/dark variants, no orphans
+- [ ] i18n: text expansion handled, RTL tested, locale formatting
+- [ ] Performance: CLS under 0.1, LCP under 2.5s, images optimized
+- [ ] Mobile: bottom sheets, swipe actions, safe areas, thumb zone
+- [ ] Notifications/badges: one purpose per badge, accessible
+- [ ] Empty states: purpose clear, copy structured, CTA present
 
 ---
 
@@ -212,7 +222,17 @@ Every deliverable:
 
 ## References
 
-- `references/quality-bar.md`: Full site/library/gallery list with what to steal
+- `references/quality-bar.md`: Full site/library/gallery list with what to steal and transferable principles
 - `references/tokens.md`: Token templates for each vibe
 - `references/motion-recipes.md`: Common motion patterns with code
 - `references/component-checklist.md`: Per-component finish gate
+- `skills/ui/ui-core/references/build.md`: Anti-slop tells, hero rules, layout rules, typography, content, icons/imagery/motion, charts, testimonials, whitespace, type scale, color semantics, component states, icons, forms, loading, skeletons, i18n, composition, keyboard shortcuts, toasts, errors, performance, mobile, badges, empty states
+- `skills/ui/ui-core/references/verify.md`: Finish gate, accessibility, dark mode, responsive, forms, loading, states, tokens, i18n, performance, mobile, notifications, empty states
+- `skills/ui/ui-core/references/system.md`: Constraint budget, color, type, scale, spacing, radius, shadows, components, dark mode, responsive, accessibility, motion, iconography, DESIGN.md template
+- `skills/ui/ui-core/references/accessibility.md`: Color contrast, focus management, ARIA, keyboard, screen reader
+- `skills/ui/ui-core/references/responsive.md`: Breakpoints, reflow vs resize, container queries, touch targets, density shifts
+- `skills/ui/ui-core/references/dark-mode.md`: CSS variables, Tailwind strategy, system preference, color adjustments, edge cases
+- `skills/ui/ui-core/references/copy.md`: Voice, CTAs, error messages, labels, micro-copy tone
+- `skills/ui/ui-core/references/direction.md`: Context questions, style families, token output, refine mode, signature interaction, productization pass
+- `skills/ui/ui-core/references/styles.md`: Minimalist and brutalist style recipes
+- `skills/ui/ui-core/references/redesign.md`: Workflow, feel contract, audit, priority order, product-quality pass

@@ -25,7 +25,12 @@ source with file:line. Assertions are not evidence.
 11. Lint and build pass. [command output]
 
 Per class also verify: nav collapse, hero reflow, multi-column
-fallbacks, touch targets at 44px minimum, nothing scrolls horizontally.
+fallbacks, touch targets at 44px minimum, nothing scrolls horizontally,
+container-queried components at their narrowest realistic container.
+
+Accessibility, responsive, dark mode, and copy each have a dedicated
+gate — see references/accessibility.md, references/responsive.md,
+references/dark-mode.md, references/copy.md.
 
 Zero failures to declare done. Fix and re-run the failed rows. If no
 browser tooling exists, say "visual verification was NOT performed" and

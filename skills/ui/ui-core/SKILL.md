@@ -56,12 +56,20 @@ Tokens first, components second. Details in references/system.md.
   icon family, one stroke weight, one motion curve family. To add
   somewhere, remove elsewhere.
 - Type: display scale with tight tracking, body under 65ch. Tabular
-  figures for data.
+  figures for data. Modular scale, weight ladder, tracking/leading
+  rules. See Type scale system in build.md.
 - Buttons: flat or barely rounded, solid contrast, no glow. Pressed
   state is tactile: scale 0.98.
 - Cards only when elevation earns them. Never cards in cards.
-- When a design system doc is asked for, emit DESIGN.md with the seven
+- Icon system: stroke weight, sizing, filled vs outline, duo-tone,
+  triple-tone. See Icon system in build.md.
+- When a design system doc is asked for, emit DESIGN.md with the ten
   mandatory sections from references/system.md.
+- Dark mode is designed, not inverted: CSS variable architecture, one
+  token set per surface, saturation and shadow adjusted per theme.
+  Details in references/dark-mode.md.
+- Every layout decision is made at the breakpoint tiers, not just
+  checked there after the fact. Details in references/responsive.md.
 
 ## Phase 3: Build the screen
 
@@ -75,6 +83,10 @@ The anti-slop discipline. Details in references/build.md.
   splits, grid over flex math, bento with as many cells as content.
 - Eyebrows: max one per three sections.
 - Content: real words, real numbers, real names. Lists over paragraphs.
+- Accessibility is built in, not audited after: contrast, focus
+  management, ARIA, and keyboard paths per references/accessibility.md.
+- Copy follows references/copy.md: imperative CTAs, sentence case,
+  error messages that say what happened and what to do.
 - Motion follows the motion skill: restraint first, every animation
   answers "what happened".
 - Verify at 7 viewports where hierarchy restructures, not shrinks.
@@ -103,6 +115,10 @@ Nothing ships without it. Details in references/verify.md.
 - Feedback matches the mechanism table.
 - Keyboard: no traps, no mouse-only controls, Escape exits.
 - Reduced motion respected.
+- Accessibility gate: contrast AA at both themes, focus order matches
+  visual order, every custom widget matches its ARIA pattern.
+- Dark mode gate: both themes hit AA, no literal white/black classes,
+  theme persists and matches system on first load.
 - The 10-minute journey runs clean at every step.
 - Lint and build pass.
 - Evidence, not assertions: capture, dom, code. Never silently skip.

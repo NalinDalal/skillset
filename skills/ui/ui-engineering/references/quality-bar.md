@@ -74,6 +74,25 @@
 | **Godly** | Curated landing pages |
 | **SiteInspire** | Design inspiration |
 | **Dribbble** | Micro-interaction concepts (search "micro-interaction") |
+| **Evil Charts** | Chart inspiration for data visualization UI |
+| **Kobbe.io** | Generous whitespace, clean typography, rounded aesthetic |
+| **Make.design** | Testimonial pages and polished design systems |
+| **Timmo.co.in** | Clean layout and modern SaaS feel |
+
+## What to Steal (Transferable Principles)
+
+| Reference | Principle to Extract |
+|-----------|----------------------|
+| **Linear** | Command palette as primary navigation. Hover cards that surface context without leaving the page. Page transitions that feel like state changes, not scenes. |
+| **Raycast** | Hover states that are near-instant. Copy-to-clipboard feedback that is visible but not intrusive. Keyboard-first means every click target has a keyboard target. |
+| **Stripe** | Gradient animations tied to scroll, not decoration. Code blocks that respond to user action. Color that leads the eye, not decorates it. |
+| **Vercel** | Geometric motion where the shape change is the feedback. Type hierarchy so strong it needs no color. Restraint as a feature, not a limit. |
+| **Arc** | Micro-copy that matches micro-animation. Onboarding that teaches through doing, not explaining. Personality in the pauses, not the noise. |
+| **Attio/Cron** | Inline editing that feels like paper, not a form. Drag-drop that snaps with intention. Micro-interactions that confirm the action, not announce it. |
+| **Kobbe.io** | Whitespace as rhythm. Generous section padding that lets content breathe. Typography with clean roundness that feels modern without being bubbly. |
+| **Make.design** | Testimonial pages where the quote is the hero, not the logo. Attribution that adds weight through simplicity. Visual rhythm that makes scrolling feel intentional. |
+| **Evil Charts** | Minimal ink: gridlines removed until the chart breaks, then added back sparingly. Annotations over legends. One accent per series, hue not lightness for distinction. |
+| **Timmo.co.in** | Clean SaaS feel through consistent spacing and restrained color. Layout that trusts the content without over-decorating. |
 
 ---
 
