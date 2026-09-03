@@ -37,12 +37,43 @@ Details in references/direction.md.
 
 1. Ask the context questions: what it is, who it is for, the vibe in one
    word, the constraints, the animation dial.
-2. Match to a style family. Shortlist 2-3 candidates with a one-line
+2. Ask the identity questions (see below). These turn generic UI into
+   something that feels like *this* product, not any product.
+3. Match to a style family. Shortlist 2-3 candidates with a one-line
    feel and a concrete anchor.
-3. Output tokens: palette, type pairing, spacing, radius, shadow or no
+4. Output tokens: palette, type pairing, spacing, radius, shadow or no
    shadow, motion character in one line.
-4. Refine mode: when a theme already exists, audit first, extract
+5. Refine mode: when a theme already exists, audit first, extract
    principles not pixels, output a token diff.
+
+### Identity questions (ask before picking tokens)
+
+These are the questions that separate "looks good" from "feels like us."
+Skip them and you get a template. Ask them and you get a brand.
+
+1. **What's the one word you want people to feel after using this?**
+   (Trust? Speed? Calm? Power? Fun?) This drives everything: type
+   weight, color saturation, motion curve, spacing.
+2. **What's your signature color?**
+   Not "what palette do you like." One color that's yours. Gumroad has
+   pink. Stripe has purple. Linear has indigo. What's the one hex that
+   shows up everywhere?
+3. **What font feels like your voice?**
+   If your product talked, what would it sound like? Technical and
+   precise? Warm and friendly? Sharp and editorial? Match that to a
+   typeface, not the other way around.
+4. **What's the one thing competitors all do that you refuse to do?**
+   This defines your visual contrast. If every competitor has gradient
+   heroes, yours is flat. If they're all minimal, yours is dense. The
+   refusal IS the identity.
+5. **What's the one interaction you want people to remember?**
+   Not 10 interactions. One. The button that feels like butter. The
+   scroll that surprises. The transition that makes someone smile.
+   Everything else should be invisible.
+6. **Show me a site that feels like what you're going for.**
+   Not "I like this site." Show me the one that, when you saw it, you
+   thought "that's the energy." Then we extract the principles, not
+   copy the pixels.
 
 The families we keep: clean SaaS (the default, Apple and Google calm),
 minimalist, brutalist. Recipes in references/styles.md, used only when

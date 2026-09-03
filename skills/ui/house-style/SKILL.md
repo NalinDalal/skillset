@@ -192,6 +192,58 @@ Study how Stripe uses gradients: barely perceptible, always functional,
 never the first thing you see. The gradient exists to make the solid
 color feel less flat. That is the whole job.
 
+### The Gumroad Effect: personality over polish
+
+Gumroad's UI breaks every "SaaS design" rule on purpose. Study it when
+a screen needs identity, not just correctness.
+
+**What they do differently:**
+
+- **Custom type, not system fonts.** ABC Favorit, not Inter. The font
+  IS the brand. Most SaaS sites are interchangeable because they all
+  use the same 3 fonts. Gumroad isn't.
+- **Buttons with physical weight.** Each button has 3 stacked layers
+  (yellow offset, red offset, black base) that animate on hover with
+  translate and hard shadow. Feels like pressing a real button. Compare
+  to flat rectangles everywhere else.
+- **Bold, limited palette.** Black, white, pink (#FF90E8), yellow,
+  orange, red. No gradients, no glass morphism. The pink is the
+  signature. Restraint in palette, boldness in application.
+- **Type as the visual element.** "$2,193,086" in 12rem font. "Go from
+  0 to $1" in 8xl. Typography does the heavy lifting, not illustrations
+  or stock photos.
+- **Asymmetric bento cards.** Feature cards aren't uniform grids.
+  Different sizes, images overflowing boundaries, text positioned
+  absolutely. Feels organic, not like a Canva template.
+- **Micro-interactions that mean something.** Hover states use
+  `hover:-translate-x-2 hover:-translate-y-2 hover:shadow-[4px_4px_0_0_#000]`.
+  Every interactive element moves slightly and gains a hard shadow. The
+  marquee of category tags scrolls continuously. Parallax coins in the
+  hero. Nothing is idle decoration.
+- **Social proof that feels real.** Real names, real photos, real quotes
+  with real numbers ("$10k+ per month", "6-figure salary"). Not
+  "Trusted by 10,000+ companies."
+- **Open source as trust signal.** GitHub link (9.6K stars) in the hero
+  nav. Says "we have nothing to hide."
+
+**The core principle:** Gumroad's UI looks like what would happen if a
+designer who actually sells stuff on the internet designed the site.
+It's not trying to look like Stripe or Vercel. It's trying to look like
+Gumroad, slightly rough, very human, unmistakably itself.
+
+Most SaaS sites are interchangeable. Gumroad isn't. It has an identity.
+That's why it's good. When building UI, ask: would someone know this is
+ours without seeing the logo? If not, it needs more personality, not
+more polish.
+
+**Apply this by:**
+- Picking one distinctive font and committing to it
+- Making hover states tactile, not just color changes
+- Using type at scale as the primary visual element
+- Letting cards and layouts be asymmetric, not grid-perfect
+- Showing real numbers and real names, not vague claims
+- Choosing a signature color and using it everywhere
+
 ## Modular Route-Based File Layout (Backend Services)
 
 ### Principle

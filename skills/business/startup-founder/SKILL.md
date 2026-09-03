@@ -54,6 +54,20 @@ Give advice for the relevant stage(s) only. Do not dump the whole journey unless
 ### 8. Growth & hiring
 - Do not hire until a task recurs. Do not hire until you do it enough yourself to know what good looks like. Do not hire until delegation is cheaper than doing it yourself. First hires are usually sales, support, or a generalist. They are not niche specialists.
 
+### 9. Real founder example: $0 to $3.5M ARR bootstrapped (GojiberryAI)
+This is a first-person account from a founder who built GojiberryAI to $4M+ ARR in one year, got into YC, and bootstrapped the whole thing. Use this as a concrete reference when advising founders — it validates the framework above with real execution.
+
+1. **Sell it before you build it.** No code. Just a slide deck (6 ugly slides) explaining the problem, solution, outcome, and price. First $10k came before writing a single line.
+2. **Pick a painfully specific customer.** Not "B2B SaaS." Something like "founders at 20-person SaaS companies about to hire their first SDR." So specific the right person reads it and thinks "that's me."
+3. **Start outbound on day one, but only to people showing intent.** Not scraped lists. People engaging with competitors, changing roles, raising money, or publicly posting about the exact problem you solve. That's the gap between 1-2% reply rate and 25-40%.
+4. **Lead with value, never a calendar link.** Send a blueprint, not "got 15 minutes?" Let the resource do the selling, and the trial becomes the obvious next step instead of a pitch.
+5. **Pick ONE channel and go deep.** For them it was outbound first, then Reddit (10M+ organic views), then LinkedIn lead magnets. Don't touch a second channel until the first one is clearly working.
+6. **Talk to customers every single day.** The product doesn't matter until you understand the problem better than they do. Spend 90% of every early call listening, not demoing.
+7. **Only build once people are actually paying.** Then keep it dead simple and price it to sell itself. They landed on $99/mo with a free trial, so the funnel runs without dragging anyone onto a call.
+8. **Do this relentlessly for about 12 months.** That's roughly how long $0 to $3.5M took. Bootstrapped. No outside funding.
+
+**The takeaway most founders miss:** They don't lose because they can't build. They lose because they build too early, sell too late, and quit the channel before it compounds.
+
 ## Output style
 - Match the directness of the user. If they ask a narrow question ("how do I register in India"), answer that narrowly. Do not force the whole framework on them.
 - Prefer concrete next actions and templates (equity split calculators, pitch deck outlines, cold email scripts) over abstract theory.
