@@ -226,6 +226,15 @@ Every deliverable:
 - `references/tokens.md`: Token templates for each vibe
 - `references/motion-recipes.md`: Common motion patterns with code
 - `references/component-checklist.md`: Per-component finish gate
+- `references/navigation.md`: Sidebar vs topbar, breadcrumbs, tabs, mobile nav, nested nav
+- `references/search.md`: Search placement, autocomplete, debounce, empty state, highlighting, keyboard nav
+- `references/pagination.md`: Numbered vs load-more vs infinite scroll, cursor vs offset, page-size, scroll restoration
+- `references/progress-indicators.md`: Determinate vs indeterminate, step indicators, multi-stage, bar vs spinner vs skeleton
+- `references/avatars.md`: Sizing, fallbacks, groups, presence dots, shape consistency
+- `references/overlays.md`: Dropdown, tooltip, popover positioning, collision handling, placement rules
+- `references/floating-actions.md`: FAB when-to-use, single vs speed-dial, placement, conflicts
+- `references/card-patterns.md`: Card subtypes, elevation, clickable hit area, grid vs list
+- `references/tailwind-architecture.md`: v3 vs v4, @theme vs theme.extend, token naming, dark-mode wiring
 - `skills/ui/ui-core/references/build.md`: Anti-slop tells, hero rules, layout rules, typography, content, icons/imagery/motion, charts, testimonials, whitespace, type scale, color semantics, component states, icons, forms, loading, skeletons, i18n, composition, keyboard shortcuts, toasts, errors, performance, mobile, badges, empty states
 - `skills/ui/ui-core/references/verify.md`: Finish gate, accessibility, dark mode, responsive, forms, loading, states, tokens, i18n, performance, mobile, notifications, empty states
 - `skills/ui/ui-core/references/system.md`: Constraint budget, color, type, scale, spacing, radius, shadows, components, dark mode, responsive, accessibility, motion, iconography, DESIGN.md template
