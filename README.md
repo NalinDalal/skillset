@@ -38,7 +38,7 @@ These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` check
 
 Not synced from anywhere. Written for this repo, live only here, edited directly in `skills/<category>/<name>/`.
 
-**ui/**: `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
+**ui/**: `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `typography-picker` (font pairing, type scale, text motion), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation).
 
 **Pattern → library pairs**: ask "how do I build X" and you get the pattern skill; it names the library and hands off to the library-specific guide:
 
@@ -144,6 +144,7 @@ Skills fire from their description, not from a command you type. Say what you wa
 | "make this screen not look templated"                    | `ui/ui-core`                                                       |
 | "what's it called when a popover bounces open"           | `ui/motion`                                                        |
 | "pick a design direction / theme"                        | `ui/ui-core`, `ui/house-style`                                     |
+| "pick a font / typeface / type scale / text motion"      | `ui/typography-picker`                                             |
 | "generate a web/mobile design reference"                 | `ui/imagegen`                                                      |
 | "add a modal / dialog / sheet / popover / menu / select" | `ui/ask-modal` → `ui/ask-base-ui`                                  |
 | "add a toast / notification / loading state"             | `ui/ask-toast` → `ui/ask-sonner`                                   |
