@@ -4,6 +4,7 @@ Adapt an existing design to a different context: another screen size, device, pl
 
 **Web only** (mobile web included). Native platforms (`ios` / `android` / `adaptive`) route to [adapt.native.md](adapt.native.md) instead; if the project is native, switch to it now.
 
+---
 
 ## Assess Adaptation Challenge
 
@@ -189,6 +190,7 @@ Test thoroughly across contexts:
 
 When the adaptation feels native to each context, hand off to `/impeccable polish` for the final pass.
 
+---
 
 ## Reference Material
 
@@ -305,5 +307,6 @@ DevTools device emulation is useful for layout but misses:
 
 **Test on at least**: One real iPhone, one real Android, a tablet if relevant. Cheap Android phones reveal performance issues you'll never see on simulators.
 
+---
 
 **Avoid**: Desktop-first design. Device detection instead of feature detection. Separate mobile/desktop codebases. Ignoring tablet and landscape. Assuming all mobile devices are powerful.
