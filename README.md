@@ -1,6 +1,6 @@
 # skillset
 
-52 agent skills in 9 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that syncs a handful from upstream repos.
+66 agent skills in 10 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that syncs a handful from upstream repos.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
@@ -18,9 +18,10 @@ skills/
 ├── architecture/      4 skills  Planning, onboarding, research
 ├── engineering/       4 skills  TDD, code review, verification, standards
 ├── quality/           2 skills  Writing quality, anti-slop
-├── business/          3 skills  Freelancing, startup, career
+├── business/          8 skills  Freelancing, startup, career, marketing
 ├── nerdev/            3 skills  Nerdev skill family
-└── ai-agent/          2 skills  Agent docs, context management
+├── ai-agent/          2 skills  Agent docs, context management
+└── workflow/          7 skills  Ship, context, health, learn
 ```
 
 ### Synced from upstream (5 skills, auto-updated nightly)
@@ -34,7 +35,7 @@ skills/
 
 These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` checks them nightly and opens a PR when they move. You never hand-copy a file from them.
 
-### Everything else (47 skills, owned outright)
+### Everything else (61 skills, owned outright)
 
 Not synced from anywhere. Written for this repo, live only here, edited directly in `skills/<category>/<name>/`.
 
@@ -67,7 +68,9 @@ Not synced from anywhere. Written for this repo, live only here, edited directly
 
 **ai-agent/**: `agent-docs-writer` (README/AGENTS.md), `ultra-context-engine` (token-efficiency layer).
 
-**business/**: `freelancing`, `startup-founder`, `resume-revamp-jake-ats`.
+**business/**: `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `pricing` (SaaS pricing strategy, value metrics, tiers), `customer-research` (interviews, surveys, persona generation, JTBD), `copywriting` (landing page copy, headlines, CTAs), `launch` (ORB framework, five-phase approach, Product Hunt), `marketing-psychology` (mental models, persuasion, buyer behavior).
+
+**workflow/**: `office-hours` (YC-style product interrogation), `ship` (detect base, test, review, commit, push, PR), `careful` (destructive command guardrails), `context-save` (save working state to disk), `context-restore` (restore from saved context), `health` (code quality dashboard with composite scoring), `learn` (project learnings manager).
 
 ## Install
 
@@ -116,7 +119,7 @@ That's it. Skills are just markdown files your agent reads, no build step, no ru
 ## Usage
 
 ```bash
-skillset list                              # see all 52 skills + descriptions
+skillset list                              # see all 66 skills + descriptions
 skillset install                           # everything → ~/.claude, ~/.config/opencode, ~/.cursor, ~/.agents, ~/.gemini
 skillset install --skill ui/motion         # just one skill (category/name)
 skillset install --target claude,opencode  # only specific harnesses
@@ -203,6 +206,23 @@ Skills fire from their description, not from a command you type. Say what you wa
 | "I want to start freelancing"      | `business/freelancing`          |
 | "should I build this startup idea" | `business/startup-founder`      |
 | "revamp my resume for this JD"     | `business/resume-revamp-jake-ats` |
+| "help me price this SaaS"          | `business/pricing`              |
+| "what are customers actually saying" | `business/customer-research`  |
+| "write copy for this landing page" | `business/copywriting`          |
+| "plan a Product Hunt launch"       | `business/launch`               |
+| "why do people buy this stuff"     | `business/marketing-psychology` |
+
+**Workflow:**
+
+| You say                            | Skill fires                     |
+| ---------------------------------- | ------------------------------- |
+| "brainstorm this idea"             | `workflow/office-hours`         |
+| "ship it / create a PR"            | `workflow/ship`                 |
+| "be careful with that command"     | `workflow/careful`              |
+| "save my progress"                 | `workflow/context-save`         |
+| "where was I / resume"             | `workflow/context-restore`      |
+| "code health check"                | `workflow/health`               |
+| "what have we learned"             | `workflow/learn`                |
 
 `architecture/progress-guard` and `ai-agent/ultra-context-engine` don't wait to be called by name. They run in the background whenever their trigger conditions show up in the conversation (side-work-instead-of-shipping, and token-budget pressure, respectively).
 
@@ -280,7 +300,7 @@ curations/
   version always wins. Everything else in that skill still tracks upstream.
 - **Never edit `skills/<category>/<skill>/` directly** for the 5 synced skills. The next
   sync deletes the folder. If you want it in your voice, put it in
-  `curations/<skill>/overlay/` first. (This doesn't apply to the 47 owned
+  `curations/<skill>/overlay` first. (This does not apply to the 61 owned
   skills, those you edit directly, since nothing re-vendors them.)
 - **Write the why.** `WHY.md` is the difference between curation and
   copy-paste. Future-you and future agents read it.
@@ -310,9 +330,10 @@ skills/
 ├── architecture/          # Planning, onboarding, research
 ├── engineering/           # TDD, code review, verification, standards
 ├── quality/               # Writing quality, anti-slop
-├── business/              # Freelancing, startup, career
+├── business/              # Freelancing, startup, career, marketing
 ├── nerdev/                # Nerdev skill family
-└── ai-agent/              # Agent docs, context management
+├── ai-agent/              # Agent docs, context management
+└── workflow/              # Ship, context save/restore, health, learn
 
 curations/<name>/          # your ownership layer: overlay/ + WHY.md (never touched by sync)
 vendor.json                # upstream repos + pinned commits + skill maps
