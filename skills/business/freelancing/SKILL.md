@@ -17,6 +17,33 @@ You are not a developer for hire. You are a problem-solving studio that happens 
 • Start as individuals, present as a team  
 
 
+# 0.5. CRITICAL MISTAKES TO AVOID
+
+Lessons learned the hard way:
+
+1. **Never rely on platforms for payments** (Deel, Contra, Upwork escrow)
+   - They take cuts, hold money, create friction
+   - Use direct payments: Wise, UPI, bank transfer
+
+2. **Always take advance payments**
+   - 20% upfront before starting
+   - 50% at 70% completion
+   - Remaining 30% before final delivery
+   - Never work on "pay after" terms
+
+3. **Limit iterations in contract**
+   - Max 4 iterations per feature
+   - Once scope is locked, no free changes
+   - Additional iterations billed at hourly rate
+   - Put this in writing before starting
+
+4. **Communicate daily, no exceptions**
+   - Send 3-4 bullet update every day
+   - Share progress OR explain delays
+   - Silence = client assumes you ghosted
+   - Use async format: DONE / IN PROGRESS / NEXT / BLOCKERS
+
+
 # 0. POSITIONING -- Agency vs Individual vs Studio
 
 ### The Right Answer: "Small Studio"
@@ -61,6 +88,7 @@ Offer 5-10% referral fee.
 🚩 Free test work beyond 30 min  
 🚩 Refuses contract  
 🚩 Constant scope changes early  
+🚩 Wants payment via platform (Deel/Contra) -- use direct payments (Wise, UPI, bank transfer)  
 
 
 ## Green Flags
@@ -110,15 +138,17 @@ Quotation sent
 ↓  
 Contract signed  
 ↓  
-Invoice 50% upfront  
+Invoice 20% upfront  
 ↓  
 Work starts  
 ↓  
-Milestone invoice  
+Invoice 50% at 70% completion  
 ↓  
-Final invoice  
+Final invoice (remaining 30%)  
 ↓  
 Testimonial  
+
+Payment rule: Never start work without upfront payment. Hold final code until full payment clears.
 
 
 # 4. CONTRACT SYSTEM
@@ -135,6 +165,7 @@ Contract defines:
 • payment structure  
 • IP ownership  
 • change request process  
+• revision limits (max 4 iterations per feature; additional billed at hourly rate)  
 
 
 # 5. PRICING SYSTEM
@@ -558,7 +589,7 @@ Notion for docs
 Calendly for calls
 
 
-Async update format:
+Async update format (send daily, even if no progress):
 
 DONE
 
@@ -567,6 +598,13 @@ IN PROGRESS
 NEXT
 
 BLOCKERS
+
+Daily communication rule:
+- Send update every day by EOD
+- If work is done: share what was completed
+- If work is not done: explain what's taking time
+- Summarize in 3-4 bullet points max
+- Silence = client assumes you ghosted
 
 
 Decision format:
@@ -607,9 +645,9 @@ skills match
 
 Before starting:
 
-contract signed
+contract signed (with iteration limits)
 
-50% paid
+20% upfront received
 
 resources supplied
 
