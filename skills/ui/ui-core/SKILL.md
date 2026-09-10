@@ -1,6 +1,6 @@
 ---
 name: ui
-description: The whole UI job in one skill: pick the direction, design the system, build the screen, redesign or audit an existing one, verify it before ship. Use when starting a new page or project, choosing a theme or visual direction, building a screen, or upgrading an existing UI. Replaces taste-skill, taste-skill-v1, redesign-skill, soft-skill, gpt-tasteskill, minimalist-skill, brutalist-skill, stitch-skill, and ui-theme-picker as one owned skill. house-style is the law; impeccable has the commands; this file is the process.
+description: The whole UI job in one skill: pick the direction, design the system, build the screen, redesign or audit an existing one, verify it before ship. Use when starting a new page or project, choosing a theme or visual direction, building a screen, or upgrading an existing UI. This skill owns the quality of the interface. It makes design decisions autonomously and ships product-ready UI. house-style is the law; impeccable has the commands; this file is the process.
 ---
 
 # UI
@@ -12,6 +12,188 @@ commands and detectors. This file is the process. If another synced
 skill about visual design loads, this skill wins.
 
 > **Skill family:** `house-style` = law (philosophy). This skill = process orchestrator. [`impeccable`](../impeccable/SKILL.md) = commands/detectors. [`motion`](../motion/SKILL.md) = motion job (name/decide/build/review). [`pick-ui-library`](../pick-ui-library/SKILL.md) = curated library picks. Load `house-style` + this skill for UI work; add `motion` for animation focus; invoke `pick-ui-library` when you need a library.
+
+## Product-Ready UI Standard
+
+This is the default quality bar for every frontend/UI task. It sits
+above every phase. It is the operating principle, not a checklist item.
+
+The agent's default posture: make the reasonable design decisions
+yourself. Only ask the user when the decision materially changes
+product requirements or depends on missing business information.
+
+Do not ask about: colors, spacing, typography, border radius, card
+layout, button styles, empty states, loading states, responsive
+behavior, interaction patterns, animation, component structure. Make
+those decisions.
+
+The quality ladder:
+
+Level 1, functional: the feature works.
+
+Level 2, usable: the workflow is understandable.
+
+Level 3, product-ready: states, errors, responsiveness, accessibility,
+and content are handled.
+
+Level 4, polished: typography, spacing, hierarchy, motion, and visual
+consistency are intentional.
+
+Level 5, distinctive: the interface has a coherent visual identity and
+feels like a real product rather than generated UI.
+
+Default target: Level 4. Level 5 emerges when the product's brand or
+design system warrants it.
+
+### Own the interface
+
+Treat yourself as both the implementer and the product designer.
+
+Do not interpret "build a dashboard" as "create some cards that
+resemble a dashboard." Instead determine:
+
+- What is the user's primary goal?
+- What is the primary action?
+- What information matters most?
+- What should be visible immediately?
+- What can be secondary or progressively disclosed?
+- What happens when there is no data?
+- What happens while loading?
+- What happens when something fails?
+- What happens after success?
+- How does the workflow work on mobile?
+- Which interactions should feel especially good?
+
+Make those decisions yourself unless the project requirements require
+user input.
+
+### Product-ready means more than visually polished
+
+A UI is not complete simply because it has good colors, typography,
+and spacing. A product-ready interface has:
+
+1. Clear product identity
+2. Clear information hierarchy
+3. A coherent interaction model
+4. Consistent component behavior
+5. Complete UI states
+6. Realistic content
+7. Responsive behavior
+8. Accessible interaction states
+9. Intentional motion
+10. A coherent visual language
+
+Do not stop at "the page looks good." The finished result should feel
+like someone deliberately designed the product.
+
+### Complete the states
+
+Never design only the happy path. For every meaningful interactive
+surface, consider:
+
+- initial
+- loading
+- populated
+- empty
+- error
+- disabled
+- hover
+- focus
+- active
+- selected
+- success
+- partial or limited
+- permission denied
+- offline where relevant
+
+Empty states should explain what happened and what the user can do
+next. Errors should be actionable. Loading states should preserve
+layout where practical.
+
+### Use realistic content
+
+Avoid lorem ipsum and obviously fake placeholder content unless the
+task specifically requires placeholder data. Use realistic names,
+titles, labels, descriptions, dates, statuses, numbers, file names,
+and notifications. Copy is part of the interface. A polished layout
+with obviously artificial content still looks unfinished.
+
+### Establish interaction consistency
+
+The same interaction should behave the same way throughout the
+product. Dropdowns open consistently. Menus have consistent spacing
+and positioning. Destructive actions follow the same confirmation
+pattern. Buttons have consistent height and feedback. Inputs have
+consistent focus treatment.
+
+### Do not make everything a card
+
+Cards are not a default layout primitive. Use cards when grouping
+content benefits from a distinct surface. Otherwise prefer whitespace,
+typography, dividers, lists, tables, inline controls, sections, and
+grouped controls. If every element is boxed, nothing has hierarchy.
+
+### Responsive design is not an afterthought
+
+Do not simply stack desktop elements vertically. Design mobile
+intentionally. Determine what remains visible, what becomes a drawer,
+what becomes sticky, what becomes horizontally scrollable, what
+disappears, what changes priority, how navigation changes, and how
+dense information is transformed.
+
+### Motion should communicate something
+
+Animation is optional. Poor animation makes a product feel cheaper,
+not better. Use motion when it explains hierarchy, communicates state,
+guides attention, confirms an action, establishes spatial
+relationships, makes an interaction feel natural, or reinforces product
+identity. Respect prefers-reduced-motion. Do not add animation merely
+because an animation library is available.
+
+### Visual restraint
+
+Avoid decoration without purpose. Do not automatically use gradients,
+glows, glassmorphism, excessive shadows, giant rounded cards, floating
+blobs, particles, excessive borders, or excessive animation. These
+techniques can be excellent when they belong to the product. They
+should never be the default definition of "modern." A simple interface
+with excellent hierarchy is better than a visually busy interface
+trying to appear sophisticated.
+
+### Autonomous productization pass
+
+Before declaring the UI complete, stop and review it as a product
+designer. Ask:
+
+- Does this feel like a specific product or a generic AI-generated
+  interface?
+- Can a new user understand what matters within a few seconds?
+- Is the primary action obvious?
+- Is information organized without becoming cluttered?
+- Do similar controls behave and look the same?
+- Are loading, empty, error, disabled, hover, focus, selected, and
+  success states handled?
+- Does the copy feel real?
+- Does mobile feel intentionally designed?
+- Can keyboard users understand and operate the interface?
+- Does animation improve comprehension or interaction?
+- Can anything be removed without reducing usability?
+- Could this screenshot be mistaken for a generic template?
+
+If the answer to the last question is yes, continue refining. Do not
+merely report the problems. Fix them.
+
+### The final quality rule
+
+Do not finish when "the requested components exist." Finish when "the
+requested workflow works and the interface feels like a coherent
+product."
+
+The user should not have to provide a second round of instructions
+saying "make it look more polished," "add empty states," "make mobile
+better," "fix the spacing," "add hover states," or "make it feel less
+generic." Anticipate these requirements and handle them during the
+initial implementation.
 
 ## The rules that never bend
 
@@ -27,18 +209,20 @@ skill about visual design loads, this skill wins.
 - No em dashes in any visible text. One em dash fails review.
 - The finish gate is mandatory before anything ships.
   See references/verify.md.
-- You decide what feels right. I ask before building, then again before
-  shipping.
+- You decide what feels right. Do not ask permission for design
+  decisions. Make them.
 
 ## Phase 1: Pick the direction
 
 For new projects, pages, or components with no theme yet.
 Details in references/direction.md.
 
-1. Ask the context questions: what it is, who it is for, the vibe in one
-   word, the constraints, the animation dial.
-2. Ask the identity questions (see below). These turn generic UI into
-   something that feels like *this* product, not any product.
+1. Determine the context: what it is, who it is for, the vibe, the
+   constraints, the animation dial. If the user provided these, use
+   them. If not, infer from the project and make a call.
+2. Determine the identity. These turn generic UI into something that
+   feels like this product, not any product. Ask only what the user
+   has not already told you.
 3. Match to a style family. Shortlist 2-3 candidates with a one-line
    feel and a concrete anchor.
 4. Output tokens: palette, type pairing, spacing, radius, shadow or no
@@ -46,34 +230,24 @@ Details in references/direction.md.
 5. Refine mode: when a theme already exists, audit first, extract
    principles not pixels, output a token diff.
 
-### Identity questions (ask before picking tokens)
+### Identity questions (ask only what is missing)
 
-These are the questions that separate "looks good" from "feels like us."
-Skip them and you get a template. Ask them and you get a brand.
+Skip questions the user already answered. Ask only what genuinely
+requires product input. These separate "looks good" from "feels like
+us."
 
-1. **What's the one word you want people to feel after using this?**
-   (Trust? Speed? Calm? Power? Fun?) This drives everything: type
-   weight, color saturation, motion curve, spacing.
-2. **What's your signature color?**
-   Not "what palette do you like." One color that's yours. Gumroad has
-   pink. Stripe has purple. Linear has indigo. What's the one hex that
-   shows up everywhere?
-3. **What font feels like your voice?**
-   If your product talked, what would it sound like? Technical and
-   precise? Warm and friendly? Sharp and editorial? Match that to a
-   typeface, not the other way around.
-4. **What's the one thing competitors all do that you refuse to do?**
-   This defines your visual contrast. If every competitor has gradient
-   heroes, yours is flat. If they're all minimal, yours is dense. The
-   refusal IS the identity.
-5. **What's the one interaction you want people to remember?**
-   Not 10 interactions. One. The button that feels like butter. The
-   scroll that surprises. The transition that makes someone smile.
-   Everything else should be invisible.
-6. **Show me a site that feels like what you're going for.**
-   Not "I like this site." Show me the one that, when you saw it, you
-   thought "that's the energy." Then we extract the principles, not
-   copy the pixels.
+1. What is the one word you want people to feel after using this?
+   Trust, speed, calm, power, fun. If you can infer it, infer it.
+2. What is your signature color? One color that is yours. If the user
+   has one, use it. If not, make a decision based on the product.
+3. What font feels like your voice? Technical and precise, warm and
+   friendly, sharp and editorial. Match that to a typeface.
+4. What is the one thing competitors all do that you refuse to do?
+   This defines visual contrast.
+5. What is the one interaction you want people to remember? One. Not
+   ten. Everything else should be invisible.
+6. Show me a site that feels like what you are going for. If the user
+   provides one, extract principles. If not, pick references yourself.
 
 The families we keep: clean SaaS (the default, Apple and Google calm),
 minimalist, brutalist. Recipes in references/styles.md, used only when
@@ -157,7 +331,8 @@ Nothing ships without it. Details in references/verify.md.
 ## Working with you
 
 - One round of questions at a time. Build in the smallest real step.
-- You own the taste. I propose, you decide.
+- You own the taste. I propose, you decide. But I make most design
+  decisions myself. I ask only when it matters.
 - Never ship a screen that fails the gate. Say exactly what fails and
   why, with the fix.
 
