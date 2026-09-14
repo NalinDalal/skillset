@@ -5,5 +5,12 @@
       "./skills",
       "~/.config/opencode/skills"
     ]
+  },
+  "mcp": {
+    "refero": {
+      "type": "local",
+      "command": ["npx", "-y", "fidgetcoding-refero-mcp"],
+      "enabled": true
+    }
   }
 }
