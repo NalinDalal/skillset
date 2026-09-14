@@ -30,7 +30,45 @@ If any of these are true, the job isn't done:
   anything in a column) or to how the chosen face handles the actual longest string
   in the UI (a nav label, a stat with a comma).
 
-## 1. Gather context (skip what's already known)
+## 1. Core rules (Calvez)
+
+Non-negotiable constraints from Pierrick Calvez's "Five-Minute Guide to Better
+Typography." Apply these to every output:
+
+1. **Hierarchy in blocks, not on the page.** Think per-block rules (heading block,
+   body block, caption block) not page-level layout. Consistent rules per block beat
+   inconsistent rules across the page.
+2. **One typeface, 4+ weights.** Start with a single family that ships at least
+   Regular, Medium, Bold, and one more. Multiple families is a later decision, not a
+   starting point.
+3. **Skip a weight for contrast.** Headings at 700, body at 400 — not 500. Skipping a
+   weight creates stronger visual hierarchy than adjacent weights.
+4. **45-75 characters per line.** The readability sweet spot. Over 75 and the eye
+   loses its place; under 45 and the rhythm breaks. Use `ch` units or
+   `max-width: 65ch` as a starting point.
+5. **Align left.** Never justify on screen. Justified text creates uneven spacing that
+   reads as amateur on digital surfaces.
+6. **Line height 1.2-1.5x.** Tighter for display (1.0-1.2), looser for body (1.5-1.6).
+   Never the default browser value at every size.
+7. **Never below 14px.** 12px is too small. 14-25px is the readable range for body
+   text on screen.
+8. **When in doubt, double.** If paragraph is 16px, subheading is 32px, heading is
+   48-64px. Bold size contrast over timid increments.
+9. **Contrast over decoration.** Weight and size do the typographic work. Colors,
+   italics, and underlines are support, not the main hierarchy tool.
+10. **Align with your eyes.** Type is not an exact science. It is aligned when it
+    *feels* aligned. Nudge by hand, not by grid math.
+11. **Kerning matters.** Pay attention to spacing between individual character pairs.
+    Tight kerning on display type, looser on body. Auto-kerning is a starting point,
+    not a finish.
+12. **Use the right dash.** Hyphen (`-`) for compound terms (check-in, money-back). En
+    dash (`–`) for ranges (1926–2017, pages 37–61). Em dash (`—`) to replace commas,
+    parentheses, or colons ("The em dash is underused in typography—such a waste.").
+
+**Calvez wrap-up:** Don't nerd over typefaces, just pick one. Think in blocks. Align
+with your eyes. Hierarchy first. Use contrast. Fine-tune with spacing. And voilà.
+
+## 2. Gather context (skip what's already known)
 
 Use `ask_user_input_v0` if available; otherwise ask inline, max 3 questions.
 
@@ -49,7 +87,7 @@ Use `ask_user_input_v0` if available; otherwise ask inline, max 3 questions.
 Don't ask about specific typeface names - that's this skill's job to propose, not
 the user's job to know.
 
-## 2. Typeface landscape - what to actually reach for (2026)
+## 3. Typeface landscape - what to actually reach for (2026)
 
 Grouped by register, not by "serif vs sans," because that's how the choice actually
 gets made. Skip anything on `ui-theme-picker`'s hard-avoid-list (rounded "friendly"
@@ -93,7 +131,7 @@ and Google Fonts' growing variable catalog (Inter, Fraunda, Recursive - which
 uniquely exposes `MONO`/`CASL`/`slnt` axes for a mono-to-humanist morph). Default
 here unless the project has a type budget for a foundry license.
 
-## 3. Pairing rules
+## 4. Pairing rules
 
 1. **Contrast, not similarity, creates hierarchy.** A serif display + grotesque body,
    or a display face + its own family's plainest weight, both work because the eye
@@ -114,7 +152,7 @@ here unless the project has a type budget for a foundry license.
    commas, the brand name itself, any all-caps usage. A pairing that looks great on
    placeholder text can break on the client's actual longest string.
 
-## 4. Fluid type scale (don't ship fixed pixel sizes)
+## 5. Fluid type scale (don't ship fixed pixel sizes)
 
 Default to a `clamp()`-based fluid scale so headings scale smoothly between mobile
 and desktop instead of jumping at breakpoints. Formula per step:
@@ -148,7 +186,7 @@ standard reference; compute by hand if it's not reachable.
 - All-caps labels need explicit tracking - never ship `uppercase` without adding
   `letter-spacing`, default tracking on caps looks cramped.
 
-## 5. Variable fonts and OpenType features
+## 6. Variable fonts and OpenType features
 
 **Ship one variable font file instead of 4-6 static weights** wherever the chosen
 family offers one (Fontshare Originals, Geist, Inter, Recursive, Fraunces all do)  - 
@@ -190,7 +228,7 @@ text automatically), `slnt`/`ital` (slant), and novelty axes like Fraunces'
 Check the specific family's specimen page for which stylistic sets it ships - these
 are family-specific and not guessable from the CSS property alone.
 
-## 6. Text-motion effects - pick 0-2, never more
+## 7. Text-motion effects - pick 0-2, never more
 
 Motion on text is the highest-leverage, highest-risk move in this skill: one
 well-executed headline reveal reads as premium; three competing text effects on one
@@ -238,7 +276,7 @@ apply to text motion at least as much as to UI chrome.
   same page - count total signature effects on one screen against that skill's
   2-3-effect ceiling, text effects included.
 
-## 7. Output format
+## 8. Output format
 
 1. **Pairing** - 1-2 named typefaces (never "a clean sans-serif"), one line each on
    why they fit the register from step 1, plus which free source to pull from.
@@ -253,7 +291,7 @@ apply to text motion at least as much as to UI chrome.
 Close with one line max: "want a variant (calmer/louder) or the effect built out for
 a second element?" - don't pad further unless asked.
 
-## 8. Self-check before presenting
+## 9. Self-check before presenting
 
 - Would this pass as one of the "generic-type failure mode" bullets from the top of
   this skill? If yes, it's not done.
