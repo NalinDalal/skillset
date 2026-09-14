@@ -16,52 +16,70 @@ triggers:
 
 # Product Engineering
 
-The discipline of making technical decisions that serve user goals. Not just building things right (engineering), but building the right things (product) — and knowing the difference.
+Thinking in product outcomes, not just technical systems. Checking how the product is doing, identifying where to improve, deciding what to improve — and building it.
 
 ## When to use
 
-- Deciding what to build next
-- Scoping a feature or project
-- Making build vs buy decisions
-- Choosing architecture that matches the problem
-- Saying no to features that don't serve users
-- Evaluating if a technical decision serves product goals
+- Reviewing product metrics and identifying improvement opportunities
+- Deciding what to build next based on data, not guesses
+- Scoping features to move specific metrics
+- Making technical decisions that serve product goals
+- Saying no to features that don't move the needle
+- Continuously improving an existing product
 
 ## Core principle
 
-**Every technical decision is a product decision.** Choosing Postgres over MongoDB isn't just an engineering choice — it affects what you can build, how fast you can iterate, and what your users experience.
+**Engineers who think in product, not just systems.** Not "how do I build this?" but "should this exist? will users care? how will we know if it worked?"
 
 ## The Product-Engineering Loop
 
 ```
-Observe → Decide → Build → Measure → Learn
-  ↑                                      |
-  └──────────────────────────────────────┘
+Measure → Identify → Prioritize → Build → Measure
+   ↑                                        |
+   └────────────────────────────────────────┘
 ```
 
-### 1. Observe
+### 1. Measure
 
-Before building anything, understand:
+Know how the product is doing:
 
-- **Who** has the problem? (Not "users" — specific people)
-- **What** are they doing today? (The status quo)
-- **When** does the pain happen? (The moment)
-- **Why** haven't they solved it? (The barrier)
+- **What's working?** Features with high adoption, good retention, positive feedback.
+- **What's not working?** Drop-offs, low adoption, support tickets, churn.
+- **What's missing?** User requests, competitive gaps, unmet needs.
 
-Use `office-hours` skill for deep product diagnostic. Use `customer-research` for user interviews.
+Track outcomes, not output:
 
-### 2. Decide
+| Output (vanity) | Outcome (signal) |
+|-----------------|------------------|
+| Features shipped | Changes in user behavior |
+| Lines of code | Users completing key flows |
+| Sprint velocity | Time to answer "is this working?" |
+| Code coverage | Bugs found before users hit them |
 
-Make explicit decisions before code:
+### 2. Identify
 
-| Decision | Question | Default |
-|----------|----------|---------|
-| **Build vs Buy** | Does this differentiate us? | Buy undifferentiated, build what makes you unique |
-| **Scope** | What's the smallest thing that tests the hypothesis? | Cut 50% more than you think |
-| **Complexity** | Does the solution match the problem's actual complexity? | Simplest thing that works |
-| **Timing** | Do we need this now or can we learn first? | Learn before building |
+Find improvement opportunities:
 
-### 3. Build
+- **Where are users dropping off?** Funnel analysis, session recordings.
+- **What are users asking for?** Support tickets, feature requests, forum posts.
+- **What are competitors doing that we're not?** Competitive analysis.
+- **What's broken that users tolerate?** Workarounds, manual processes.
+
+### 3. Prioritize
+
+Decide what to work on:
+
+| Factor | Question | Weight |
+|--------|----------|--------|
+| **Impact** | How many users does this affect? | High |
+| **Intensity** | How much pain does this solve? | High |
+| **Confidence** | How sure are we this will work? | Medium |
+| **Effort** | How long will this take? | Medium |
+| **Strategic fit** | Does this align with our direction? | Low |
+
+**Rule:** Work on the highest impact + highest intensity problems first. Not the easiest, not the most interesting.
+
+### 4. Build
 
 Ship with intent:
 
@@ -69,18 +87,7 @@ Ship with intent:
 - **Instrument from day one.** If you can't measure it, you can't learn from it.
 - **Ship to a subset.** Feature flags, staged rollouts, beta groups.
 
-### 4. Measure
-
-Measure outcomes, not output:
-
-| Output (vanity) | Outcome (signal) |
-|-----------------|------------------|
-| Lines of code | Users completing the flow |
-| Features shipped | Changes in user behavior |
-| Sprint velocity | Time to answer "is this working?" |
-| Code coverage | Bugs found before users hit them |
-
-### 5. Learn
+### 5. Measure (again)
 
 After shipping, answer:
 
@@ -88,7 +95,7 @@ After shipping, answer:
 - What surprised us?
 - What should we double down on? Kill? Iterate?
 
-Feed learnings back to Observe.
+Feed findings back to step 1.
 
 ## Decision Frameworks
 
@@ -183,13 +190,14 @@ Adding abstractions "just in case" we need them later. You probably won't. Delet
 
 | Skill | When to use with product-engineering |
 |-------|-------------------------------------|
-| `office-hours` | Before building — validate the problem |
+| `office-hours` | Validating a new product idea |
 | `startup-founder` | Early stage — what to build first |
 | `customer-research` | Understanding users deeply |
-| `ui-engineering` | Building the frontend with product decisions |
+| `ui-engineering` | Building the frontend |
 | `ship` | Shipping with measurement |
 | `performance` | Optimizing what matters to users |
 | `security` | Protecting what users trust you with |
+| `learn` | Tracking product learnings across sessions |
 
 ## Pre-ship checklist
 
@@ -207,4 +215,4 @@ Before declaring any feature done:
 
 ## One-liner
 
-**Product engineering is knowing what NOT to build.**
+**Product engineering is checking how the product is doing and knowing what to improve next.**
