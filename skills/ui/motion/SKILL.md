@@ -37,7 +37,7 @@ Reverse lookup: you describe the feeling, this names the effect.
 | "Old image fades out as the new one fades in" | Crossfade |
 | "The button squishes when I press it" | Press feedback: scale to 0.97 on press, spring back |
 | "A sheet slides up from the bottom with blur behind" | Sheet presentation |
-| "The icon reshapes between states" | Icon morph |
+| "The icon reshapes between states" | Icon morph — use [morphicons](https://morphicons.com/) for SVG→SVG spring morphs |
 | "The header shrinks while I scroll" | Scroll-aware collapse |
 | "Rows slide away when I dismiss them" | Collapse dismissal |
 | "The thing follows my cursor with a lag" | Magnetic cursor spring |
@@ -97,6 +97,26 @@ Crib sheet for the common jobs:
 - List reorder: layout transition, 200ms, items stagger 20ms.
 - Skeleton: shimmer only while loading, never on loop after load.
 
+### Micro-interactions are multi-sensory
+
+Every interaction has up to three layers. Pick what the moment needs:
+
+| Layer | Tool | When |
+|-------|------|------|
+| **Visual** | CSS spring, morphicons | Always — this is the primary feedback |
+| **Audio** | quiet-fx | Confirming actions: clicks, toggles, submits, deletes |
+| **Haptic** | `navigator.vibrate(ms)` | Mobile: toggles, destructive actions, long-press confirm |
+
+**Examples:**
+
+- **Send button:** Visual (scale 0.95→1 spring) + Audio (soft pop) + Haptic (10ms)
+- **Toggle switch:** Visual (thumb spring) + Audio (quiet snap) + Haptic (5ms)
+- **Delete:** Visual (fade out) + Audio (dull knock) + Haptic (50ms, stronger)
+- **Hover:** Visual only. No sound, no haptic. Hover is exploration, not commitment.
+- **Toast appear:** Visual (slide up + fade) + Audio (gentle chime). No haptic — it's informational, not interactive.
+
+**Rule:** The more consequential the action, the more layers. Hover = 1 layer. Click = 2. Destructive = 3. If someone notices the sound, it's too loud. If the haptic is longer than 50ms, it's an alarm, not feedback.
+
 ## Review (a piece of work)
 
 Default to flagging. Approve only what passes review. Check in this order:
@@ -154,9 +174,27 @@ physical grammar. Match it, do not invent your own:
 - CSS transitions beat keyframes when interruption matters, which is
   nearly always.
 - A motion library (motion.dev, GSAP) only when gestures get complex.
-  Most micro work is plain CSS.
+   Most micro work is plain CSS.
+- **Icon morphing:** Use [morphicons](https://morphicons.com/) for
+   icon→icon transitions (hamburger↔X, play↔pause, chevron states).
+   6.5KB, zero deps, spring physics, works with Lucide/Tabler/Heroicons.
+   Install: `npm i morphicons`. Import as data (`d` attribute), not
+   components.
+- **Audio feedback:** Use
+   [quiet-fx](https://github.com/nicmcphee/quiet-fx) for subtle UI
+   sounds (clicks, pops, chimes, snaps). Creates one `SoundPlayer` per
+   mount, fire-and-forget `play()`, dispose on unmount. Layer with
+   visual motion — the sound confirms what the eye just saw. Never
+   await `play()`, never gate logic on it.
+   ```ts
+   import { createQuietSound } from './quiet';
+   // One per component. Dispose on unmount.
+   const { play, dispose } = createQuietSound();
+   // In handler: play() fires async, don't await
+   onClick={() => { play(); doAction(); }}
+   ```
 - Test on the weakest device you have. If it stutters, delete the
-  animation, not the test.
+   animation, not the test.
 
 ## Origin
 
