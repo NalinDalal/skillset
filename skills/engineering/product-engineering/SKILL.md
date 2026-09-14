@@ -194,6 +194,7 @@ Adding abstractions "just in case" we need them later. You probably won't. Delet
 | `startup-founder` | Early stage — what to build first |
 | `customer-research` | Understanding users deeply |
 | `ui-engineering` | Building the frontend |
+| `motion` | Adding micro-interactions, icon morphs, transitions — load when a product decision involves UI feel |
 | `ship` | Shipping with measurement |
 | `performance` | Optimizing what matters to users |
 | `security` | Protecting what users trust you with |
