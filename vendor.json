@@ -53,7 +53,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "c1c0a32802223f4be824112dd83d33ad29a8b26c",
+      "commit": "e31650eea443aaea1e84cc15d88c13f40080b275",
       "source": "pstack/skills",
       "skills": [
         {
