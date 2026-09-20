@@ -1,6 +1,6 @@
 # skillset
 
-67 agent skills in 10 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that syncs a handful from upstream repos.
+69 agent skills in 10 categories (ui, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) with a CLI to install them into any harness (Claude Code, OpenCode, Cursor, Codex, Gemini) and a CI/CD pipeline that syncs a handful from upstream repos.
 
 > **Owned, not copied.** Synced skills are a base, not the final word. Any skill
 > you care about gets a `curations/<skill>/` layer that survives every upstream
@@ -12,7 +12,7 @@
 
 ```
 skills/
-├── ui/               26 skills  Components, animations, design systems
+├── ui/               28 skills  Components, animations, design systems
 ├── backend/           5 skills  API, auth, database, realtime, security
 ├── devops/            4 skills  CI/CD, deployment, testing, performance
 ├── architecture/      4 skills  Planning, onboarding, research
@@ -35,11 +35,11 @@ skills/
 
 These four repos are pinned in `vendor.json`. `.github/workflows/sync.yml` checks them nightly and opens a PR when they move. You never hand-copy a file from them.
 
-### Everything else (62 skills, owned outright)
+### Everything else (64 skills, owned outright)
 
 Not synced from anywhere. Written for this repo, live only here, edited directly in `skills/<category>/<name>/`.
 
-**ui/**: `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `typography-picker` (font pairing, type scale, text motion), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation), `frontend-craftsmanship` (product design thinking, visual systems, interaction design, reverse engineering, learning roadmap).
+**ui/**: `house-style` (the law: how UI, code, and docs should look and feel), `ui-engineering` (loads the rest of the UI family for a full build), `ui-core` (whole UI job: direction → system → build → verify), `typography-picker` (font pairing, type scale, text motion), `motion` (whole motion job: name → decide → build → review), `imagegen` (design-reference image generation), `frontend-craftsmanship` (product design thinking, visual systems, interaction design, reverse engineering, learning roadmap), `product-site` (product site architecture: which pages exist, what each page accomplishes, page relationships, legal/trust/support/operational pages), `product-messaging` (landing page content hierarchy, hero/value prop/section copy, what each section should actually communicate).
 
 **Pattern → library pairs**: ask "how do I build X" and you get the pattern skill; it names the library and hands off to the library-specific guide:
 
@@ -157,6 +157,8 @@ Skills fire from their description, not from a command you type. Say what you wa
 | "add a command palette / ⌘K"                             | `ui/ask-command-menu` → `ui/ask-cmdk`                              |
 | "build a virtual list / infinite scroll / feed / chat"   | `ui/ask-virtual-list` → `ui/ask-virtuoso`                          |
 | "add a mobile drawer / bottom sheet"                     | `ui/ask-drawer` → `ui/ask-vaul`                                    |
+| "what pages does my product site need"                   | `ui/product-site` (page architecture, funnel, legal/support/auth pages) |
+| "write my landing page / hero copy / value prop"         | `ui/product-messaging` (what to say, section hierarchy, actual copy) |
 
 **Backend / dev workflow:**
 
