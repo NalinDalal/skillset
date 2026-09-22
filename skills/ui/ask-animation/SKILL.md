@@ -62,6 +62,8 @@ User needs animation/motion
     └─► implement with motion.dev + house-style motion rules
 ```
 
+**Reference:** [transitions.dev](http://transitions.dev) — curated CSS transitions & micro-interactions. Good for inspiration and copy-paste snippets that align with the quality checklist above.
+
 ## motion.dev Primitives (Core)
 ```tsx
 import { motion, AnimatePresence, LazyMotion, domAnimation, m } from 'motion/react'

@@ -333,3 +333,7 @@ import { LazyMotion, domAnimation, m, motion } from 'motion/react'
 - `ui/ask-animation` - Pattern guide for all motion
 - `ui/ask-gsap` - GSAP + ScrollTrigger + Lenis for showcase tier
 - `ui/ui-engineering` - Master orchestrator
+
+## External Reference
+
+- **[transitions.dev](http://transitions.dev)** — curated CSS transitions & micro-interactions. Ready-made snippets for hover, tap, enter/exit, focus states. Aligns with house-style rules (transform/opacity only, spring curves, reduced motion).

@@ -68,7 +68,7 @@ Not synced from anywhere. Written for this repo, live only here, edited directly
 
 **ai-agent/**: `agent-docs-writer` (README/AGENTS.md), `ultra-context-engine` (token-efficiency layer).
 
-**business/**: `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `pricing` (SaaS pricing strategy, value metrics, tiers), `customer-research` (interviews, surveys, persona generation, JTBD), `copywriting` (landing page copy, headlines, CTAs), `launch` (ORB framework, five-phase approach, Product Hunt), `marketing-psychology` (mental models, persuasion, buyer behavior).
+**business/**: `freelancing`, `startup-founder`, `resume-revamp-jake-ats`, `pricing` (SaaS pricing strategy, value metrics, tiers), `customer-research` (interviews, surveys, persona generation, JTBD), `copywriting` (landing page copy, headlines, CTAs), `launch` (ORB framework, five-phase approach, Product Hunt), `marketing-psychology` (mental models, persuasion, buyer behavior), `brag` (turn any project into a launch video with Hyperframes).
 
 **workflow/**: `office-hours` (YC-style product interrogation), `ship` (detect base, test, review, commit, push, PR), `careful` (destructive command guardrails), `context-save` (save working state to disk), `context-restore` (restore from saved context), `health` (code quality dashboard with composite scoring), `learn` (project learnings manager).
 
@@ -213,6 +213,7 @@ Skills fire from their description, not from a command you type. Say what you wa
 | "write copy for this landing page" | `business/copywriting`          |
 | "plan a Product Hunt launch"       | `business/launch`               |
 | "why do people buy this stuff"     | `business/marketing-psychology` |
+| "make a launch video for this"     | `business/brag`                 |
 
 **Workflow:**
 

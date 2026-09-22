@@ -333,6 +333,67 @@ Practical principles for getting from 0 to first 100 users.
 - First version shouldn't be min viable product; it should be **min evolvable product**.
 - Launch early. Study early users closely. Experiment and fail fast, talk to users.
 
+### Founder Validation Philosophy (Battle-Tested)
+
+**1. Ship janky, sell trust.** V1 was vibe-coded in a few days. But we found design partners who paid anyway — for a lifetime discount + their data and feedback.
+
+**2. Pre-sell before you build.** A dozen contracts signed, paid upfront, weeks before the product was ready.
+
+**3. Let cash be the validation.** Profitable from day one. Every payment = proof, not vanity metrics.
+
+## The Unc Protocol (Jason Freedman, YC S09/W12, GP Orange Collective)
+
+> **If you wish you were starting YC today, but you're not. Do this:**
+
+### Operating System
+1. **Launch early.** Write code, talk to users, take care of your health. Nothing else.
+2. **Founder-led sales/GTM/distribution.** You do it. Not a hire. Not an agency.
+3. **Grow 10–30% week-over-week until Demo Day.** Relentless focus on only two things: writing code and talking to users.
+4. **Set 2-week goals.** Not quarters. Not months. Two weeks.
+5. **Find 5–10 of your most ambitious fellow founders.** Do group office hours every week. Push each other.
+6. **Set Dec 2nd as your personal Demo Day.** Have amazing metrics by then. **$1M ARR or bust.**
+7. **Trust amazing metrics will make fundraising easier.** Do **no fundraising** until then.
+
+### Founder Brand: Write Things Worth Becoming Known For
+**Write something worth becoming known for.** 15 years later, people still bring it up. It compounds better than anything else.
+
+#### Method
+- Every piece: a real story from your life + a singular, different message + actionable guidance
+- Goal: reader knows you better + comes away better for it
+- Bad metaphors allowed (they're a feature)
+
+#### Find Your Voice
+- Jason: sincere, original, thoughtful, helpful (bad metaphors)
+- Chris Bakke: tremendous witty humor
+- Yours: your own. Amazing = best of what *you* can do
+
+#### Process
+- Write 10, rewrite favorite 6, post top 4
+- Or: 30–40 tweet threads → expand the winners
+- Or: brainstorm with founders Socratically
+- Or: get posts reviewed by smartest people you know (PG reviews his essays)
+- Or: write the Ultimate Guide your industry needs
+
+#### What NOT to Do
+- **Don't touch AI.** "Sipping salt water while dying of thirst in the ocean."
+- **Don't rage bait.** Hurts you + collective brand.
+- **Don't do idiot stuff.** Collateral damage to everyone around you.
+- **Don't just self-promote.** It's lame.
+
+#### Target
+Write something **timeless** — 15 years from now, someone's kid reads it and wants to be a founder.
+
+### Integration with Stages
+| Unc Protocol Step | Maps to Skill Stage |
+|-------------------|---------------------|
+| Launch early, code + users + health | Stage 4: Building MVP |
+| Founder-led sales | Stage 6: GTM / First Customers |
+| 10–30% WoW growth | Stage 8: Growth |
+| 2-week goals, peer office hours | Stage 0: Calibration / Continuous |
+| Personal Demo Day ($1M ARR) | Stage 5: Funding Decision (bootstrap to metrics) |
+| No fundraising until metrics | Stage 5: Funding Decision |
+| Write reputation-building content | **New: Founder Brand / Content Strategy** |
+
 ## Output style
 - Match the directness of the user. If they ask a narrow question ("how do I register in India"), answer that narrowly. Do not force the whole framework on them.
 - Prefer concrete next actions and templates (equity split calculators, pitch deck outlines, cold email scripts) over abstract theory.

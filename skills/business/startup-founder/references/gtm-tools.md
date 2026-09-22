@@ -32,14 +32,26 @@
 Pick based on stack and budget. Most have free tiers usable pre-revenue.
 
 - **Payments**: Stripe, Razorpay (India), PayPal, Paddle (handles tax/compliance for you, good for solo global sellers)
+- **Billing/Subscriptions**: Lago (open-source, usage-based, seats, credits), Stripe Billing
 - **Auth/Backend**: Supabase, Firebase, Clerk
+- **AI Agent Platform**: Dify (build/deploy agents & workflows), LangGraph
 - **Analytics (product)**: PostHog (open-source friendly), Mixpanel, Amplitude, Simple Analytics/Plausible (privacy-friendly, lightweight)
+- **Session Replay**: OpenReplay (self-hosted), Highlight.io
+- **In-App Surveys**: Formbricks (onboarding friction, churn)
 - **Email/newsletters**: Resend/Postmark (transactional), ConvertKit/Buttondown (newsletter), Mailchimp
+- **Notifications**: Novu (email, SMS, push — one API, all channels), Knock
 - **CRM/support**: Crisp, Intercom, HubSpot (has a startup program)
 - **No-code/prototyping**: Framer, Webflow, Bubble, Retool
 - **Docs**: Docusaurus, Mintlify, GitBook
 - **Monitoring**: Sentry, UptimeRobot
 - **Design**: Figma, Canva, Undraw (illustrations)
+- **Launch Video / Demo Recording**: Cap Software (clean product demos without videographer), `/brag` skill (AI-generated launch video)
+- **Pitch Deck Tracking**: Papermark (who opened, which slides, time per slide)
+- **Legal**: Claude for Legal by Anthropic (contract review, legal workflows)
+- **Market Research**: Last 30 Days (scrapes Reddit, X, forums for topic research)
+- **Back-Office AI**: qm by Y Combinator (AI agents for YC company back-office work)
+- **AI Dev Team**: gstack by Garry Tan (Claude as planner/reviewer/QA for code)
+- **UI Components**: shadcn/ui (copy-paste components, no lock-in, Radix-based)
 
 ## Startup credit programs (cut infra cost near-zero early on)
 AWS Activate, Google Cloud for Startups, Microsoft for Startups, MongoDB for Startups, Notion for Startups, HubSpot for Startups, Segment Startup Program. India-specific: Razorpay startup programs, MSG91/Exotel for Startups. Apply once incorporated (or with a live product). Terms and amounts change. Verify current details via search rather than assuming figures.

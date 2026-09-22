@@ -8,6 +8,14 @@ description: "Confidence-weighted code review with false-positive suppression. L
 
 When to use: reviewing PRs, setting up review processes, establishing quality standards.
 
+## Core Principle
+
+**You own the code you commit.**  
+**You partially own the code you review and approve.**  
+**How the code is generated is irrelevant.**
+
+This applies whether you wrote it, an AI wrote it, or a teammate wrote it. If you commit it, you own it. If you approve it, you share ownership.
+
 ## Review Checklist
 
 ### CRITICAL (Block merge)

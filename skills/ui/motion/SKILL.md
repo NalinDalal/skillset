@@ -23,6 +23,8 @@ rebuild.
   house-style wins over both.
 
 > **Related skills:** [`pick-ui-library`](../pick-ui-library/SKILL.md) for motion library recommendations (motion.dev, GSAP). [`ui`](../ui/SKILL.md) for the full UI process where motion is one phase. Load `house-style` + this skill for motion work; add `ui` when motion is part of a broader UI task.
+>
+> **Reference:** [transitions.dev](http://transitions.dev) — curated collection of copy-paste CSS transitions & micro-interactions. Use for inspiration and ready-made snippets that follow the rules above.
 
 ## Name it (when you cannot say what you want)
 
