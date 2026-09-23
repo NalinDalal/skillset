@@ -121,43 +121,43 @@ Scene durations must sum to 15-25 seconds. Count them.
 
 ## Reading time (keep the pace, not at text's expense)
 
-High pace comes from fast motion, fast transitions, and tight cuts — NOT from pulling text off screen before it can be read. Every text element a viewer must read needs enough fully-visible, settled time (entered, not yet exiting) to actually read it:
+High pace comes from fast motion, fast transitions, and tight cuts ,  NOT from pulling text off screen before it can be read. Every text element a viewer must read needs enough fully-visible, settled time (entered, not yet exiting) to actually read it:
 
 - Short label or 1-3 word line: about 0.8s settled.
 - Headline or full sentence: about 0.3s per word, minimum ~1.2s. The hook line gets the most.
 
-Plan that floor, then keep everything else fast: entrances and transitions stay snappy (0.3-0.6s) and motion stays energetic. A line can SLAM in fast and then HOLD — fast-in plus an adequate hold reads as punchy AND legible.
+Plan that floor, then keep everything else fast: entrances and transitions stay snappy (0.3-0.6s) and motion stays energetic. A line can SLAM in fast and then HOLD ,  fast-in plus an adequate hold reads as punchy AND legible.
 
 Two failure modes to design out at the plan stage:
 
-- **Too much text for the scene length.** A 4s scene lands maybe 2-3 short reads at the floor, not 6. If a scene carries more text than its duration allows, cut copy or split the scene — do not speed it up.
+- **Too much text for the scene length.** A 4s scene lands maybe 2-3 short reads at the floor, not 6. If a scene carries more text than its duration allows, cut copy or split the scene ,  do not speed it up.
 - **Sequential text snapped onto a fast beat.** Beat-grid reveals can land ~0.5s apart at 110+ BPM (this is what rushed the bicycles spec rows). That spacing is fine for accents (glows, dots, ticks) but too fast for readable lines. For sequential TEXT, hold each item to the floor: snap to every other beat, or reveal them quickly and hold the full set on screen afterward. Flag any sequential text reveal in the storyboard with its intended hold.
 
 ## Choosing what to show
 
 Every brag video must show something real from the product. Options, in preferred order:
 
-1. **Recreate a working-app moment** — the upload screen, the result view, the dashboard with real-looking content. Use real source from `app/`, `pages/`, or routed components — not just the landing page. This is the most compelling option whenever the product has a flow. The product *doing* its thing beats the product *describing* its thing.
-2. **Recreate a UI element in HTML** — a hero card, swipe UI, progress meter, stat block. Strong when there is no flow to show.
-3. **Animate the core concept** — if the product is "taxis for taxis", animate two taxis where one is in the other. Pure graphic but grounded in the idea.
-4. **Text-forward sequence** — if the product is copy-driven (Psychologists for Chatbots), let the copy be the visual. Giant display type, minimal chrome.
+1. **Recreate a working-app moment** ,  the upload screen, the result view, the dashboard with real-looking content. Use real source from `app/`, `pages/`, or routed components ,  not just the landing page. This is the most compelling option whenever the product has a flow. The product *doing* its thing beats the product *describing* its thing.
+2. **Recreate a UI element in HTML** ,  a hero card, swipe UI, progress meter, stat block. Strong when there is no flow to show.
+3. **Animate the core concept** ,  if the product is "taxis for taxis", animate two taxis where one is in the other. Pure graphic but grounded in the idea.
+4. **Text-forward sequence** ,  if the product is copy-driven (Psychologists for Chatbots), let the copy be the visual. Giant display type, minimal chrome.
 
 Never fill scenes with abstract patterns, color washes, or generic motion graphics that could belong to any video.
 
 ## Bias the storyboard toward the user flow
 
-If Step 1 question 9 identified a real user flow, the **centerpiece scenes must show that flow** — not just landing-page recreations.
+If Step 1 question 9 identified a real user flow, the **centerpiece scenes must show that flow** ,  not just landing-page recreations.
 
 Good (working-app scenes):
-- "Upload screen — cursor drops a video file. Filename appears. Progress bar fills 0→100% in 1.2s."
+- "Upload screen ,  cursor drops a video file. Filename appears. Progress bar fills 0→100% in 1.2s."
 - "Three result thumbnails pop in: 0:15, 0:23, 0:31. Each shows a vertical clip frame with a real-looking caption."
 - "Inbox row appears, gets a green 'resolved' badge, slides off the top of the list."
 
 Avoid (marketing-only scenes when a flow exists):
-- "16:9 → 9:16 transform diagram" — that's a *diagram of what the product does*, not the product doing it.
-- "Three stat cards: 10x faster / 0 cuts / 3 clips" — that's the landing page's social-proof row, not the product.
+- "16:9 → 9:16 transform diagram" ,  that's a *diagram of what the product does*, not the product doing it.
+- "Three stat cards: 10x faster / 0 cuts / 3 clips" ,  that's the landing page's social-proof row, not the product.
 
-Stat cards, headline blocks, and the landing-page hero still have a place — but at most one of them, used as a frame around the flow, not as a substitute. The centerpiece is the working app.
+Stat cards, headline blocks, and the landing-page hero still have a place ,  but at most one of them, used as a frame around the flow, not as a substitute. The centerpiece is the working app.
 
 If the project has no app (landing-page-only static site), skip this section and recreate the landing-page strongest visual instead.
 
@@ -165,10 +165,10 @@ If the project has no app (landing-page-only static site), skip this section and
 
 Before writing the storyboard, ask: **does this product have things that can appear one by one, or actions that can be simulated?**
 
-These are among the most effective moments in a brag video — they make the product feel alive and real, not like a slide deck. Look for:
+These are among the most effective moments in a brag video ,  they make the product feel alive and real, not like a slide deck. Look for:
 
-- **Sequential reveals** — feature cards, stats, list items, match results, profile cards, menu options, or anything the product shows as a set. Design these to appear one by one so sound and motion reinforce each arrival. This is a storyboard decision, not an audio afterthought.
-- **Simulated interaction** — if the product involves swiping, clicking, typing, selecting, or toggling, show it. A cursor clicking a button, a swipe gesture on a card, or text being typed into a field turns a static mockup into a demonstration. Sound matches the action automatically when the gesture is in the storyboard.
+- **Sequential reveals** ,  feature cards, stats, list items, match results, profile cards, menu options, or anything the product shows as a set. Design these to appear one by one so sound and motion reinforce each arrival. This is a storyboard decision, not an audio afterthought.
+- **Simulated interaction** ,  if the product involves swiping, clicking, typing, selecting, or toggling, show it. A cursor clicking a button, a swipe gesture on a card, or text being typed into a field turns a static mockup into a demonstration. Sound matches the action automatically when the gesture is in the storyboard.
 
 If a scene has either of these, commit to it explicitly in the scene description:
 - Good: "3 horse profiles slide in one by one, each with a card sound"
@@ -176,7 +176,7 @@ If a scene has either of these, commit to it explicitly in the scene description
 - Good: "The hook line types out character by character with keyboard sounds"
 - Avoid: leaving it vague and hoping Hyperframes adds rhythm on its own
 
-Hyperframes can implement both patterns well — but only if the plan specifies what's appearing, in what order, and that interaction is being simulated. The plan is the contract.
+Hyperframes can implement both patterns well ,  but only if the plan specifies what's appearing, in what order, and that interaction is being simulated. The plan is the contract.
 
 ## Audio planning
 
@@ -201,7 +201,7 @@ Do not over-specify audio if the tone asks for restraint. For `yc-parody` or `de
 Beat/cue sync is available for any track now (see `audio.md` → "Beat and cue sources"): bundled tracks have precomputed presets; custom tracks get cues at composition time via `analyze_music_cues.py` (rich, needs Python) or `npx hyperframes beats` (simple, zero-dep). When the plan chooses music, add a compact `Music cue guidance` section to `brag-plan.md`:
 
 - The track and, if a preset exists, its tempo.
-- 1-3 strong-cue timestamps to target for major visual moments — from the preset if bundled, otherwise note "to be detected at composition time."
+- 1-3 strong-cue timestamps to target for major visual moments ,  from the preset if bundled, otherwise note "to be detected at composition time."
 - Beat-grid windows for any sequential reveals in the storyboard.
 - A restraint note when the tone is deadpan, yc-parody, or otherwise quiet.
 

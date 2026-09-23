@@ -6,7 +6,7 @@ A paragraph arrives one word at a time at roughly the pace you would say it: sho
 
 The framework skill's controller calls `speakIn` during intro at the chosen position in its sequence; this module never decides when. Keep the returned `revert` for as long as the finishes should persist, and call it on outro or unmount. Use for short display copy such as a hero subhead; leave ordinary reading text immediately readable.
 
-Dependencies: `gsap`, `gsap/SplitText`. A variable font supporting the configured weight range for the `broken` finish (400–800 in the example). Adapt that range to the loaded face, or omit `broken` / use `tilt` for a static face; keep its existing font.
+Dependencies: `gsap`, `gsap/SplitText`. A variable font supporting the configured weight range for the `broken` finish (400-800 in the example). Adapt that range to the loaded face, or omit `broken` / use `tilt` for a static face; keep its existing font.
 
 Setup: follow [stable typography for character animation](../text-stability.md#stable-typography-for-character-animation) before creating splits; keep that target CSS after revert and under reduced motion. Apply it only to persistent emphasis elements receiving inner character splits, not the entire paragraph. Verify the split-to-unsplit boundary with the [cleanup checks](../verification.md#splittext-cleanup-stability).
 

@@ -1,6 +1,6 @@
 ---
 name: gsap-plugins
-description: Official GSAP skill for GSAP plugins — registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG and physics plugins, CustomEase, EasePack, CustomWiggle, CustomBounce, GSDevTools. Use when the user asks about a GSAP plugin, scroll-to, flip animations, draggable, SVG drawing, or plugin registration.
+description: Official GSAP skill for GSAP plugins ,  registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG and physics plugins, CustomEase, EasePack, CustomWiggle, CustomBounce, GSDevTools. Use when the user asks about a GSAP plugin, scroll-to, flip animations, draggable, SVG drawing, or plugin registration.
 license: MIT
 ---
 
@@ -14,9 +14,9 @@ Apply when using or reviewing code that uses GSAP plugins: registering plugins, 
 
 ## Licensing & Install (important)
 
-Every GSAP plugin is **free**, including for commercial use. Since [Webflow's acquisition of GSAP](https://gsap.com/blog/webflow-GSAP/), Club GSAP is no longer a paid tier and **no plugin requires a membership, license key, or auth token** — this includes formerly Club-only plugins (**SplitText**, **MorphSVG**, etc.).
+Every GSAP plugin is **free**, including for commercial use. Since [Webflow's acquisition of GSAP](https://gsap.com/blog/webflow-GSAP/), Club GSAP is no longer a paid tier and **no plugin requires a membership, license key, or auth token** ,  this includes formerly Club-only plugins (**SplitText**, **MorphSVG**, etc.).
 
-- ✅ Install everything from the public `gsap` npm package: `npm install gsap`. All plugins are included — import them as `gsap/SplitText`, `gsap/MorphSVGPlugin`, etc.
+- ✅ Install everything from the public `gsap` npm package: `npm install gsap`. All plugins are included ,  import them as `gsap/SplitText`, `gsap/MorphSVGPlugin`, etc.
 - ❌ Do **not** generate an `.npmrc` with a GreenSock auth token, suggest the private `npm.greensock.com` registry, or tell users to sign up for Club GSAP to access a plugin. Those instructions are outdated.
 
 ## Registering Plugins
@@ -49,7 +49,7 @@ gsap.to(window, { duration: 1, scrollTo: { y: "#section", offsetY: 50 } });
 gsap.to(scrollContainer, { duration: 1, scrollTo: { x: "max" } });
 ```
 
-**ScrollToPlugin — key config (scrollTo object):**
+**ScrollToPlugin ,  key config (scrollTo object):**
 
 | Option | Description |
 |--------|-------------|
@@ -86,7 +86,7 @@ const state = Flip.getState(".item");
 Flip.from(state, { duration: 0.5, ease: "power2.inOut" });
 ```
 
-**Flip — key config (Flip.from vars):**
+**Flip ,  key config (Flip.from vars):**
 
 | Option | Description |
 |--------|-------------|
@@ -111,14 +111,14 @@ Draggable.create(".box", { type: "x,y", bounds: "#container", inertia: true });
 Draggable.create(".knob", { type: "rotation" });
 ```
 
-**Draggable — key config options:**
+**Draggable ,  key config options:**
 
 | Option | Description |
 |--------|-------------|
 | `type` | `"x"`, `"y"`, `"x,y"`, `"rotation"`, `"scroll"` |
 | `bounds` | Element, selector, or `{ minX, maxX, minY, maxY }` to constrain drag |
 | `inertia` | `true` to enable throw/momentum (requires InertiaPlugin) |
-| `edgeResistance` | 0–1; resistance when dragging past bounds |
+| `edgeResistance` | 0-1; resistance when dragging past bounds |
 | `cursor` | CSS cursor during drag |
 | `onDragStart`, `onDrag`, `onDragEnd` | Callbacks; receive event and target |
 | `onThrowUpdate`, `onThrowComplete` | Callbacks when inertia is active |
@@ -160,7 +160,7 @@ Observer.create({
 });
 ```
 
-**Observer — key config options:**
+**Observer ,  key config options:**
 
 | Option | Description |
 |--------|-------------|
@@ -195,7 +195,7 @@ SplitText.create(".split", {
 });
 ```
 
-**SplitText — key config (SplitText.create vars):**
+**SplitText ,  key config (SplitText.create vars):**
 
 | Option | Description |
 |--------|-------------|
@@ -238,9 +238,9 @@ gsap.to(".text", {
 
 Reveals or hides the stroke of SVG elements by animating `stroke-dashoffset` / `stroke-dasharray`. Works on `<path>`, `<line>`, `<polyline>`, `<polygon>`, `<rect>`, `<ellipse>`. Use when “drawing” or “erasing” strokes.
 
-**drawSVG value:** Describes the **visible segment** of the stroke along the path (start and end positions), not “animate from A to B over time.” Format: `"start end"` in percent or length. Examples: `"0% 100%"` = full stroke; `"20% 80%"` = stroke only between 20% and 80% (gaps at both ends). The tween animates from the element’s **current** segment to the **target** segment — e.g. `gsap.to("#path", { drawSVG: "0% 100%" })` goes from whatever it is now to full stroke. Single value (e.g. `0`, `"100%"`) means start is 0: `"100%"` is equivalent to `"0% 100%"`. 
+**drawSVG value:** Describes the **visible segment** of the stroke along the path (start and end positions), not “animate from A to B over time.” Format: `"start end"` in percent or length. Examples: `"0% 100%"` = full stroke; `"20% 80%"` = stroke only between 20% and 80% (gaps at both ends). The tween animates from the element’s **current** segment to the **target** segment ,  e.g. `gsap.to("#path", { drawSVG: "0% 100%" })` goes from whatever it is now to full stroke. Single value (e.g. `0`, `"100%"`) means start is 0: `"100%"` is equivalent to `"0% 100%"`. 
 
-**Required:** The element must have a visible stroke — set `stroke` and `stroke-width` in CSS or as SVG attributes; otherwise nothing is drawn.
+**Required:** The element must have a visible stroke ,  set `stroke` and `stroke-width` in CSS or as SVG attributes; otherwise nothing is drawn.
 
 ```javascript
 gsap.registerPlugin(DrawSVGPlugin);
@@ -259,7 +259,7 @@ gsap.to("#path", { duration: 1, drawSVG: "20% 80%" });
 
 ### MorphSVG (MorphSVGPlugin)
 
-Morphs one SVG shape into another by animating the `d` attribute (path data). Start and end shapes do not need the same number of points — MorphSVG converts to cubic beziers and adds points as needed. Use for icon-to-icon morphs, shape transitions, or path-based animations. Works on `<path>`, `<polyline>`, and `<polygon>`; `<circle>`, `<rect>`, `<ellipse>`, and `<line>` are converted internally or via **MorphSVGPlugin.convertToPath(selector | element)** (replaces the element in the DOM with a `<path>`).
+Morphs one SVG shape into another by animating the `d` attribute (path data). Start and end shapes do not need the same number of points ,  MorphSVG converts to cubic beziers and adds points as needed. Use for icon-to-icon morphs, shape transitions, or path-based animations. Works on `<path>`, `<polyline>`, and `<polygon>`; `<circle>`, `<rect>`, `<ellipse>`, and `<line>` are converted internally or via **MorphSVGPlugin.convertToPath(selector | element)** (replaces the element in the DOM with a `<path>`).
 
 **morphSVG value:** Can be a **selector** (e.g. `"#lightning"`), an **element**, **raw path data** (e.g. `"M47.1,0.8 73.3,0.8..."`), or for polygon/polyline a **points string** (e.g. `"240,220 240,70 70,70 70,220"`). For full config use the **object form** with **shape** as the only required property.
 
@@ -278,7 +278,7 @@ gsap.to("#diamond", {
 
 ```
 
-**MorphSVG — key config (morphSVG object):**
+**MorphSVG ,  key config (morphSVG object):**
 
 | Option | Description |
 |--------|-------------|
@@ -291,7 +291,7 @@ gsap.to("#diamond", {
 | **origin** | Rotation origin for **type: "rotational"**. String: `"50% 50%"` (default) or `"20% 60%, 35% 90%"` for different start/end origins. |
 | **precision** | Decimal places for output path data; default `2`. |
 | **precompile** | Array of precomputed path strings (or use **precompile: "log"** once, copy from console). Skips expensive startup calculations; use for very complex morphs. Only for `<path>` (convert polygon/polyline first). |
-| **render** | Function(rawPath, target) called each update — e.g. draw to canvas. RawPath is an array of segments (each segment = array of alternating x,y cubic bezier coords). |
+| **render** | Function(rawPath, target) called each update ,  e.g. draw to canvas. RawPath is an array of segments (each segment = array of alternating x,y cubic bezier coords). |
 | **updateTarget** | When using **render** (e.g. canvas-only), set **updateTarget: false** so the original `<path>` is not updated. **MorphSVGPlugin.defaultUpdateTarget** sets default. |
 
 **Utilities:** **MorphSVGPlugin.convertToPath(selector | element)** converts circle/rect/ellipse/line/polygon/polyline to `<path>` in the DOM. **MorphSVGPlugin.rawPathToString(rawPath)** and **stringToRawPath(d)** convert between path strings and raw arrays. The plugin stores the original `d` on the target (e.g. for tweening back: `morphSVG: "#originalId"` or the same element).
@@ -313,15 +313,15 @@ gsap.to(".dot", {
 });
 ```
 
-**MotionPath — key config (motionPath object):**
+**MotionPath ,  key config (motionPath object):**
 
 | Option | Description |
 |--------|-------------|
 | `path` | SVG path element, selector, or path data string |
 | `align` | Path element or selector to align the target to |
-| `alignOrigin` | `[x, y]` origin (0–1); default `[0.5, 0.5]` |
+| `alignOrigin` | `[x, y]` origin (0-1); default `[0.5, 0.5]` |
 | `autoRotate` | Rotate element to follow path tangent |
-| `curviness` | 0–2; path smoothing |
+| `curviness` | 0-2; path smoothing |
 
 ### MotionPathHelper
 

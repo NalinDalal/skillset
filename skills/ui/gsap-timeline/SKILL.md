@@ -1,6 +1,6 @@
 ---
 name: gsap-timeline
-description: Official GSAP skill for timelines — gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines).
+description: Official GSAP skill for timelines ,  gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines).
 license: MIT
 ---
 
@@ -27,10 +27,10 @@ By default, tweens are **appended** one after another. Use the **position parame
 
 Third argument (or position property in vars) controls placement:
 
-- **Absolute**: `1` — start at 1 second.
-- **Relative (default)**: `"+=0.5"` — 0.5s after end; `"-=0.2"` — 0.2s before end.
-- **Label**: `"labelName"` — at that label; `"labelName+=0.3"` — 0.3s after label.
-- **Placement**: `"<"` — start when recently-added animation starts; `">"` — start when recently-added animation ends (default); `"<0.2"` — 0.2s after recently-added animation start.
+- **Absolute**: `1` ,  start at 1 second.
+- **Relative (default)**: `"+=0.5"` ,  0.5s after end; `"-=0.2"` ,  0.2s before end.
+- **Label**: `"labelName"` ,  at that label; `"labelName+=0.3"` ,  0.3s after label.
+- **Placement**: `"<"` ,  start when recently-added animation starts; `">"` ,  start when recently-added animation ends (default); `"<0.2"` ,  0.2s after recently-added animation start.
 
 Examples:
 
@@ -52,10 +52,10 @@ tl.to(".a", { x: 100 }).to(".b", { y: 50 }); // both use 0.5s and power2.out
 
 ## Timeline Options (constructor)
 
-- **paused: true** — create paused; call `.play()` to start.
-- **repeat**, **yoyo** — same as tweens; apply to whole timeline.
-- **onComplete**, **onStart**, **onUpdate** — timeline-level callbacks.
-- **defaults** — vars merged into every child tween.
+- **paused: true** ,  create paused; call `.play()` to start.
+- **repeat**, **yoyo** ,  same as tweens; apply to whole timeline.
+- **onComplete**, **onStart**, **onUpdate** ,  timeline-level callbacks.
+- **defaults** ,  vars merged into every child tween.
 
 ## Labels
 
@@ -86,10 +86,10 @@ master.to(".c", { opacity: 0 }, "+=0.2");
 
 - **tl.play()** / **tl.pause()**
 - **tl.reverse()** / **tl.progress(1)** then **tl.reverse()**
-- **tl.restart()** — from start.
-- **tl.time(2)** — seek to 2 seconds.
-- **tl.progress(0.5)** — seek to 50%.
-- **tl.kill()** — kill timeline and (by default) its children.
+- **tl.restart()** ,  from start.
+- **tl.time(2)** ,  seek to 2 seconds.
+- **tl.progress(0.5)** ,  seek to 50%.
+- **tl.kill()** ,  kill timeline and (by default) its children.
 
 ## Official GSAP Best practices
 

@@ -6,7 +6,7 @@ Splits a heading into letters and, every few seconds, ripples a small move acros
 
 The framework skill's controller calls `startWave` at settled (on `idle`) and the returned stop function on outro and unmount; this module never decides when.
 
-Dependencies: `gsap`, `gsap/SplitText`. A variable font supporting the configured weight range for weight moves; no particular font family is required. The example rests at 800 and dips through 400–500. Adapt those weights to the target's actual resting weight and axis, or omit the three weight moves for a static face; keep its existing font.
+Dependencies: `gsap`, `gsap/SplitText`. A variable font supporting the configured weight range for weight moves; no particular font family is required. The example rests at 800 and dips through 400-500. Adapt those weights to the target's actual resting weight and axis, or omit the three weight moves for a static face; keep its existing font.
 
 Setup: follow [stable typography for character animation](../text-stability.md#stable-typography-for-character-animation) before creating splits; keep that target CSS after revert and under reduced motion. Verify the split-to-unsplit boundary with the [cleanup checks](../verification.md#splittext-cleanup-stability).
 

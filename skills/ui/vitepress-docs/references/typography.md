@@ -12,15 +12,15 @@
 | Role | Size | Weight | Line Height | Letter Spacing | Transform |
 |------|------|--------|-------------|----------------|-----------|
 | Eyebrow | 13px | 700 | 1.4 | 0.1em | uppercase |
-| Hero Title | 48–56px | 700 | 1.1 | -0.02em | — |
-| Hero Subtitle | 24–28px | 400 | 1.4 | -0.005em | — |
-| H1 | 32px | 700 | 1.2 | -0.01em | — |
-| H2 | 24px | 600 | 1.3 | -0.005em | — |
-| H3 | 20px | 600 | 1.4 | 0 | — |
-| Body | 16px | 400 | 1.6 | 0 | — |
-| Body Small | 14px | 400 | 1.5 | 0 | — |
-| Code | 14px (0.875em) | 400 | 1.7 | 0 | — |
-| Caption | 13px | 400 | 1.4 | 0 | — |
+| Hero Title | 48-56px | 700 | 1.1 | -0.02em | ,  |
+| Hero Subtitle | 24-28px | 400 | 1.4 | -0.005em | ,  |
+| H1 | 32px | 700 | 1.2 | -0.01em | ,  |
+| H2 | 24px | 600 | 1.3 | -0.005em | ,  |
+| H3 | 20px | 600 | 1.4 | 0 | ,  |
+| Body | 16px | 400 | 1.6 | 0 | ,  |
+| Body Small | 14px | 400 | 1.5 | 0 | ,  |
+| Code | 14px (0.875em) | 400 | 1.7 | 0 | ,  |
+| Caption | 13px | 400 | 1.4 | 0 | ,  |
 | Label | 12px | 500 | 1.4 | 0.02em | uppercase |
 
 ## Eyebrow Pattern
