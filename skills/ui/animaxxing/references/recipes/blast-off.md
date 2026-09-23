@@ -1,14 +1,14 @@
 # Recipe: blast off
 
-Failure contract: apply [effect restoration](../effect-restoration.md) when adapting this module. The framework controller chooses recovery timing; this effect must undo even partial setup.
+Failure contract: apply [effect restoration](../effect-restoration.md) when adapting this module. The framework controller chooses recovery timing. this effect must undo even partial setup.
 
-The hero's outro when a call to action is pressed: the whole composition is thrown apart from the pressed button outward, fast. Headline letters fly away from it and tumble, the subhead's words drop off the page, the pressed button flares out while the others collapse, and the page rocks. The timeline is reversible, so the same motion played backward pulls everything back.
+The hero's outro when a call to action presses: the whole composition throws apart from the pressed button outward, fast. Headline letters fly away from it and tumble, the subhead's words drop off the page, the pressed button flares out while the others collapse, and the page rocks. The timeline reverses, so the same motion played backward pulls everything back.
 
-The framework skill's controller calls `blastOff` as the outro that precedes navigation and hands off once the page is cleared; this module never decides when and never navigates. Pair it with the particle `blast()` of the pressed button.
+The framework skill's controller calls `blastOff` as the outro that precedes navigation and hands off once the page clears. this module never decides when and never navigates. Pair it with the particle `blast()` of the pressed button.
 
 Dependencies: `gsap`, `gsap/SplitText`.
 
-Setup: follow [stable typography for character animation](../text-stability.md#stable-typography-for-character-animation) before creating splits; keep that target CSS after revert and under reduced motion. Verify the split-to-unsplit boundary with the [cleanup checks](../verification.md#splittext-cleanup-stability).
+Setup: use [stable typography for character animation](../text-stability.md#stable-typography-for-character-animation) before creating splits. keep that target CSS after revert and under reduced motion. Verify the split-to-unsplit boundary with the [cleanup checks](../verification.md#splittext-cleanup-stability).
 
 ```ts
 import gsap from "gsap";
@@ -116,4 +116,4 @@ export function blastOff({ root, heading, words, pressed, others }: BlastOffOpti
 
 ## Controller contract
 
-`blastOff({ root, heading, words, pressed, others })` returns `{ timeline, revert }`. Stop competing headline/particle effects before calling it. Keep any speak-in word handles valid while the blast uses them. The framework controller consumes timeline completion and invokes `revert` when the visual no longer needs its split; navigation and cancellation policy belong to that controller.
+`blastOff({ root, heading, words, pressed, others })` returns `{ timeline, revert }`. Stop competing headline/particle effects before calling it. Keep any speak-in word handles valid while the blast uses them. The framework controller consumes timeline completion and invokes `revert` when the visual no longer needs its split. navigation and cancellation policy belong to that controller.

@@ -1,12 +1,12 @@
 # Recipe: split entrances
 
-Failure contract: apply [effect restoration](../effect-restoration.md) when adapting this module. The framework controller chooses recovery timing; this effect must undo even partial setup.
+Failure contract: apply [effect restoration](../effect-restoration.md) when adapting this module. The framework controller chooses recovery timing. this effect must undo even partial setup.
 
-The framework skill's controller calls these during intro and outro; this module never decides when. Each builder returns a timeline the controller can compose, kill, or await. Display type only.
+The framework skill's controller calls these during intro and outro. this module never decides when. Each builder returns a timeline the controller can compose, kill, or await. Display type only.
 
-Dependencies: `gsap`, `gsap/SplitText` (free since 3.13). `scrambleIn`/`Out` also need `gsap/ScrambleTextPlugin`. `charsWeightWave` needs a variable face covering its configured `WEIGHT` endpoints (400-800 in the example); adjust those and the midpoint choice to the loaded axis, or select a transform-only recipe. No font family is prescribed.
+Dependencies: `gsap`, `gsap/SplitText` (free because 3.13). `scrambleIn`/`Out` also need `gsap/ScrambleTextPlugin`. `charsWeightWave` needs a variable face covering its configured `WEIGHT` endpoints (400-800 in the example). adjust those and the midpoint choice to the loaded axis, or select a transform-only recipe. No font family is prescribed.
 
-Setup: follow [stable typography for character animation](../text-stability.md#stable-typography-for-character-animation) before creating splits; keep that target CSS after revert and under reduced motion. For confirmed clipped ink, use the optional `charMaskClass` with the [targeted mask CSS](../text-stability.md#apparent-weight-change-from-clipped-glyph-ink); verify both hidden endpoints after expanding masks. Verify the split-to-unsplit boundary with the [cleanup checks](../verification.md#splittext-cleanup-stability).
+Setup: use [stable typography for character animation](../text-stability.md#stable-typography-for-character-animation) before creating splits. keep that target CSS after revert and under reduced motion. For confirmed clipped ink, use the optional `charMaskClass` with the [targeted mask CSS](../text-stability.md#apparent-weight-change-from-clipped-glyph-ink). verify both hidden endpoints after expanding masks. Verify the split-to-unsplit boundary with the [cleanup checks](../verification.md#splittext-cleanup-stability).
 
 ```ts
 import gsap from "gsap";
@@ -298,7 +298,7 @@ export const linesMaskOut: SplitRunner = (element, options = {}) =>
 
 ## Scramble
 
-Needs `ScrambleTextPlugin` registered. Display only: reading text must never look like it is being typed.
+Needs `ScrambleTextPlugin` registered. Display only: reading text must never look like it types.
 
 ```ts
 export const scrambleIn: SplitRunner = (element, options = {}) => {
@@ -342,4 +342,4 @@ const outro = gsap.timeline();
 outro.add(linesMaskOut(lede), 0).add(charsFallOut(heading, headlineOptions), 0.05);
 ```
 
-Give a split heading its own pre-paint hiding rule rather than marking it as a page item too, or the page's stagger and the split's rise will fight over one element.
+Give a split heading its own pre-paint hiding rule rather than marking it as a page item too, or the page's stagger and the split is rise will fight over one element.
