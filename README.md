@@ -1,32 +1,35 @@
-# @nerdev/skillset
+# skillset
 
-**69 agent skills** across 10 categories, installable into Claude Code, OpenCode, Cursor, Codex, and Gemini. Skills are markdown files your agent reads — no build step, no runtime.
+**69 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) — installable into Claude Code, OpenCode, Cursor, Codex, and Gemini. Skills are markdown files your agent reads — no build step, no runtime.
 
-```bash
-npm install -g @nerdev/skillset
-skillset install
-```
-
-## What this is
-
-A curated collection of agent skills for UI, backend, devops, architecture, engineering, quality, business, and workflow. Five skills sync automatically from upstream repos; the rest are owned outright and edited directly.
+<p align="center">
+  <a href="https://www.npmjs.com/package/@nerdev/skillset">
+    <img src="https://img.shields.io/npm/v/@nerdev/skillset.svg?style=for-the-badge&logo=npm&color=brightgreen" alt="npm version">
+  </a>
+  <a href="https://github.com/NalinDalal/skillset">
+    <img src="https://img.shields.io/github/license/NalinDalal/skillset.svg?style=for-the-badge" alt="License: MIT">
+  </a>
+  <a href="https://github.com/NalinDalal/skillset/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/NalinDalal/skillset/.github/workflows/sync.yml?branch=main&style=for-the-badge" alt="CI status">
+  </a>
+</p>
 
 ## Install
 
 ```bash
-npm install -g @nerdev/skillset
-skillset install                          # all skills, all harnesses
-skillset install --skill ui/motion        # one skill
-skillset install --target claude,opencode # specific harnesses only
-skillset install --scope project          # into ./project instead of global
-skillset install --dry-run                # preview
-skillset install --undo                   # remove
+npm install -g @nerdev/skillset   # installs the `skillset` CLI globally
+skillset install                   # install all skills, all harnesses
 ```
 
-Or run without installing:
+Or without global install:
 
 ```bash
-npx @nerdev/skillset install
+npx @nerdev/skillset install       # all skills, all harnesses
+npx @nerdev/skillset install --skill ui/motion   # one skill
+npx @nerdev/skillset install --target claude     # specific harness only
+npx @nerdev/skillset install --scope project     # into ./project instead of global
+npx @nerdev/skillset install --dry-run          # preview only
+npx @nerdev/skillset install --undo           # remove installed skills
 ```
 
 ## Quick start
@@ -35,12 +38,15 @@ npx @nerdev/skillset install
 cd my-project
 skillset install --scope project --target opencode
 opencode
+
+# Then naturally:
 > add a toast notification to this page
+# → ask-toast fires → hands off to ask-sonner → working code
 ```
 
-Skills fire from their description, not from a command you type. Say what you want; the closest matching skill loads automatically.
+Skills fire from their description — say what you want in plain words; the closest-matching skill loads automatically.
 
-## What to say for what you want
+## What you can say
 
 ### UI / frontend
 
@@ -119,7 +125,7 @@ Skills fire from their description, not from a command you type. Say what you wa
 | "code health check" | `workflow/health` |
 | "what have we learned" | `workflow/learn` |
 
-`architecture/progress-guard` and `ai-agent/ultra-context-engine` run in the background when their trigger conditions appear. They don't need to be called by name.
+> **Note:** `architecture/progress-guard` and `ai-agent/ultra-context-engine` run in the background when their trigger conditions appear in conversation. They don't need to be called by name.
 
 ## After installing
 
@@ -130,17 +136,9 @@ Restart or reload your agent:
 - **Cursor**: reload window (`Cmd+Shift+P` → "Reload Window")
 - **Codex**: start a new session
 
-## CLI
-
-```bash
-skillset list                              # see all skills + descriptions
-skillset sync                              # pull latest from upstream repos
-skillset install --skill ui/motion --undo  # remove one skill
-```
-
 ## What's included
 
-**69 skills in 10 categories**
+**69 skills in 10 categories:**
 
 - **ui** (28): components, animations, design systems, typography, motion, forms, tables, modals, toasts, command palettes, virtual lists, drawers
 - **backend** (5): API design, auth, database, realtime, security
@@ -153,8 +151,8 @@ skillset install --skill ui/motion --undo  # remove one skill
 - **ai-agent** (2): agent docs, context efficiency
 - **workflow** (7): ship, careful, context save/restore, health, learn
 
-5 skills sync from upstream repos nightly. The remaining 64 are owned outright. You can overlay any synced skill with your own version via `curations/<skill>/overlay/` — your edits survive every sync.
+5 skills sync from upstream repos nightly (pinned in `vendor.json`). The remaining 64 are owned outright. You can overlay any synced skill with your own version via `curations/<skill>/overlay/` — your edits survive every sync.
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE) for details.
