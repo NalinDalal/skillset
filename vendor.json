@@ -4,7 +4,7 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "83c2c735777c68e30ea536ab9cc97f7843456945",
+      "commit": "e0881d2de397d5e9761d7b35ff5017d8f5ebf69b",
       "source": ".opencode/skills",
       "skills": [
         {
@@ -17,7 +17,7 @@
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "5217fb45be2c0b302f29c9cd31cbd3237501c684",
+      "commit": "c184364c58658b2f131b4ae8bd3d206cabb3deee",
       "source": "skills",
       "skills": [
         {
@@ -53,13 +53,13 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "53e579f1481697931fc44f5445171397cfa2b24b",
+      "commit": "b42effe0aa50f59c693d7e2924714e015e00bf7c",
       "source": "pstack/skills",
       "skills": [
         {
           "name": "unslop",
           "dest": "quality/unslop",
-          "sha256": "9a2dd6be8afd4a612061f5c022ab8d7c875a061b5f15c834eab71a52ed5371f1"
+          "sha256": "6542a1662aa6be597b22d6ef030598a0c20c7a11f06b3eea7fcaad106ffe817d"
         }
       ]
     },
