@@ -30,7 +30,7 @@
     {
       "name": "emil-skills",
       "repo": "emilkowalski/skills",
-      "commit": "85e8e2363b713506e1d5b6e07a0eb2da66be1bc3",
+      "commit": "d16ebe60d09a5ba2afcb7054ede9d0a10c9f6128",
       "source": "skills",
       "skills": [
         {
@@ -53,7 +53,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "b0b9c7a0baf8b6aa1d00bf77d4101e577d4ba411",
+      "commit": "12d587dfb20741cafc376c42c696c5f6e2a64487",
       "source": "pstack/skills",
       "skills": [
         {
