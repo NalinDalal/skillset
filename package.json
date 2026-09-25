@@ -1,6 +1,6 @@
 {
   "name": "@nerdev/skillset",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A curated, auto-synced collection of agent skills (design, animation, dev workflow) with a CLI to install them into any harness: Claude Code, OpenCode, Cursor, Codex, Gemini.",
   "type": "module",
   "bin": {
