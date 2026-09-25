@@ -1,7 +1,6 @@
 ---
 name: brag
 description: Turn the current project website into a short, polished, shareable launch video using Hyperframes. Use when someone says "/brag", "let's brag about this", "make a launch video", "turn this into a video", or wants to share what they built. Reads the project code directly — no live URL or screenshots needed.
-user-invocable: true
 ---
 
 # /brag
@@ -9,6 +8,8 @@ user-invocable: true
 You built it. Now let's brag about it.
 
 ## Invocation dispatch (must happen first)
+
+**Model check.** If you are Claude Opus 5.5 and the invocation doesn't ask for the full workflow (`--full`, "use the full brag") or for voiceover (`--voice`, which brag-slim doesn't do), switch to brag-slim: read `<skill-dir>/slim.md` (the /brag-slim skill, bundled here) and follow it for the rest of this run instead of this file. Pass along the user's input, and pass any other options (`--no-music`, `--title`, …) as plain-language direction. Tell the user in one line first, e.g. "You're on Opus 5.5, so I'm using /brag-slim: I build the whole video myself. Say 'use the full brag' to switch back." If you are any other model, or can't tell which model you are, skip this check.
 
 Before inspecting the project, parse the complete `/brag` invocation. If the
 invocation contains `--voice`, set `voice.enabled = true`. Enable narration
@@ -38,15 +39,15 @@ The user may invoke with natural language or flags:
 
 Parse these options:
 
-| Option       | Values                            | Default               |
-| ------------ | --------------------------------- | --------------------- |
-| `--tone`     | preset or freeform description    | inferred              |
-| `--format`   | `landscape`, `vertical`, `square` | `landscape`           |
-| `--duration` | seconds                           | auto (15-25s)         |
-| `--no-music` | flag                              | music on              |
-| `--no-sfx`   | flag                              | sfx on                |
-| `--title`    | string                            | inferred from project |
-| `--voice`    | flag                              | narration off         |
+| Option | Values | Default |
+|---|---|---|
+| `--tone` | preset or freeform description | inferred |
+| `--format` | `landscape`, `vertical`, `square` | `landscape` |
+| `--duration` | seconds | auto (15-25s) |
+| `--no-music` | flag | music on |
+| `--no-sfx` | flag | sfx on |
+| `--title` | string | inferred from project |
+| `--voice` | flag | narration off |
 
 Voice is opt-in. If `--voice` is present, use Kokoro via Hyperframes and do
 not add any provider-selection logic. The voice workflow is intentionally
@@ -75,7 +76,6 @@ brag-output-2026-05-04-143022/
 ```
 
 Use a timestamp when:
-
 - The user explicitly asks for a new run without overriding previous results
 - A `brag-output/` directory already exists in the project
 
@@ -139,15 +139,15 @@ Seven tone presets ship with `/brag`. Each changes scripting energy, pacing, typ
 
 Full definitions: [references/tones.md](references/tones.md)
 
-| Tone        | Energy                     | One-liner                                   |
-| ----------- | -------------------------- | ------------------------------------------- |
-| `default`   | Playful, clean, postable   | The good-vibes default                      |
-| `polished`  | Serious, elegant           | For projects that are not jokes             |
-| `yc-parody` | Deadpan startup energy     | Fake seriousness applied to absurd projects |
-| `chaotic`   | Fast, loud, aggressive     | Over-the-top and unhinged                   |
-| `deadpan`   | Calm, dry, understated     | The joke is that nothing is a joke          |
-| `cinematic` | Dramatic, trailer-scale    | Big motion, bigger claims                   |
-| `app-store` | Smooth, feature-card clean | Corporate but not boring                    |
+| Tone | Energy | One-liner |
+|---|---|---|
+| `default` | Playful, clean, postable | The good-vibes default |
+| `polished` | Serious, elegant | For projects that are not jokes |
+| `yc-parody` | Deadpan startup energy | Fake seriousness applied to absurd projects |
+| `chaotic` | Fast, loud, aggressive | Over-the-top and unhinged |
+| `deadpan` | Calm, dry, understated | The joke is that nothing is a joke |
+| `cinematic` | Dramatic, trailer-scale | Big motion, bigger claims |
+| `app-store` | Smooth, feature-card clean | Corporate but not boring |
 
 Always allow a freeform creative direction to refine or override the preset.
 
@@ -172,7 +172,6 @@ These apply to every brag video regardless of tone.
 **Funny earns its place.** Humor should come from the project's absurdity, not from trying to be funny.
 
 **Pattern:**
-
 ```
 Hook (2-3s) → Reveal (2-4s) → 2-3 sharp highlights (5-12s) → Punchline/outro (2-4s)
 ```
