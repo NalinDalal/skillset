@@ -1,5 +1,8 @@
+---
 name: nerdev-monorepo
 description: Turborepo + Bun monorepo structure, conventions, CI/CD, and deployment patterns from nerdev-co
+user-invocable: true
+---
 
 # nerdev-monorepo Skill
 
@@ -9,10 +12,10 @@ Enforce the nerdev-co development methodology across all projects: consistent mo
 
 > **nerdev-co skill family:** This is one of three core skills. See also [`nerdev-docs`](../nerdev-docs/SKILL.md) for development-integrated documentation (ADRs, design docs, runbooks) and [`nerdev-abstraction`](../nerdev-abstraction/SKILL.md) for interface-first, registry-based plug-and-play patterns. All three work together for nerdev-co projects.
 
-
 ## Core Principles
 
 ### 1. Monorepo Architecture (Turborepo + Bun)
+
 ```
 project-root/
 ├── apps/                    # Independent deployable applications
@@ -45,19 +48,21 @@ project-root/
 ```
 
 ### 2. Naming Conventions (camelCase Everywhere)
-| Element | Convention | Example |
-|---------|------------|---------|
-| Files | camelCase.ts | `userService.ts`, `roomController.ts` |
-| Directories | camelCase | `src/routes`, `src/components`, `src/draw` |
-| Functions | camelCase | `getUserById`, `createRoom`, `broadcastDiff` |
-| Variables | camelCase | `currentUser`, `roomId`, `shapeDiff` |
-| Types/Interfaces | PascalCase | `User`, `RoomState`, `ShapeDiff` |
-| Enums | PascalCase | `ToolType`, `UserRole` |
-| Constants | UPPER_SNAKE_CASE | `MAX_RETRY_ATTEMPTS`, `DEFAULT_TIMEOUT` |
-| React Components | PascalCase | `CanvasToolbar`, `RoomHeader` |
-| CSS Classes | kebab-case | `canvas-container`, `tool-button` |
+
+| Element          | Convention       | Example                                      |
+| ---------------- | ---------------- | -------------------------------------------- |
+| Files            | camelCase.ts     | `userService.ts`, `roomController.ts`        |
+| Directories      | camelCase        | `src/routes`, `src/components`, `src/draw`   |
+| Functions        | camelCase        | `getUserById`, `createRoom`, `broadcastDiff` |
+| Variables        | camelCase        | `currentUser`, `roomId`, `shapeDiff`         |
+| Types/Interfaces | PascalCase       | `User`, `RoomState`, `ShapeDiff`             |
+| Enums            | PascalCase       | `ToolType`, `UserRole`                       |
+| Constants        | UPPER_SNAKE_CASE | `MAX_RETRY_ATTEMPTS`, `DEFAULT_TIMEOUT`      |
+| React Components | PascalCase       | `CanvasToolbar`, `RoomHeader`                |
+| CSS Classes      | kebab-case       | `canvas-container`, `tool-button`            |
 
 ### 3. File-Based Routing (TanStack Router Preferred)
+
 ```
 apps/frontend/src/routes/
 ├── __root.tsx              # Root layout + providers
@@ -67,12 +72,15 @@ apps/frontend/src/routes/
 └── canvas/
     └── $roomId.tsx         # Dynamic route: /canvas/:roomId
 ```
+
 - Auto-generates `routeTree.gen.ts` for type-safe navigation
 - Use loaders for data fetching
 - Search params validated with Zod
 
 ### 4. Documented Code Standards
+
 **Every file must have:**
+
 ```typescript
 /**
  * @fileoverview Brief description of what this module does
@@ -104,6 +112,7 @@ export interface TypeName {
 ### 5. Shared Package Patterns
 
 #### packages/common (Required)
+
 ```
 packages/common/src/
 ├── env.ts          # Validated env config (Zod)
@@ -116,6 +125,7 @@ packages/common/src/
 ```
 
 #### packages/ui (Design System)
+
 ```
 packages/ui/src/
 ├── components/
@@ -133,6 +143,7 @@ packages/ui/src/
 ```
 
 #### packages/db (Prisma)
+
 ```
 packages/db/
 ├── prisma/
@@ -148,6 +159,7 @@ packages/db/
 ### 6. Backend Patterns (Bun + Elysia)
 
 #### HTTP Backend Structure
+
 ```
 apps/http-backend/src/
 ├── routes/
@@ -173,6 +185,7 @@ apps/http-backend/src/
 ```
 
 #### WebSocket Backend Structure
+
 ```
 apps/ws-backend/src/
 ├── handlers/
@@ -193,16 +206,16 @@ apps/ws-backend/src/
 
 **One file per resource under `routes/`, named after the resource.**
 
-| Pattern | Example |
-|---------|---------|
-| Single file per resource | `routes/auth.ts`, `routes/me.ts`, `routes/profile.ts` |
-| All HTTP verbs in one file | `GET /me`, `PUT /me` both in `me.ts` |
-| Handler naming | `handleGetMe`, `handlePutMe` (or `handleMe` for single-handler) |
-| Promotion to folder | `routes/<resource>/index.ts` + `handlers.ts` when resource outgrows one file |
+| Pattern                    | Example                                                                      |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| Single file per resource   | `routes/auth.ts`, `routes/me.ts`, `routes/profile.ts`                        |
+| All HTTP verbs in one file | `GET /me`, `PUT /me` both in `me.ts`                                         |
+| Handler naming             | `handleGetMe`, `handlePutMe` (or `handleMe` for single-handler)              |
+| Promotion to folder        | `routes/<resource>/index.ts` + `handlers.ts` when resource outgrows one file |
 
 ```typescript
 // apps/http-backend/src/routes/me.ts
-import { t } from 'elysia'
+import { t } from "elysia";
 
 /**
  * @fileoverview Current user profile endpoints
@@ -210,13 +223,17 @@ import { t } from 'elysia'
  */
 
 export function handleGetMe(app: Elysia) {
-  return app.get('/me', async ({ currentUser }) => currentUser)
+  return app.get("/me", async ({ currentUser }) => currentUser);
 }
 
 export function handlePutMe(app: Elysia) {
-  return app.put('/me', async ({ body, currentUser, db }) => {
-    // update logic
-  }, { body: t.Object({ name: t.String(), bio: t.Optional(t.String()) }) })
+  return app.put(
+    "/me",
+    async ({ body, currentUser, db }) => {
+      // update logic
+    },
+    { body: t.Object({ name: t.String(), bio: t.Optional(t.String()) }) },
+  );
 }
 ```
 
@@ -239,6 +256,7 @@ routes/
 ### 7. Frontend Patterns (Vite + TanStack Router)
 
 #### Canvas Engine (CoDraw Pattern)
+
 ```
 apps/frontend/src/draw/
 ├── engine/
@@ -269,6 +287,7 @@ apps/frontend/src/draw/
 ```
 
 #### Component Organization
+
 ```
 apps/frontend/src/components/
 ├── canvas/                # Canvas-specific components
@@ -283,6 +302,7 @@ apps/frontend/src/components/
 ### 8. Database Patterns (Prisma + PostgreSQL)
 
 #### Schema Conventions
+
 ```prisma
 // Use camelCase for fields, PascalCase for models
 model User {
@@ -295,7 +315,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   rooms         RoomMember[]
-  
+
   @@map("users")
 }
 
@@ -309,6 +329,7 @@ enum UserRole {
 ```
 
 #### Optimistic Concurrency
+
 ```prisma
 model Room {
   id        String   @id @default(cuid())
@@ -316,7 +337,7 @@ model Room {
   version   Int      @default(1)  // For optimistic locking
   shapes    Json     @default("[]")
   updatedAt DateTime @updatedAt
-  
+
   @@map("rooms")
 }
 ```
@@ -349,17 +370,20 @@ diffApplier.apply(localState, remoteDiff);
 ### 10. Authentication & Security
 
 #### Session-Based Auth (HTTP)
+
 - bcrypt password hashing (cost 12)
 - httpOnly, secure, sameSite=lax cookies
 - Server-side session table with expiry
 - Token revocation on logout
 
 #### WebSocket Auth
+
 - Short-lived WS tokens via `/auth/ws-token` (JWT, 5min TTL)
 - Heartbeat with `re_auth` message
 - Reconnection exchanges token for new session
 
 #### Rate Limiting
+
 - Sliding window on auth endpoints (5 req/min)
 - Per-IP and per-user limits
 - Redis-backed for distributed deployments
@@ -375,7 +399,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
       - run: bun install
-      - run: bun run check-types  # tsc --noEmit
+      - run: bun run check-types # tsc --noEmit
 
   lint:
     runs-on: ubuntu-latest
@@ -428,12 +452,19 @@ server {
 // ecosystem.config.json (PM2)
 {
   "apps": [
-    { "name": "http-backend", "script": "apps/http-backend/dist/index.js", "cwd": "./apps/http-backend" },
-    { "name": "ws-backend", "script": "apps/ws-backend/dist/index.js", "cwd": "./apps/ws-backend" }
+    {
+      "name": "http-backend",
+      "script": "apps/http-backend/dist/index.js",
+      "cwd": "./apps/http-backend"
+    },
+    {
+      "name": "ws-backend",
+      "script": "apps/ws-backend/dist/index.js",
+      "cwd": "./apps/ws-backend"
+    }
   ]
 }
 ```
-
 
 ## Required Files Checklist
 
@@ -450,21 +481,19 @@ Every nerdev-co project MUST have:
 - [ ] `eslint.config.js` - Flat config extending `@repo/eslint-config`
 - [ ] `tsconfig.json` - Extending `@repo/typescript-config`
 
-
 ## Commands Reference
 
-| Command | Description |
-|---------|-------------|
-| `bun install` | Install all workspace deps |
-| `bun run dev` | Start all apps in dev mode |
-| `bun run build` | Build all packages and apps |
-| `bun run lint` | ESLint across all workspaces |
-| `bun run check-types` | TypeScript type checking |
-| `bun run format` | Prettier format |
-| `bun run db:seed` | Seed database |
-| `bun run openapi:gen` | Generate OpenAPI spec |
-| `bun run docs:gen` | Generate documentation |
-
+| Command               | Description                  |
+| --------------------- | ---------------------------- |
+| `bun install`         | Install all workspace deps   |
+| `bun run dev`         | Start all apps in dev mode   |
+| `bun run build`       | Build all packages and apps  |
+| `bun run lint`        | ESLint across all workspaces |
+| `bun run check-types` | TypeScript type checking     |
+| `bun run format`      | Prettier format              |
+| `bun run db:seed`     | Seed database                |
+| `bun run openapi:gen` | Generate OpenAPI spec        |
+| `bun run docs:gen`    | Generate documentation       |
 
 ## When Creating New Projects
 
@@ -477,7 +506,6 @@ Every nerdev-co project MUST have:
 7. **Write AGENTS.md first** using agent-docs-writer skill
 8. **Document architecture decisions** in design.md with rationale tables
 9. **Create deploy.md** before first deployment
-
 
 ## Code Review Checklist
 
@@ -494,22 +522,20 @@ Every nerdev-co project MUST have:
 - [ ] Dark mode support in components
 - [ ] Accessibility (ARIA, keyboard nav)
 
-
 ## Anti-Patterns to Avoid
 
-| Anti-Pattern | Correct Approach |
-|--------------|------------------|
-| `snake_case` files/functions | Use `camelCase` |
-| Inline types in components | Extract to `packages/common/types.ts` |
-| Direct Prisma calls in routes | Use service layer |
-| Full state sync over WS | Diff-based broadcasting |
-| `any` type for WebSocket messages | Discriminated union types |
-| Missing JSDoc on exports | Document every public API |
-| Hardcoded env values | Use `packages/common/env.ts` |
-| Duplicated validation logic | Shared Zod schemas in `common` |
-| Next.js for canvas-heavy apps | Vite + TanStack Router |
-| Node.js for WebSocket servers | Bun.serve native WebSocket |
-
+| Anti-Pattern                      | Correct Approach                      |
+| --------------------------------- | ------------------------------------- |
+| `snake_case` files/functions      | Use `camelCase`                       |
+| Inline types in components        | Extract to `packages/common/types.ts` |
+| Direct Prisma calls in routes     | Use service layer                     |
+| Full state sync over WS           | Diff-based broadcasting               |
+| `any` type for WebSocket messages | Discriminated union types             |
+| Missing JSDoc on exports          | Document every public API             |
+| Hardcoded env values              | Use `packages/common/env.ts`          |
+| Duplicated validation logic       | Shared Zod schemas in `common`        |
+| Next.js for canvas-heavy apps     | Vite + TanStack Router                |
+| Node.js for WebSocket servers     | Bun.serve native WebSocket            |
 
 ## References
 

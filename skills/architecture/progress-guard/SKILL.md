@@ -1,6 +1,7 @@
 ---
 name: progress-guard
-description: "Use whenever the user does setup work while a main project (the current SHIP thread) has code work pending. Setup work includes: docs, curation, planning, skill-collecting, repo organization, and interview-script rewrites. Trigger on \"let me first update the docs\", \"just reorganizing\", \"saw this new skill/library, let me plan around it\", project-switching after an external event (interview questions, someone's comment, a new idea), or any session where the user describes feeling stuck on the main project. Detects motion vs progress. Checks whether the current activity advances the SHIP thread. Redirects to one concrete next action on the real project."
+description: 'Use whenever the user does setup work while a main project (the current SHIP thread) has code work pending. Setup work includes: docs, curation, planning, skill-collecting, repo organization, and interview-script rewrites. Trigger on "let me first update the docs", "just reorganizing", "saw this new skill/library, let me plan around it", project-switching after an external event (interview questions, someone''s comment, a new idea), or any session where the user describes feeling stuck on the main project. Detects motion vs progress. Checks whether the current activity advances the SHIP thread. Redirects to one concrete next action on the real project.'
+user-invocable: true
 ---
 
 # Progress Guard
@@ -30,6 +31,7 @@ Distinguish **motion** (activity that feels productive) from
 **progress** (activity that advances the SHIP thread):
 
 Motion:
+
 - Writing or rewriting docs, READMEs, architecture notes, whiteboard
   scripts.
 - Curating skills, collecting libraries, watching or hand-picking
@@ -43,6 +45,7 @@ Motion:
   for the same old work.
 
 Progress:
+
 - One concrete unit of the SHIP thread's product actually built,
   tested, or shipped.
 - Code written that the product's users will touch.
@@ -81,14 +84,15 @@ the motivation to keep building.
 
 ## The delegated-thinking trap (third documented failure mode)
 
-Boundary: the user offloads the *doing* to AI freely, but never the
-*deciding*. When design decisions, architecture reasoning, or
+Boundary: the user offloads the _doing_ to AI freely, but never the
+_deciding_. When design decisions, architecture reasoning, or
 plan-shaping goes to the agent wholesale, the project stops being
 the user's. Nothing to defend, nothing committed, and momentum dies
 (documented: playmesh, 5 days stuck after delegating the thinking). A
 user cannot build what they did not decide to build.
 
 Hard rules for agents in any session:
+
 1. **Present decisions, do not make them.** Options with one-line
    tradeoffs. The user picks. "Which?" not "I will do X."
 2. **Ask for the user's opinion first** on anything that shapes the

@@ -1,6 +1,7 @@
 ---
 name: product-site
 description: Use when designing, auditing, or planning the public-facing website and supporting pages for a software product, SaaS, startup, developer tool, consumer app, marketplace, or community product. Determines which pages are needed, what each page should accomplish, how pages relate to the product funnel, and which legal, trust, support, authentication, and operational pages are appropriate. Also use when asking "what pages does my product site need," "what should my about/pricing/features page contain," or when a site exists but is missing structural pages or has pages that don't serve a clear purpose.
+user-invocable: true
 ---
 
 # Product Site
@@ -402,20 +403,24 @@ The footer should provide the secondary navigation users expect.
 Typical groups:
 
 Product
+
 - Features
 - Pricing
 - Documentation
 
 Company
+
 - About
 - Contact
 
 Legal
+
 - Privacy
 - Terms
 - Cookies
 
 Resources
+
 - Help
 - Changelog
 - Status

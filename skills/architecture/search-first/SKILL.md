@@ -3,6 +3,8 @@ name: search-first
 category: architecture
 source: ECC (adapted)
 description: "Research-before-coding workflow. Load before implementing new features to find existing solutions."
+user-invocable: true
+---
 
 # Search First
 
@@ -10,12 +12,12 @@ Load before implementing any new feature, adding dependencies, or solving a prob
 
 ## Decision Matrix
 
-| Option | When to use | Effort | Risk |
-|--------|-------------|--------|------|
-| Adopt | Existing library does exactly what you need | Low | Low |
-| Extend | Existing library does 80% of what you need | Medium | Medium |
-| Compose | Multiple small libraries can be combined | Medium | Low |
-| Build | No existing solution fits, or you need full control | High | High |
+| Option  | When to use                                         | Effort | Risk   |
+| ------- | --------------------------------------------------- | ------ | ------ |
+| Adopt   | Existing library does exactly what you need         | Low    | Low    |
+| Extend  | Existing library does 80% of what you need          | Medium | Medium |
+| Compose | Multiple small libraries can be combined            | Medium | Low    |
+| Build   | No existing solution fits, or you need full control | High   | High   |
 
 ## Search Process
 
@@ -56,14 +58,14 @@ grep -r "description:" skills/*/SKILL.md | grep [keyword]
 
 For each candidate, check:
 
-| Criteria | How to check |
-|----------|--------------|
+| Criteria    | How to check                                     |
+| ----------- | ------------------------------------------------ |
 | Maintenance | Last commit date, open issues, release frequency |
-| Popularity | Weekly downloads, GitHub stars, community size |
-| Quality | TypeScript support, test coverage, documentation |
-| Bundle Size | Impact on your bundle |
-| License | Compatible with your project |
-| API Fit | Does the API match your needs? |
+| Popularity  | Weekly downloads, GitHub stars, community size   |
+| Quality     | TypeScript support, test coverage, documentation |
+| Bundle Size | Impact on your bundle                            |
+| License     | Compatible with your project                     |
+| API Fit     | Does the API match your needs?                   |
 
 ### 4. Make Decision
 
@@ -71,13 +73,13 @@ Document the options, the decision, and the trade-offs.
 
 ## Anti-Patterns
 
-| Anti-pattern | Problem | Fix |
-|--------------|---------|-----|
-| Jumping to code | Building something that already exists | Search first, build last |
-| Dependency bloat | Adding libraries for trivial things | Prefer native solutions when simple |
-| Copy-paste | Importing code without understanding | Understand before adopting |
-| NIH syndrome | "Not invented here" bias | Evaluate fairly, not emotionally |
-| Premature abstraction | Building for hypothetical future needs | Solve today's problem first |
+| Anti-pattern          | Problem                                | Fix                                 |
+| --------------------- | -------------------------------------- | ----------------------------------- |
+| Jumping to code       | Building something that already exists | Search first, build last            |
+| Dependency bloat      | Adding libraries for trivial things    | Prefer native solutions when simple |
+| Copy-paste            | Importing code without understanding   | Understand before adopting          |
+| NIH syndrome          | "Not invented here" bias               | Evaluate fairly, not emotionally    |
+| Premature abstraction | Building for hypothetical future needs | Solve today's problem first         |
 
 ## Search Checklist
 

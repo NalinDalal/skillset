@@ -1,6 +1,7 @@
 ---
 name: frontend-craftsmanship
 description: Use when building frontend, designing a screen, improving UI quality, establishing a design system, reverse-engineering premium interfaces, or when the user wants Shipd/Linear/Vercel-level output instead of generic AI slop. Load when the task involves product thinking, visual systems, interaction design, motion, typography, or frontend architecture. This is a core skill: it defines how the user wants frontend built, independent of any single project.
+user-invocable: true
 ---
 
 # Frontend Craftsmanship

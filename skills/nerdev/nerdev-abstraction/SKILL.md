@@ -1,6 +1,7 @@
 ---
 name: nerdev-abstraction
 description: Interface-first, registry, factory, plugin protocol for plug-and-play architecture patterns
+user-invocable: true
 ---
 
 # nerdev-abstraction
@@ -43,7 +44,7 @@ Single source of truth for all implementations.
 
 ```typescript
 // packages/core/registry/toolRegistry.ts
-import type { Tool } from '../interfaces/tool';
+import type { Tool } from "../interfaces/tool";
 
 class ToolRegistry {
   private tools = new Map<string, Tool>();
@@ -77,8 +78,8 @@ Create instances with runtime configuration.
 
 ```typescript
 // packages/core/factory/toolFactory.ts
-import type { Tool, ToolConfig } from '../interfaces/tool';
-import { toolRegistry } from '../registry/toolRegistry';
+import type { Tool, ToolConfig } from "../interfaces/tool";
+import { toolRegistry } from "../registry/toolRegistry";
 
 interface ToolFactoryOptions {
   defaultConfig?: Partial<ToolConfig>;
@@ -97,7 +98,9 @@ export function createToolFactory(options: ToolFactoryOptions = {}) {
     },
 
     createAll(configs: Record<string, Partial<ToolConfig>>): Tool[] {
-      return Object.entries(configs).map(([id, config]) => this.create(id, config));
+      return Object.entries(configs).map(([id, config]) =>
+        this.create(id, config),
+      );
     },
   };
 }
@@ -195,7 +198,7 @@ Business logic separated from transport (HTTP, WS, CLI).
 export interface Repository<T, TFilter = unknown> {
   findById(id: string): Promise<T | null>;
   findMany(filter: TFilter): Promise<T[]>;
-  create(data: Omit<T, 'id'>): Promise<T>;
+  create(data: Omit<T, "id">): Promise<T>;
   update(id: string, data: Partial<T>): Promise<T>;
   delete(id: string): Promise<void>;
 }
@@ -241,7 +244,7 @@ export class EventBus {
 
   async publish<T>(event: string, payload: T): Promise<void> {
     const handlers = this.handlers.get(event) || [];
-    await Promise.all(handlers.map(h => h(payload)));
+    await Promise.all(handlers.map((h) => h(payload)));
   }
 }
 
@@ -254,7 +257,7 @@ Behavior controlled by config, not code changes.
 
 ```typescript
 // packages/config/schema.ts
-import { z } from 'zod';
+import { z } from "zod";
 
 export const appConfigSchema = z.object({
   features: z.object({
@@ -268,23 +271,23 @@ export const appConfigSchema = z.object({
     debounceMs: z.number().default(1500),
   }),
   integrations: z.object({
-    database: z.enum(['postgres', 'sqlite', 'memory']).default('postgres'),
-    cache: z.enum(['redis', 'memory']).default('memory'),
-    queue: z.enum(['kafka', 'memory']).default('memory'),
+    database: z.enum(["postgres", "sqlite", "memory"]).default("postgres"),
+    cache: z.enum(["redis", "memory"]).default("memory"),
+    queue: z.enum(["kafka", "memory"]).default("memory"),
   }),
 });
 
 export type AppConfig = z.infer<typeof appConfigSchema>;
 
 // packages/config/env.ts
-import { appConfigSchema } from './schema';
+import { appConfigSchema } from "./schema";
 
 export function loadConfig(): AppConfig {
   const raw = {
     features: {
-      realtime: process.env.FEATURE_REALTIME === 'true',
-      persistence: process.env.FEATURE_PERSISTENCE !== 'false',
-      collaboration: process.env.FEATURE_COLLABORATION === 'true',
+      realtime: process.env.FEATURE_REALTIME === "true",
+      persistence: process.env.FEATURE_PERSISTENCE !== "false",
+      collaboration: process.env.FEATURE_COLLABORATION === "true",
     },
     limits: {
       maxTools: Number(process.env.MAX_TOOLS) || 20,
@@ -292,9 +295,9 @@ export function loadConfig(): AppConfig {
       debounceMs: Number(process.env.DEBOUNCE_MS) || 1500,
     },
     integrations: {
-      database: (process.env.DB_DRIVER as any) || 'postgres',
-      cache: (process.env.CACHE_DRIVER as any) || 'memory',
-      queue: (process.env.QUEUE_DRIVER as any) || 'memory',
+      database: (process.env.DB_DRIVER as any) || "postgres",
+      cache: (process.env.CACHE_DRIVER as any) || "memory",
+      queue: (process.env.QUEUE_DRIVER as any) || "memory",
     },
   };
   return appConfigSchema.parse(raw);
@@ -305,15 +308,15 @@ export function loadConfig(): AppConfig {
 
 ```typescript
 // packages/core/index.ts
-export * from './interfaces';
-export * from './registry';
-export * from './factory';
-export * from './plugin';
-export * from './hooks';
-export * from './events';
+export * from "./interfaces";
+export * from "./registry";
+export * from "./factory";
+export * from "./plugin";
+export * from "./hooks";
+export * from "./events";
 
 // Usage in apps
-import { Tool, toolRegistry, createToolFactory, eventBus } from '@repo/core';
+import { Tool, toolRegistry, createToolFactory, eventBus } from "@repo/core";
 ```
 
 ### 10. Dependency Injection (Optional, Lightweight)
@@ -366,16 +369,16 @@ When adding a new pluggable feature:
 
 ## Anti-Patterns to Avoid
 
-| Anti-Pattern | Correct Approach |
-|--------------|------------------|
-| Direct imports between features | Use registry/factory |
-| `if (tool === 'pencil')` switches | Polymorphism via interface |
-| Hardcoded config values | `packages/config/schema.ts` + env |
-| Business logic in HTTP handlers | Service layer (`packages/core/interfaces/service.ts`) |
-| Circular dependencies between packages | Depend only on `core` + `shared` |
-| Duplicate validation logic | Shared Zod schemas in `shared/validation` |
-| Framework code in domain services | Pure TS, inject repositories |
-| Global mutable state | Event bus + explicit subscriptions |
+| Anti-Pattern                           | Correct Approach                                      |
+| -------------------------------------- | ----------------------------------------------------- |
+| Direct imports between features        | Use registry/factory                                  |
+| `if (tool === 'pencil')` switches      | Polymorphism via interface                            |
+| Hardcoded config values                | `packages/config/schema.ts` + env                     |
+| Business logic in HTTP handlers        | Service layer (`packages/core/interfaces/service.ts`) |
+| Circular dependencies between packages | Depend only on `core` + `shared`                      |
+| Duplicate validation logic             | Shared Zod schemas in `shared/validation`             |
+| Framework code in domain services      | Pure TS, inject repositories                          |
+| Global mutable state                   | Event bus + explicit subscriptions                    |
 
 ## Migration Path for Existing Code
 
@@ -406,6 +409,7 @@ project/
 ```
 
 Load both skills:
+
 ```
 skill nerdev-monorepo
 skill nerdev-abstraction

@@ -1,6 +1,7 @@
 ---
 name: agent-docs-writer
-description: "Use this skill to write, create, improve, or audit README.md and AGENTS.md for a code repository. Make the codebase legible to AI coding agents (Claude Code, Cursor, Codex, OpenCode, etc.) and to humans. Trigger on phrases like \"write an AGENTS.md\", \"make my repo agent-friendly\", \"onboarding doc for coding agents\", \"README for this project\", \"contributor guide\", \"docs so an AI agent does not break things\", or any request to document a codebase's context, conventions, glossary, or guardrails. Also use it to review or critique an existing README or AGENTS.md against this skill's checklist. Check that docs distinguish [planned] vs [shipped] reality and mark plan-drift with dated NOTE markers. Always use this instead of writing a generic README or AGENTS.md from scratch."
+description: 'Use this skill to write, create, improve, or audit README.md and AGENTS.md for a code repository. Make the codebase legible to AI coding agents (Claude Code, Cursor, Codex, OpenCode, etc.) and to humans. Trigger on phrases like "write an AGENTS.md", "make my repo agent-friendly", "onboarding doc for coding agents", "README for this project", "contributor guide", "docs so an AI agent does not break things", or any request to document a codebase''s context, conventions, glossary, or guardrails. Also use it to review or critique an existing README or AGENTS.md against this skill''s checklist. Check that docs distinguish [planned] vs [shipped] reality and mark plan-drift with dated NOTE markers. Always use this instead of writing a generic README or AGENTS.md from scratch.'
+user-invocable: true
 ---
 
 # Agent Docs Writer
@@ -23,7 +24,6 @@ This skill borrows the philosophy behind T3 Code's AGENTS.md (https://github.com
 
 Never skip straight to writing files without showing a draft first. This is a hard requirement for this skill. It holds no matter how the user phrases the request.
 
-
 > **nerdev-docs integration:** This skill generates `AGENTS.md` for projects using the nerdev-co methodology. See [`nerdev-docs`](../nerdev-docs/SKILL.md) for the full documentation framework (ADRs, design docs, runbooks) that mandates AGENTS.md as a required document type.
 
 ## Plan vs. Shipped-Reality rule (applies to every doc this skill writes or audits)
@@ -41,7 +41,6 @@ Therefore, whenever this skill writes or audits docs:
    The marker takes 30 seconds, and keeps the doc an honest archive of everything: the vision AND the reality.
 3. **Audit mode:** when reviewing existing docs, actively look for unmarked claims that do not match the code (in `package.json`, repo structure, tests, CI). Flag each one with the drift marker, do not silently "fix" it to match code. Include the question "did this actually ship?" for the user to answer.
 4. **Postmortem/case-study docs** (drafted during the build): end each milestone/postmortem with a "what actually changed" section dated at the time of writing. This keeps the final story true to what happened, not to the plan.
-
 
 ## Step 1: Scan the repo
 
@@ -72,7 +71,7 @@ If the user is clearly in a hurry or says "just draft something", infer sensible
 
 ## Step 3: Draft
 
-Use the templates in `templates/README.template.md` and `templates/AGENTS.template.md` as the structural skeleton. Read `references/principles.md` for the reasoning behind each section before filling them in. Do not skip it. It explains *why* each section exists so you do not flatten it into generic boilerplate.
+Use the templates in `templates/README.template.md` and `templates/AGENTS.template.md` as the structural skeleton. Read `references/principles.md` for the reasoning behind each section before filling them in. Do not skip it. It explains _why_ each section exists so you do not flatten it into generic boilerplate.
 
 Show both drafts inline in the chat response (as markdown, not as files yet).
 

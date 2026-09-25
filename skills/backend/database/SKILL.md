@@ -1,37 +1,45 @@
 ---
 name: database
 description: Prisma patterns , schema design, migrations, seeding, query optimization, connection pooling, transactions, soft deletes, audit logs, multi-tenancy, read replicas. Load when designing data layer or optimizing queries.
+user-invocable: true
 ---
+
 # Database , Prisma + PostgreSQL Patterns
 
 **When to use:** Schema design, migrations, query optimization, seeding, connection management, advanced patterns.
 
-
 ## Prisma Setup
+
 ```typescript
 // packages/db/src/client.ts
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
-export const prisma = globalForPrisma.prisma || new PrismaClient({
-  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-  datasources: {
-    db: { url: process.env.DATABASE_URL },
-  },
-})
+export const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    log:
+      process.env.NODE_ENV === "development"
+        ? ["query", "error", "warn"]
+        : ["error"],
+    datasources: {
+      db: { url: process.env.DATABASE_URL },
+    },
+  });
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 // Graceful shutdown
-process.on('beforeExit', async () => {
-  await prisma.$disconnect()
-})
+process.on("beforeExit", async () => {
+  await prisma.$disconnect();
+});
 ```
 
 ## Schema Conventions
 
 ### Naming
+
 ```prisma
 // PascalCase models, camelCase fields, snake_case in DB
 model User {
@@ -44,10 +52,10 @@ model User {
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")
   deletedAt     DateTime? @map("deleted_at") // Soft delete
-  
+
   sessions      Session[]
   memberships   Membership[]
-  
+
   @@index([email])
   @@index([deletedAt])
   @@map("users")
@@ -59,7 +67,9 @@ enum UserRole {
   VIEWER
 }
 ```
+
 ### Required Fields on Every Model
+
 ```prisma
 // Base fields for all models
 abstract model BaseModel {
@@ -69,7 +79,9 @@ abstract model BaseModel {
   deletedAt DateTime? @map("deleted_at") // Soft delete
 }
 ```
+
 ### Relations
+
 ```prisma
 // One-to-Many
 model Project {
@@ -79,7 +91,7 @@ model Project {
   owner       User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
   members     Membership[]
   tasks       Task[]
-  
+
   @@map("projects")
 }
 
@@ -90,19 +102,21 @@ model Membership {
   role      ProjectRole @default(MEMBER)
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  
+
   @@unique([userId, projectId])
   @@map("memberships")
 }
 ```
+
 ### Optimistic Concurrency
+
 ```prisma
 model Task {
   id        String   @id @default(cuid())
   title     String
   version   Int      @default(1) // Optimistic locking
   updatedAt DateTime @updatedAt
-  
+
   @@map("tasks")
 }
 
@@ -124,6 +138,7 @@ async function updateTask(id: string, data: Partial<Task>, expectedVersion: numb
 ## Migrations
 
 ### Development Workflow
+
 ```bash
 # 1. Edit schema.prisma
 # 2. Create migration
@@ -134,7 +149,9 @@ bunx prisma migrate dev --name descriptive_name
 git add prisma/migrations/
 git commit -m "db: add project members table"
 ```
+
 ### Production Deployment
+
 ```bash
 # Apply migrations (non-interactive)
 bunx prisma migrate deploy
@@ -144,7 +161,9 @@ bunx prisma migrate deploy
   env:
     DATABASE_URL: ${{ secrets.DATABASE_URL }}
 ```
+
 ### Migration Safety
+
 ```prisma
 // NEVER do this in production migration:
 // - Drop column (use @deletedAt soft delete instead)
@@ -155,65 +174,68 @@ bunx prisma migrate deploy
 model User {
   // Adding optional field - safe
   phone String? @map("phone")
-  
+
   // Adding required field with default - safe
   status String @default("active") @map("status")
-  
+
   // Adding index - safe (CONCURRENTLY in Postgres)
   @@index([status])
 }
 ```
+
 ### Seed Data
+
 ```typescript
 // packages/db/src/seed.ts
-import { prisma } from './client'
-import { hashPassword } from '@/lib/auth/password'
+import { prisma } from "./client";
+import { hashPassword } from "@/lib/auth/password";
 
 async function main() {
   // Clean in order (respect FK)
-  await prisma.session.deleteMany()
-  await prisma.membership.deleteMany()
-  await prisma.project.deleteMany()
-  await prisma.user.deleteMany()
+  await prisma.session.deleteMany();
+  await prisma.membership.deleteMany();
+  await prisma.project.deleteMany();
+  await prisma.user.deleteMany();
 
   // Admin user
   const admin = await prisma.user.create({
     data: {
-      email: 'admin@example.com',
-      passwordHash: await hashPassword('AdminPass123!'),
-      firstName: 'Admin',
-      lastName: 'User',
-      role: 'ADMIN',
+      email: "admin@example.com",
+      passwordHash: await hashPassword("AdminPass123!"),
+      firstName: "Admin",
+      lastName: "User",
+      role: "ADMIN",
     },
-  })
+  });
 
   // Demo project
   const project = await prisma.project.create({
     data: {
-      name: 'Demo Project',
+      name: "Demo Project",
       ownerId: admin.id,
       members: {
-        create: { userId: admin.id, role: 'OWNER' },
+        create: { userId: admin.id, role: "OWNER" },
       },
     },
-  })
+  });
 
-  console.log({ admin, project })
+  console.log({ admin, project });
 }
 
 main()
   .catch(console.error)
-  .finally(() => prisma.$disconnect())
+  .finally(() => prisma.$disconnect());
 ```
 
 ## Query Patterns
 
 ### Efficient Queries
+
 ```typescript
 // ❌ N+1 problem
-const projects = await prisma.project.findMany()
+const projects = await prisma.project.findMany();
 for (const p of projects) {
-  p.owner = await prisma.user.findUnique({ where: { id: p.ownerId } })
+  p.owner = await prisma.user.findUnique({ where: { id: p.ownerId } });
 }
 
 // ✅ Include (JOIN)
@@ -222,30 +244,34 @@ const projects = await prisma.project.findMany({
     owner: { select: { id: true, name: true, email: true } },
     _count: { select: { members: true, tasks: true } },
   },
-})
+});
 
 // ✅ Select only needed fields
 const users = await prisma.user.findMany({
   select: { id: true, email: true, firstName: true, lastName: true },
   where: { deletedAt: null },
-})
+});
 ```
+
 ### Pagination (Cursor-Based)
+
 ```typescript
 // Cursor pagination for large datasets
 async function getProjectsCursor(cursor?: string, limit = 25) {
   return prisma.project.findMany({
     take: limit + 1,
     cursor: cursor ? { id: cursor } : undefined,
-    orderBy: { createdAt: 'desc' },
+    orderBy: { createdAt: "desc" },
     where: { deletedAt: null },
     include: { owner: { select: { id: true, name: true } } },
-  })
+  });
 }
 
 // Returns: { data, nextCursor, hasMore }
 ```
+
 ### Full-Text Search
+
 ```typescript
 // PostgreSQL full-text search
 const projects = await prisma.$queryRaw`
@@ -255,40 +281,55 @@ const projects = await prisma.$queryRaw`
   AND deleted_at IS NULL
   ORDER BY rank DESC
   LIMIT 20
-`
+`;
 ```
 
 ## Transactions
 
 ### Basic Transaction
+
 ```typescript
 await prisma.$transaction(async (tx) => {
-  const project = await tx.project.create({ data: { name: 'New', ownerId: userId } })
-  await tx.membership.create({ data: { userId, projectId: project.id, role: 'OWNER' } })
-  await tx.activity.create({ data: { userId, type: 'PROJECT_CREATED', projectId: project.id } })
-})
+  const project = await tx.project.create({
+    data: { name: "New", ownerId: userId },
+  });
+  await tx.membership.create({
+    data: { userId, projectId: project.id, role: "OWNER" },
+  });
+  await tx.activity.create({
+    data: { userId, type: "PROJECT_CREATED", projectId: project.id },
+  });
+});
 ```
+
 ### Interactive Transaction (Long-Running)
+
 ```typescript
 // Use for complex logic with external calls
-const result = await prisma.$transaction(async (tx) => {
-  // ... multiple operations
-  return { project, membership }
-}, {
-  maxWait: 5000,   // Max wait for lock
-  timeout: 10000,  // Max transaction time
-  isolationLevel: 'ReadCommitted', // or 'Serializable'
-})
+const result = await prisma.$transaction(
+  async (tx) => {
+    // ... multiple operations
+    return { project, membership };
+  },
+  {
+    maxWait: 5000, // Max wait for lock
+    timeout: 10000, // Max transaction time
+    isolationLevel: "ReadCommitted", // or 'Serializable'
+  },
+);
 ```
 
 ## Connection Pooling
 
 ### PgBouncer (Production)
+
 ```bash
 # DATABASE_URL with PgBouncer
 postgresql://user:pass@host:6543/db?pgbouncer=true&connection_limit=20
 ```
+
 ### Prisma Connection Limit
+
 ```typescript
 // In schema.prisma
 datasource db {
@@ -299,28 +340,30 @@ datasource db {
 ```
 
 ## Soft Deletes
+
 ```typescript
 // Middleware for automatic soft delete filtering
 prisma.$use(async (params, next) => {
-  if (params.action === 'findUnique' || params.action === 'findFirst') {
-    params.action = 'findFirst'
-    params.args.where = { ...params.args.where, deletedAt: null }
+  if (params.action === "findUnique" || params.action === "findFirst") {
+    params.action = "findFirst";
+    params.args.where = { ...params.args.where, deletedAt: null };
   }
-  if (params.action === 'findMany') {
-    params.args.where = { ...params.args.where, deletedAt: null }
+  if (params.action === "findMany") {
+    params.args.where = { ...params.args.where, deletedAt: null };
   }
-  if (params.action === 'delete' || params.action === 'deleteMany') {
-    params.action = 'update'
-    params.args.data = { deletedAt: new Date() }
+  if (params.action === "delete" || params.action === "deleteMany") {
+    params.action = "update";
+    params.args.data = { deletedAt: new Date() };
   }
-  return next(params)
-})
+  return next(params);
+});
 
 // Hard delete when needed
-await prisma.project.delete({ where: { id }, force: true }) // Custom extension
+await prisma.project.delete({ where: { id }, force: true }); // Custom extension
 ```
 
 ## Audit Logs
+
 ```prisma
 model AuditLog {
   id        String   @id @default(cuid())
@@ -331,7 +374,7 @@ model AuditLog {
   changes   Json     // { field: { old, new } }
   metadata  Json?    // IP, user agent, etc.
   createdAt DateTime @default(now()) @map("created_at")
-  
+
   @@index([entityType, entityId])
   @@index([userId])
   @@index([createdAt])
@@ -344,36 +387,41 @@ model AuditLog {
 export async function auditLog(
   entityId: string,
   entityType: string,
-  action: 'CREATE' | 'UPDATE' | 'DELETE',
+  action: "CREATE" | "UPDATE" | "DELETE",
   userId: string | null,
   changes: Record<string, { old: any; new: any }>,
-  metadata?: object
+  metadata?: object,
 ) {
   await prisma.auditLog.create({
     data: { entityId, entityType, action, userId, changes, metadata },
-  })
+  });
 }
 
 // Usage in service
-async function updateProject(id: string, data: Partial<Project>, userId: string) {
-  const old = await prisma.project.findUnique({ where: { id } })
-  const updated = await prisma.project.update({ where: { id }, data })
-  
+async function updateProject(
+  id: string,
+  data: Partial<Project>,
+  userId: string,
+) {
+  const old = await prisma.project.findUnique({ where: { id } });
+  const updated = await prisma.project.update({ where: { id }, data });
+
   const changes = Object.keys(data).reduce((acc, key) => {
     if (old[key] !== updated[key]) {
-      acc[key] = { old: old[key], new: updated[key] }
+      acc[key] = { old: old[key], new: updated[key] };
     }
-    return acc
-  }, {})
-  
-  await auditLog(id, 'Project', 'UPDATE', userId, changes)
-  return updated
+    return acc;
+  }, {});
+
+  await auditLog(id, "Project", "UPDATE", userId, changes);
+  return updated;
 }
 ```
 
 ## Multi-Tenancy
 
 ### Row-Level Security (PostgreSQL)
+
 ```sql
 -- Enable RLS
 ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
@@ -387,18 +435,21 @@ CREATE POLICY project_isolation ON projects
 // Middleware to set RLS context
 prisma.$use(async (params, next) => {
   if (currentUser) {
-    await prisma.$executeRawUnsafe(`SET LOCAL app.current_user_id = '${currentUser.id}'`)
+    await prisma.$executeRawUnsafe(
+      `SET LOCAL app.current_user_id = '${currentUser.id}'`,
+    );
   }
-  return next(params)
-})
+  return next(params);
+});
 ```
 
 ## Read Replicas
+
 ```typescript
 // packages/db/src/client.ts
 const readReplica = new PrismaClient({
   datasources: { db: { url: process.env.DATABASE_READ_URL } },
-})
+});
 
 // Use for read-heavy operations
 export async function getDashboardStats(userId: string) {
@@ -406,8 +457,8 @@ export async function getDashboardStats(userId: string) {
     readReplica.project.count({ where: { ownerId: userId } }),
     readReplica.task.count({ where: { assigneeId: userId } }),
     readReplica.membership.count({ where: { userId } }),
-  ])
-  return { projects, tasks, members }
+  ]);
+  return { projects, tasks, members };
 }
 ```
 
@@ -423,8 +474,8 @@ export async function getDashboardStats(userId: string) {
 - [ ] Query logging in dev, slow query monitoring in prod
 - [ ] `EXPLAIN ANALYZE` on slow queries
 
-
 ## Related Skills
+
 - `devops/testing` - Testcontainers for integration tests
 - `backend/security` - Data encryption, RLS
 - `backend/api-design` - Query optimization for API

@@ -1,8 +1,8 @@
 ---
 name: ultra-context-engine
 description: "An aggressive context-efficiency and token-optimization layer for Claude Code. Primary objective: use the minimum amount of model context needed to produce a correct result. Do not optimize tokens at the expense of correctness. Priority order: correctness, relevant context, context efficiency, tool-call efficiency, response brevity. Never sacrifice required information merely to reduce tokens."
+user-invocable: true
 ---
-
 
 # Core Principle
 
@@ -44,39 +44,38 @@ Reason over minimal sufficient context
 Return concise result
 ```
 
-
 # Integrated Systems
 
 This skill orchestrates the concepts and capabilities represented by:
 
-* Caveman
+- Caveman
   https://github.com/juliusbrussee/caveman
 
-* RTK: Rust Token Killer
+- RTK: Rust Token Killer
   https://github.com/rtk-ai/rtk
 
-* Code Review Graph
+- Code Review Graph
   https://github.com/tirth8205/code-review-graph
 
-* Context Mode
+- Context Mode
   https://github.com/mksglu/context-mode
 
-* Claude Token Optimizer
+- Claude Token Optimizer
   https://github.com/nadimtuhin/claude-token-optimizer
 
-* Token Optimizer
+- Token Optimizer
   https://github.com/alexgreensh/token-optimizer
 
-* Token Optimizer MCP
+- Token Optimizer MCP
   https://github.com/ooples/token-optimizer-mcp
 
-* Claude Context
+- Claude Context
   https://github.com/zilliztech/claude-context
 
-* Claude Token Efficient
+- Claude Token Efficient
   https://github.com/drona23/claude-token-efficient
 
-* Token Savior
+- Token Savior
   https://github.com/mibayy/token-savior
 
 These are conceptual capabilities of the system.
@@ -87,7 +86,6 @@ Do not execute, import, or invoke a tool merely because it exists in this list.
 
 Use an available implementation when present. Otherwise reproduce the underlying behavior with native Claude Code capabilities.
 
-
 # Operating Modes
 
 Determine the task before retrieving context.
@@ -96,9 +94,9 @@ Determine the task before retrieving context.
 
 Examples:
 
-* "What does this function do?"
-* "Explain this error."
-* "How does X work?"
+- "What does this function do?"
+- "Explain this error."
+- "How does X work?"
 
 Use the smallest possible context.
 
@@ -108,27 +106,25 @@ Do not perform semantic indexing.
 
 Do not retrieve unrelated files.
 
-
 ## Mode 2: Local Code Change
 
 Examples:
 
-* "Fix this function."
-* "Add validation here."
-* "Rename this variable."
+- "Fix this function."
+- "Add validation here."
+- "Rename this variable."
 
 Start with the target file/symbol.
 
 Retrieve only:
 
-* target symbol
-* directly related types
-* directly called functions
-* relevant tests
-* required configuration
+- target symbol
+- directly related types
+- directly called functions
+- relevant tests
+- required configuration
 
 Do not load the entire repository.
-
 
 ## Mode 3: Debugging
 
@@ -144,7 +140,6 @@ First identify:
 Use the smallest dependency path that explains the failure.
 
 Do not indiscriminately retrieve every file mentioning the same keyword.
-
 
 ## Mode 4: Code Review
 
@@ -162,7 +157,6 @@ Prioritize:
 8. Security-sensitive dependencies
 
 Avoid reading unrelated files.
-
 
 ## Mode 5: Architecture / Repository Understanding
 
@@ -186,7 +180,6 @@ Relevant implementation
 
 Never start by loading the entire repository.
 
-
 ## Mode 6: Large Output / Logs
 
 Never inject large raw outputs directly into context when an external process can handle them.
@@ -207,7 +200,6 @@ Store externally if necessary
 Expose only relevant sections
 ```
 
-
 # Context Retrieval Strategy
 
 Use a funnel.
@@ -217,7 +209,6 @@ Use a funnel.
 Always use information already given by the user before doing additional retrieval.
 
 Do not retrieve information the user already supplied.
-
 
 ## Level 1: Symbol lookup
 
@@ -236,7 +227,6 @@ route POST /login
 Use symbol-level navigation whenever possible.
 
 This uses the Token Savior principle.
-
 
 ## Level 2: Dependency expansion
 
@@ -257,7 +247,6 @@ Use graph-based traversal where available.
 
 This uses the Code Review Graph principle.
 
-
 ## Level 3: Semantic retrieval
 
 When exact symbol navigation is insufficient, use semantic/hybrid retrieval.
@@ -266,13 +255,11 @@ Retrieve the smallest set of documents/code fragments that answer the question.
 
 This uses the Claude Context principle.
 
-
 ## Level 4: Broader retrieval
 
 Only expand beyond the immediate dependency neighborhood when evidence indicates that the existing context is insufficient.
 
 Never broaden context simply because more context exists.
-
 
 # Context Budgeting
 
@@ -298,33 +285,31 @@ If a summary is sufficient, do not include the raw source.
 
 If a symbol is sufficient, do not include the entire file.
 
-
 # Code Retrieval Rules
 
 Never:
 
-* read an entire monorepo unnecessarily
-* read every file in a directory
-* dump giant files into context
-* repeatedly retrieve the same file
-* retrieve generated files unless necessary
-* retrieve lockfiles unless dependency resolution requires them
-* retrieve build artifacts unless debugging them
-* retrieve unrelated tests
-* retrieve unrelated documentation
+- read an entire monorepo unnecessarily
+- read every file in a directory
+- dump giant files into context
+- repeatedly retrieve the same file
+- retrieve generated files unless necessary
+- retrieve lockfiles unless dependency resolution requires them
+- retrieve build artifacts unless debugging them
+- retrieve unrelated tests
+- retrieve unrelated documentation
 
 Prefer:
 
-* symbols
-* definitions
-* references
-* callers
-* callees
-* dependency edges
-* relevant tests
-* relevant configuration
-* targeted line ranges
-
+- symbols
+- definitions
+- references
+- callers
+- callees
+- dependency edges
+- relevant tests
+- relevant configuration
+- targeted line ranges
 
 # Monorepo Rules
 
@@ -339,32 +324,30 @@ For monorepos:
 
 Never treat a monorepo as one giant application.
 
-
 # Context Compression
 
 Before context enters the model, remove information that does not affect reasoning.
 
 Potential compression operations:
 
-* remove duplicate content
-* remove repeated logs
-* collapse repeated stack frames
-* remove irrelevant timestamps
-* remove ANSI escape sequences
-* remove terminal progress output
-* remove generated boilerplate
-* remove duplicated imports
-* remove irrelevant comments
-* collapse repetitive JSON
-* collapse repeated objects
-* summarize repetitive errors
-* preserve unique errors
-* preserve exact values when they affect correctness
-* preserve line numbers when useful
-* preserve code semantics
+- remove duplicate content
+- remove repeated logs
+- collapse repeated stack frames
+- remove irrelevant timestamps
+- remove ANSI escape sequences
+- remove terminal progress output
+- remove generated boilerplate
+- remove duplicated imports
+- remove irrelevant comments
+- collapse repetitive JSON
+- collapse repeated objects
+- summarize repetitive errors
+- preserve unique errors
+- preserve exact values when they affect correctness
+- preserve line numbers when useful
+- preserve code semantics
 
 Never compress away information that could change the answer.
-
 
 # Terminal Output
 
@@ -401,21 +384,20 @@ relevant stderr
 
 When possible, ask tools for filtered output directly rather than receiving massive output and filtering it afterward.
 
-
 # Large Outputs
 
 Large outputs must not automatically become model context.
 
 Examples:
 
-* build logs
-* test logs
-* GitHub API responses
-* git history
-* database dumps
-* generated JSON
-* large command output
-* large search results
+- build logs
+- test logs
+- GitHub API responses
+- git history
+- database dumps
+- generated JSON
+- large command output
+- large search results
 
 Use the Context Mode principle:
 
@@ -441,7 +423,6 @@ Relevant identifiers
 rather than the entire artifact.
 
 If external storage is unavailable, simulate the same behavior by retaining only the relevant subset in working context.
-
 
 # MCP Optimization
 
@@ -478,35 +459,33 @@ reuse execute
 
 Never repeatedly fetch identical information within the same task.
 
-
 # Caching
 
 Cache information when it is:
 
-* deterministic
-* expensive to retrieve
-* likely used again
-* unchanged during the current task
+- deterministic
+- expensive to retrieve
+- likely used again
+- unchanged during the current task
 
 Good candidates:
 
-* repository structure
-* symbol index
-* dependency graph
-* package metadata
-* repeated MCP responses
-* repeated command output
-* documentation retrieval
+- repository structure
+- symbol index
+- dependency graph
+- package metadata
+- repeated MCP responses
+- repeated command output
+- documentation retrieval
 
 Do not cache information when it is:
 
-* rapidly changing
-* task-specific
-* potentially stale
-* security-sensitive without appropriate controls
+- rapidly changing
+- task-specific
+- potentially stale
+- security-sensitive without appropriate controls
 
 Always prefer correctness over cache hits.
-
 
 # Prompt Optimization
 
@@ -529,23 +508,22 @@ Inspect relevant files. Identify root cause. Patch it. Test it.
 
 Preserve:
 
-* requirements
-* constraints
-* acceptance criteria
-* edge cases
-* safety requirements
-* user intent
+- requirements
+- constraints
+- acceptance criteria
+- edge cases
+- safety requirements
+- user intent
 
 Remove:
 
-* filler
-* repetition
-* unnecessary politeness
-* duplicated instructions
-* redundant explanations
+- filler
+- repetition
+- unnecessary politeness
+- duplicated instructions
+- redundant explanations
 
 Never compress away an actual requirement.
-
 
 # Persistent Repository Knowledge
 
@@ -576,7 +554,6 @@ Inferred
 Uncertain
 ```
 
-
 # Response Optimization
 
 The final response must contain only information useful to the user.
@@ -593,20 +570,19 @@ Remaining issue
 
 Avoid:
 
-* unnecessary introductions
-* repeating the request
-* narrating every internal step
-* explaining obvious code
-* repeating code already shown
-* verbose conclusions
-* generic "let me know if..." endings
+- unnecessary introductions
+- repeating the request
+- narrating every internal step
+- explaining obvious code
+- repeating code already shown
+- verbose conclusions
+- generic "let me know if..." endings
 
 For simple tasks, answer briefly.
 
 For complex tasks, give enough detail to make the result usable.
 
 Do not impose arbitrary word limits when the task requires explanation.
-
 
 # Caveman Mode
 
@@ -637,13 +613,12 @@ Do not remove technical information merely to make text shorter.
 
 Never sacrifice:
 
-* correctness
-* caveats
-* security information
-* required instructions
-* exact commands
-* error details
-
+- correctness
+- caveats
+- security information
+- required instructions
+- exact commands
+- error details
 
 # Final Response Terseness
 
@@ -665,7 +640,6 @@ Tested:
 For code changes, prefer showing only the important diff or explanation.
 
 Do not reproduce entire files unless explicitly requested.
-
 
 # Tool Selection
 
@@ -704,7 +678,6 @@ Repeated MCP data
 ```
 
 Make the system adaptive.
-
 
 # Anti-Patterns
 
@@ -765,7 +738,6 @@ Broken explanation
 
 Compression must preserve meaning.
 
-
 # Accuracy Guardrails
 
 Token reduction is subordinate to correctness.
@@ -796,7 +768,6 @@ KEEP BOTH UNTIL RESOLVED.
 
 Never report an inferred fact as verified.
 
-
 # Progressive Escalation
 
 Use this escalation ladder:
@@ -826,7 +797,6 @@ Start at level 1.
 Escalate only when necessary.
 
 Never start at level 9.
-
 
 # Decision Function
 
@@ -859,7 +829,6 @@ Can this be shorter without losing information?
 ```
 
 If yes, shorten it.
-
 
 # Ideal End-to-End Pipeline
 
@@ -915,7 +884,6 @@ The complete system behaves like this:
                          ▼
                  Final Response
 ```
-
 
 # Success Criteria
 
