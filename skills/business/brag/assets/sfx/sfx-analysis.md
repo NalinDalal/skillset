@@ -16,30 +16,30 @@ Use this as planning guidance for choosing tasteful SFX. Prefer low/medium high-
 
 ## Safest General Picks
 
-- `impact/impactSoft_medium_001.ogg` ,  0.18s, warm, low HF risk, transient; use for hard transition, major reveal
-- `impact/impactSoft_medium_004.ogg` ,  0.15s, warm, low HF risk, transient; use for hard transition, major reveal
-- `impact/impactSoft_medium_002.ogg` ,  0.14s, warm, low HF risk, transient; use for hard transition, major reveal
-- `interface/bong_001.ogg` ,  0.12s, warm, low HF risk, textured; use for general accent
-- `impact/impactSoft_medium_003.ogg` ,  0.14s, warm, low HF risk, textured; use for hard transition, major reveal
-- `impact/impactSoft_medium_000.ogg` ,  0.12s, warm, low HF risk, textured; use for hard transition, major reveal
-- `interface/click_003.ogg` ,  0.01s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
-- `interface/click_002.ogg` ,  0.01s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
-- `interface/click_005.ogg` ,  0.01s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
-- `ui/click2.ogg` ,  0.06s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
-- `ui/rollover2.ogg` ,  0.06s, balanced, low HF risk, continuous; use for general accent
-- `interface/glitch_002.ogg` ,  0.03s, bright, low HF risk, continuous; use for chaotic accent, comedic interruption, tiny accent only
-- `impact/impactSoft_heavy_003.ogg` ,  0.54s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/impactSoft_heavy_004.ogg` ,  0.50s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/impactSoft_heavy_002.ogg` ,  0.57s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/impactSoft_heavy_001.ogg` ,  0.57s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/impactSoft_heavy_000.ogg` ,  0.51s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/footstep_wood_004.ogg` ,  0.25s, warm, medium HF risk, transient; use for general accent
-- `impact/footstep_wood_002.ogg` ,  0.25s, warm, medium HF risk, transient; use for general accent
-- `impact/footstep_wood_000.ogg` ,  0.25s, warm, medium HF risk, transient; use for general accent
-- `impact/footstep_wood_001.ogg` ,  0.25s, warm, medium HF risk, transient; use for general accent
-- `impact/impactWood_medium_003.ogg` ,  0.33s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/impactWood_medium_001.ogg` ,  0.33s, warm, medium HF risk, transient; use for hard transition, major reveal
-- `impact/impactWood_medium_000.ogg` ,  0.33s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_medium_001.ogg` — 0.18s, warm, low HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_medium_004.ogg` — 0.15s, warm, low HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_medium_002.ogg` — 0.14s, warm, low HF risk, transient; use for hard transition, major reveal
+- `interface/bong_001.ogg` — 0.12s, warm, low HF risk, textured; use for general accent
+- `impact/impactSoft_medium_003.ogg` — 0.14s, warm, low HF risk, textured; use for hard transition, major reveal
+- `impact/impactSoft_medium_000.ogg` — 0.12s, warm, low HF risk, textured; use for hard transition, major reveal
+- `interface/click_003.ogg` — 0.01s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
+- `interface/click_002.ogg` — 0.01s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
+- `interface/click_005.ogg` — 0.01s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
+- `ui/click2.ogg` — 0.06s, balanced, low HF risk, continuous; use for button press, selection, simulated user action
+- `ui/rollover2.ogg` — 0.06s, balanced, low HF risk, continuous; use for general accent
+- `interface/glitch_002.ogg` — 0.03s, bright, low HF risk, continuous; use for chaotic accent, comedic interruption, tiny accent only
+- `impact/impactSoft_heavy_003.ogg` — 0.54s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_heavy_004.ogg` — 0.50s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_heavy_002.ogg` — 0.57s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_heavy_001.ogg` — 0.57s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactSoft_heavy_000.ogg` — 0.51s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/footstep_wood_004.ogg` — 0.25s, warm, medium HF risk, transient; use for general accent
+- `impact/footstep_wood_002.ogg` — 0.25s, warm, medium HF risk, transient; use for general accent
+- `impact/footstep_wood_000.ogg` — 0.25s, warm, medium HF risk, transient; use for general accent
+- `impact/footstep_wood_001.ogg` — 0.25s, warm, medium HF risk, transient; use for general accent
+- `impact/impactWood_medium_003.ogg` — 0.33s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactWood_medium_001.ogg` — 0.33s, warm, medium HF risk, transient; use for hard transition, major reveal
+- `impact/impactWood_medium_000.ogg` — 0.33s, warm, medium HF risk, transient; use for hard transition, major reveal
 
 ## Lower-Risk Picks By Use Case
 

@@ -129,23 +129,23 @@ If the user wants a different Kokoro voice, run `npx hyperframes tts --list`
 to see the available options. The command above is the voice implementation
 for this PR and should be used directly.
 
-Wire it into the composition on its own track. Music ducks to 0.12-0.15 for the duration of the voiceover, then returns to its normal level:
+Wire it into the composition on its own track. Music ducks to 0.12–0.15 for the duration of the voiceover, then returns to its normal level:
 
 ```html
 <audio id="vo" data-start="0" data-track-index="3" data-volume="1" src="assets/voiceover.wav"></audio>
 ```
 
-Scene durations must flex to match the generated audio ,  check the WAV duration after generation and adjust `data-duration` values accordingly. Do not hardcode scene lengths when voiceover is present; let the voice set the pace.
+Scene durations must flex to match the generated audio — check the WAV duration after generation and adjust `data-duration` values accordingly. Do not hardcode scene lengths when voiceover is present; let the voice set the pace.
 
 ---
 
 ## Audio-reactive extraction (when music is present)
 
-When music is present and the treatment is not `none`, the composition can react to per-frame audio data. **Delegate the extraction to the Hyperframes audio-reactive workflow** ,  `/brag` does not ship an extraction script and must not hardcode a path to one.
+When music is present and the treatment is not `none`, the composition can react to per-frame audio data. **Delegate the extraction to the Hyperframes audio-reactive workflow** — `/brag` does not ship an extraction script and must not hardcode a path to one.
 
 In the composition step, follow the audio-reactive guidance owned by the `hyperframes-creative` skill (let that skill locate its own files). It owns the data format, the extraction helper (which ships with that skill, not with `/brag`, so don't hardcode a path to it), and the per-frame sampling pattern. Ask Hyperframes to extract the audio data and wire at least one visual element to it.
 
-If extraction is unavailable (no helper, or ffmpeg missing), note it in the brief and skip audio-reactive ,  do not block the render.
+If extraction is unavailable (no helper, or ffmpeg missing), note it in the brief and skip audio-reactive — do not block the render.
 
 ---
 
@@ -153,30 +153,30 @@ If extraction is unavailable (no helper, or ffmpeg missing), note it in the brie
 
 Get a cue source first (see `audio.md` → "Beat and cue sources"): a bundled preset, `analyze_music_cues.py` on any track (needs Python; run via `uv`), or `npx hyperframes beats` (no Python; needs Hyperframes ≥ 0.6.99). The rich sources (preset / `analyze_music_cues.py`) give two arrays; `hyperframes beats` gives one.
 
-- **`strongCues`** ,  high-intensity beats (drops, swells, accents). Use for **major moments**: scene transitions, hero reveals, match payoff, logo landing. Lock 1-3 per video. With `hyperframes beats` (no `strongCues`), take the highest-`strength` beats instead.
-- **`beats`** ,  the full beat grid. Use to **snap small sequential events** into the music's pulse: cards arriving one by one, stats popping in, sequenced SFX hits.
+- **`strongCues`** — high-intensity beats (drops, swells, accents). Use for **major moments**: scene transitions, hero reveals, match payoff, logo landing. Lock 1–3 per video. With `hyperframes beats` (no `strongCues`), take the highest-`strength` beats instead.
+- **`beats`** — the full beat grid. Use to **snap small sequential events** into the music's pulse: cards arriving one by one, stats popping in, sequenced SFX hits.
 
 ### How to implement
 
 **Major moments (strong cues):**
 1. Load the cue source: the preset/analysis JSON (`strongCues` + `beats`), or the beat-grid JSON that `hyperframes beats` writes (a plain beat list; see the current hyperframes-cli skill for its location).
-2. Pick 1-3 strong timestamps near a planned major visual moment ,  `strongCues`, or the highest-`strength` beats.
+2. Pick 1–3 strong timestamps near a planned major visual moment — `strongCues`, or the highest-`strength` beats.
 3. Shift the reveal's start time to land within ±0.15s of the cue.
 4. Mark it: `// beat-locked: 5.80s`
 
 **Sequential events (beats):**
 1. Decide how many sequential items there are (e.g. 3 stats, 4 profile cards).
 2. Find the nearest beat to your intended start time for the first item.
-3. Use consecutive beats from that point for each subsequent item ,  snap each within ±0.10s of a beat timestamp.
+3. Use consecutive beats from that point for each subsequent item — snap each within ±0.10s of a beat timestamp.
 4. Mark it: `// beat-grid: stat 1 at 12.65s, stat 2 at 13.17s, stat 3 at 13.70s`
 
-**Readable text vs the beat grid:** if the sequential items are text the viewer reads (stat labels, list rows, callouts) and the beats are close (under ~0.6s apart at fast tempos), do not reveal a new line on every beat ,  it outruns reading (this rushed the bicycles spec rows). Snap to every other beat, or reveal them quickly and hold the full set on screen afterward. Non-text accents (glows, dots, ticks) may still hit every beat. See the reading-time floor in `step-2-plan.md`.
+**Readable text vs the beat grid:** if the sequential items are text the viewer reads (stat labels, list rows, callouts) and the beats are close (under ~0.6s apart at fast tempos), do not reveal a new line on every beat — it outruns reading (this rushed the bicycles spec rows). Snap to every other beat, or reveal them quickly and hold the full set on screen afterward. Non-text accents (glows, dots, ticks) may still hit every beat. See the reading-time floor in `step-2-plan.md`.
 
 This gives you two layers of musicality: the big moments land on the strongest hits, and the small events tick along with the pulse.
 
-Do not force every tween onto a beat ,  readability and scene pacing come first. If snapping a tween to a beat hurts copy legibility or the product story, use the natural timing instead.
+Do not force every tween onto a beat — readability and scene pacing come first. If snapping a tween to a beat hurts copy legibility or the product story, use the natural timing instead.
 
-If SFX are enabled, also pass `<skill-dir>/assets/sfx/sfx-analysis.md` as selection guidance. Prefer low high-frequency-risk files for repeated or polished moments. SFX on sequential events should fire at the same timestamp as the visual ,  the sound and motion land together.
+If SFX are enabled, also pass `<skill-dir>/assets/sfx/sfx-analysis.md` as selection guidance. Prefer low high-frequency-risk files for repeated or polished moments. SFX on sequential events should fire at the same timestamp as the visual — the sound and motion land together.
 
 ---
 
@@ -184,7 +184,7 @@ If SFX are enabled, also pass `<skill-dir>/assets/sfx/sfx-analysis.md` as select
 
 After `<output-dir>/brag-plan.md`, `<output-dir>/composition-brief.md`, and selected audio assets exist:
 
-1. Load the Hyperframes domain skills (`hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`, `hyperframes-keyframes`, `hyperframes-cli`) to create or update `<output-dir>/composition/`. /brag is its own workflow ,  do not enter the `hyperframes` entry-point intent interview or route into its generic promo / launch-video workflow.
+1. Load the Hyperframes domain skills (`hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`, `hyperframes-keyframes`, `hyperframes-cli`) to create or update `<output-dir>/composition/`. /brag is its own workflow — do not enter the `hyperframes` entry-point intent interview or route into its generic promo / launch-video workflow.
 2. Pass Hyperframes the composition brief, the brag plan, and the source files it should reference.
 3. Let Hyperframes choose the implementation details.
 4. Run Hyperframes check (the single gate before render).
