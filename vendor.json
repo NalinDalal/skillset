@@ -17,7 +17,7 @@
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "c184364c58658b2f131b4ae8bd3d206cabb3deee",
+      "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
       "source": "skills",
       "skills": [
         {
@@ -53,7 +53,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "fadd23794c0075468eb8964b0fd93e06e09486ad",
+      "commit": "ecc249f1e306fc64ddf83c7bed16cacf7c2239db",
       "source": "pstack/skills",
       "skills": [
         {
