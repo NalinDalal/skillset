@@ -1,7 +1,6 @@
 ---
 name: product-messaging
 description: Use whenever the user is writing or reviewing copy for a landing page, product homepage, pitch page, or hero section. Triggers on "write my landing page," "hero copy," "what should my homepage say," "positioning," "value prop," "why isn't my landing page converting," or any product/marketing page build where the layout is decided (or being decided via ui-theme-picker) but the actual words are not. Also use when a page already has UI polish but reads generic or forgettable, the content is the fix. Runs a messaging derivation (ICP, problem, outcome, mechanism, differentiation), builds a section-by-section content hierarchy tied to the question each section answers for the visitor, and hands back actual copy, not placeholder lorem or vague direction, mapped to sections a UI skill can then style. Pairs with ui-theme-picker: this skill decides what the page says, ui-theme-picker decides how it looks.
-user-invocable: true
 ---
 
 # Product Messaging

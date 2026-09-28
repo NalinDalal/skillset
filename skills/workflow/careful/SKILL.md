@@ -1,12 +1,7 @@
 ---
 name: careful
 version: 1.0.0
-description: "Safety guardrails for destructive commands. Warns before rm -rf, DROP TABLE, force-push, and similar."
-triggers:
-  - be careful
-  - warn before destructive
-  - safety mode
-  - careful mode
+description: "Safety guardrails for destructive commands. Warns before rm -rf, DROP TABLE, force-push, and similar. Use when the user says 'be careful', 'warn before destructive', 'safety mode', or 'careful mode'."
 ---
 
 ## When to use

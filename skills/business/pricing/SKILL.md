@@ -1,22 +1,7 @@
 ---
 name: pricing
 version: 1.0.0
-description: "Pricing decisions, packaging, and monetization strategy. Covers value metrics, tiers, Van Westendorp research, price increases, and pricing page teardowns."
-triggers:
-  - pricing
-  - pricing tiers
-  - freemium
-  - free trial
-  - packaging
-  - price increase
-  - value metric
-  - willingness to pay
-  - monetization
-  - how much should I charge
-  - pricing page
-  - annual vs monthly
-  - per seat pricing
-  - should I offer a free plan
+description: "Pricing decisions, packaging, and monetization strategy. Covers value metrics, tiers, Van Westendorp research, price increases, and pricing page teardowns. Use when the user asks 'how much should I charge' or about pricing tiers, freemium, free trial, packaging, price increase, value metric, willingness to pay, monetization, a pricing page, annual vs monthly, or per seat pricing."
 ---
 
 ## When to use

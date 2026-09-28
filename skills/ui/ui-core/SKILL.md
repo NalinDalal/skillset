@@ -1,5 +1,5 @@
 ---
-name: ui
+name: ui-core
 description: The whole UI job in one skill: pick the direction, design the system, build the screen, redesign or audit an existing one, verify it before ship. Use when starting a new page or project, choosing a theme or visual direction, building a screen, or upgrading an existing UI. This skill owns the quality of the interface. It makes design decisions autonomously and ships product-ready UI. house-style is the law; impeccable has the commands; this file is the process.
 ---
 

@@ -1,12 +1,7 @@
 ---
 name: context-save
 version: 1.0.0
-description: "Save working context so any future session can pick up without losing a beat."
-triggers:
-  - save progress
-  - save state
-  - save my work
-  - context save
+description: "Save working context so any future session can pick up without losing a beat. Use when the user says 'save progress', 'save state', 'save my work', or is wrapping up a session they want to resume later."
 ---
 
 ## When to use

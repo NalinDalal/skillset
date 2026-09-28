@@ -1,7 +1,6 @@
 ---
 name: progress-guard
 description: 'Use whenever the user does setup work while a main project (the current SHIP thread) has code work pending. Setup work includes: docs, curation, planning, skill-collecting, repo organization, and interview-script rewrites. Trigger on "let me first update the docs", "just reorganizing", "saw this new skill/library, let me plan around it", project-switching after an external event (interview questions, someone''s comment, a new idea), or any session where the user describes feeling stuck on the main project. Detects motion vs progress. Checks whether the current activity advances the SHIP thread. Redirects to one concrete next action on the real project.'
-user-invocable: true
 ---
 
 # Progress Guard

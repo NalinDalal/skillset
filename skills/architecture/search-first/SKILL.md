@@ -3,7 +3,6 @@ name: search-first
 category: architecture
 source: ECC (adapted)
 description: "Research-before-coding workflow. Load before implementing new features to find existing solutions."
-user-invocable: true
 ---
 
 # Search First

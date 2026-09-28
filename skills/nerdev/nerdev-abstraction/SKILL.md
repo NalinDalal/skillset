@@ -1,7 +1,6 @@
 ---
 name: nerdev-abstraction
-description: Interface-first, registry, factory, plugin protocol for plug-and-play architecture patterns
-user-invocable: true
+description: "Interface-first, registry, factory, and plugin protocol patterns for plug-and-play architecture. Use when designing an extension point, a module registry, or a swappable implementation behind an interface."
 ---
 
 # nerdev-abstraction

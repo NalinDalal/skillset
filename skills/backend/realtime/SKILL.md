@@ -1,7 +1,6 @@
 ---
 name: realtime
 description: Real-time patterns: WebSocket server, connection lifecycle, rooms, presence, diff sync, reconnection, scaling, Redis adapter, Bun native WebSocket. Load when building collaborative features, live updates, or chat.
-user-invocable: true
 ---
 
 # Real-Time , WebSocket, Presence, Diff Sync

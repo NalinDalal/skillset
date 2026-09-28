@@ -2,16 +2,7 @@
 name: product-engineering
 category: engineering
 source: custom
-description: "The discipline of making technical decisions that serve user goals. Bridges product thinking and engineering execution. Load when building features, making architecture choices, scoping work, or deciding what NOT to build."
-triggers:
-  - should we build this
-  - is this worth building
-  - how to scope this
-  - what should we build next
-  - technical decision
-  - architecture decision
-  - build vs buy
-  - product engineering
+description: "Product engineering judgment on features and technical decisions. Use when deciding whether to build something, scoping a feature, sequencing what to build next, choosing build vs buy, or making an architecture or technical tradeoff. Triggers on 'should we build this', 'is this worth building', 'how do I scope this', 'what should we build next', 'technical decision', 'architecture decision'. Not for marketing copy, landing page content, pricing, or visual design."
 ---
 
 # Product Engineering

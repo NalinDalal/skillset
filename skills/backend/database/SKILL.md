@@ -1,7 +1,6 @@
 ---
 name: database
-description: Prisma patterns , schema design, migrations, seeding, query optimization, connection pooling, transactions, soft deletes, audit logs, multi-tenancy, read replicas. Load when designing data layer or optimizing queries.
-user-invocable: true
+description: Prisma patterns: schema design, migrations, seeding, query optimization, connection pooling, transactions, soft deletes, audit logs, multi-tenancy, read replicas. Use when designing a data layer, writing migrations, or making queries faster.
 ---
 
 # Database , Prisma + PostgreSQL Patterns

@@ -1,7 +1,6 @@
 ---
 name: ultra-context-engine
 description: "An aggressive context-efficiency and token-optimization layer for Claude Code. Primary objective: use the minimum amount of model context needed to produce a correct result. Do not optimize tokens at the expense of correctness. Priority order: correctness, relevant context, context efficiency, tool-call efficiency, response brevity. Never sacrifice required information merely to reduce tokens."
-user-invocable: true
 ---
 
 # Core Principle

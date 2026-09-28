@@ -1,13 +1,7 @@
 ---
 name: health
 version: 1.0.0
-description: "Code quality dashboard. Wraps type checker, linter, test runner, dead code detector. Computes a weighted composite score."
-triggers:
-  - code health check
-  - quality dashboard
-  - how healthy is codebase
-  - health check
-  - quality score
+description: "Code quality dashboard. Wraps type checker, linter, test runner, dead code detector into a weighted composite score. Use when the user asks for a health check, a quality dashboard, a quality score, or 'how healthy is this codebase'."
 ---
 
 ## When to use

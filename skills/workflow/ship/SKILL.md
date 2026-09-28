@@ -1,13 +1,7 @@
 ---
 name: ship
 version: 1.0.0
-description: "Ship workflow: detect base branch, run tests, review diff, commit, push, create PR."
-triggers:
-  - ship it
-  - create a pr
-  - push to main
-  - deploy this
-  - let's ship
+description: "Ship workflow: detect base branch, run tests, review diff, commit, push, create PR. Use when the user says 'ship it', 'let's ship', 'create a PR', 'push to main', or 'deploy this'."
 ---
 
 ## When to use

@@ -1,19 +1,7 @@
 ---
 name: copywriting
 version: 1.0.0
-description: "Write, rewrite, or improve marketing copy for any page. Homepage, landing pages, pricing pages, feature pages, about pages, product pages."
-triggers:
-  - write copy
-  - improve this copy
-  - rewrite this page
-  - marketing copy
-  - headline help
-  - CTA copy
-  - value proposition
-  - tagline
-  - this copy is weak
-  - make this more compelling
-  - help me describe my product
+description: "Write, rewrite, or improve marketing copy for any page. Homepage, landing pages, pricing pages, feature pages, about pages, product pages. Use when the user says 'write copy', 'improve this copy', 'rewrite this page', 'this copy is weak', 'make this more compelling', or needs a headline, CTA, tagline, or value proposition."
 ---
 
 ## When to use

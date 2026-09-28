@@ -2,7 +2,8 @@
 name: coding-standards
 category: engineering
 source: ECC (adapted)
-description: "Cross-project coding conventions for TypeScript/JavaScript. Load when establishing code standards or reviewing code style."
+description: "Cross-project coding conventions for TypeScript and JavaScript. Use when setting up a new project, establishing code standards, reviewing code style, or resolving a style debate."
+---
 
 # Coding Standards
 

@@ -1,22 +1,7 @@
 ---
 name: marketing-psychology
 version: 1.0.0
-description: "Mental models and psychological principles for marketing. Covers persuasion, buyer behavior, pricing psychology, design models, and growth patterns."
-triggers:
-  - psychology
-  - mental models
-  - cognitive bias
-  - persuasion
-  - behavioral science
-  - why people buy
-  - decision-making
-  - consumer behavior
-  - anchoring
-  - social proof
-  - scarcity
-  - loss aversion
-  - framing
-  - nudge
+description: "Mental models and psychological principles for marketing. Covers persuasion, buyer behavior, pricing psychology, design models, and growth patterns. Use when the user asks 'why do people buy' or about cognitive bias, anchoring, social proof, scarcity, loss aversion, framing, nudges, or consumer decision-making."
 ---
 
 ## When to use

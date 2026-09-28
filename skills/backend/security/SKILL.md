@@ -1,7 +1,6 @@
 ---
 name: security
-description: Application security , CSP, security headers, input validation, rate limiting, secrets management, authentication hardening, CORS, CSRF, XSS prevention, dependency scanning. Load when securing an app or reviewing security posture.
-user-invocable: true
+description: Application security: CSP, security headers, input validation, rate limiting, secrets management, auth hardening, CORS, CSRF, XSS prevention, dependency scanning. Use when securing an app, adding headers, or reviewing security posture before launch.
 ---
 
 # Security , Hardening Applications

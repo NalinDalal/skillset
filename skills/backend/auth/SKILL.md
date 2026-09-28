@@ -1,7 +1,6 @@
 ---
 name: auth
-description: Authentication patterns , session-based, JWT, OAuth2/OIDC, magic links, MFA, password reset, email verification, RBAC, middleware, token refresh. Load when implementing auth or hardening existing auth.
-user-invocable: true
+description: Authentication patterns: session-based auth, JWT, OAuth2/OIDC, magic links, MFA, password reset, email verification, RBAC, middleware, token refresh. Use when implementing login, signup, sessions, or permissions, or when hardening auth that already exists.
 ---
 
 # Authentication , Sessions, JWT, OAuth, MFA

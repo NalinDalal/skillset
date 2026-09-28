@@ -1,7 +1,6 @@
 ---
 name: nerdev-monorepo
-description: Turborepo + Bun monorepo structure, conventions, CI/CD, and deployment patterns from nerdev-co
-user-invocable: true
+description: "Turborepo and Bun monorepo structure, conventions, CI/CD, and deployment patterns from nerdev-co. Use when setting up a monorepo, adding a workspace package, wiring Turborepo tasks, or debugging monorepo builds and deploys."
 ---
 
 # nerdev-monorepo Skill

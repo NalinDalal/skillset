@@ -2,13 +2,7 @@
 name: about-sop
 category: engineering
 source: custom
-description: "Repeatable SOP for building an About Us page that serves both humans and machine-readable entity sources for LLMs. Covers entity definition, core services, differentiators, user segments, team & origin, how it works, key facts, and FAQ with structured schema markup."
-triggers:
-  - about us page
-  - build an about page
-  - llm entity source
-  - e-e-a-t optimization
-  - structured data for about page
+description: "Build an About Us page that serves human readers and machine-readable entity sources for LLMs. Use when writing an about page, company page, or 'about us' copy that AI answers need to cite. Covers entity definition, core services, differentiators, user segments, team and origin, how it works, key facts, and FAQ with structured data markup. Triggers on 'about us page', 'about page', 'llm entity source', 'e-e-a-t', 'structured data for about page'."
 ---
 # SOP: How to Build a Perfectly Optimized About Us Page
 

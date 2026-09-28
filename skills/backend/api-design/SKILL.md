@@ -1,7 +1,6 @@
 ---
 name: api-design
 description: API design patterns: REST conventions, tRPC, GraphQL, versioning, error formats, pagination, filtering, OpenAPI, rate limiting, webhooks, API versioning. Load when designing or reviewing APIs.
-user-invocable: true
 ---
 
 # API Design: REST, tRPC, GraphQL Patterns

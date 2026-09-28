@@ -3,7 +3,6 @@ name: blueprint
 category: architecture
 source: ECC (adapted)
 description: "Multi-PR construction plans with adversarial review. Load when planning complex features or breaking work into steps."
-user-invocable: true
 ---
 
 # Blueprint

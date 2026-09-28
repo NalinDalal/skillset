@@ -2,7 +2,8 @@
 name: code-review
 category: engineering
 source: ECC (adapted)
-description: "Confidence-weighted code review with false-positive suppression. Load when reviewing code or setting up review processes."
+description: "Confidence-weighted code review with false-positive suppression. Use when reviewing a PR or diff, setting up a review process, or establishing code quality standards."
+---
 
 # Code Review
 

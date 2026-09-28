@@ -1,19 +1,7 @@
 ---
 name: launch
 version: 1.0.0
-description: "Plan a product launch, feature announcement, or release strategy. Covers the ORB framework, SLC gate, five-phase approach, Product Hunt strategy, and post-launch marketing."
-triggers:
-  - launch
-  - Product Hunt
-  - feature release
-  - announcement
-  - go-to-market
-  - beta launch
-  - early access
-  - waitlist
-  - launch checklist
-  - GTM plan
-  - we are about to ship
+description: "Plan a product launch, feature announcement, or release strategy. Covers the ORB framework, SLC gate, five-phase approach, Product Hunt strategy, and post-launch marketing. Use when the user says 'we are about to ship' or asks for a launch checklist, GTM plan, Product Hunt launch, beta, early access, waitlist, or a feature announcement."
 ---
 
 ## When to use

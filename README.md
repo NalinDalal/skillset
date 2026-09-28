@@ -1,6 +1,6 @@
 # skillset
 
-**69 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) — installable into Claude Code, OpenCode, Cursor, Codex, and Gemini. Skills are markdown files your agent reads — no build step, no runtime.
+**93 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) — installable into Claude Code, OpenCode, Cursor, Codex, and Gemini. Skills are markdown files your agent reads — no build step, no runtime.
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@nerdev/skillset">
@@ -45,6 +45,31 @@ opencode
 ```
 
 Skills fire from their description — say what you want in plain words; the closest-matching skill loads automatically.
+
+## Invoking a skill
+
+Every skill is registered in your harness's command catalog, so the name is always a slash command. This is true in OpenCode as well as Claude Code: a skill and a command are the same entry, tagged by source. Type `/` to see the full list.
+
+```bash
+/impeccable            # by name, any harness
+/product-engineering
+/ship
+/pricing
+```
+
+Two other ways in, neither requiring the name:
+
+- **Ask for the behavior.** "should we build this" loads `engineering/product-engineering` on description match alone.
+- **Name it in prose.** "use the product-engineering skill" forces the load when the automatic match picks a neighbour.
+
+The slash name is the frontmatter `name`, not the folder. Two differ:
+
+| Slash name | Folder |
+|---|---|
+| `/full-output-enforcement` | `quality/output-skill` |
+| `/ui-core` | `ui/ui-core` |
+
+`output-skill` is synced from upstream, which ships that name in its own frontmatter, so the mismatch is upstream's and survives every sync.
 
 ## What you can say
 
@@ -138,20 +163,20 @@ Restart or reload your agent:
 
 ## What's included
 
-**69 skills in 10 categories:**
+**93 skills in 10 categories:**
 
-- **ui** (28): components, animations, design systems, typography, motion, forms, tables, modals, toasts, command palettes, virtual lists, drawers
+- **ui** (50): components, animations, design systems, typography, motion, forms, tables, modals, toasts, command palettes, virtual lists, drawers
 - **backend** (5): API design, auth, database, realtime, security
 - **devops** (4): CI/CD, deployment, testing, performance
 - **architecture** (4): planning, onboarding, research, progress guard
-- **engineering** (4): TDD, code review, verification, standards
+- **engineering** (7): TDD, code review, verification, standards, product engineering, about-page SOP, senior engineer prompts
 - **quality** (2): anti-slop, writing quality
-- **business** (8): freelancing, startup, pricing, customer research, copywriting, launch, marketing, video
+- **business** (9): freelancing, startup, pricing, customer research, copywriting, launch, marketing, video, product messaging
 - **nerdev** (3): Turborepo + Bun structure, docs/ADRs, plug-and-play architecture
 - **ai-agent** (2): agent docs, context efficiency
-- **workflow** (7): ship, careful, context save/restore, health, learn
+- **workflow** (7): ship, careful, context save/restore, health, learn, office hours
 
-5 skills sync from upstream repos nightly (pinned in `vendor.json`). The remaining 64 are owned outright. You can overlay any synced skill with your own version via `curations/<skill>/overlay/` — your edits survive every sync.
+5 skills sync from upstream repos nightly (pinned in `vendor.json`). The remaining 88 are owned outright. You can overlay any synced skill with your own version via `curations/<skill>/overlay/` — your edits survive every sync.
 
 ## License
 

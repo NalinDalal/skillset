@@ -1,5 +1,7 @@
+---
 name: git-ci
-description: Git workflow conventions, conventional commits, branching strategy, PR workflow, GitHub Actions CI/CD, release automation, semantic versioning. Load when setting up repo, configuring CI, or automating releases.
+description: "Git workflow conventions, conventional commits, branching strategy, PR workflow, GitHub Actions CI/CD, release automation, semantic versioning. Use when setting up a repo, configuring CI, or automating releases."
+---
 
 # Git & CI
 

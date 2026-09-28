@@ -2,7 +2,8 @@
 name: tdd-workflow
 category: engineering
 source: ECC (adapted)
-description: "Test-driven development with RED/GREEN/REFACTOR cycle, evidence capture, and mutation testing. Load when writing tests or implementing features test-first."
+description: "Test-driven development with the RED/GREEN/REFACTOR cycle, evidence capture, and mutation testing. Use when writing tests, implementing a feature test-first, or fixing a bug with a regression test."
+---
 
 # TDD Workflow
 

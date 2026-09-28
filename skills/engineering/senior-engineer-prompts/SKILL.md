@@ -2,7 +2,8 @@
 name: senior-engineer-prompts
 category: engineering
 source: custom
-description: "5 senior software engineer thinking modes for architecture, debugging, code review, performance, and full-stack building. Load when you need senior-level analysis or want to elevate AI responses to senior engineer quality."
+description: "Five senior software engineer thinking modes for architecture, debugging, code review, performance, and full-stack building. Use when you want senior-level analysis, or to push AI output up to senior engineer quality."
+---
 
 # Senior Engineer Prompts
 

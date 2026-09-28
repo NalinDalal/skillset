@@ -1,7 +1,6 @@
 ---
 name: nerdev-docs
-description: "Development-integrated docs: ADRs, design docs, incident postmortems, deploy runbooks with templates"
-user-invocable: true
+description: "Development-integrated docs with templates: ADRs, design docs, incident postmortems, deploy runbooks. Use when writing or updating an architecture decision record, a design doc, a postmortem, or a runbook."
 ---
 
 # nerdev-docs Skill

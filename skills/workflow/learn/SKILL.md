@@ -1,12 +1,7 @@
 ---
 name: learn
 version: 1.0.0
-description: "Manage project learnings. Review, search, prune, and export patterns across sessions."
-triggers:
-  - show learnings
-  - what have we learned
-  - manage project learnings
-  - learn
+description: "Manage project learnings: review, search, prune, and export patterns across sessions. Use when the user says 'show learnings', 'what have we learned', or wants to manage project learnings."
 ---
 
 ## When to use

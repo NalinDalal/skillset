@@ -1,13 +1,7 @@
 ---
 name: office-hours
 version: 1.0.0
-description: "YC office hours. Six forcing questions that reframe your product before you write code. Produces a design doc, not code."
-triggers:
-  - brainstorm this
-  - is this worth building
-  - help me think through
-  - office hours
-  - I have an idea
+description: "YC office hours. Six forcing questions that reframe your product before you write code. Produces a design doc, not code. Use when the user says 'I have an idea', 'brainstorm this', 'help me think through', or asks 'is this worth building'."
 ---
 
 ## When to use

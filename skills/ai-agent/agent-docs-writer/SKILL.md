@@ -1,7 +1,6 @@
 ---
 name: agent-docs-writer
 description: 'Use this skill to write, create, improve, or audit README.md and AGENTS.md for a code repository. Make the codebase legible to AI coding agents (Claude Code, Cursor, Codex, OpenCode, etc.) and to humans. Trigger on phrases like "write an AGENTS.md", "make my repo agent-friendly", "onboarding doc for coding agents", "README for this project", "contributor guide", "docs so an AI agent does not break things", or any request to document a codebase''s context, conventions, glossary, or guardrails. Also use it to review or critique an existing README or AGENTS.md against this skill''s checklist. Check that docs distinguish [planned] vs [shipped] reality and mark plan-drift with dated NOTE markers. Always use this instead of writing a generic README or AGENTS.md from scratch.'
-user-invocable: true
 ---
 
 # Agent Docs Writer

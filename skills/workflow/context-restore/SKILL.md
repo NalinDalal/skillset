@@ -1,13 +1,7 @@
 ---
 name: context-restore
 version: 1.0.0
-description: "Restore working context saved earlier by /context-save."
-triggers:
-  - resume where i left off
-  - restore context
-  - where was i
-  - pick up where i left off
-  - context restore
+description: "Restore working context saved earlier by /context-save. Use when the user says 'resume where I left off', 'restore context', 'where was I', or 'pick up where I left off'."
 ---
 
 ## When to use

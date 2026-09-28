@@ -2,7 +2,8 @@
 name: verification-loop
 category: engineering
 source: ECC (adapted)
-description: "6-phase verification system: Build, Type Check, Lint, Test, Security, Review. Load before PRs or after major changes."
+description: "Six-phase verification system: Build, Type Check, Lint, Test, Security, Review. Use before opening a PR, after a major change, before a release, or when setting up a CI pipeline."
+---
 
 # Verification Loop
 

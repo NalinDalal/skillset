@@ -1,22 +1,7 @@
 ---
 name: customer-research
 version: 1.0.0
-description: "Conduct, analyze, or synthesize customer research. Covers transcript analysis, online signal mining, interviews, surveys, persona generation, and JTBD frameworks."
-triggers:
-  - customer research
-  - ICP research
-  - talk to customers
-  - analyze transcripts
-  - customer interviews
-  - survey analysis
-  - voice of customer
-  - VOC
-  - build personas
-  - jobs to be done
-  - JTBD
-  - review mining
-  - Reddit mining
-  - PMF survey
+description: "Conduct, analyze, or synthesize customer research. Covers transcript analysis, online signal mining, interviews, surveys, persona generation, and JTBD frameworks. Use when the user says 'customer research', 'talk to customers', 'analyze transcripts', 'build personas', 'voice of customer', or 'jobs to be done', or asks about ICP research, VOC, review mining, Reddit mining, or a PMF survey."
 ---
 
 ## When to use

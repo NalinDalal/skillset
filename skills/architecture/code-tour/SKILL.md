@@ -3,7 +3,6 @@ name: code-tour
 category: architecture
 source: ECC (adapted)
 description: "Guided codebase walkthroughs for onboarding. Load when onboarding new team members or documenting architecture."
-user-invocable: true
 ---
 
 # Code Tour
