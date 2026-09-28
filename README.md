@@ -1,6 +1,6 @@
 # skillset
 
-**93 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow) — installable into Claude Code, OpenCode, Cursor, Codex, and Gemini. Skills are markdown files your agent reads — no build step, no runtime.
+**93 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow)
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@nerdev/skillset">
