@@ -1,6 +1,6 @@
 {
   "name": "@nerdev/skillset",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A curated, auto-synced collection of agent skills (design, animation, dev workflow) with a CLI to install them into any harness: Claude Code, OpenCode, Cursor, Codex, Gemini.",
   "type": "module",
   "bin": {
@@ -11,7 +11,8 @@
     "scripts",
     "skills",
     "curations",
-    "vendor.json"
+    "vendor.json",
+    "!skills/business/brag/assets/music/*.mp3"
   ],
   "scripts": {
     "sync": "node scripts/sync.mjs",
