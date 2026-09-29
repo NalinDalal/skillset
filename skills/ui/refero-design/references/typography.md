@@ -2,6 +2,30 @@
 
 Typography is 90% of web design. Get it right and everything else falls into place. Get it wrong and no amount of polish will save you.
 
+## Units: px, rem, and the em trap
+
+Font size is meaningless without the unit. Three choices, and the difference matters more than it looks.
+
+**`px` is fixed.** A 30px heading stays 30px no matter what the user's browser default is. That is useful for pixel-precise hero work and bad as the foundation of a type system, because it ignores the user's accessibility preference entirely.
+
+**`rem` is relative to the root.** It scales with the user's root font size, so it respects browser zoom and font preferences. This is the default choice for a type system.
+
+```css
+/* With a 16px root: 1rem = 16px, 1.5rem = 24px, 2rem = 32px */
+:root { --text-base: 1rem; }
+```
+
+The whole point of `rem` is that changing one root value propagates through the interface. If your type scale is written in `rem`, it is one edit. If it is written in `px`, it is a find-and-replace.
+
+**`em` is relative to the parent**, and it compounds. A `div` at `2em` inside a `1rem` root is 2rem. A `p` at `2em` inside that div is 4rem. Nest two more levels and you have a 32rem paragraph nobody asked for.
+
+```css
+div { font-size: 2em; }  /* 2rem */
+p  { font-size: 2em; }  /* 4rem, not 2rem */
+```
+
+So the rule is: **`rem` for type scale steps and anything that must not compound, `em` for the rare local adjustment** (an icon that should scale with its label, a nested quote). Never use `em` for a step in the type scale. A compounding scale is the same class of bug as animating a `width` that a sibling depends on.
+
 ---
 
 ## 0. Context First
@@ -19,6 +43,38 @@ Before choosing fonts, answer these questions:
 > When in doubt ,  go denser, simpler, and more neutral. Clarity beats decoration in most product interfaces.
 
 This mindset helps avoid over-designed typography in functional contexts. For branding, editorial, or creative products ,  different rules apply.
+
+### Vetting a candidate before you commit
+
+Picking a face you have not tested is the most common way a type system fails late. Check these in order, and reject early:
+
+- **Available weights.** A 400/500/600/700 family can build a full scale. A family that ships only 400 and 700 forces every intermediate step into faux-bold, which is the single biggest quality ceiling on a type system. Read the specimen page; do not assume from the marketing copy.
+- **Real content, not placeholder.** Set the longest string the product will actually show: a nav label, a number with commas, a name from the client's data. A face that looks good on "Lorem ipsum" breaks on "Notifications settings".
+- **X-height against the body size.** Two faces at the same `font-size` can look different sizes because their x-heights differ. Check the candidate against the face it will sit next to, at the real sizes.
+- **Numerals.** Tabular (`font-variant-numeric: tabular-nums`) for anything in a column, and check that the default figures do not look cramped in currency and percentages.
+- **Punctuation and quotes.** Curly vs straight, and how the face handles an apostrophe in "don't" at 16px.
+- **Language support.** If the product ships in more than one language, confirm the family covers the full character set. A missing glyph falls back to a different family mid-word.
+- **Screen over print.** If it is a screen-only choice, favor faces that hold up at 13-14px rather than ones that only shine at poster size.
+
+### Where to find candidates
+
+Free, license-clean sources, in rough order of how often the answer is good:
+
+- [Fontshare](https://www.fontshare.com) - ITF's free families, all true variable fonts.
+- [Google Fonts](https://fonts.google.com) - the widest catalog, growing variable support.
+- [Fontjoy](https://fontjoy.com) - generates a matched pair from any two families. Useful for exploring a direction you did not expect.
+- [Uncut](https://uncut.wtf) - sharp sans options with unusual details.
+- [Free Faces Gallery](https://freefaces.gallery) - dense catalog, good for browsing a specific character.
+
+Default to these unless the project has a budget for a foundry license.
+
+---
+
+## 0.5 Choosing before scaling
+
+Pick the typeface first, then derive the scale from it. A scale built around a face that later gets replaced is work thrown away, and worse, a scale tuned to one face's proportions looks wrong on the replacement.
+
+Once the face is chosen, the scale follows from the base size and a ratio (section 2). Once the scale is set, the remaining sections are about the space around and between those sizes.
 
 ---
 

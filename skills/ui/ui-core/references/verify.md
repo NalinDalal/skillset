@@ -22,7 +22,16 @@ source with file:line. Assertions are not evidence.
 8. First-run guidance exists and self-disappears. [capture]
 9. prefers-reduced-motion respected. [code]
 10. The 10-minute journey runs clean at every step. [per-step result]
-11. Lint and build pass. [command output]
+11. No decision point offers more than about four meaningful choices,
+    and no primary action competes with an equally weighted secondary
+    one. [code, dom]
+12. Familiar patterns kept: standard placement for nav, search, cart,
+    and back. Any deviation is deliberate and noted. [code]
+13. Buttons: no fixed height or width, no clipped or wrapped labels at
+    200% browser font size, every icon-only button has an accessible
+    name, `:focus-visible` ring present on all five states, and disabled
+    used only for genuinely unavailable actions. [code, dom]
+14. Lint and build pass. [command output]
 
 Per class also verify: nav collapse, hero reflow, multi-column
 fallbacks, touch targets at 44px minimum, nothing scrolls horizontally,

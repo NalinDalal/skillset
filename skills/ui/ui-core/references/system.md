@@ -32,6 +32,8 @@ addition needs a reason tied to the product.
 - Serif only when the brand asks or the brief is editorial.
 - Modular scale: major third (1.25), perfect fourth (1.333), or golden
   ratio (1.618). See Type scale in build.md.
+- Scale steps in rem, not em. em compounds through nesting and a scale built
+  from it multiplies. px is for precise hero sizes only.
 
 ## Scale
 
@@ -48,6 +50,12 @@ addition needs a reason tied to the product.
 ## Spacing
 
 - Macro whitespace first: py-24 to py-40 for sections.
+- Two sizes of space, and the gap between them does the grouping.
+  Macro space separates sections, micro space lives inside a
+  component. Related things get micro space, unrelated things get
+  macro space. Proximity is a grouping tool that costs nothing, so
+  reach for it before adding a border or a card. See
+  references/ux-laws.md.
 - Section gaps: clamp(3rem, 8vw, 6rem).
 - Content max width 1400px or max-w-7xl.
 - Component padding: p-6 to p-8 for cards, p-4 for compact controls.
@@ -75,6 +83,8 @@ addition needs a reason tied to the product.
 
 - Buttons: flat or barely rounded, solid contrast, no glow, no gradient.
   Pressed state: scale 0.98. One CTA per intent, no duplicated labels.
+  Padding-block sizing, never a fixed height, so the label survives
+  enlarged text. Details in references/buttons.md.
 - Cards: only when elevation is hierarchy. No cards in cards. High
   density: border-top instead.
 - Inputs: label above, error below, accent focus ring. No
@@ -117,7 +127,10 @@ addition needs a reason tied to the product.
 - Container queries: use when component width depends on parent, not
   viewport.
 - Touch targets: 44x44px minimum on touch devices. 8px minimum gap
-  between targets.
+  between targets. This is Fitts's law: time to reach a target scales
+  with its distance and shrinks with its size, so a small target in a
+  corner costs real effort and shows up as mis-taps. Hit area counts
+  padding, not just the visible box. See references/ux-laws.md.
 - Density shifts: mobile gets larger targets and less dense content.
   Desktop gets more columns and tighter spacing.
 - Horizontal scroll banned: no element overflows container on any
@@ -173,18 +186,21 @@ addition needs a reason tied to the product.
 
 ## DESIGN.md (when a design system doc is asked for)
 
-Ten mandatory sections:
+Eleven mandatory sections:
 
 1. Visual theme and atmosphere: density, variance, motion bands.
-2. Color palette and roles: descriptive name, hex, functional role,
+2. Brand: primary/secondary/accent roles, brand typeface, one icon
+   family, imagery treatment, voice register, logo rules. If no brand
+   exists yet, the direction chosen and why. See references/brand.md.
+3. Color palette and roles: descriptive name, hex, functional role,
    light/dark variants, semantic colors.
-3. Typography: families, scale, usage rules, responsive behavior.
-4. Component stylings: each component with its states, variants,
+4. Typography: families, scale, usage rules, responsive behavior.
+5. Component stylings: each component with its states, variants,
    composition patterns.
-5. Layout principles: grid, containers, responsive behavior, breakpoints.
-6. Motion and interaction: curves, durations, state machine, what
+6. Layout principles: grid, containers, responsive behavior, breakpoints.
+7. Motion and interaction: curves, durations, state machine, what
    animates.
-7. Accessibility: contrast, focus, ARIA, keyboard, screen reader.
-8. Dark mode: CSS variable architecture, color adjustments, testing.
-9. Iconography: family, stroke weight, sizing, variants, usage rules.
-10. Anti-patterns: the banned list for this project.
+8. Accessibility: contrast, focus, ARIA, keyboard, screen reader.
+9. Dark mode: CSS variable architecture, color adjustments, testing.
+10. Iconography: family, stroke weight, sizing, variants, usage rules.
+11. Anti-patterns: the banned list for this project.

@@ -10,7 +10,7 @@ Read this before changing skillset. It targets coding agents, but applies to hum
 - **Synced skill**: pulled nightly from an upstream repo, pinned in `vendor.json`. Currently: `ui/impeccable`, `quality/output-skill`, `ui/ask-sonner`, `ui/pick-ui-library`, `ui/prototype`, `quality/unslop`.
 - **Overlay**: your owned version of a synced skill, at `curations/<skill>/overlay/`. It is copied over the vendored file after every sync, so your version always wins.
 - **Vendoring**: the nightly sync that clones upstream, checks the pinned commit, re-copies changed skill folders, bumps `vendor.json`, and opens a PR titled `chore: sync skills from upstreams`.
-- **STE**: sloppy-text lint, `scripts/ste-gate.mjs` + `ste-lint.py`. Owned `.md` files must stay under 5.0 violations per 100 words. Em dashes are the most common violation.
+- **STE**: sloppy-text lint, `scripts/ste-gate.mjs` + `ste-lint.mjs`. Owned `.md` files must stay under 5.0 violations per 100 words. Em dashes are the most common violation.
 
 ## What makes skillset special
 

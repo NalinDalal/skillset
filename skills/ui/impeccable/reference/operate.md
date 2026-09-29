@@ -12,8 +12,8 @@ Product UI's failure mode isn't flatness, it's strangeness without purpose: over
 
 - **One family is often right.** Product UIs don't need display/body pairing. A well-tuned sans carries headings, buttons, labels, body, data.
 - **Fixed rem scale, not fluid.** Clamp-sized headings don't serve product UI. Users view at consistent DPI, and a fluid h1 that shrinks in a sidebar looks worse, not better.
-- **Tighter scale ratio.** 1.125–1.2 between steps is typical. More type elements here than on brand surfaces; exaggerated contrast creates noise.
-- **Line length still applies for prose** (65–75ch). Data and compact UI can run denser; tables at 120ch+ are fine.
+- **Tighter scale ratio.** 1.125-1.2 between steps is typical. More type elements here than on brand surfaces; exaggerated contrast creates noise.
+- **Line length still applies for prose** (65-75ch). Data and compact UI can run denser; tables at 120ch+ are fine.
 
 ## Color
 
@@ -38,7 +38,7 @@ Every interactive component has: default, hover, focus, active, disabled, loadin
 
 ## Motion
 
-- 150–250 ms on most transitions. Users are in flow; don't make them wait for choreography.
+- 150-250 ms on most transitions. Users are in flow; don't make them wait for choreography.
 - Motion conveys state, not decoration. State change, feedback, loading, reveal: nothing else.
 - No orchestrated page-load sequences. Product loads into a task; users don't want to watch it load.
 

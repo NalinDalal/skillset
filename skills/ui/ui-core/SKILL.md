@@ -201,7 +201,15 @@ initial implementation.
   it is wrong.
 - One clear action per screen. Color in small doses. Whitespace does the
   separating, not borders and shadows.
+- An existing brand is a hard constraint: its typeface, its primary
+  color, and its logo survive a redesign untouched. Swapping any of
+  them is a rebrand, so say so instead of shipping it as a cleanup.
+  Details in references/brand.md.
 - Clean typography: one family, a tight scale, real hierarchy.
+- Type vocabulary used correctly. A typeface is the family; a font is one
+  weight and size inside it. Tracking is uniform letter spacing, kerning is
+  spacing between a specific pair, leading is baseline-to-baseline distance.
+  Tight line-height clips descenders; all-caps needs positive tracking.
 - Tailwind strictly: component-based, tokens first. Raw CSS only when
   Tailwind cannot do it, with a reason.
 - Feedback matches the action: a visual state for manipulation, a quiet
@@ -263,18 +271,28 @@ Tokens first, components second. Details in references/system.md.
 - Type: display scale with tight tracking, body under 65ch. Tabular
   figures for data. Modular scale, weight ladder, tracking/leading
   rules. See Type scale system in build.md.
+- Type scale steps in `rem`, never `em`. `em` compounds through nesting, so a
+  2em paragraph inside a 2em container is 4x what you meant. `px` is for
+  precise hero work only, never a scale step. Details in
+  refero-design/references/typography.md.
 - Buttons: flat or barely rounded, solid contrast, no glow. Pressed
-  state is tactile: scale 0.98.
+  state is tactile: scale 0.98. One CTA per intent. Size with
+  `padding-block`, never a fixed height, so the label survives enlarged
+  text. Label the action, not the answer. Icon-only needs an accessible
+  name. Details in references/buttons.md.
 - Cards only when elevation earns them. Never cards in cards.
 - Icon system: stroke weight, sizing, filled vs outline, duo-tone,
   triple-tone. See Icon system in build.md.
-- When a design system doc is asked for, emit DESIGN.md with the ten
+- When a design system doc is asked for, emit DESIGN.md with the eleven
   mandatory sections from references/system.md.
 - Dark mode is designed, not inverted: CSS variable architecture, one
   token set per surface, saturation and shadow adjusted per theme.
   Details in references/dark-mode.md.
 - Every layout decision is made at the breakpoint tiers, not just
-  checked there after the fact. Details in references/responsive.md.
+  checked there after the decision. Details in references/responsive.md.
+- When a layout or flow call is contested, name the law behind it
+  (hierarchy, consistency, proximity, Fitts, Hick, Jakob) and state the
+  reason in one line. Details in references/ux-laws.md.
 
 ## Phase 3: Build the screen
 
@@ -292,6 +310,10 @@ The anti-slop discipline. Details in references/build.md.
   management, ARIA, and keyboard paths per references/accessibility.md.
 - Copy follows references/copy.md: imperative CTAs, sentence case,
   error messages that say what happened and what to do.
+- Respect the four established laws while building: hit area follows
+  Fitts, choice count follows Hick, familiar placement follows Jakob,
+  and grouping follows proximity. Break one only on purpose, and say
+  which and why. Details in references/ux-laws.md.
 - Motion follows the motion skill: restraint first, every animation
   answers "what happened".
 - Verify at 7 viewports where hierarchy restructures, not shrinks.
