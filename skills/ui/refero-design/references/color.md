@@ -16,7 +16,7 @@ Before touching palettes, answer these questions:
 
 **Hard rule:**
 
-> When in doubt — fewer colors, more neutrals, stricter purpose. Restraint beats "colorful."
+> When in doubt: fewer colors, more neutrals, stricter purpose. Restraint beats "colorful."
 
 This single rule eliminates 50% of AI-slop before you start.
 
@@ -77,7 +77,7 @@ Neutrals are 70–90% of your UI. This is where you win or lose.
 
 **Hard rules:**
 - Never use pure `#000` on white as body text
-- Don't make text gray "for breathing room" — spacing creates breathing room, not faded text
+- Don't make text gray "for breathing room" because spacing creates breathing room, not faded text
 
 ### 2.2 Primary Accent
 
@@ -98,10 +98,10 @@ One brand color. It should:
 ### 2.3 Semantic Colors
 
 Usually 3-4:
-- **Success** — Green (confirmations, completion)
-- **Warning** — Amber/Yellow (attention needed)
-- **Danger** — Red (errors, destructive actions)
-- **Info** — Blue (neutral information) — optional
+- **Success**: Green (confirmations, completion)
+- **Warning**: Amber/Yellow (attention needed)
+- **Danger**: Red (errors, destructive actions)
+- **Info**: Blue (neutral information), optional
 
 **Important:** Semantics work through pairs, not single colors.
 
@@ -123,6 +123,59 @@ Usually 3-4:
 
 ---
 
+## 2.5 How screens and print make color
+
+Two models, and knowing which one you are in prevents a whole class of mistakes.
+
+**Additive mixing (RGB)** starts at black and adds red, green, and blue light until it reaches white. Every pixel on a screen emits light, so this is how displays work: TVs, monitors, phones. A pixel at full red is a pixel dumping maximum red light.
+
+**Subtractive mixing (CMYK)** starts at white and subtracts light. Ink or pigment absorbs wavelengths and reflects the rest, which is how print works: magazines, packaging, anything on paper. Blue at 100% in CMYK absorbs almost all the light rather than emitting it.
+
+The practical consequence: RGB and CMYK share no common color, so a brand color handed over from a print asset will not match on screen without conversion, and a saturated CMYK blue is often unreproducible in RGB. When a client gives a print-derived brand color, convert it and check it against the real palette rather than pasting CMYK build values into a token. If the brand is print-first, ask for the Pantone or CMYK reference and derive the screen value from it.
+
+Screen work is RGB (or OKLCH, which section 1 covers). Reach for CMYK only when the deliverable is a physical artifact, and never store CMYK values in a design token.
+
+## 2.6 Wheel terminology
+
+The color wheel describes relationships between hues. Note that two wheels are in common use, and they disagree.
+
+- **Primary colors** cannot be made by mixing other colors. In the RYB (art) wheel: red, yellow, blue. In the RGB (screen) wheel: red, green, blue.
+- **Secondary colors** come from mixing two primaries. RYB gives purple, orange, green. RGB gives cyan, magenta, yellow.
+- **Tertiary colors** come from a primary plus its neighboring secondary: red-orange, yellow-orange, yellow-green, blue-green, blue-violet, red-violet.
+
+The RYB wheel is what most people picture and what most art references use. The RGB wheel is what a screen actually renders. Use RYB when talking to a designer or reading art theory, RGB when picking hex values, and never mix the two vocabularies in one sentence, since "secondary yellow" means a different color in each.
+
+One trap: in a design system, a *primary color* also means a token role, not a wheel position. `--color-primary` is a role. See section 2.2.
+
+## 2.7 Deriving steps from one hue
+
+A hue is a position on the wheel. Everything else is a modification of it, and this is how the 50-950 scales in section 2.1 and 2.2 get built.
+
+- **Shade**: the hue mixed toward black. Darkens and usually cools it.
+- **Tint**: the hue mixed toward white. Lightens and usually warms it.
+- **Tone**: the hue mixed toward gray. Holds roughly the same value while dropping intensity, so it reads as muted rather than faded.
+
+In OKLCH this is just moving `l` and `c` independently: a scale is a path through lightness, and tints and shades are its two ends. Mixing in black or white in RGB does not do this cleanly, which is one more reason section 1 says to generate scales in OKLCH and store the result as hex.
+
+## 2.8 Color Theory (why a palette feels right)
+
+Vocabulary for making the call in section 2, not a substitute for section 7.
+
+**Hue** is the color family: red, blue, green. **Saturation** is intensity. **Value** is relative lightness or darkness, and it is pulled by all three, so a saturated red and a desaturated red at the same hue do not read as equally bright. In OKLCH these are `h`, `c`, and `l`.
+
+**Color temperature** is whether a hue reads warm or cool:
+
+- **Warm** (red, orange, yellow, and warm-leaning browns and pinks): energy, urgency, excitement, action, closeness.
+- **Cool** (blue, green, purple, and cool-leaning greys): calm, trust, precision, professionalism, distance.
+
+Temperature is a palette-level decision, not a per-component one. A warm neutral ground with a cool primary is a legitimate and common combination; a UI whose neutrals, accent, and semantics each pull a different direction reads as accidental. Pick the ground temperature first, then bring every other color to it.
+
+**Color harmony** means combining colors so the result is balanced rather than merely different. In practice that is one of four schemes: monochromatic (one hue, many values and saturations), analogous (neighbors on the wheel, 30 degrees apart), complementary (opposites), or triadic (three evenly spaced). Monochromatic plus one complementary accent is the most reliable structure for product UI, which is why the neutrals-plus-accent pattern in section 2.1 and 2.2 works.
+
+## 2.9 Color Psychology (a starting point, not a law)
+
+Distribution that works for any interface:
+
 ## 3. The 60/30/10 Rule
 
 Distribution that works for any interface:
@@ -132,6 +185,18 @@ Distribution that works for any interface:
 | 60-80% | Neutrals (backgrounds, surfaces, borders) |
 | 10-20% | Text hierarchy (different gray levels) |
 | 5-10% | Accents and semantics |
+
+### What Goes Wrong With Too Many Colors
+
+The classic 60/30/10 allocation assumes restraint. Adding a color is never free, and the costs compound:
+
+- **Clutter.** Past a few hues, the interface stops reading as organized and starts reading as busy. Attention goes to the colors themselves.
+- **No hierarchy.** Color is one of the strongest hierarchy signals available. When everything is colored, nothing outranks anything else, and the user cannot tell where to look first.
+- **Brand dilution.** If every surface is a different color, the user forms no association between the palette and the product. Nothing reads as the brand color, so nothing reads as branded.
+- **Cognitive load.** People process a limited amount of visual information at once. A crowded palette slows comprehension of the actual task, not just the decoration.
+- **A diluted accent.** This is the most common failure and the easiest to miss, because each individual use looks reasonable. The accent on a button, then a link, then an icon, then a heading, then a border, then a badge. Every one was a good idea; together they mean the accent marks nothing, so the primary CTA stops standing out.
+
+The fix is subtraction, not addition. Cut back to neutrals plus one accent plus the semantic set, then re-check that the primary action is still the most colored thing on screen. If the CTA does not win, the palette is too busy regardless of how good each color is on its own.
 
 ### Component Color Limit
 
@@ -168,7 +233,7 @@ Hover and Active should be:
 
 ## 4. Contrast and Readability
 
-Not about checking boxes — about actual readability.
+Not about checking boxes, but about actual readability.
 
 ### Minimum Requirements
 
@@ -180,9 +245,9 @@ Not about checking boxes — about actual readability.
 
 ### Common Failures
 
-1. **Secondary text too pale** — The #1 issue. If it looks fine on your Retina display at noon, it fails on cheap monitors at 9pm.
+1. **Secondary text too pale**, the number one issue. If it looks fine on your Retina display at noon, it fails on cheap monitors at 9pm.
 
-2. **Text on tinted backgrounds** — "Almost readable" text on colored backgrounds fails in real conditions (tired eyes, ambient light, older monitors).
+2. **Text on tinted backgrounds**: "Almost readable" text on colored backgrounds fails in real conditions (tired eyes, ambient light, older monitors).
 
 ### Practical Check
 
@@ -213,7 +278,7 @@ Result: eye-burning contrast, amateur look.
   --text-muted: #5f6368;
 }
 
-/* Dark — NOT just inverted */
+/* Dark: NOT just inverted */
 [data-theme="dark"] {
   --bg: #0f0f0f;          /* Not #000 */
   --surface: #1a1a1a;
@@ -241,7 +306,7 @@ In dark UI, surfaces and layers communicate through:
 Browser-level settings that most developers miss:
 
 ```html
-<!-- In <head> — tells browser UI elements to use dark mode -->
+<!-- In <head>: tells browser UI elements to use dark mode -->
 <meta name="color-scheme" content="light dark">
 
 <!-- Theme color for browser chrome, PWA, mobile address bar -->
@@ -250,7 +315,7 @@ Browser-level settings that most developers miss:
 ```
 
 ```css
-/* On <html> — fixes scrollbars, form controls, system dialogs */
+/* On <html>: fixes scrollbars, form controls, system dialogs */
 :root {
   color-scheme: light;
 }
@@ -337,7 +402,7 @@ When there's no brand yet:
 
 ### Step 1: Choose Neutral Character
 
-Decide warm or cool. This affects the entire feel.
+Decide warm or cool (see section 2.8). This affects the entire feel.
 
 ```css
 /* Cool (tech, precision) */
@@ -349,11 +414,14 @@ Decide warm or cool. This affects the entire feel.
 
 ### Step 2: Choose One Primary
 
+**Start from the register, not from a swatch.** Which emotion is this product supposed to land? Security and trust point to blue or navy, momentum and growth to green, precision and calm to a cool near-neutral with a restrained accent, warmth and craft to orange or a warm brown. Section 2.9 has the association table. Pick the hue from that, then narrow to a specific family.
+
 Requirements:
 - Works on white background
 - Works on dark background
 - Works in buttons, links, badges
 - "Strong" but not fluorescent
+- Sits at a deliberate distance from the neutral temperature. A cool accent on warm neutrals is a valid choice; an accidental clash is not.
 
 **Test:** Put your primary in a button, a text link, a badge. All three should feel right.
 
@@ -385,11 +453,11 @@ Gradients are allowed when:
 
 ### Rules
 
-1. **Gradient is never the only way to make something visible** — If removing the gradient makes the element invisible, redesign.
+1. **Gradient is never the only way to make something visible**: if removing the gradient makes the element invisible, redesign.
 
-2. **Subtle > dramatic** — Direction and angle matter more than color variety.
+2. **Subtle > dramatic**: direction and angle matter more than color variety.
 
-3. **Text on gradients** — Ensure contrast works across the entire gradient, not just the start.
+3. **Text on gradients**: ensure contrast works across the entire gradient, not just the start.
 
 ```css
 /* Acceptable */
@@ -422,24 +490,24 @@ Every LLM, every AI code generator, every design tool defaults to indigo/violet 
 3. Is there a semantic reason (not just "looks modern")?
 4. Would a senior designer question this choice?
 
-**If you can't answer YES to at least one of these—choose a different color.**
+**If you can't answer YES to at least one of these, choose a different color.**
 
 Safe alternatives when you need an accent:
-- Blue (`#2563eb`) — trust, stability, professional
-- Teal (`#0d9488`) — fresh, modern, distinctive
-- Green (`#16a34a`) — growth, success, natural
-- Orange (`#ea580c`) — energy, action, warmth
+- Blue (`#2563eb`): trust, stability, professional
+- Teal (`#0d9488`): fresh, modern, distinctive
+- Green (`#16a34a`): growth, success, natural
+- Orange (`#ea580c`): energy, action, warmth
 - Brand-specific color from research
 
 **The rule:** Indigo is BANNED unless explicitly justified by brand requirements.
 
 ### Other Red Flags
 
-- **Multiple competing accents** — One primary. Others should be clearly secondary or semantic
-- **Random hex in components** — Should use tokens
-- **Pure black on white** — Use near-black (#0b0b0b)
-- **Every state is a new color** — Hover/active should be predictable shifts
-- **Dark theme = inverted** — Needs separate neutrals
+- **Multiple competing accents**: one primary. Others should be clearly secondary or semantic
+- **Random hex in components**: use tokens
+- **Pure black on white**: use near-black (#0b0b0b)
+- **Every state is a new color**: hover/active should be predictable shifts
+- **Dark theme = inverted**: needs separate neutrals
 
 ### Quick Test
 
@@ -456,12 +524,14 @@ Safe alternatives when you need an accent:
 
 - [ ] **One primary accent**, not 3 "hero colors"
 - [ ] **Neutrals are 70-90%** of the interface
+- [ ] **Accent still means something**: the primary CTA is the most colored thing on screen
+- [ ] **Ground temperature is deliberate** and neutrals plus primary agree on warm or cool
 - [ ] **Text readable everywhere**, secondary text not pale
 - [ ] **Hover/Active states predictable** and calm
 - [ ] **Tokens named by purpose** (bg, text, border, primary)
 - [ ] **Dark theme is separate**, not inverted
 - [ ] **Semantics don't clash** with primary
-- [ ] **No random hex** in components — all from tokens
+- [ ] **No random hex** in components: all from tokens
 - [ ] **Contrast passes** WCAG AA (4.5:1 body, 3:1 large)
 - [ ] **Gradients are rare** and localized
 - [ ] **`color-scheme`** set on `<html>` for dark mode (fixes scrollbars, inputs)

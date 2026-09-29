@@ -10,7 +10,7 @@ Would a fluent Android user trust this app, or trip on off-spec components? The 
 
 ## Layout & structure
 
-- **Material navigation, matched to size.** Navigation bar (bottom, 3–5 destinations) on compact width; navigation rail or drawer on expanded width. Never ship a phone bottom-bar untouched on a tablet.
+- **Material navigation, matched to size.** Navigation bar (bottom, 3-5 destinations) on compact width; navigation rail or drawer on expanded width. Never ship a phone bottom-bar untouched on a tablet.
 - **System Back always works.** Honor the predictive Back gesture and Back button; never trap the user or hijack the gesture.
 - **Edge-to-edge with window insets.** Apply the status bar, navigation bar, display cutout, and IME insets so content never hides behind system bars or the keyboard.
 - **Top app bar for screen context**; pair with a FAB when the screen has a single primary action.

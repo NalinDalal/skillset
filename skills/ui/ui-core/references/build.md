@@ -182,8 +182,9 @@ Rules:
   labels. Never placeholder-as-label.
 - Label association: use htmlFor matching input id. Screen readers
   announce the label with the input.
-- Input sizing: height 40-44px on desktop, 44-48px on mobile. Full
-  width on mobile, constrained on desktop.
+- Input sizing: min-height 40-44px on desktop, 44-48px on mobile, or
+  padding-block. Not a fixed height: text clips when a user enlarges
+  their font. Full width on mobile, constrained on desktop.
 - Validation timing: validate on blur for single fields, on submit for
   the whole form. No inline validation while typing unless the field
   has a clear format constraint (email, phone).
@@ -634,7 +635,7 @@ Every interactive component must define these states before it ships:
 |-------|--------|--------|---------|
 | Default | Resting state, no highlight | None | Button at rest |
 | Hover | Subtle background or border shift | 150ms ease-out | Button lightens |
-| Focus | Focus ring, no outline | Instant | Ring appears |
+| Focus | Focus ring, no default outline | Instant | Ring appears |
 | Active/Pressed | Scale 0.97 to 0.98, darker fill | 100ms spring | Button depresses |
 | Disabled | Grayed, no interaction | None | Button unclickable |
 | Loading | Spinner or skeleton inside | None or subtle pulse | Button shows spinner |

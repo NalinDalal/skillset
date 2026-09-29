@@ -30,6 +30,32 @@ If any of these are true, the job isn't done:
   anything in a column) or to how the chosen face handles the actual longest string
   in the UI (a nav label, a stat with a comma).
 
+## 0. Vocabulary (use these words precisely)
+
+Most type arguments go nowhere because both sides mean different things by "kerning" or "font". Get the terms straight first.
+
+**Typeface** is the family. **Font** is one member of it: a specific weight, style, and size. Poppins is a typeface. Poppins Bold 16px is a font. When someone says "use font Inter", they usually mean the typeface.
+
+**Anatomy, because it explains most sizing decisions:**
+
+- **Ascender**: the part of a lowercase letter that rises above the x-height. See b, d, f, h, k, l, t.
+- **Descender**: the part that drops below the baseline. See g, j, p, q, y.
+- **X-height**: the height of the lowercase letters, excluding ascenders and descenders.
+- **Cap line**: the invisible line at the top of capital letters and tall ascenders.
+- **Baseline**: the invisible line that most letters sit on.
+
+**Spacing, which is where the levers actually are:**
+
+- **Tracking** is uniform letter spacing applied across a whole word, line, or block. CSS: `letter-spacing`. Normal, tight, or loose.
+- **Kerning** is spacing adjusted between two specific neighbouring letters, so the pair looks balanced. CSS: `font-kerning`, usually on by default. Track the letters, not the word.
+- **Leading** is baseline-to-baseline vertical spacing between lines. CSS: `line-height`. Too little cramps, too much disconnects; 1.5-1.75x the font size suits body text.
+
+**Practical consequences, which is the reason to know any of this:**
+- Tight `line-height` clips descenders on g, j, p, q, y. See `animaxxing/references/text-stability.md` for the mask fix. Set `line-height` on the text block, not the headline alone.
+- All-caps text needs positive tracking. Caps sit at cap height with no ascender or descender to fill space, so default tracking reads cramped.
+- A face with a small x-height looks smaller than a large-x-height face at the same `font-size`. This is the single most common reason a "correct" pairing looks mismatched. Check them side by side, as rule 4 in step 4 says.
+- Optical alignment: round letters (o, e, c) and punctuation hang slightly past the baseline and cap line. Nudge them by eye.
+
 ## 1. Core rules (Calvez)
 
 Non-negotiable constraints from Pierrick Calvez's "Five-Minute Guide to Better
@@ -41,8 +67,12 @@ Typography." Apply these to every output:
 2. **One typeface, 4+ weights.** Start with a single family that ships at least
    Regular, Medium, Bold, and one more. Multiple families is a later decision, not a
    starting point.
-3. **Skip a weight for contrast.** Headings at 700, body at 400 — not 500. Skipping a
-   weight creates stronger visual hierarchy than adjacent weights.
+3. **Skip a weight for contrast.** Headings at 700, body at 400, not 500. Skipping a
+   weight creates stronger visual hierarchy than adjacent weights. The named scale
+   runs 100 Thin, 200 Extra Light, 300 Light, 400 Regular, 500 Medium, 600 Semi Bold,
+   700 Bold, 800 Extra Bold, 900 Black. Most families ship 400/500/600/700 only, so
+   read what the chosen face actually has before promising a weight. Do not lean on
+   bold or italic for emphasis; piling it on flattens hierarchy.
 4. **45-75 characters per line.** The readability sweet spot. Over 75 and the eye
    loses its place; under 45 and the rhythm breaks. Use `ch` units or
    `max-width: 65ch` as a starting point.
@@ -61,9 +91,10 @@ Typography." Apply these to every output:
 11. **Kerning matters.** Pay attention to spacing between individual character pairs.
     Tight kerning on display type, looser on body. Auto-kerning is a starting point,
     not a finish.
-12. **Use the right dash.** Hyphen (`-`) for compound terms (check-in, money-back). En
-    dash (`–`) for ranges (1926–2017, pages 37–61). Em dash (`—`) to replace commas,
-    parentheses, or colons ("The em dash is underused in typography—such a waste.").
+12. **Use the right dash.** Hyphen for compound terms (check-in, money-back). En
+    dash for ranges (1926-2017, pages 37-61). No em dash: this repo bans them in
+    prose and a full stop does the same job. Copy rules in
+    `ui-core/references/copy.md` outrank this one.
 
 **Calvez wrap-up:** Don't nerd over typefaces, just pick one. Think in blocks. Align
 with your eyes. Hierarchy first. Use contrast. Fine-tune with spacing. And voilà.
@@ -94,6 +125,23 @@ gets made. Skip anything on `ui-theme-picker`'s hard-avoid-list (rounded "friend
 corporate faces like Poppins/Quicksand/Baloo) as a *default* - they're fine when a
 project genuinely calls for approachable-and-soft, just never the reach-for-it-first
 choice.
+
+**The classic six categories, and where each lands here.** Useful for reading a
+brand brief ("we want something scripty") or naming what you picked. The register
+groups below are the live version; these are the labels clients use.
+
+| Category | Read | Examples | Use for | Never for |
+|---|---|---|---|---|
+| Serif | Formal, traditional, trustworthy | Times New Roman, Georgia, Merriweather | Print, news, blogs, premium brand body | UI at small sizes on low-DPI |
+| Sans serif | Clean, modern, simple | Helvetica, Arial, Roboto, Inter | Websites, UI, product, tech | Nothing - this is the safe default |
+| Display | Decorative, grabs attention | Impact, Bebas Neue, Playfair Display | Headlines, posters, banners | Body text, ever |
+| Monospace | Every character the same width | Courier, Consolas, JetBrains Mono | Code, terminals, tabular data, technical | Long-form reading |
+| Script | Cursive or calligraphic | Brush Script, Lobster, Pacifico | Logotype, invitations, short accents | Long passages - hard to read |
+| Handwritten | Imitates informal handwriting | Marker, Bradley Hand, Caveat | Personal branding, creative, decorative | Body text, and any UI control |
+
+The two caution rows are the useful part. Script and handwritten faces look
+distinctive in a palette and fall apart the moment a user has to read a sentence
+or tap a button. Reserve them for a logo lockup or a single pull-quote.
 
 **Neo-grotesque (quiet authority - the safest premium default for dev tools, fintech,
 design-forward SaaS):** Inter, Suisse Int'l, Aktiv Grotesk, ABC Diatype, Neue Montreal,

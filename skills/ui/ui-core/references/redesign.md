@@ -12,6 +12,11 @@
 Preserve: information architecture, slugs, nav labels, copy voice,
 accessibility, analytics.
 
+If the product has an existing brand, the brand typeface, the brand
+primary color, and the unmodified logo are hard constraints too. A pass
+that swaps them is a rebrand, so name it as one rather than shipping it
+as a cleanup. Details in references/brand.md.
+
 ## The feel contract (write first, 3-5 lines)
 
 1. Temperament in one word: calm, playful, precise, rugged.
@@ -39,6 +44,8 @@ product?
 - Components: cards only with elevation, tertiary buttons, no pill
   badges, side-by-side FAQ entries.
 - Icons: non-cliche metaphors, one stroke weight, branded favicon.
+- Brand: brand colors from tokens only, one icon family, imagery sharing
+  one treatment, voice holding across every surface. See brand.md.
 - Code: semantic HTML, z-index scale, no dead code, meta tags.
 
 ## Priority order
