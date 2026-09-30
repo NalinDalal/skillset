@@ -3,13 +3,13 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "40f990fac1ada1be12ab8d4ae6a6abc6c75b7f4e",
+      "commit": "0d6b47ea19b63afe15e3f93a44d5d9fbbc6fd275",
       "source": ".opencode/skills",
       "skills": [
         {
           "name": "impeccable",
           "dest": "ui/impeccable",
-          "sha256": "73c8ce45256544fb1729ac113a61277f2c5c3dc15016f9b33f1e983c5de210b8"
+          "sha256": "92c0866965445b7df0492cecd06d13bfa0aab827d8466c9ab7753aed627c16d1"
         }
       ]
     },
@@ -52,7 +52,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "adf3218ca2f5b9971eedc07a76bef22df7701539",
+      "commit": "fae2c6ed95821bd85f614a73e4842e13229fa5e5",
       "source": "pstack/skills",
       "skills": [
         {
