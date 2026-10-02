@@ -6,26 +6,26 @@ Read the project directory to understand what you're bragging about.
 
 Read these in priority order:
 
-1. **`index.html`** ,  the primary source. Read the full file. Extract: page title, hero headline, tagline, all section headings, CTA text, testimonial copy, nav items. This is the voice and story of the app.
+1. **`index.html`** — the primary source. Read the full file. Extract: page title, hero headline, tagline, all section headings, CTA text, testimonial copy, nav items. This is the voice and story of the app.
 
-2. **`styles.css`** or equivalent ,  extract: primary color palette (look for CSS custom properties / `:root` vars), font families, background colors, accent colors. These become the visual identity of the brag video.
+2. **`styles.css`** or equivalent — extract: primary color palette (look for CSS custom properties / `:root` vars), font families, background colors, accent colors. These become the visual identity of the brag video.
 
-3. **`README.md`** ,  if present, extract: project name, one-line description, any listed features.
+3. **`README.md`** — if present, extract: project name, one-line description, any listed features.
 
-4. **`package.json`** ,  if present, extract: `name`, `description`.
+4. **`package.json`** — if present, extract: `name`, `description`.
 
-5. **Subdirectory files** ,  if this is a multi-page app, scan route files, component files, or page files. Extract key feature names and screen descriptions.
+5. **Subdirectory files** — if this is a multi-page app, scan route files, component files, or page files. Extract key feature names and screen descriptions.
 
-6. **The user flow / happy path** ,  scan beyond marketing pages. The brag's strongest material is usually the product *in use*, not the product's marketing of itself. Look at:
-   - **Routes** (`app/`, `pages/`, route files) ,  the screens beyond the landing page.
-   - **Key feature components** ,  the upload form, the editor, the result view, the dashboard.
-   - **State machines, stores, or step components** ,  how a session progresses.
-   - **README "how it works" or "usage" sections** ,  the project's own description of the flow.
-   - **Example or demo folders** ,  sample inputs and outputs the team tested with.
+6. **The user flow / happy path** — scan beyond marketing pages. The brag's strongest material is usually the product *in use*, not the product's marketing of itself. Look at:
+   - **Routes** (`app/`, `pages/`, route files) — the screens beyond the landing page.
+   - **Key feature components** — the upload form, the editor, the result view, the dashboard.
+   - **State machines, stores, or step components** — how a session progresses.
+   - **README "how it works" or "usage" sections** — the project's own description of the flow.
+   - **Example or demo folders** — sample inputs and outputs the team tested with.
 
-   Identify the 2-3 beats of *using* the product: **entry → key action → result.**
+   Identify the 2–3 beats of *using* the product: **entry → key action → result.**
 
-7. **`public/` or `assets/`** ,  note any images, logos, icons. These can be referenced in the composition.
+7. **`public/` or `assets/`** — note any images, logos, icons. These can be referenced in the composition.
 
 ## The 9-question rubric
 
