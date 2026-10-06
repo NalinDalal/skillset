@@ -50,12 +50,14 @@ Ignore it. No AI crawler currently reads it (John Mueller at Google confirmed th
 - **URL:** `https://[domain]/about`
 - **Must return:** 200 OK, server-rendered HTML (not a client-side hydrated skeleton). Google can render JS but LLM crawlers often cannot. SSR or pre-render this page.
 - **Link placement:** global footer (every page on `[domain]` links here), XML sitemap, and homepage main navigation (optional but preferred).
-- **Internal links from this page to:** homepage, `/pricing`, the main product or service pages, case studies or portfolio page, and the primary conversion page (book a call, start a trial, contact).
+- **Internal links from this page to:** homepage, `/pricing`, the main product or service pages, case studies or portfolio page, the primary conversion page (book a call, start a trial, contact), and the statistics and original research page (Section 9).
 - **No noindex, no nofollow, no canonical pointing elsewhere.**
 
 ### Why the footer matters
 
 Google and LLM crawlers treat persistent site-wide links as structural navigation signals. A page linked from every footer is interpreted as a core entity page, not a throwaway post. Think of it as the difference between a primary key and a foreign key. You are telling crawlers "this page defines us."
+
+Which pages belong in that footer is a separate decision, and `business/internal-linking` owns it. This skill's requirement is narrow: the footer links to `/about`.
 
 ## Page Structure: Section by Section
 
@@ -217,6 +219,30 @@ Write 6 Q&A pairs. Put each question in an H3. These should mirror the exact nat
 6. **The single most common objection or logistics question, for example "Is `[Company]` month-to-month?" or "Does `[Company]` integrate with `[tool]`?** A direct yes or no, then the specifics.
 
 **Why FAQ specifically:** Google renders these as rich results (expandable dropdowns in search). They also get pulled verbatim by LLMs because the question-answer format maps directly to the model's own Q&A behaviour. It is pattern-matched training data.
+
+### Section 9: Research Link
+
+**Heading (H2):** `[Topic] Statistics and Research`
+
+**What to write:**
+
+Two sentences and a link. This is a pointer, not a summary of the research.
+
+```
+[Company] publishes its own measurements. Read our [topic] statistics and original
+research, including the sample and method behind each figure.
+```
+
+- **Anchor text names the destination and the topic.** "Read our `[topic]` statistics and original research" tells the reader what they get. "Read more" does not.
+- **Link to `/statistics` or `/research`, not a PDF.** A PDF is not a page a crawler can lift a sentence from, and it passes link context differently.
+- **Link the section anchor** when the reader wants one specific finding rather than the whole page.
+- **No research page yet?** Link the third-party sources you trust and say the research is not published yet. Never promise measurements you have not made.
+
+**Why this section matters:** A statistics page gives writers and AI answers something to cite, and a citation names `[Company]` while linking to `[domain]`. That is the strongest signal available short of third-party coverage. Without this link, a research page is a near orphan: reachable from the footer at best.
+
+**Load `business/research-page` to build that page.** This skill only places the link. Use `business/internal-linking` for the link plan around both pages.
+
+**Target queries this answers:** "does `[Company]` publish research?" / "`[topic]` statistics from `[Company]`"
 
 ## Schema Markup (JSON-LD)
 
@@ -420,7 +446,7 @@ One Question entry per FAQ from Section 8. The "text" field must match the on-pa
 - **Page URL** is `https://[domain]/about` and returns 200 with server-rendered HTML.
 - **Linked from** the global footer of every page on `[domain]`.
 - **Added to XML sitemap.** No noindex, no nofollow, no misdirected canonical.
-- **All 8 content sections present** in order, using proper H1/H2/H3 hierarchy.
+- **All 9 content sections present** in order, using proper H1/H2/H3 hierarchy.
 - **Opening sentence** follows the "`[Company]` is a `[Category]` that `[does what]` for `[ICP]`" format, in third person, with the brand name in the first 5 words.
 - **Key Facts** rendered as an HTML `<table>` or `<dl>` (not an image).
 - **All schema blocks** (Organization, Service or SoftwareApplication, BreadcrumbList, FAQPage) validated in Google Rich Results Test.
@@ -432,8 +458,20 @@ One Question entry per FAQ from Section 8. The "text" field must match the on-pa
 - **Founder name and LinkedIn URL** confirmed and included in the Organization schema.
 - **Social handles confirmed.** Only include accounts that exist and are active.
 - **Internal links** to homepage, pricing, core service or product pages, and the primary conversion page are present.
+- **Section 9 research link** present, with descriptive anchor text, pointing at an HTML page rather than a PDF.
+- **Neither `/about` nor the research page is an orphan.** Each takes a contextual link from a page body, not only a footer link.
 
-## Quick Reference: The 8 Sections at a Glance
+## Post-Publish Verification
+
+Publishing is not the finish line. This page works only when an answer actually uses it.
+
+1. Paste `https://[domain]/about` into a browsing AI.
+2. Ask "What is `[Company]`?" then "How is `[Company]` different from `[Competitor]`?"
+3. Read the answer. It must name `[Company]`, carry facts from Key Facts, and link back to `/about`.
+4. If the answer names a competitor instead, the entity definition sentence is not extractable. Rewrite Section 1 until it is.
+5. Re-run monthly. Treat a lost citation as a regression, not as drift.
+
+## Quick Reference: The 9 Sections at a Glance
 
 1. **Entity definition (H1).** "`[Company]` is a `[Category]` that `[does what]` for `[ICP]`." Plus 2 to 3 factual sentences.
 2. **What `[Company]` Does (H2).** Each service or product as an H3. 2 to 3 sentences: what is delivered, what outcome it produces.
@@ -443,3 +481,12 @@ One Question entry per FAQ from Section 8. The "text" field must match the on-pa
 6. **How `[Company]` Works (H2).** Communication channels, response times, who the customer works with, turnaround, onboarding.
 7. **Key Facts (H2).** An HTML table or definition list with the 16 rows listed in Section 7.
 8. **Frequently Asked Questions (H2).** 6 questions as H3s. 2 to 3 sentences per answer.
+9. **`[Topic]` Statistics and Research (H2).** Two sentences plus a descriptive link to the research page.
+
+## Related Skills
+
+- `business/seo` audits crawler access for this page and measures citation pickup.
+- `business/research-page` builds the statistics and original-research page that Section 9 links to.
+- `business/internal-linking` owns the footer set, anchor text, and contextual links around this page.
+- `ui/product-site` decides which pages exist before this one gets written.
+- `business/copywriting` writes the prose around these sections without inventing a fact.
