@@ -1,6 +1,6 @@
 # skillset
 
-**96 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow)
+**98 agent skills** across 10 categories (UI, backend, devops, architecture, engineering, quality, business, nerdev, ai-agent, workflow)
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@nerdev/skillset">
@@ -131,6 +131,10 @@ The slash name is the frontmatter `name`, not the folder. Two differ:
 |---|---|
 | "I want to start freelancing" | `business/freelancing` |
 | "should I build this startup idea" | `business/startup-founder` |
+| "how do I reach a CMO / find partners / write a cold message to a VP" | `business/decision-maker-outreach` |
+| "help me define my ICP / where do my buyers hang out" | `business/decision-maker-outreach` |
+| "should I become a fractional CMO / what does a fractional CMO do" | `business/fractional-cmo` |
+| "we have four agencies and nobody owning marketing" | `business/fractional-cmo` |
 | "revamp my resume for this JD" | `business/resume-revamp-jake-ats` |
 | "help me price this SaaS" | `business/pricing` |
 | "what are customers actually saying" | `business/customer-research` |
@@ -167,7 +171,7 @@ Restart or reload your agent:
 
 ## What's included
 
-**96 skills in 10 categories:**
+**98 skills in 10 categories:**
 
 - **ui** (50): components, animations, design systems, typography, motion, forms, tables, modals, toasts, command palettes, virtual lists, drawers
 - **backend** (5): API design, auth, database, realtime, security
@@ -175,12 +179,12 @@ Restart or reload your agent:
 - **architecture** (4): planning, onboarding, research, progress guard
 - **engineering** (7): TDD, code review, verification, standards, product engineering, about-page SOP, senior engineer prompts
 - **quality** (2): anti-slop, writing quality
-- **business** (12): freelancing, startup, pricing, customer research, copywriting, launch, marketing, video, product messaging, SEO, research pages, internal linking
+- **business** (14): freelancing, startup, decision-maker outreach, fractional CMO, pricing, customer research, copywriting, launch, marketing, video, product messaging, SEO, research pages, internal linking
 - **nerdev** (3): Turborepo + Bun structure, docs/ADRs, plug-and-play architecture
 - **ai-agent** (2): agent docs, context efficiency
 - **workflow** (7): ship, careful, context save/restore, health, learn, office hours
 
-5 skills sync from upstream repos nightly (pinned in `vendor.json`). The remaining 91 are owned outright. You can overlay any synced skill with your own version via `curations/<skill>/overlay/` — your edits survive every sync.
+5 skills sync from upstream repos nightly (pinned in `vendor.json`). The remaining 93 are owned outright. You can overlay any synced skill with your own version via `curations/<skill>/overlay/` — your edits survive every sync.
 
 ## License
 
