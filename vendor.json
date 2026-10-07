@@ -3,7 +3,7 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "f676fb4ff08eeed1e422d9869d08618819e29549",
+      "commit": "bbcb29d9dee6c94915d760bcfc36818ad5be66ad",
       "source": ".opencode/skills",
       "skills": [
         {
@@ -16,7 +16,7 @@
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b",
+      "commit": "b482f7a970abb98c4108d4a9f761e458c64cefc8",
       "source": "skills",
       "skills": [
         {
@@ -52,7 +52,7 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "df581122cde17e6e27686b5a448bde23e4ad4318",
+      "commit": "d0ef80d86795816da932a153458c5dbe192d294e",
       "source": "pstack/skills",
       "skills": [
         {
@@ -65,13 +65,13 @@
     {
       "name": "brag",
       "repo": "latent-spaces/brag",
-      "commit": "cb89b9f44309b0bf4e3cb89e685fadf80c7999ed",
+      "commit": "7079945d391573edebe48fdc0a23b39c4b4e8726",
       "source": "skills",
       "skills": [
         {
           "name": "brag",
           "dest": "business/brag",
-          "sha256": "3039887a2013e20266076f2748965bb9546986edd57e970a787210252838976d"
+          "sha256": "325535caadfad9300c11500d59ba24381cbb2a9f9be4ba325616e968c16bfcef"
         }
       ]
     }
