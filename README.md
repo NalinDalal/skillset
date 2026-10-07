@@ -131,6 +131,8 @@ The slash name is the frontmatter `name`, not the folder. Two differ:
 |---|---|
 | "I want to start freelancing" | `business/freelancing` |
 | "should I build this startup idea" | `business/startup-founder` |
+| "pressure test my idea / kill or continue" | `business/startup-founder` |
+| "find my first 10 customers / build an MVP in 2 weeks" | `business/startup-founder` |
 | "how do I reach a CMO / find partners / write a cold message to a VP" | `business/decision-maker-outreach` |
 | "help me define my ICP / where do my buyers hang out" | `business/decision-maker-outreach` |
 | "should I become a fractional CMO / what does a fractional CMO do" | `business/fractional-cmo` |

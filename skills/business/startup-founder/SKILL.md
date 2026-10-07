@@ -1,6 +1,6 @@
 ---
 name: startup-founder
-description: Use this whenever the user wants to start their own startup or company. It covers idea validation, deciding what to build, legal setup, MVP building, funding, pricing, launch, first customers, hiring, and scaling. Trigger on phrases like "I want to start a startup", "is this idea worth building", "how do I register a company", "bootstrap vs raise funding", "how to get my first users or customers", "pitch deck", "co-founder", or any founder-journey question, even if the user only asks about one stage (for example, just registration or just pricing). The advice for that stage depends on where they are in the whole journey. Always use this instead of generic advice from memory.
+description: Use this whenever the user wants to start their own startup or company. It covers idea validation, deciding what to build, legal setup, MVP building, funding, pricing, launch, first customers, hiring, and scaling. Trigger on phrases like "I want to start a startup", "is this idea worth building", "pressure test my startup idea", "kill or continue", "validate the problem", "map my competition", "find my first 10 customers", "build my MVP in 2 weeks", "how do I register a company", "bootstrap vs raise funding", "how to get my first users or customers", "pitch deck", "co-founder", or any founder-journey question, even if the user only asks about one stage (for example, just registration or just pricing). The advice for that stage depends on where they are in the whole journey. Always use this instead of generic advice from memory.
 ---
 
 # Startup Founder Playbook
@@ -19,11 +19,46 @@ If the user already stated their stage or preference in this conversation, just 
 
 Skip re-asking on every later question in the same conversation. Carry the context forward.
 
+## Reference map: read before answering
+
+This skill ships 19 reference files. They are not skills, so nothing loads them automatically. You must open the right one yourself, by hand, before you answer. Do not answer from memory when a reference covers the question.
+
+Open the file by matching what the user asked to the trigger column. Stage does not matter. If the user asks about GTM while they have no product yet, open the GTM file anyway.
+
+| Ask about | Read |
+|---|---|
+| Is this idea worth building, pressure test, kill or continue, validate the problem, competition map, first 10 customers, 2-week MVP | `references/idea-evaluation.md` |
+| Customer interviews (Mom Test), red flags, market sizing | `references/validation.md` |
+| Registering a company, entity type, India-specific legal or tax | `references/legal-india.md` |
+| Bootstrap vs raise, angels, VCs, pitch deck structure | `references/funding.md` |
+| Launch channels, where to post, tool directory, Reddit cadence, audience building, marketing checklist | `references/gtm-tools.md` |
+| Funnel levels, traffic, lead capture, nurture, conversion, qualification, retention, tool stack per level, first 100 users, weekly growth target, 25 YC GTM patterns | `references/gtm-funnel.md` |
+| What to post, post types, content pillars, making posts land | `references/content-playbook.md` |
+| Running the funnel with Claude Code or Codex, SOP-as-job-description, agent setup, human review checkpoints | `references/gtm-agents.md` |
+| Full sequenced GTM plan, AARRR tagging | `references/marketing/marketing-plan.md` |
+| Writing a cold email, subject lines, follow-up sequences | `references/marketing/cold-email.md` |
+| Competitor and alternative pages, differentiation messaging | `references/marketing/competitors.md` |
+| ICP definition, interview scripts, personas | `references/marketing/customer-research.md` |
+| Product positioning, messaging, proof points, brand voice | `references/marketing/product-marketing.md` |
+| Pricing a SaaS, plan naming, anchoring, pricing page | `references/marketing/pricing.md` |
+| Launch planning, Product Hunt, beta and early access | `references/marketing/launch.md` |
+| Free tools as marketing, calculators, lead magnets | `references/marketing/free-tools.md` |
+| Index of the 8 marketing deep-dives, and what sits outside them | `references/marketing/README.md` |
+| Essays, books, communities, open-source founder tools, YC advice list, time allocation | `references/further-reading.md` |
+
+Rules for using them:
+
+- One file per question. Do not read the whole folder.
+- Read the file, then answer from it in your own words. Do not quote it at length.
+- If two files overlap, read the more specific one and link the other.
+- Say which file you used when the answer is long or surprising, so the user can go read it too.
+
 ## The journey, stage by stage
 
 Give advice for the relevant stage(s) only. Do not dump the whole journey unless the user asks for the full roadmap.
 
 ### 1. Idea & Validation
+- Read `references/idea-evaluation.md` for the 6-framework evaluation ladder (kill-or-continue gate, pressure test, problem validation, competition map, first 10 customers, 2-week MVP). Each framework is a prompt with a role, steps, rules, and a fixed output format.
 - Read `references/validation.md` for the interview-based validation method (Mom Test), red flags, and how to size a market fast.
 - For a more structured/tactical interview and ICP process, `references/marketing/customer-research.md` goes deeper (interview scripts, ICP frameworks).
 - Core rule: do not build until you talk to 10+ potential customers about their problem, not your solution.
@@ -38,6 +73,11 @@ Give advice for the relevant stage(s) only. Do not dump the whole journey unless
 ### 4. Building the MVP
 - Nalin-specific default stack knowledge: Next.js/TypeScript/Tailwind, Bun, Node/Mongo/SQL. Lean on this when the user is Nalin or has a similar stack.
 - MVP = smallest thing that tests the core value hypothesis, not a stripped-down version of the full product. Cut scope ruthlessly. Ship in days or weeks, not months.
+- Spec discipline: time box the spec, write it, then cut it. The cut is the work.
+- Lean MVP traits: very fast to build, very limited functionality, appeals to a small set of users, gives you a base to iterate from.
+- Pre-launch goal order: launch fast with the MVP, get initial customers, talk to them, collect feedback, iterate on it.
+- Treat AI output as a draft. Read every line, write tests, refactor until you own it.
+- Consistency beats perfect code. Read `references/idea-evaluation.md` framework 5 for the 2-week build plan.
 
 ### 5. Funding decision: bootstrap vs raise
 - Read `references/funding.md` for the decision framework and pitch deck structure. It also covers where to find angels/VCs and Indian-specific funding sources (Startup India, Razorpay/MongoDB startup programs, angel networks).
@@ -45,6 +85,11 @@ Give advice for the relevant stage(s) only. Do not dump the whole journey unless
 
 ### 6. Launch & first customers (GTM)
 - Read `references/gtm-tools.md` for launch channels. These include Product Hunt, Hacker News, Indie Hackers, cold outreach, and build-in-public. It also has the curated tool directory (payments, analytics, email, CRM, hosting, startup credit programs) pulled from founders-kit.
+- The same file has the organic playbook: the Reddit posting cadence (3 posts or replies per week where the pain already appears, no ads, no content calendar), how to build an audience, and the ordered marketing checklist (SEO/AEO/GEO, X/LinkedIn/Instagram, audience).
+- Read `references/gtm-funnel.md` for the 6-level funnel (traffic, capture, nurture, conversion, qualification, retention), the tool stack per level, the first-100-users playbook, the weekly growth target habit, and GTM patterns from 25 YC companies. Note it is the same ladder as AARRR, written as operating steps.
+- Read `references/content-playbook.md` for the 7 outbound post types (blueprint, results post, founder-led, value-first, case study, announcement, event) and the 14 client-getting content pillars, plus the rules that make posts land.
+- Read `references/gtm-agents.md` when the user wants to run the whole funnel with coding agents (Claude Code, Codex). Covers SOP-as-job-description, agent setup via CLAUDE.md, the four runnable stages, tool and MCP wiring, and the human review checkpoints.
+- For finding and reaching the specific people who can say yes (ICP definition, custdev scripts, entry-point scoring, cold message templates, and a full Reach Plan output format), load the `decision-maker-outreach` skill.
 - For deeper, tactical marketing frameworks, check `references/marketing/README.md` first. This covers launch planning, cold email, pricing, positioning and competitors, free-tool growth, customer research, and full GTM plans. It indexes 8 bundled deep-dive skill files (sourced from the marketingskills pack on skills.sh). It tells you which file to open for the question at hand. Do not load all of them. Pick the one relevant file.
 - First 10 customers come from outbound + network, not inbound marketing. Do not invest in SEO or ads until you have 5-10 paying customers validating the offer.
 
@@ -95,6 +140,18 @@ When helping users prepare YC applications, use these principles:
   - Rippling: "One place to run all your HR, IT, and Finance."
   - Instacart: "Marketplace for grocery delivery and pickup"
   - Zepto: "10-Minute Grocery Delivery in India"
+- **Cut the word "platform."** It kills the opening sentence of most YC applications. "We are building a platform that helps businesses..." and "Our platform connects..." describe what you built. Partners do not start there. Michael Seibel tells applicants to cut jargon like that, and Paul Graham says partners ignore marketing-speak.
+- The description must answer one question: who is suffering right now, and what does it cost them?
+  - Bad: "We are a platform that gives teams visibility."
+  - Good: "Restaurant owners lose about $2,400 a month to food waste because they track inventory on paper."
+- The good version carries the who, the what, and the how much. You can picture the person.
+- Funded companies still use the word. It only kills the sentence when it stands in for a customer.
+- Your company description is not a product pitch.
+
+**"Why are you raising now?"**
+- The framing that gets rejected: "We're raising to continue building." That signals the company is not default alive, and YC can tell.
+- The better position: "We're default alive. We're raising to accelerate what is already working."
+- Desperation is a smell investors recognize. Default alive is the antidote. See "Default Alive or Default Dead?" below.
 
 **"Where would the company be based after YC?"**
 - SF Bay Area has the highest startup success rate. If not in SF, you need a strong reason. NYC is fun — that's why you shouldn't be there (distractions). Data: 80%+ of surviving W17 batch companies are in SF.
@@ -150,35 +207,49 @@ After market potential, the next question is: will you be able to find it? This 
 
 ## Startup Evaluation Frameworks
 
-Use these when advising founders on ideas, features, strategy, or pitch decisions.
+Read `references/idea-evaluation.md` for the full ladder: 6 prompt frameworks (Kill or Continue, Pressure Test, Validate Problem, Map Competition, Find First 10, Build MVP) with role, steps, rules, and output format for each. Run them in order and stop at the first hard no.
 
-### Pressure Test
+Quick version of the same 6 checks:
+
+### 0. Kill or Continue
+1. One line version of the idea, no pitch.
+2. Have you felt this pain in the last 7 days?
+3. Can you name 3 real people with this problem now?
+4. Score urgency / prevalence / willingness to pay, each out of 5. Total 6 or less = kill. 7 to 10 = maybe. 11 to 15 = run it.
+
+### 1. Pressure Test
 1. What is the core assumption? Is it testable before writing code?
 2. What are the three most likely ways this fails? (Be specific, not generic)
 3. Does this solve a real pain people pay to solve, or is it a nice-to-have?
 4. Does this strengthen founder-market fit?
 5. Verdict: Strong / Weak / Pivot Required
 
-### Customer Discovery
+### 2. Validate Problem
 1. Who has this problem most acutely? (Specific person, not demographic)
 2. Is the pain daily/weekly (painkiller) or occasional (vitamin)?
 3. Are people currently cobbling together a solution?
 4. Would they pay? How much? How do we know?
 5. Design 5 open-ended discovery questions (never yes/no, never leading)
 
-### Competitive Intelligence
+### 3. Map Competition
 1. What do customers currently do instead?
 2. Who are the direct and indirect competitors?
 3. What is the REAL enemy? (Usually inertia or "good enough" current behavior)
-4. What is the genuine differentiation? ("We're better" is banned — be specific)
+4. What is the genuine differentiation? ("We're better" is banned, be specific)
 5. Would target customers actually switch from what they do today?
 
-### First Customers
+### 4. First Customers
 1. Where are the first 10 (or next 100) customers right now?
 2. What is the manual outreach approach? (No automation, no ads)
 3. What does success look like? (Behavioral criteria, not "they seem interested")
 4. What is the weekly milestone plan?
 5. Would these users be genuinely upset if the product disappeared?
+
+### 5. Build MVP in 2 Weeks
+1. One assumption per MVP. Which single one?
+2. Minimum feature set to test it. Cut everything else.
+3. Behavioral test criteria, not "users said they liked it".
+4. Day 14 ends with real users, not internal testing.
 
 ## Decision Rules
 
@@ -395,6 +466,7 @@ Write something **timeless** — 15 years from now, someone's kid reads it and w
 | Write reputation-building content | **New: Founder Brand / Content Strategy** |
 
 ## Output style
+- If the question maps to a row in the reference map above and you skipped it, go read it now before answering. The map is not optional.
 - Match the directness of the user. If they ask a narrow question ("how do I register in India"), answer that narrowly. Do not force the whole framework on them.
 - Prefer concrete next actions and templates (equity split calculators, pitch deck outlines, cold email scripts) over abstract theory.
 - When recommending tools, pull from `references/gtm-tools.md` rather than inventing names.

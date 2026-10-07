@@ -268,3 +268,6 @@ That said: do not pad. Every section must be **dense, not bloated**. If a sectio
 This plan serves founders who are sharp, busy, and skeptical of marketing-speak. Write like a thoughtful colleague, not a deck-slide-writer. No jargon for its own sake. Direct claims, named tradeoffs, explicit assumptions. When unsure, name the open question rather than guessing.
 
 The exec summary must be short enough to read in 60 seconds. The rest must reward deep reading.
+## Related
+
+For the fractional CMO role itself, and whether to take it, hire it, scope it, or price it, load the `fractional-cmo` skill. This file produces the plan artifact; that one covers the engagement around it.

@@ -1,5 +1,20 @@
 # Go-To-Market: Launch, First Users, Tools
 
+## Contents
+
+1. Getting the first 10 users
+2. Launch platforms
+3. Getting to 100-1000 users
+4. Posting in public: the Reddit playbook
+5. Build an audience
+6. Marketing your SaaS: the checklist
+7. Landing page / positioning basics
+8. Pricing
+9. Curated tool directory
+10. Startup credit programs
+
+Deeper references live beside this file: `gtm-funnel.md` (the 6 levels, tool stack, first 100 users, weekly growth targets, 25 YC GTM patterns), `content-playbook.md` (post types and content pillars), and `gtm-agents.md` (running the funnel with coding agents).
+
 ## Getting the first 10 users
 - Cold outreach to people who match your validation-interview profile (see `validation.md`). Use direct DMs/emails, not blasts. Reference the actual problem they described.
 - Personal network + relevant communities (Reddit, Indie Hackers, Discord servers for your niche). Post as a person sharing something useful, not an ad.
@@ -17,6 +32,64 @@
 - **Content marketing**: write about the specific problem you solve. Share it where your audience already is (relevant subreddits, newsletters, dev communities). Do not just publish to your own blog and hope for organic traffic.
 - **Free-tool marketing / "engineering as marketing"**: build a small free tool adjacent to your product. It can be a calculator, checker, or generator that solves a narrow problem. It drives backlinks, PR, and organic traffic without feeling like an ad.
 - **Affiliates/referrals**: cheap because you only pay on conversion. Good fit for bootstrapped products with a clear price point.
+
+For the technical SEO work (LCP, bundle size, semantic HTML, keyword research) see section 6 below. For the full search and AI answer engine SOP, load the `seo` skill.
+
+## Posting in public: the Reddit playbook
+
+A founder gets 80% of signups from Reddit. No ads, no content calendar, no following. He posts and replies to people who have the problem his product solves, 3 times a week, for 8 months, and now has 2000 paying users.
+
+The mechanism is simple and repeatable:
+
+1. Find the subreddits where the problem gets described out loud, not where products get promoted.
+2. Read before posting. Learn the room's rules, the recurring questions, the language people use.
+3. Post and reply where the pain already appears, 3 times a week. Consistency beats reach.
+4. Answer first. Only mention the product when someone asks or when it is the honest answer.
+5. Never drop a link as the first line. It reads as an ad and gets removed.
+
+Everyone overcomplicates this. The founder with 2000 users has no ads, no content, and no audience. He has a schedule.
+
+### The general rule
+
+Give value where the audience already gathers. Impart real knowledge, teach the thing you are known for, and show how to do the work well. Drop the gyaan-bait posts on LinkedIn and X. Talk about the actual problem, and about building the thing.
+
+Then join the groups, Discords, and communities where the audience already is, and be useful there. Visibility follows contribution.
+
+## Build an audience
+
+An audience is the compounding asset. It turns every launch into a distribution event and makes customer development easier.
+
+- Give value consistently in one place rather than scattering across five.
+- Teach the skill you are best at. Being known for one thing beats being mediocre at ten.
+- Repost the best replies and threads as standalone posts.
+- Own a channel (newsletter, YouTube, blog) so the audience outlives any single algorithm.
+
+## Marketing your SaaS: the checklist
+
+A working order of operations. Do them in roughly this sequence.
+
+### 1. Search and AI answer engines (SEO, AEO, GEO)
+
+- Pick target keywords based on who the audience is, not on volume alone. Use Google's Keyword Planner for volume and difficulty.
+- Semantic HTML: real headings, real lists, real landmarks. Search engines and AI crawlers both read structure.
+- LCP under 2.5s. Check PageSpeed Insights and fix what it flags.
+- Cut the JS bundle. Every kilobyte costs you rankings and conversions.
+- Earn backlinks. Product Hunt and directories are the cheapest starting points; guest posts and original data are the durable ones.
+- Write substantive posts on your own site first, then republish to Medium for reach and referral traffic.
+- For AEO/GEO: publish structured, factual pages about what the product does, plus comparison pages and pricing pages. Get cited on third-party sites.
+
+### 2. X, LinkedIn, Instagram
+
+- Tell the target audience what problem you solve, and show the work.
+- Post the thing you know best: how to do the job well, with specifics.
+- Skip the gyaan bait. Generic advice posts on LinkedIn reach nobody.
+- Post about building the product in public. Progress, decisions, numbers, and the failures too.
+
+### 3. Build the audience
+
+- Give value on a schedule, in public, where the audience already reads.
+- Turn the best replies into standalone posts.
+- Move the audience somewhere you own: newsletter, email list, community.
 
 ## Landing page / positioning basics
 - Above the fold: who it is for, what it does, why it is better. Use plain language, not jargon.
