@@ -140,6 +140,57 @@ Before presenting, gut-check:
 - Sending only "Just checking in" notes
 
 
+## YC Cold Outbound Playbook (8-part debugging framework)
+
+When replies are near zero, debug in this order. The problem is rarely the subject line.
+
+### 1. Do 100 manual outreaches first
+Validate the approach before scaling or automating. Manual outreach should produce learnings, not merely a count. If you cannot get replies manually, automation will only scale the failure.
+
+### 2. Target the right person at the right company
+Identify the actual buyer, decision-maker, or person who experiences the problem. Correct targeting matters more than polishing copy sent to the wrong people. If you are emailing the wrong title, no subject line will fix it.
+
+### 3. Find the right title through real deals
+Learn from existing customers, closed deals, people who signed contracts, and people who approved or paid for the solution. If there are no customers yet, identify who experiences the problem and has the strongest incentive to solve it. Do not guess—ask.
+
+### 4. Write something worth reading
+Explain the product simply, focus on a concrete problem relevant to the recipient, and use specific, credible language. Prefer a clear reason to respond over generic phrases such as "Does this sound interesting?" Every sentence must earn its place.
+
+### 5. Use LinkedIn as part of sender credibility
+Keep the profile and company positioning credible, clear, and consistent with the outreach. Mutual connections can help establish familiarity, but do not assume they guarantee acceptance or a reply. The profile is checked before the email is read.
+
+### 6. Interpret reply rates honestly
+Treat roughly 2–3 replies per 100 targeted cold emails as an initial reference point from the YC playbook, not a universal benchmark or guarantee. Diagnose the result in context. If targeting, messaging, sender credibility, and deliverability are all sound but replies remain absent, consider whether the offer or product has a product-market-fit problem.
+
+### 7. Follow up, then break up
+Send two to four thoughtful follow-ups spaced several days apart. Each should provide context or a reason to respond. End respectfully and make it easy for the recipient to disengage. Stop contacting people who opt out or ask not to be contacted. The breakup email is your last touch—honor it.
+
+### 8. Use customers' actual words
+Ask customers what caught their attention, why they bought, and which problem mattered most. Reuse their language accurately instead of inventing marketing copy. This connects to the personalization principle: the observation must lead naturally into why you write to them.
+
+### Debugging order (do not skip steps)
+
+**Right person → Right company → Subject line → Messaging → Materials → Deliverability → Product-market fit.**
+
+Do not start by rewriting the subject line when the real issue may be poor targeting, an unclear offer, or a product that recipients do not need.
+
+### Practical workflow for outbound campaigns
+
+1. **Research & validate targeting** (Steps 1–3): Build a list of 50–100 ideal prospects manually. Confirm the right title through customer conversations or closed-won analysis.
+2. **Write personalized outreach** (Step 4): Use the Observation → Problem → Proof → Ask framework. Connect personalization to the problem.
+3. **Manual test** (Step 1): Send 50–100 emails yourself. Track replies, not opens.
+4. **Evaluate replies** (Step 6): If <2% reply rate, diagnose using the debugging order above.
+5. **Follow up systematically** (Step 7): 2–4 follow-ups with new angles, not "checking in."
+6. **Mine customer language** (Step 8): Interview responders and customers. Feed their words back into copy.
+7. **Only then consider automation**: Once the manual process produces consistent replies, codify what works.
+
+### Guardrails
+
+- **Respect opt-outs immediately.** Stop contacting anyone who asks.
+- **Follow anti-spam law** (GDPR, CAN-SPAM, CASL). Legitimate interest, clear sender identity, easy unsubscribe.
+- **Do not de-anonymize.** Use contact details people have made available, not scraped or inferred private data.
+- **Treat benchmarks as guidance, not law.** The 100-email exercise and 2–3 replies per 100 are reference points from the YC playbook, not rigid requirements for every market.
+
 ## Data & Benchmarks
 
 The references contain performance data if you need to make informed choices:

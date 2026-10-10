@@ -80,7 +80,7 @@ Give advice for the relevant stage(s) only. Do not dump the whole journey unless
 - Consistency beats perfect code. Read `references/idea-evaluation.md` framework 5 for the 2-week build plan.
 
 ### 5. Funding decision: bootstrap vs raise
-- Read `references/funding.md` for the decision framework and pitch deck structure. It also covers where to find angels/VCs and Indian-specific funding sources (Startup India, Razorpay/MongoDB startup programs, angel networks).
+- Read `references/funding.md` for the decision framework, pitch deck structure, and **investor cold email framework (Hook → Traction → Social Proof → CTA)**. It also covers where to find angels/VCs and Indian-specific funding sources (Startup India, Razorpay/MongoDB startup programs, angel networks).
 - Rule of thumb: bootstrap if the business can reach profitability without heavy upfront capital. This fits most SaaS, dev-tooling, and service businesses. Raise only if the opportunity requires spending ahead of revenue to win. Examples: marketplaces, capital-intensive markets, and winner-take-most markets.
 
 ### 6. Launch & first customers (GTM)
@@ -89,7 +89,7 @@ Give advice for the relevant stage(s) only. Do not dump the whole journey unless
 - Read `references/gtm-funnel.md` for the 6-level funnel (traffic, capture, nurture, conversion, qualification, retention), the tool stack per level, the first-100-users playbook, the weekly growth target habit, and GTM patterns from 25 YC companies. Note it is the same ladder as AARRR, written as operating steps.
 - Read `references/content-playbook.md` for the 7 outbound post types (blueprint, results post, founder-led, value-first, case study, announcement, event) and the 14 client-getting content pillars, plus the rules that make posts land.
 - Read `references/gtm-agents.md` when the user wants to run the whole funnel with coding agents (Claude Code, Codex). Covers SOP-as-job-description, agent setup via CLAUDE.md, the four runnable stages, tool and MCP wiring, and the human review checkpoints.
-- For finding and reaching the specific people who can say yes (ICP definition, custdev scripts, entry-point scoring, cold message templates, and a full Reach Plan output format), load the `decision-maker-outreach` skill.
+- For finding and reaching the specific people who can say yes (ICP definition, custdev scripts, entry-point scoring, cold message templates, and a full Reach Plan output format), load the `decision-maker-outreach` skill. Its **YC Cold Outbound Debugging Framework** (8 checks, debugging order, practical workflow) is the reference when replies are near zero.
 - For deeper, tactical marketing frameworks, check `references/marketing/README.md` first. This covers launch planning, cold email, pricing, positioning and competitors, free-tool growth, customer research, and full GTM plans. It indexes 8 bundled deep-dive skill files (sourced from the marketingskills pack on skills.sh). It tells you which file to open for the question at hand. Do not load all of them. Pick the one relevant file.
 - First 10 customers come from outbound + network, not inbound marketing. Do not invest in SEO or ads until you have 5-10 paying customers validating the offer.
 

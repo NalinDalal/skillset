@@ -46,3 +46,74 @@ Nerdev-style studio/SaaS profile for Nalin: bootstrapping is the default fit. Ra
 - Indian angel networks: Indian Angel Network, LetsVenture, Venture Catalysts, 100X.VC, Titan Capital.
 - Razorpay, MongoDB, AWS, and several others run India-specific startup programs (free credits, discounted tooling). Check current terms because they change. Search rather than rely on memory.
 - FDI/foreign investment rules matter if raising from outside India. This needs a CA/lawyer, not general advice.
+
+## Investor cold email framework (Hook → Traction → Social Proof → CTA)
+
+Use this structure when emailing investors cold. It mirrors the email that raised an oversubscribed $7M seed round.
+
+### The four-part structure
+
+**1. Hook — Context + company in one sentence**
+Open with a specific, relevant reason for reaching out *and* a concise explanation of what the company does. The investor should understand both why you picked them and what you build within the first two lines.
+
+> "Saw your thesis on vertical AI for manufacturing. We build an AI co-pilot that cuts CNC programming time from hours to minutes for job shops."
+
+Avoid: generic compliments ("love your portfolio"), vague intros ("I'm a founder building..."), or burying the company description.
+
+**2. Traction — Scannable, verifiable metrics**
+Lead with your strongest proof. Use concrete numbers: revenue, customers, growth rate, usage depth, profitability, or adoption signals. Format so an investor can scan in 3 seconds.
+
+> "$180k ARR, 12 paying shops, 40% MoM growth for 4 months. Profitable since month 3."
+
+If pre-revenue: waitlist size, pilot commitments, LOIs, usage intensity, or technical milestones. Never invent metrics. If you have no traction yet, acknowledge it briefly and lead with the problem insight instead.
+
+**3. Social proof — Relevant credibility only**
+Establish trust through signals that matter to *this* investor:
+- Founder credibility: prior exits, relevant domain experience, technical depth
+- Customer validation: notable logos, usage depth, expansion
+- Investor participation: angels already committed, funds in process
+- Fundraising context: round size, how much allocated, timeline
+
+> "Backed by [Angel 1] (ex-CTO of [Co]) and [Angel 2] (early [Unicorn] engineer). Raising $1.5M on a $8M cap, $800k committed."
+
+Keep it tight. One or two lines max. Do not name-drop people who haven't agreed to be referenced.
+
+**4. CTA — One clear, low-friction next step**
+End with a specific ask that is easy to say yes to. A scheduling link works when appropriate; a simple "worth a quick call?" works too.
+
+> "Open to a 15-min call this week? Calendly: [link]"
+
+Avoid: "Let me know if interested," "Would love to chat," or asking for 30-60 minutes on first touch.
+
+### Full template
+
+```
+Subject: [Specific reason] / [Company] — [one-line metric]
+
+Hi [Investor Name],
+
+[Hook: Specific reason for reaching out + what we do in one sentence]
+
+[Traction: 2-3 bullet metrics or one dense line with numbers]
+
+[Social Proof: 1 line of relevant credibility]
+
+[CTA: One low-friction ask with scheduling link if appropriate]
+
+Thanks,
+[Your Name]
+[One-line role/company]
+[Link to deck or one-pager — optional, not required]
+```
+
+### Principles to follow
+
+- **Concise**: The entire email should be under 150 words. Investors skim.
+- **Specific**: Every claim must be verifiable. No "best-in-class," "disruptive," "revolutionary."
+- **Relevant**: Tailor the hook and social proof to *this* investor's thesis, portfolio, or public writing.
+- **Truthful**: Never invent traction, customer names, revenue, investor commitments, or round details.
+- **Low friction**: Make it effortless for them to take the next step.
+
+### When not to use this framework
+
+Do not apply fundraising-specific metrics (ARR, round size, cap tables, investor names) to customer cold emails, partnership outreach, or hiring emails. Each audience needs its own proof points.

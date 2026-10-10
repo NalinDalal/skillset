@@ -110,7 +110,43 @@ Suggest the ones that fit the user's situation:
 2. **Make the first message easy to answer.** "Would you be open to exploring a partnership?" gets no reply. "Saw you are hiring five engineers. How are you finding candidates?" gets one. Ask about their situation, never about your offer.
 3. **Do not automate yet.** The instinct to automate posting and DMs is strong and premature. First learn who cares about the problem and which messages hit the pain point. Automating before you know what works only scales the wrong message.
 
-## Guardrails
+## YC Cold Outbound Debugging Framework (for when replies are near zero)
+
+When outreach produces no replies, debug in this exact order. The problem is rarely the copy.
+
+### The 8 checks
+
+1. **Do 100 manual outreaches first.** Validate the approach before scaling. Manual outreach must produce learnings, not just a count.
+2. **Target the right person at the right company.** The actual buyer, decision-maker, or person who feels the pain. Correct targeting beats perfect copy sent to the wrong person.
+3. **Find the right title through real deals.** Learn from closed-won customers: who signed, who approved, who paid. No customers yet? Identify who has the problem *and* the strongest incentive to solve it.
+4. **Write something worth reading.** Simple product explanation, concrete problem, specific language. A clear reason to respond beats "Does this sound interesting?"
+5. **Use LinkedIn as sender credibility.** Profile and company positioning must be credible, clear, and consistent with the outreach. Mutual connections help familiarity but do not guarantee replies.
+6. **Interpret reply rates honestly.** ~2–3 replies per 100 targeted cold emails is a reference point from the YC playbook, not a universal benchmark. If targeting, messaging, credibility, and deliverability are sound but replies are absent, consider a product-market-fit problem.
+7. **Follow up, then break up.** 2–4 thoughtful follow-ups spaced days apart. Each adds context or a reason to respond. End respectfully; make it easy to disengage. Stop contacting anyone who opts out.
+8. **Use customers' actual words.** Ask what caught their attention, why they bought, which problem mattered. Reuse their language instead of inventing copy.
+
+### Debugging order (do not reorder)
+
+**Right person → Right company → Subject line → Messaging → Materials → Deliverability → Product-market fit.**
+
+Do not start by rewriting the subject line when the real issue may be poor targeting, an unclear offer, or a product nobody needs.
+
+### Practical outbound campaign workflow
+
+1. **Research & validate targeting** (Checks 1–3): Build a list of 50–100 ideal prospects manually. Confirm the right title through customer conversations or closed-won analysis.
+2. **Write personalized outreach** (Check 4): Use the Observation → Problem → Proof → Ask framework. Connect personalization to the problem.
+3. **Manual test** (Check 1): Send 50–100 emails yourself. Track replies, not opens.
+4. **Evaluate replies** (Check 6): If <2% reply rate, diagnose using the debugging order above.
+5. **Follow up systematically** (Check 7): 2–4 follow-ups with new angles, not "checking in."
+6. **Mine customer language** (Check 8): Interview responders and customers. Feed their words back into copy.
+7. **Only then consider automation**: Once the manual process produces consistent replies, codify what works.
+
+### Guardrails
+
+- **Respect opt-outs immediately.** Stop contacting anyone who asks.
+- **Follow anti-spam law** (GDPR, CAN-SPAM, CASL). Legitimate interest, clear sender identity, easy unsubscribe.
+- **Do not de-anonymize.** Use contact details people have made available, not scraped or inferred private data.
+- **Treat benchmarks as guidance, not law.** The 100-email exercise and 2–3 replies per 100 are reference points from the YC playbook, not rigid requirements for every market.
 
 This playbook works because it is built on trust, so keep the tactics on the right side of the line:
 
