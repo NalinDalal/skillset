@@ -3,20 +3,20 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "c63b8dd7dd5a5f3c32eaabe1af76d0694f863ed2",
+      "commit": "936867543ac2576920d663cc9803597f6044f3ac",
       "source": ".opencode/skills",
       "skills": [
         {
           "name": "impeccable",
           "dest": "ui/impeccable",
-          "sha256": "cd7758024f5717ef90abaca78b1b53a6bd6ac8b90367266d0891a2fbb380ca33"
+          "sha256": "05e3dbcfa79f40c2b082b09d6b4c32832d114fa3c203de289ceeebdad7744f4d"
         }
       ]
     },
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "717446e07a78d4e6d7918b1fde1a263378eebac9",
+      "commit": "6010f91a9935f1c167dfc500fb1a475681892e6b",
       "source": "skills",
       "skills": [
         {
@@ -52,26 +52,26 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
       "source": "pstack/skills",
       "skills": [
         {
           "name": "unslop",
           "dest": "quality/unslop",
-          "sha256": "abff1795aa5273ff5dc2d578c8407520048978081556eb9fa4a7ae2e5d4e5ae2"
+          "sha256": "a45d39871eedccbe33292962b6afed412802c764309d2cbec274287db8b3b3f2"
         }
       ]
     },
     {
       "name": "brag",
       "repo": "latent-spaces/brag",
-      "commit": "8531ccb9f471ef5099abf930079e47b55c55bb21",
+      "commit": "669ab9286aa28b6c3ee30e75f181ee74319d012a",
       "source": "skills",
       "skills": [
         {
           "name": "brag",
           "dest": "business/brag",
-          "sha256": "325535caadfad9300c11500d59ba24381cbb2a9f9be4ba325616e968c16bfcef"
+          "sha256": "ba509e9861f5515add68841d54cdfdb92383ae248fece46e358ea5106f8a151b"
         }
       ]
     }
