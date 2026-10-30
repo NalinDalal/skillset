@@ -3,20 +3,20 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "c63b8dd7dd5a5f3c32eaabe1af76d0694f863ed2",
+      "commit": "02523aec3e4c4580102d996d1b6a71fbe062e03f",
       "source": ".opencode/skills",
       "skills": [
         {
           "name": "impeccable",
           "dest": "ui/impeccable",
-          "sha256": "cd7758024f5717ef90abaca78b1b53a6bd6ac8b90367266d0891a2fbb380ca33"
+          "sha256": "cea33d750982a629bfdd041fc017ced92eb1bfa4bfbfaa316d617b7f02a68038"
         }
       ]
     },
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "717446e07a78d4e6d7918b1fde1a263378eebac9",
+      "commit": "12af471f627f866411b4bd785b19646d3672784c",
       "source": "skills",
       "skills": [
         {
@@ -29,7 +29,7 @@
     {
       "name": "emil-skills",
       "repo": "emilkowalski/skills",
-      "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+      "commit": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
       "source": "skills",
       "skills": [
         {
@@ -52,26 +52,26 @@
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "11713c683fe4add4fd403ea880580abbc9e0875f",
+      "commit": "4dd1d05818d19792e7cd6e818f1667f95f7e1dbe",
       "source": "pstack/skills",
       "skills": [
         {
           "name": "unslop",
           "dest": "quality/unslop",
-          "sha256": "abff1795aa5273ff5dc2d578c8407520048978081556eb9fa4a7ae2e5d4e5ae2"
+          "sha256": "a45d39871eedccbe33292962b6afed412802c764309d2cbec274287db8b3b3f2"
         }
       ]
     },
     {
       "name": "brag",
       "repo": "latent-spaces/brag",
-      "commit": "8531ccb9f471ef5099abf930079e47b55c55bb21",
+      "commit": "669ab9286aa28b6c3ee30e75f181ee74319d012a",
       "source": "skills",
       "skills": [
         {
           "name": "brag",
           "dest": "business/brag",
-          "sha256": "325535caadfad9300c11500d59ba24381cbb2a9f9be4ba325616e968c16bfcef"
+          "sha256": "ba509e9861f5515add68841d54cdfdb92383ae248fece46e358ea5106f8a151b"
         }
       ]
     }
