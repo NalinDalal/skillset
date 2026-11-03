@@ -1,0 +1,42 @@
+/* driftlock theme — ink / emerald / red / amber brand tokens */
+:root {
+  --bg: #0a0a0f;
+  --bg-soft: #111118;
+  --surface: #14141d;
+  --surface-2: #1c1c28;
+  --border: rgba(16, 185, 129, .14);
+  --border-strong: rgba(16, 185, 129, .35);
+  --text-1: #f8f8f9;
+  --text-2: #a1a1aa;
+  --text-3: #71717a;
+  --accent: #10b981;
+  --accent-ink: #0a0a0f;
+  --accent-2: #34d399;
+  --accent-3: #ff4444;
+  --good: #10b981;
+  --warn: #f59e0b;
+  --bad: #ff4444;
+  --grad: linear-gradient(135deg,#10b981 0%,#34d399 55%,#059669 100%);
+  --grad-soft: linear-gradient(135deg,#0f172a,#111827 55%,#0a0a0f);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-lg: 26px;
+  --shadow: 0 20px 50px rgba(0,0,0,.45), 0 6px 16px rgba(0,0,0,.25);
+  --shadow-lg: 0 40px 90px rgba(0,0,0,.6), 0 10px 24px rgba(0,0,0,.35);
+  --font-sans: 'Inter','Noto Sans SC',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;
+  --font-serif: 'Playfair Display','Noto Serif SC',Georgia,serif;
+  --font-mono: 'JetBrains Mono','IBM Plex Mono',SFMono-Regular,Menlo,monospace;
+  --font-display: var(--font-sans);
+  --letter-tight: -.03em;
+  --letter-normal: -.01em;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+/* DriftLock-specific brand utilities */
+.driftlock-ink{color:var(--text-1)}
+.driftlock-emerald{color:var(--accent)}
+.driftlock-red{color:var(--bad)}
+.driftlock-amber{color:var(--warn)}
+.bg-ink{background:var(--bg)}
+.bg-surface{background:var(--surface)}
+.border-emerald{border-color:var(--border-strong)}
