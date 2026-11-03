@@ -17,3 +17,9 @@ source set (market-gap-finder, kai-cmo-harness, LeadMagic gtm-skills, claude-
 persona, zarif gtm-skills, wondelai skills, RohitWaghire Deep-Market-Reasearch)
 is credited per skill in the fork notes at the top of each SKILL.md, and the
 license texts live in the upstream repo at `_licences/`.
+
+Runtime plumbing is machine-local and lives outside this repo: the business
+record at `~/ACX/my-business.md`, plus the global
+`~/.config/opencode/opencode.jsonc` file, which points `skills.paths` at
+this folder, carries the `instructions` entry for the business record, and
+defines the `/acx:*` command templates.
