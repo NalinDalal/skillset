@@ -32,7 +32,8 @@ Open the file by matching what the user asked to the trigger column. Stage does 
 | Registering a company, entity type, India-specific legal or tax | `references/legal-india.md` |
 | Bootstrap vs raise, angels, VCs, pitch deck structure | `references/funding.md` |
 | Launch channels, where to post, tool directory, Reddit cadence, audience building, marketing checklist | `references/gtm-tools.md` |
-| Funnel levels, traffic, lead capture, nurture, conversion, qualification, retention, tool stack per level, first 100 users, weekly growth target, 25 YC GTM patterns | `references/gtm-funnel.md` |
+| Funnel levels, traffic, lead capture, nurture, conversion, qualification, retention, tool stack per level, hand-to-hand first 10, hand-raiser signals, launch surfaces, weekly growth target, 25 YC GTM patterns | `references/gtm-funnel.md` |
+| First-10 outreach message, message openers by signal, Loom checklist, quote file, tracker | `references/first-10-templates.md` |
 | What to post, post types, content pillars, making posts land | `references/content-playbook.md` |
 | Running the funnel with Claude Code or Codex, SOP-as-job-description, agent setup, human review checkpoints | `references/gtm-agents.md` |
 | Full sequenced GTM plan, AARRR tagging | `references/marketing/marketing-plan.md` |

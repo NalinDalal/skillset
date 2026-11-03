@@ -82,27 +82,38 @@ Five ways to turn a visitor into an application:
 
 Volume outbound still runs through the guardrails in `decision-maker-outreach`: use data people published for this purpose, respect the sending platform's terms, and check local law before scaling volume.
 
-## 3. Getting the first 100 users
+## 3. The first 10: hand to hand
 
-You do not need to be a genius, only relentless. Six steps:
+The talking should not scale. The finding can. Before you have proof, 90% of the job is talking to people who already have the problem, one at a time.
 
-1. **Launch everywhere.** Product Hunt, DevHunt, BetaList, Peerlist, AppSumo, Indie Hackers. If it lets you list your product, list it.
-2. **Post on socials like your life depends on it.** One post will not do it. Do it 100 days in a row. Copy what went viral, tweak, repeat.
-3. **Stalk your competitors.** See where they are listed, then submit your product in the same places.
-4. **Pair AI output with SEO.** Spin up posts with an LLM, then edit every line. Fifty solid posts move mountains. Get domain rating to 15 or higher.
-5. **Run some ads.** Google, Facebook, even Bing. Optimize once, then let it run.
-6. **Send cold DMs and replies.** Find your people. Be short, be real, be helpful. One sentence pitch. No spam.
+1. **Narrow the ICP to one sentence.** Not "B2B SaaS companies." Try "heads of finance at 50 to 200 person SaaS companies in the US who just switched accounting tools." Four dimensions: role, company shape, region, trigger.
+2. **Find the people already raising a hand.** Someone commenting under a competitor's post. Someone engaging with content about the exact problem you solve. A company that just raised and is about to feel the pain. Rank those signals by distance from buying: a public complaint sits closer than a like. Expect a low match rate on the weakest ones, and count how many names each signal actually returns before you build a motion on it.
+3. **Contact them personally.** Not a sequence. Not a template. One paragraph that proves you looked at who they are and what they just did. Openers and a fill-in block: `first-10-templates.md`.
+4. **Do the work for them.** Configure the account yourself. Onboard live on a call. Send a Loom of their own account, set up. At this stage the offer is your labor, not a discount. Record it with the checklist in `first-10-templates.md`.
+5. **Stay close for the first month.** Text them after week one. Ask what broke. Fix it before they ask twice.
+6. **Write down everything they say.** Their words become the landing page, the cold email, the pitch. Keep one file of quotes, in their phrasing.
 
-This is how the internet is won. No secret, just consistent boring work.
+## 4. From 10 to 100: surfaces, and the honest math
 
-## 4. What actually produced the first 100
+The surfaces below work. They work in a specific order, and the order matters more than the list.
 
-The honest version, from a founder with no ads and no blog. Ads and blogs only start working after some users are already paying. Before that, 90% of the job is talking to people who already have the problem.
+| Surface | When it works |
+|---|---|
+| Hand to hand, one person at a time | First 10 to 30 customers, always |
+| Real replies under posts in the niche, 30 days straight | 10 to 100, if the replies carry insight |
+| Launch surfaces: Product Hunt, DevHunt, BetaList, Peerlist, AppSumo, Indie Hackers | A spike, then nothing. Worth one day each. |
+| Ads, SEO, a blog | Only after 5 to 10 paying customers prove the offer |
 
-1. **DM people who had already complained about the exact problem** on LinkedIn and X. Keep it short and simple.
-2. **Reply under every post in the niche for 30 days.** Not "check out my tool." Real answers with real insight.
-3. **Obsess over the first 20 users.** Calls, Loom videos, or fixing their setup by hand.
-4. **Post the money numbers.** $0, then $10k. People trust authenticity.
+1. **Launch everywhere, once.** If a site lets you list the product, list it. Treat it as a spike, not a channel.
+2. **Post like your life depends on it for 100 days.** One post does not do it. Copy what landed, change it, repeat.
+3. **Copy your competitors' surfaces.** See where they are listed, then submit in the same places.
+4. **Pair AI output with editing for SEO.** Fifty solid posts move more than five hundred thin ones. Domain rating of 15 or higher is the floor.
+5. **Run ads after the offer works, not before.** Optimize once, then leave it alone.
+6. **Send cold DMs and replies.** Short, real, useful. One sentence of pitch.
+7. **Post the money numbers.** $0, then $10k. People trust the sequence, not the claim.
+
+The math: hand-to-hand caps at the hours you have. Past 10 to 30 customers, productize the motion you ran by hand (the setup, the Loom, the onboarding call) instead of trying to clone yourself. Launch surfaces and ads do not rescue a motion nobody ran by hand first.
+
 
 ## 5. The weekly growth target habit
 

@@ -3,3 +3,5 @@
 node_modules/
 .sync-cache/
 .sync-state
+# private client copy, never published or committed
+/driftlock/
