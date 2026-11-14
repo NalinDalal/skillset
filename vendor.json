@@ -3,20 +3,20 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "df3a4abe7d0840d5f60324812c432e00b66a4e75",
+      "commit": "fb46cc6e356253a5d9945c4e3667c20c3d699cc8",
       "source": ".opencode/skills",
       "skills": [
         {
           "name": "impeccable",
           "dest": "ui/impeccable",
-          "sha256": "09b6213dbd2e02881414350a57f1a054c842df61fd2a8fccac31291587ad8579"
+          "sha256": "a53d573e9f12a5581a89d6b2b5c6cb3b35240c3078e50dee5d52596a2f216fcd"
         }
       ]
     },
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "12af471f627f866411b4bd785b19646d3672784c",
+      "commit": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
       "source": "skills",
       "skills": [
         {
@@ -29,30 +29,30 @@
     {
       "name": "emil-skills",
       "repo": "emilkowalski/skills",
-      "commit": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
+      "commit": "0f2e23b32bb1265e84cff8d3e75785fec953fb1b",
       "source": "skills",
       "skills": [
         {
           "name": "ask-sonner",
           "dest": "ui/ask-sonner",
-          "sha256": "54fadebaeb6b904ec77ef9d288edde366645f5d93794dc6137e94c196aeb6163"
+          "sha256": "a1322c6b4be339c10375e53dcbfa83118c3ac8292d464c762fd5740020c14725"
         },
         {
           "name": "pick-ui-library",
           "dest": "ui/pick-ui-library",
-          "sha256": "1204b873a8918bed93e125e2d2ef5e479e5cfcb6f1a63068bbd867b07db4f0d1"
+          "sha256": "eaf9ddc48be194cca8c8873f265da5ea7ef97d5551ad3dc3c799c67001c4891d"
         },
         {
           "name": "prototype",
           "dest": "ui/prototype",
-          "sha256": "fbafb2c083b74232e78dcbd1685cf02d90310d474aa9489a22a46025fbffccad"
+          "sha256": "97afe6e79d5881cd029d7e349c22d3df05d37dd7565ab6ea5ef586b9537fe233"
         }
       ]
     },
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "4dd1d05818d19792e7cd6e818f1667f95f7e1dbe",
+      "commit": "3dbd22ff12742fb28c9700b9760baa29ed41dc13",
       "source": "pstack/skills",
       "skills": [
         {
