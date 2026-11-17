@@ -1,0 +1,43 @@
+{
+  "name": "codex-first-customer-finder-skill",
+  "version": "0.2.0",
+  "description": "A Codex skill that finds evidence-backed potential first customers from recent public signals.",
+  "license": "MIT",
+  "author": "Francesco Mistero",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kappaemme-git/codex-first-customer-finder-skill.git"
+  },
+  "homepage": "https://github.com/Kappaemme-git/codex-first-customer-finder-skill#readme",
+  "bugs": {
+    "url": "https://github.com/Kappaemme-git/codex-first-customer-finder-skill/issues"
+  },
+  "bin": {
+    "codex-first-customer-finder-skill": "scripts/install.js"
+  },
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/install.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "files": [
+    "first-customer-finder",
+    "scripts/install.js",
+    "README.md",
+    "LICENSE",
+    "!**/__pycache__/**",
+    "!**/*.pyc"
+  ],
+  "keywords": [
+    "codex",
+    "skill",
+    "startup",
+    "customers",
+    "early-adopters",
+    "prospecting",
+    "customer-discovery",
+    "founders"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
