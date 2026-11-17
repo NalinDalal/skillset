@@ -19,15 +19,18 @@ description: "Audit and fix search visibility, including AI answer engines. Use 
 
 This skill audits, prioritizes, and measures. It writes two artifacts: a query set and a crawler policy.
 
-## Three gates on any citation
+## Start from scratch: if I lost all my SEO knowledge tomorrow
 
-An answer engine does three things before it names you:
+Here is exactly how I'd start ranking again:
 
-1. **Reach.** The crawler fetches the page. Fail here and nothing after it matters.
-2. **Extract.** The page holds one sentence with a number, a name, or a definition in it.
-3. **Trust.** Something off-site already vouches for you.
+1. Write down 50 searches your customers would type to find a business like yours.
+2. Google every single one. Study what's ranking and why. Search intent is everything.
+3. Steal the format. Listicle on page 1? Write a listicle. Landing page? Build a landing page.
+4. Build backlinks to your homepage and key pages from sites that fit your niche.
+5. Open Search Console after a few days, a week, a month. Update the articles based on what's actually ranking.
+Then do it all again.
 
-Writing a page is easy, so most sites clear gate 2. Most fail gate 1 in silence, because nobody checks. Gate 3 caps the ceiling and takes months.
+Boring SEO simply works.
 
 ## Step 1: Audit crawler access
 
