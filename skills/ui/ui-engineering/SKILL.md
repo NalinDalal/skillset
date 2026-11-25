@@ -347,7 +347,23 @@ User: "Build the FE/UI"
      │
      ├─► house-style (LAW: always loaded)
      │
-     ├─► ui (process: direction → system → build → verify)
+     ├─► ui-core (process: direction → system → build → verify)
+     │
+     ├─► refero-design (research-first direction, reference grounding)
+     │
+     ├─► ui-theme-picker (visual direction, tokens, Tailwind config)
+     │
+     ├─► typography-picker (font pairing, type scale)
+     │
+     ├─► design-styles (pick an aesthetic from the catalog)
+     │
+     ├─► anti-vibecode (run as a "do not" review pass)
+     │
+     ├─► product-site (page inventory, 404, legal, contact)
+     │
+     ├─► product-messaging (landing copy and content hierarchy)
+     │
+     ├─► copywriting (marketing copy)
      │
      ├─► pick-ui-library (for each interaction needed)
      │     ├─► ask-modal → ask-base-ui
@@ -360,8 +376,15 @@ User: "Build the FE/UI"
      │     └─► ask-drawer → ask-vaul
      │
      ├─► motion (name → decide → build → review)
+     │     └─► scroll-effects (parallax, pinned, stacking, etc.)
      │
      ├─► impeccable (audit → polish → animate → verify)
+     │
+     ├─► launch-polish (UI and mobile polish pass)
+     │
+     ├─► launch-conversion (conversion and trust pass)
+     │
+     ├─► site-launch-readiness (technical and SEO pass)
      │
      └─► prototype (optional: divergence exploration)
      │
