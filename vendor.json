@@ -3,20 +3,20 @@
     {
       "name": "impeccable",
       "repo": "pbakaus/impeccable",
-      "commit": "df3a4abe7d0840d5f60324812c432e00b66a4e75",
+      "commit": "2fc5e1459efbbf06d92c7306517c286bf12490cf",
       "source": ".opencode/skills",
       "skills": [
         {
           "name": "impeccable",
           "dest": "ui/impeccable",
-          "sha256": "09b6213dbd2e02881414350a57f1a054c842df61fd2a8fccac31291587ad8579"
+          "sha256": "fc552ea85e5c06f1b56133b90e477d3b92e2a90a601c96ce31241e5357b42e38"
         }
       ]
     },
     {
       "name": "taste-skill",
       "repo": "Leonxlnx/taste-skill",
-      "commit": "12af471f627f866411b4bd785b19646d3672784c",
+      "commit": "952435f63acece7d2fcb4b4d3c1786c1c43603e0",
       "source": "skills",
       "skills": [
         {
@@ -29,49 +29,49 @@
     {
       "name": "emil-skills",
       "repo": "emilkowalski/skills",
-      "commit": "a81dbca07f2217b7103e510c0f13f8d5b017afc9",
+      "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
       "source": "skills",
       "skills": [
         {
           "name": "ask-sonner",
           "dest": "ui/ask-sonner",
-          "sha256": "54fadebaeb6b904ec77ef9d288edde366645f5d93794dc6137e94c196aeb6163"
+          "sha256": "a73d039359712d049267822742d598dab9f6d35500c03310b52e4b90b81041fd"
         },
         {
           "name": "pick-ui-library",
           "dest": "ui/pick-ui-library",
-          "sha256": "1204b873a8918bed93e125e2d2ef5e479e5cfcb6f1a63068bbd867b07db4f0d1"
+          "sha256": "a5b48b17ac4344bc72371a6d2e4d7de809757466d86b4314872b3d341b95471f"
         },
         {
           "name": "prototype",
           "dest": "ui/prototype",
-          "sha256": "fbafb2c083b74232e78dcbd1685cf02d90310d474aa9489a22a46025fbffccad"
+          "sha256": "f6c820e9ef450c506de53545ef36be9bcf817362e8f55c84d87bc283719c33ae"
         }
       ]
     },
     {
       "name": "pstack",
       "repo": "cursor/plugins",
-      "commit": "4dd1d05818d19792e7cd6e818f1667f95f7e1dbe",
+      "commit": "b7b93c36be9bcc36a74db438e0fd385d660bc559",
       "source": "pstack/skills",
       "skills": [
         {
           "name": "unslop",
           "dest": "quality/unslop",
-          "sha256": "a45d39871eedccbe33292962b6afed412802c764309d2cbec274287db8b3b3f2"
+          "sha256": "fb992526fc6c2c34af20a88bd5645ad6f2fbd9246841afc74053aaf24dc84459"
         }
       ]
     },
     {
       "name": "brag",
       "repo": "latent-spaces/brag",
-      "commit": "669ab9286aa28b6c3ee30e75f181ee74319d012a",
+      "commit": "06379432a9243c951dfcc051153be18d2d261044",
       "source": "skills",
       "skills": [
         {
           "name": "brag",
           "dest": "business/brag",
-          "sha256": "ba509e9861f5515add68841d54cdfdb92383ae248fece46e358ea5106f8a151b"
+          "sha256": "71f4f886c165cc86b207cd99528e3cfc45a36bbb29eed7c6b16d3d6529cddb67"
         }
       ]
     }
